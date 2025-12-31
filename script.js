@@ -600,7 +600,7 @@ async function initVisitCounter() {
     try {
         // 1. Total de Visitas: Incrementa sempre (HIT)
         // Usando no-cors ou fetch normal. A countapi retorna JSON.
-        const totalReq = await fetch(`https://api.countapi.xyz/hit/${namespace}/${keyTotal}`);
+        const totalReq = await fetch(`https://api.countapi.xyz/hit/${namespace}/${keyTotal}?t=${Date.now()}`);
         const totalData = await totalReq.json();
         totalEl.textContent = formatNumber(totalData.value);
 
@@ -610,13 +610,13 @@ async function initVisitCounter() {
         let uniqueData;
         if (!hasVisited) {
             // Primeira vez: HIT (incrementa)
-            const uniqueReq = await fetch(`https://api.countapi.xyz/hit/${namespace}/${keyUnique}`);
+            const uniqueReq = await fetch(`https://api.countapi.xyz/hit/${namespace}/${keyUnique}?t=${Date.now()}`);
             uniqueData = await uniqueReq.json();
             // Marca como contado
             localStorage.setItem('bolao_v1_counted', 'true');
         } else {
             // Recorrente: GET (apenas lê)
-            const uniqueReq = await fetch(`https://api.countapi.xyz/get/${namespace}/${keyUnique}`);
+            const uniqueReq = await fetch(`https://api.countapi.xyz/get/${namespace}/${keyUnique}?t=${Date.now()}`);
             uniqueData = await uniqueReq.json();
         }
 
