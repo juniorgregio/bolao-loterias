@@ -9,26 +9,26 @@
 const BOLAO_CONFIG = {
     // Prêmio estimado da Mega da Virada 2025
     premioTotal: 1_000_000_000, // R$ 1 bilhão
-    
+
     // Distribuição dos prêmios
     percentualSena: 0.90,    // 90% para sena
     percentualQuina: 0.05,   // 5% para quina
     percentualQuadra: 0.05,  // 5% para quadra
-    
+
     // Desconto do administrador do bolão
     descontoAdmin: 0.10, // 10%
-    
+
     // Dados do bolão
     arrecadacaoTotal: 536993.99,
     participantes: 1743,
     pixes: 3410,
     totalCotas: 21309,
     valorCota: 25.20,
-    
+
     // Jogos
     jogos9Numeros: 1065,
     jogos6Numeros: 39,
-    
+
     // Estimativas de ganhadores (para cálculo)
     // Estes valores seriam atualizados após o sorteio oficial
     estimativaGanhadoresSena: 1,
@@ -169,21 +169,21 @@ function combination(n, k) {
 function calcularCombinacoes(numerosDoJogo, acertos) {
     const n = numerosDoJogo;
     const k = acertos;
-    
+
     // Se temos as combinações pré-calculadas, usamos
     if (COMBINACOES[n] && COMBINACOES[n][k]) {
         return COMBINACOES[n][k];
     }
-    
+
     // Caso contrário, calculamos dinamicamente
     // Senas: C(k, 6) * C(n-k, 0) = 1 se k=6, 0 caso contrário
     // Quinas: C(k, 5) * C(n-k, 1) 
     // Quadras: C(k, 4) * C(n-k, 2)
-    
+
     const senas = k >= 6 ? combination(k, 6) * combination(n - k, 0) : 0;
     const quinas = k >= 5 ? combination(k, 5) * combination(n - k, 1) : 0;
     const quadras = k >= 4 ? combination(k, 4) * combination(n - k, 2) : 0;
-    
+
     return { senas, quinas, quadras };
 }
 
@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function initParticles() {
     const container = document.getElementById('particles');
     const colors = ['#FFD700', '#667eea', '#764ba2', '#38ef7d', '#ff416c'];
-    
+
     for (let i = 0; i < 30; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
@@ -224,7 +224,7 @@ function initParticles() {
 function initNumbersGrid() {
     const grid = document.getElementById('numbersGrid');
     grid.innerHTML = '';
-    
+
     for (let i = 1; i <= 60; i++) {
         const btn = document.createElement('button');
         btn.className = 'number-btn';
@@ -249,16 +249,16 @@ function initCalculator() {
 function initEventListeners() {
     // Botão limpar seleção
     document.getElementById('clearSelection').addEventListener('click', clearSelection);
-    
+
     // Botão carregar exemplo
     document.getElementById('loadSampleBtn').addEventListener('click', loadSampleGames);
-    
+
     // Botão validar
     document.getElementById('validateBtn').addEventListener('click', validateGames);
-    
+
     // Textarea de jogos
     document.getElementById('gamesTextarea').addEventListener('input', updateGamesCount);
-    
+
     // Filtros de resultados
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', (e) => filterResults(e.target.dataset.filter));
@@ -274,7 +274,7 @@ function initEventListeners() {
  */
 function toggleNumber(number) {
     const index = state.selectedNumbers.indexOf(number);
-    
+
     if (index > -1) {
         // Remove o número
         state.selectedNumbers.splice(index, 1);
@@ -286,7 +286,7 @@ function toggleNumber(number) {
         showToast('Você já selecionou 6 números. Remova um para adicionar outro.');
         return;
     }
-    
+
     updateNumbersUI();
 }
 
@@ -299,11 +299,11 @@ function updateNumbersUI() {
         const num = parseInt(btn.dataset.number);
         btn.classList.toggle('selected', state.selectedNumbers.includes(num));
     });
-    
+
     // Atualiza bolas selecionadas
     const balls = document.getElementById('selectedBalls');
     const sorted = [...state.selectedNumbers].sort((a, b) => a - b);
-    
+
     let html = '';
     for (let i = 0; i < 6; i++) {
         if (sorted[i]) {
@@ -313,7 +313,7 @@ function updateNumbersUI() {
         }
     }
     balls.innerHTML = html;
-    
+
     // Atualiza badge
     const badge = document.querySelector('.number-selector .badge');
     if (state.selectedNumbers.length === 6) {
@@ -345,31 +345,31 @@ function clearSelection() {
 function updateCalculator() {
     const input = document.getElementById('quotasInput');
     const cotas = parseInt(input.value) || 0;
-    
+
     // Valor investido
     const investido = cotas * BOLAO_CONFIG.valorCota;
     document.getElementById('investedValue').textContent = formatCurrency(investido);
-    
+
     // Participação percentual
     const participacao = cotas / BOLAO_CONFIG.totalCotas;
     document.getElementById('participationPercent').textContent = formatPercent(participacao);
-    
+
     // Prêmios estimados (considerando que o bolão ganha sozinho, para fins de exemplo)
     // Na prática, o prêmio seria dividido entre todos os ganhadores
     const premioSenaBruto = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualSena;
     const premioQuinaBruto = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuina;
     const premioQuadraBruto = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuadra;
-    
+
     // Parte do bolão (assumindo ganha sozinho para fins de cálculo max)
     const parteSenaBolao = premioSenaBruto * (1 - BOLAO_CONFIG.descontoAdmin);
     const parteQuinaBolao = premioQuinaBruto * (1 - BOLAO_CONFIG.descontoAdmin);
     const parteQuadraBolao = premioQuadraBruto * (1 - BOLAO_CONFIG.descontoAdmin);
-    
+
     // Parte individual
     const senaReturn = parteSenaBolao * participacao;
     const quinaReturn = parteQuinaBolao * participacao;
     const quadraReturn = parteQuadraBolao * participacao;
-    
+
     document.getElementById('senaReturn').textContent = formatCurrency(senaReturn);
     document.getElementById('quinaReturn').textContent = formatCurrency(quinaReturn);
     document.getElementById('quadraReturn').textContent = formatCurrency(quadraReturn);
@@ -385,11 +385,11 @@ function updateCalculator() {
 function parseGames(text) {
     const lines = text.trim().split('\n');
     const games = [];
-    
+
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i].trim();
         if (!line) continue;
-        
+
         // Remove múltiplos espaços e divide por espaço, vírgula, hífen ou ponto-vírgula
         const numbers = line
             .replace(/[\s,;\-]+/g, ' ')
@@ -397,10 +397,10 @@ function parseGames(text) {
             .split(' ')
             .map(n => parseInt(n))
             .filter(n => !isNaN(n) && n >= 1 && n <= 60);
-        
+
         // Remove duplicatas
         const uniqueNumbers = [...new Set(numbers)];
-        
+
         if (uniqueNumbers.length >= 6 && uniqueNumbers.length <= 15) {
             games.push({
                 id: games.length + 1,
@@ -409,7 +409,7 @@ function parseGames(text) {
             });
         }
     }
-    
+
     return games;
 }
 
@@ -420,22 +420,22 @@ function updateGamesCount() {
     const text = document.getElementById('gamesTextarea').value;
     const games = parseGames(text);
     const countEl = document.getElementById('gamesCount');
-    
+
     if (games.length === 0) {
         countEl.textContent = '0 jogos carregados';
     } else {
         const de6 = games.filter(g => g.numbers.length === 6).length;
         const de9 = games.filter(g => g.numbers.length === 9).length;
         const outros = games.length - de6 - de9;
-        
+
         let text = `${games.length} jogos carregados`;
         if (de6 > 0) text += ` | ${de6} de 6 números`;
         if (de9 > 0) text += ` | ${de9} de 9 números`;
         if (outros > 0) text += ` | ${outros} outros`;
-        
+
         countEl.textContent = text;
     }
-    
+
     state.parsedGames = games;
 }
 
@@ -453,7 +453,7 @@ function loadSampleGames() {
 09 19 29 39 49 59 01 11 21
 12 22 32 42 52 02 13 23 33
 15 25 35 45 55 05`;
-    
+
     document.getElementById('gamesTextarea').value = sampleGames;
     updateGamesCount();
     showToast('10 jogos de exemplo carregados!');
@@ -472,38 +472,38 @@ function validateGames() {
         showToast('Por favor, selecione exatamente 6 números sorteados!', 'error');
         return;
     }
-    
+
     // Verifica se há jogos para validar
     if (state.parsedGames.length === 0) {
         showToast('Por favor, cole os jogos do bolão!', 'error');
         return;
     }
-    
+
     const sorteados = new Set(state.selectedNumbers);
     const results = [];
-    
+
     let totalSenas = 0;
     let totalQuinas = 0;
     let totalQuadras = 0;
-    
+
     for (const game of state.parsedGames) {
         // Conta quantos números do jogo foram sorteados
         const acertos = game.numbers.filter(n => sorteados.has(n));
         const numAcertos = acertos.length;
-        
+
         // Calcula quantas senas/quinas/quadras esse jogo gerou
         const combinacoes = calcularCombinacoes(game.numbers.length, numAcertos);
-        
+
         totalSenas += combinacoes.senas;
         totalQuinas += combinacoes.quinas;
         totalQuadras += combinacoes.quadras;
-        
+
         // Determina a melhor categoria (para exibição)
         let categoria = 'none';
         if (combinacoes.senas > 0) categoria = 'sena';
         else if (combinacoes.quinas > 0) categoria = 'quina';
         else if (combinacoes.quadras > 0) categoria = 'quadra';
-        
+
         results.push({
             ...game,
             acertos: acertos,
@@ -512,13 +512,13 @@ function validateGames() {
             categoria: categoria
         });
     }
-    
+
     // Ordena por categoria (senas primeiro, depois quinas, depois quadras)
     results.sort((a, b) => {
         const order = { sena: 0, quina: 1, quadra: 2, none: 3 };
         return order[a.categoria] - order[b.categoria];
     });
-    
+
     // Salva resultados no estado
     state.validationResults = {
         results: results,
@@ -528,10 +528,10 @@ function validateGames() {
             quadras: totalQuadras
         }
     };
-    
+
     // Exibe resultados
     displayResults();
-    
+
     // Se houver ganhadores, mostra confetti
     if (totalSenas > 0 || totalQuinas > 0 || totalQuadras > 0) {
         triggerConfetti();
@@ -544,14 +544,14 @@ function validateGames() {
 function displayResults() {
     const section = document.getElementById('resultsSection');
     section.style.display = 'block';
-    
+
     const { results, totals } = state.validationResults;
-    
+
     // Atualiza resumo
     document.getElementById('senasCount').textContent = totals.senas;
     document.getElementById('quinasCount').textContent = totals.quinas;
     document.getElementById('quadrasCount').textContent = totals.quadras;
-    
+
     // Atualiza badge
     const badge = document.getElementById('resultsBadge');
     if (totals.senas > 0) {
@@ -567,46 +567,81 @@ function displayResults() {
         badge.textContent = 'Sem prêmios';
         badge.className = 'badge';
     }
-    
-    // Calcula prêmios estimados
-    // NOTA: Estes são valores estimados baseados na distribuição padrão
-    // Os valores reais dependem do número de ganhadores em cada faixa
-    
-    const premioSenaPorGanhador = (BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualSena) / BOLAO_CONFIG.estimativaGanhadoresSena;
-    const premioQuinaPorGanhador = (BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuina) / BOLAO_CONFIG.estimativaGanhadoresQuina;
-    const premioQuadraPorGanhador = (BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuadra) / BOLAO_CONFIG.estimativaGanhadoresQuadra;
-    
+
+    // Lê os valores dos campos de ganhadores no Brasil
+    // Se vazio, usa os valores padrão
+    const totalSenaWinnersInput = document.getElementById('totalSenaWinners');
+    const totalQuinaWinnersInput = document.getElementById('totalQuinaWinners');
+    const totalQuadraWinnersInput = document.getElementById('totalQuadraWinners');
+
+    // Pega o valor do input ou usa o padrão
+    const totalSenaWinners = parseInt(totalSenaWinnersInput.value) || BOLAO_CONFIG.estimativaGanhadoresSena;
+    const totalQuinaWinners = parseInt(totalQuinaWinnersInput.value) || BOLAO_CONFIG.estimativaGanhadoresQuina;
+    const totalQuadraWinners = parseInt(totalQuadraWinnersInput.value) || BOLAO_CONFIG.estimativaGanhadoresQuadra;
+
+    // Calcula prêmios baseados nos ganhadores informados
+    // Prêmio total por categoria
+    const premioTotalSena = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualSena;
+    const premioTotalQuina = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuina;
+    const premioTotalQuadra = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuadra;
+
+    // Prêmio por ganhador (dividido pelo total de ganhadores no Brasil)
+    const premioSenaPorGanhador = premioTotalSena / totalSenaWinners;
+    const premioQuinaPorGanhador = premioTotalQuina / totalQuinaWinners;
+    const premioQuadraPorGanhador = premioTotalQuadra / totalQuadraWinners;
+
+    // Prêmio bruto do bolão (multiplicado pela quantidade que o bolão ganhou)
     const senaBruto = totals.senas * premioSenaPorGanhador;
     const quinaBruto = totals.quinas * premioQuinaPorGanhador;
     const quadraBruto = totals.quadras * premioQuadraPorGanhador;
     const totalBruto = senaBruto + quinaBruto + quadraBruto;
-    
+
+    // Prêmio líquido (após desconto do admin de 10%)
     const senaLiquido = senaBruto * (1 - BOLAO_CONFIG.descontoAdmin);
     const quinaLiquido = quinaBruto * (1 - BOLAO_CONFIG.descontoAdmin);
     const quadraLiquido = quadraBruto * (1 - BOLAO_CONFIG.descontoAdmin);
     const totalLiquido = totalBruto * (1 - BOLAO_CONFIG.descontoAdmin);
-    
+
     // Atualiza tabela de prêmios
     document.getElementById('senaQty').textContent = totals.senas;
     document.getElementById('senaBruto').textContent = formatCurrency(senaBruto);
     document.getElementById('senaLiquido').textContent = formatCurrency(senaLiquido);
-    
+
     document.getElementById('quinaQty').textContent = totals.quinas;
     document.getElementById('quinaBruto').textContent = formatCurrency(quinaBruto);
     document.getElementById('quinaLiquido').textContent = formatCurrency(quinaLiquido);
-    
+
     document.getElementById('quadraQty').textContent = totals.quadras;
     document.getElementById('quadraBruto').textContent = formatCurrency(quadraBruto);
     document.getElementById('quadraLiquido').textContent = formatCurrency(quadraLiquido);
-    
+
     document.getElementById('totalBruto').textContent = formatCurrency(totalBruto);
     document.getElementById('totalLiquido').textContent = formatCurrency(totalLiquido);
-    
+
+    // Mostra informação sobre divisão usada
+    updatePrizeNote(totalSenaWinners, totalQuinaWinners, totalQuadraWinners);
+
     // Renderiza lista de jogos
     renderGamesList(results);
-    
+
     // Scroll suave até os resultados
     section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+/**
+ * Atualiza a nota de informação sobre divisão de prêmios
+ */
+function updatePrizeNote(senaWinners, quinaWinners, quadraWinners) {
+    const noteEl = document.querySelector('.prize-info-note');
+    if (noteEl) {
+        noteEl.innerHTML = `
+            <em>⚠️ Cálculo baseado em: <strong>${senaWinners}</strong> ganhador(es) de SENA, 
+            <strong>${quinaWinners.toLocaleString('pt-BR')}</strong> de QUINA, 
+            <strong>${quadraWinners.toLocaleString('pt-BR')}</strong> de QUADRA no Brasil. 
+            Prêmio total: R$1 bilhão (~90% SENA, ~5% QUINA, ~5% QUADRA). 
+            Desconto de 10% do admin já aplicado.</em>
+        `;
+    }
 }
 
 /**
@@ -615,23 +650,23 @@ function displayResults() {
 function renderGamesList(results, filter = 'all') {
     const list = document.getElementById('gamesList');
     list.innerHTML = '';
-    
-    const filtered = filter === 'all' 
-        ? results 
+
+    const filtered = filter === 'all'
+        ? results
         : results.filter(g => g.categoria === filter);
-    
+
     if (filtered.length === 0) {
         list.innerHTML = '<p style="text-align: center; color: var(--text-muted);">Nenhum jogo encontrado nesta categoria.</p>';
         return;
     }
-    
+
     const sorteados = new Set(state.selectedNumbers);
-    
+
     for (const game of filtered) {
         const div = document.createElement('div');
         div.className = `game-item ${game.categoria}`;
         div.dataset.categoria = game.categoria;
-        
+
         // Números do jogo
         let numbersHtml = '<div class="game-numbers">';
         for (const num of game.numbers) {
@@ -639,7 +674,7 @@ function renderGamesList(results, filter = 'all') {
             numbersHtml += `<span class="number ${isHit ? 'hit' : ''}">${num.toString().padStart(2, '0')}</span>`;
         }
         numbersHtml += '</div>';
-        
+
         // Resultado
         let resultHtml = '<div class="game-result">';
         if (game.categoria === 'sena') {
@@ -655,7 +690,7 @@ function renderGamesList(results, filter = 'all') {
             resultHtml += `<span class="result-type" style="color: var(--text-muted)">❌ ${game.numAcertos} acerto(s)</span>`;
         }
         resultHtml += '</div>';
-        
+
         div.innerHTML = `
             <div>
                 <span style="font-size: 0.8rem; color: var(--text-muted);">Jogo #${game.id} (${game.numbers.length} nums)</span>
@@ -663,7 +698,7 @@ function renderGamesList(results, filter = 'all') {
             </div>
             ${resultHtml}
         `;
-        
+
         list.appendChild(div);
     }
 }
@@ -676,7 +711,7 @@ function filterResults(filter) {
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.filter === filter);
     });
-    
+
     // Re-renderiza lista
     if (state.validationResults) {
         renderGamesList(state.validationResults.results, filter);
@@ -694,7 +729,7 @@ function showToast(message, type = 'info') {
     // Remove toast existente
     const existing = document.querySelector('.toast');
     if (existing) existing.remove();
-    
+
     const toast = document.createElement('div');
     toast.className = 'toast';
     toast.style.cssText = `
@@ -712,7 +747,7 @@ function showToast(message, type = 'info') {
         animation: slideUp 0.3s ease;
     `;
     toast.textContent = message;
-    
+
     // Adiciona estilo de animação
     const style = document.createElement('style');
     style.textContent = `
@@ -722,9 +757,9 @@ function showToast(message, type = 'info') {
         }
     `;
     document.head.appendChild(style);
-    
+
     document.body.appendChild(toast);
-    
+
     // Remove após 3 segundos
     setTimeout(() => {
         toast.style.opacity = '0';
@@ -738,7 +773,7 @@ function showToast(message, type = 'info') {
  */
 function triggerConfetti() {
     const colors = ['#FFD700', '#ff416c', '#38ef7d', '#667eea', '#764ba2', '#f5af19'];
-    
+
     for (let i = 0; i < 50; i++) {
         setTimeout(() => {
             const confetti = document.createElement('div');
@@ -747,9 +782,9 @@ function triggerConfetti() {
             confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
             confetti.style.animationDuration = (2 + Math.random() * 2) + 's';
             confetti.style.animationDelay = (Math.random() * 0.5) + 's';
-            
+
             document.body.appendChild(confetti);
-            
+
             setTimeout(() => confetti.remove(), 4000);
         }, i * 50);
     }
