@@ -585,33 +585,51 @@ function formatCurrencyValue(value) {
  * Inicializa o contador de visitas
  * Usando localStorage para contagem local (funciona sem backend)
  */
-function initVisitCounter() {
+/**
+ * Inicializa o contador de visitas GLOBAL
+ * Usa API externa (countapi.xyz) para persistir dados entre usuários
+ */
+async function initVisitCounter() {
+    const namespace = 'bolao-mega-virada-2025-prod';
+    const keyTotal = 'total-visits';
+    const keyUnique = 'unique-visits';
+
+    const totalEl = document.getElementById('totalVisits');
+    const uniqueEl = document.getElementById('uniqueVisits');
+
     try {
-        // Contador de visitas totais (incrementa a cada page load)
-        let totalVisits = parseInt(localStorage.getItem('bolao_total_visits') || '0');
-        totalVisits++;
-        localStorage.setItem('bolao_total_visits', totalVisits.toString());
-        document.getElementById('totalVisits').textContent = formatNumber(totalVisits);
+        // 1. Total de Visitas: Incrementa sempre (HIT)
+        // Usando no-cors ou fetch normal. A countapi retorna JSON.
+        const totalReq = await fetch(`https://api.countapi.xyz/hit/${namespace}/${keyTotal}`);
+        const totalData = await totalReq.json();
+        totalEl.textContent = formatNumber(totalData.value);
 
-        // Contador de visitantes únicos (1x por navegador/dispositivo - primeiro acesso)
-        let uniqueVisits = parseInt(localStorage.getItem('bolao_unique_visits') || '0');
-        const isFirstVisit = !localStorage.getItem('bolao_first_visit_done');
+        // 2. Visitas Únicas: Verifica localStorage
+        const hasVisited = localStorage.getItem('bolao_v1_counted');
 
-        if (isFirstVisit) {
-            // Primeira vez neste navegador = novo visitante único
-            uniqueVisits++;
-            localStorage.setItem('bolao_unique_visits', uniqueVisits.toString());
-            localStorage.setItem('bolao_first_visit_done', 'true');
+        let uniqueData;
+        if (!hasVisited) {
+            // Primeira vez: HIT (incrementa)
+            const uniqueReq = await fetch(`https://api.countapi.xyz/hit/${namespace}/${keyUnique}`);
+            uniqueData = await uniqueReq.json();
+            // Marca como contado
+            localStorage.setItem('bolao_v1_counted', 'true');
+        } else {
+            // Recorrente: GET (apenas lê)
+            const uniqueReq = await fetch(`https://api.countapi.xyz/get/${namespace}/${keyUnique}`);
+            uniqueData = await uniqueReq.json();
         }
 
-        document.getElementById('uniqueVisits').textContent = formatNumber(uniqueVisits);
+        uniqueEl.textContent = formatNumber(uniqueData.value);
 
     } catch (error) {
-        console.log('Contador de visitas erro:', error);
-        document.getElementById('totalVisits').textContent = '-';
-        document.getElementById('uniqueVisits').textContent = '-';
+        console.error('Erro no contador (CountAPI):', error);
+        // Fallback visual
+        if (totalEl.textContent === '-' || totalEl.textContent === '') totalEl.textContent = '1';
+        if (uniqueEl.textContent === '-' || uniqueEl.textContent === '') uniqueEl.textContent = '1';
     }
 }
+
 
 /**
  * Formata número grande de forma legível
