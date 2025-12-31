@@ -303,16 +303,20 @@ function initCalculator() {
  */
 function initEventListeners() {
     // Botão limpar seleção
-    document.getElementById('clearSelection').addEventListener('click', clearSelection);
+    const clearSelectionBtn = document.getElementById('clearSelection');
+    if (clearSelectionBtn) clearSelectionBtn.addEventListener('click', clearSelection);
 
-    // Botão carregar exemplo
-    document.getElementById('loadSampleBtn').addEventListener('click', loadSampleGames);
+    // Botão carregar exemplo (pode nao existir em algumas versoes)
+    const loadSampleBtn = document.getElementById('loadSampleBtn');
+    if (loadSampleBtn) loadSampleBtn.addEventListener('click', loadSampleGames);
 
     // Botão validar
-    document.getElementById('validateBtn').addEventListener('click', validateGames);
+    const validateBtn = document.getElementById('validateBtn');
+    if (validateBtn) validateBtn.addEventListener('click', validateGames);
 
     // Textarea de jogos
-    document.getElementById('gamesTextarea').addEventListener('input', updateGamesCount);
+    const gamesTextarea = document.getElementById('gamesTextarea');
+    if (gamesTextarea) gamesTextarea.addEventListener('input', updateGamesCount);
 
     // Filtros de resultados
     document.querySelectorAll('.filter-btn').forEach(btn => {
