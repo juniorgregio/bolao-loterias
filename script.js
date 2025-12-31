@@ -30,7 +30,7 @@ const BOLAO_CONFIG = {
     jogos6Numeros: 39,
 
     // Dados do Bolão 2
-    totalCotasBolao2: 764, // Atualizado com jogos do 800 2a.pdf
+    totalCotasBolao2: 1469, // Atualizado com jogos do 800 1.pdf
     valorCotaBolao2: 6.00,
 
     // Estimativas de ganhadores (para cálculo)
