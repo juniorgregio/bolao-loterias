@@ -198,48 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initEventListeners();
     initVisitCounter();
     initCountdown();
-    initOnlineSimulation();
 });
-
-/**
- * Simula contador de usuários online baseado no horário
- * Mais pessoas "online" em horários de pico
- */
-function initOnlineSimulation() {
-    function updateOnline() {
-        const now = new Date();
-        const hour = now.getHours();
-
-        // Base de usuários por horário (simula comportamento real)
-        let baseOnline;
-        if (hour >= 20 && hour <= 23) {
-            // Pico noturno (perto do sorteio!)
-            baseOnline = 150 + Math.floor(Math.random() * 100);
-        } else if (hour >= 18 && hour < 20) {
-            // Tarde/noite
-            baseOnline = 80 + Math.floor(Math.random() * 60);
-        } else if (hour >= 12 && hour < 18) {
-            // Tarde
-            baseOnline = 40 + Math.floor(Math.random() * 40);
-        } else if (hour >= 8 && hour < 12) {
-            // Manhã
-            baseOnline = 20 + Math.floor(Math.random() * 30);
-        } else {
-            // Madrugada
-            baseOnline = 5 + Math.floor(Math.random() * 15);
-        }
-
-        // Adiciona variação aleatória pequena para parecer real
-        const variation = Math.floor(Math.random() * 10) - 5;
-        const online = Math.max(1, baseOnline + variation);
-
-        document.getElementById('onlineNow').textContent = online;
-    }
-
-    // Atualiza imediatamente e depois a cada 5 segundos
-    updateOnline();
-    setInterval(updateOnline, 5000);
-}
 
 /**
  * Inicializa o cronômetro regressivo até o sorteio
