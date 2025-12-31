@@ -197,7 +197,49 @@ document.addEventListener('DOMContentLoaded', () => {
     initCalculator();
     initEventListeners();
     initVisitCounter();
+    initCountdown();
 });
+
+/**
+ * Inicializa o cronômetro regressivo até o sorteio
+ */
+function initCountdown() {
+    // Data do sorteio: 31/12/2025 às 22:00:00 (horário de Brasília)
+    const sorteioDate = new Date('2025-12-31T22:00:00-03:00');
+
+    function updateCountdown() {
+        const now = new Date();
+        const diff = sorteioDate - now;
+
+        const countdownEl = document.getElementById('countdownTime');
+        const timerEl = document.getElementById('countdownTimer');
+
+        if (diff <= 0) {
+            // Sorteio já aconteceu
+            countdownEl.textContent = 'SORTEADO!';
+            timerEl.classList.add('ended');
+            return;
+        }
+
+        // Calcula horas, minutos e segundos
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        // Formata com zeros à esquerda
+        const formatted = [
+            hours.toString().padStart(2, '0'),
+            minutes.toString().padStart(2, '0'),
+            seconds.toString().padStart(2, '0')
+        ].join(':');
+
+        countdownEl.textContent = formatted;
+    }
+
+    // Atualiza imediatamente e depois a cada segundo
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+}
 
 /**
  * Cria partículas animadas no fundo
