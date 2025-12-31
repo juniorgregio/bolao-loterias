@@ -206,6 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function initCountdown() {
     // Data do sorteio: 31/12/2025 às 22:00:00 (horário de Brasília)
     const sorteioDate = new Date('2025-12-31T22:00:00-03:00');
+    let autoFetchDone = false;
 
     function updateCountdown() {
         const now = new Date();
@@ -218,6 +219,15 @@ function initCountdown() {
             // Sorteio já aconteceu
             countdownEl.textContent = 'SORTEADO!';
             timerEl.classList.add('ended');
+
+            // Busca automaticamente os dados da Caixa (apenas 1x)
+            if (!autoFetchDone) {
+                autoFetchDone = true;
+                // Aguarda 2 segundos para o usuário ver a interface primeiro
+                setTimeout(() => {
+                    fetchCaixaResult();
+                }, 2000);
+            }
             return;
         }
 
