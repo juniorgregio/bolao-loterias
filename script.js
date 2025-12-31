@@ -196,6 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNumbersGrid();
     initCalculator();
     initEventListeners();
+    initVisitCounter();
 });
 
 /**
@@ -263,6 +264,70 @@ function initEventListeners() {
     document.querySelectorAll('.filter-btn').forEach(btn => {
         btn.addEventListener('click', (e) => filterResults(e.target.dataset.filter));
     });
+
+    // Event listeners para campos de ganhadores - atualiza automaticamente quando alterado
+    const winnersInputs = ['totalSenaWinners', 'totalQuinaWinners', 'totalQuadraWinners'];
+    winnersInputs.forEach(inputId => {
+        const input = document.getElementById(inputId);
+        if (input) {
+            input.addEventListener('input', () => {
+                // Se já há resultados, recalcula automaticamente
+                if (state.validationResults) {
+                    displayResults();
+                }
+                // Atualiza calculadora de cotas também
+                updateCalculator();
+            });
+        }
+    });
+}
+
+/**
+ * Inicializa o contador de visitas usando CountAPI
+ */
+async function initVisitCounter() {
+    const namespace = 'bolao-loterias-jonas';
+    const keyTotal = 'total-visits';
+    const keyUnique = 'unique-visits';
+
+    try {
+        // Incrementa visita total
+        const totalResponse = await fetch(`https://api.countapi.xyz/hit/${namespace}/${keyTotal}`);
+        const totalData = await totalResponse.json();
+        document.getElementById('totalVisits').textContent = formatNumber(totalData.value);
+
+        // Verifica se é visita única (usando localStorage)
+        const hasVisited = localStorage.getItem('bolao_visited');
+
+        if (!hasVisited) {
+            // Primeira visita - incrementa contador de únicos
+            const uniqueResponse = await fetch(`https://api.countapi.xyz/hit/${namespace}/${keyUnique}`);
+            const uniqueData = await uniqueResponse.json();
+            document.getElementById('uniqueVisits').textContent = formatNumber(uniqueData.value);
+            localStorage.setItem('bolao_visited', 'true');
+        } else {
+            // Já visitou - apenas pega o valor atual
+            const uniqueResponse = await fetch(`https://api.countapi.xyz/get/${namespace}/${keyUnique}`);
+            const uniqueData = await uniqueResponse.json();
+            document.getElementById('uniqueVisits').textContent = formatNumber(uniqueData.value);
+        }
+    } catch (error) {
+        console.log('Contador de visitas indisponível:', error);
+        document.getElementById('totalVisits').textContent = '-';
+        document.getElementById('uniqueVisits').textContent = '-';
+    }
+}
+
+/**
+ * Formata número grande de forma legível
+ */
+function formatNumber(num) {
+    if (num >= 1000000) {
+        return (num / 1000000).toFixed(1) + 'M';
+    } else if (num >= 1000) {
+        return (num / 1000).toFixed(1) + 'K';
+    }
+    return num.toString();
 }
 
 // ============================================
@@ -354,18 +419,32 @@ function updateCalculator() {
     const participacao = cotas / BOLAO_CONFIG.totalCotas;
     document.getElementById('participationPercent').textContent = formatPercent(participacao);
 
-    // Prêmios estimados (considerando que o bolão ganha sozinho, para fins de exemplo)
-    // Na prática, o prêmio seria dividido entre todos os ganhadores
-    const premioSenaBruto = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualSena;
-    const premioQuinaBruto = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuina;
-    const premioQuadraBruto = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuadra;
+    // Lê os valores dos campos de ganhadores (se preenchidos)
+    const totalSenaWinnersInput = document.getElementById('totalSenaWinners');
+    const totalQuinaWinnersInput = document.getElementById('totalQuinaWinners');
+    const totalQuadraWinnersInput = document.getElementById('totalQuadraWinners');
 
-    // Parte do bolão (assumindo ganha sozinho para fins de cálculo max)
-    const parteSenaBolao = premioSenaBruto * (1 - BOLAO_CONFIG.descontoAdmin);
-    const parteQuinaBolao = premioQuinaBruto * (1 - BOLAO_CONFIG.descontoAdmin);
-    const parteQuadraBolao = premioQuadraBruto * (1 - BOLAO_CONFIG.descontoAdmin);
+    const totalSenaWinners = parseInt(totalSenaWinnersInput?.value) || BOLAO_CONFIG.estimativaGanhadoresSena;
+    const totalQuinaWinners = parseInt(totalQuinaWinnersInput?.value) || BOLAO_CONFIG.estimativaGanhadoresQuina;
+    const totalQuadraWinners = parseInt(totalQuadraWinnersInput?.value) || BOLAO_CONFIG.estimativaGanhadoresQuadra;
 
-    // Parte individual
+    // Prêmio total por categoria
+    const premioTotalSena = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualSena;
+    const premioTotalQuina = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuina;
+    const premioTotalQuadra = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuadra;
+
+    // Prêmio que o bolão receberia se ganhasse (1 sena / quina / quadra)
+    // Dividido pelo número de ganhadores no Brasil
+    const premioSenaBolao = premioTotalSena / totalSenaWinners;
+    const premioQuinaBolao = premioTotalQuina / totalQuinaWinners;
+    const premioQuadraBolao = premioTotalQuadra / totalQuadraWinners;
+
+    // Após desconto de 10% do admin
+    const parteSenaBolao = premioSenaBolao * (1 - BOLAO_CONFIG.descontoAdmin);
+    const parteQuinaBolao = premioQuinaBolao * (1 - BOLAO_CONFIG.descontoAdmin);
+    const parteQuadraBolao = premioQuadraBolao * (1 - BOLAO_CONFIG.descontoAdmin);
+
+    // Parte individual baseada nas cotas
     const senaReturn = parteSenaBolao * participacao;
     const quinaReturn = parteQuinaBolao * participacao;
     const quadraReturn = parteQuadraBolao * participacao;

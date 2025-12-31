@@ -255,6 +255,45 @@ body::before {
     color: #000;
 }
 
+/* Visit Counter */
+.visit-counter {
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+}
+
+.counter-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.counter-icon {
+    font-size: 1.25rem;
+}
+
+.counter-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.counter-value {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #38ef7d;
+    line-height: 1;
+}
+
+.counter-label {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
 /* Main Container */
 .main-container {
     max-width: 1200px;
