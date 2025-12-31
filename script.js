@@ -26,8 +26,8 @@ const BOLAO_CONFIG = {
     valorCota: 25.20,
 
     // Jogos
-    jogos9Numeros: 1065,
-    jogos6Numeros: 39,
+    jogos9Numeros: 1101,
+    jogos6Numeros: 63,
 
     // Dados do Bolão 2
     totalCotasBolao2: 2024, // Atualizado com jogos do 800 4.pdf e 800 3.pdf
