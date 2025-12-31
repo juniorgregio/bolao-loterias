@@ -198,6 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initEventListeners();
     initVisitCounter();
     initCountdown();
+    initBolaoEdit();
 });
 
 /**
@@ -1097,6 +1098,97 @@ function showToast(message, type = 'info') {
         toast.style.transition = 'opacity 0.3s';
         setTimeout(() => toast.remove(), 300);
     }, 3000);
+}
+
+// ============================================
+// EDIÇÃO DE DADOS DO BOLÃO
+// ============================================
+
+function initBolaoEdit() {
+    document.getElementById('editBolaoBtn').addEventListener('click', toggleEditBolao);
+    document.getElementById('saveBolaoBtn').addEventListener('click', saveBolaoInfo);
+}
+
+function toggleEditBolao() {
+    const isEditing = document.getElementById('saveBolaoBtn').style.display !== 'none';
+
+    // Elementos
+    const viewEls = ['viewArrecadacao', 'viewParticipantes', 'viewTotalCotas', 'viewValorCota', 'viewPixes'];
+    const editEls = ['editArrecadacao', 'editParticipantes', 'editTotalCotas', 'editValorCota', 'editPixes'];
+
+    // Toggle buttons
+    document.getElementById('editBolaoBtn').style.display = isEditing ? 'block' : 'none';
+    document.getElementById('saveBolaoBtn').style.display = isEditing ? 'none' : 'block';
+
+    if (!isEditing) {
+        // Entrando no modo edição - Preenche inputs com valores atuais
+        // Arrecadacao
+        const arrecadacao = BOLAO_CONFIG.arrecadacaoTotal;
+        document.getElementById('editArrecadacao').value = arrecadacao.toFixed(2);
+
+        // Participantes
+        document.getElementById('editParticipantes').value = BOLAO_CONFIG.participantes;
+
+        // Total Cotas
+        document.getElementById('editTotalCotas').value = BOLAO_CONFIG.totalCotas;
+
+        // Valor Cota
+        document.getElementById('editValorCota').value = BOLAO_CONFIG.valorCota.toFixed(2);
+
+        // Pixes
+        document.getElementById('editPixes').value = BOLAO_CONFIG.pixes;
+    }
+
+    // Toggle visibility e estilo visual
+    viewEls.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = isEditing ? 'block' : 'none';
+    });
+
+    editEls.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = isEditing ? 'none' : 'block';
+    });
+}
+
+function saveBolaoInfo() {
+    // Lê e valida valores
+    const newArrecadacao = parseFloat(document.getElementById('editArrecadacao').value);
+    const newParticipantes = parseInt(document.getElementById('editParticipantes').value);
+    const newTotalCotas = parseInt(document.getElementById('editTotalCotas').value);
+    const newValorCota = parseFloat(document.getElementById('editValorCota').value);
+    const newPixes = parseInt(document.getElementById('editPixes').value);
+
+    if (isNaN(newArrecadacao) || isNaN(newParticipantes) || isNaN(newTotalCotas) || isNaN(newValorCota)) {
+        showToast('❌ Valores inválidos! Verifique os números.', 'error');
+        return;
+    }
+
+    // Atualiza Config
+    BOLAO_CONFIG.arrecadacaoTotal = newArrecadacao;
+    BOLAO_CONFIG.participantes = newParticipantes;
+    BOLAO_CONFIG.totalCotas = newTotalCotas;
+    BOLAO_CONFIG.valorCota = newValorCota;
+    BOLAO_CONFIG.pixes = newPixes;
+
+    // Atualiza Views View
+    document.getElementById('viewArrecadacao').textContent = formatCurrency(newArrecadacao);
+    document.getElementById('viewParticipantes').textContent = newParticipantes.toLocaleString('pt-BR') + ' pessoas';
+    document.getElementById('viewTotalCotas').textContent = newTotalCotas.toLocaleString('pt-BR');
+    document.getElementById('viewValorCota').textContent = formatCurrency(newValorCota);
+    document.getElementById('viewPixes').textContent = newPixes.toLocaleString('pt-BR');
+
+    // Atualiza Helper da Calculadora
+    const helper = document.getElementById('helperValorCota');
+    if (helper) helper.textContent = formatCurrency(newValorCota);
+
+    // Atualiza Cálculos existentes
+    updateCalculator();
+
+    // Sai do modo edição
+    toggleEditBolao();
+
+    showToast('💾 Dados do bolão atualizados!', 'info');
 }
 
 /**

@@ -65,51 +65,61 @@
         <section class="bolao-info glass-card">
             <div class="section-header">
                 <h2>📊 Informações do Bolão</h2>
-                <span class="badge">Dados Oficiais</span>
+                <div class="header-actions">
+                    <span class="badge">Dados Oficiais</span>
+                    <button class="btn-icon-small" id="editBolaoBtn" title="Editar Dados">✏️</button>
+                    <button class="btn-icon-small" id="saveBolaoBtn" title="Salvar Dados"
+                        style="display: none;">💾</button>
+                </div>
             </div>
-            <div class="info-grid">
+            <div class="info-grid" id="bolaoInfoGrid">
                 <div class="info-card">
                     <div class="info-icon">💰</div>
                     <div class="info-content">
                         <span class="info-label">Arrecadação Total</span>
-                        <span class="info-value">R$ 536.993,99</span>
+                        <span class="info-value" id="viewArrecadacao">R$ 536.993,99</span>
+                        <input type="number" step="0.01" class="info-input" id="editArrecadacao" style="display: none;">
                     </div>
                 </div>
                 <div class="info-card">
                     <div class="info-icon">👥</div>
                     <div class="info-content">
                         <span class="info-label">Participantes</span>
-                        <span class="info-value">1.743 pessoas</span>
-                    </div>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">📱</div>
-                    <div class="info-content">
-                        <span class="info-label">Pixes Realizados</span>
-                        <span class="info-value">3.410</span>
+                        <span class="info-value" id="viewParticipantes">1.743 pessoas</span>
+                        <input type="number" class="info-input" id="editParticipantes" style="display: none;">
                     </div>
                 </div>
                 <div class="info-card">
                     <div class="info-icon">🎫</div>
                     <div class="info-content">
                         <span class="info-label">Total de Cotas</span>
-                        <span class="info-value">21.309</span>
+                        <span class="info-value" id="viewTotalCotas">21.309</span>
+                        <input type="number" class="info-input" id="editTotalCotas" style="display: none;">
                     </div>
                 </div>
+                <!-- Card Valor da Cota (Explícito para edição) -->
+                <div class="info-card">
+                    <div class="info-icon">💲</div>
+                    <div class="info-content">
+                        <span class="info-label">Valor da Cota</span>
+                        <span class="info-value" id="viewValorCota">R$ 25,20</span>
+                        <input type="number" step="0.01" class="info-input" id="editValorCota" style="display: none;">
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📱</div>
+                    <div class="info-content">
+                        <span class="info-label">Pixes Realizados</span>
+                        <span class="info-value" id="viewPixes">3.410</span>
+                        <input type="number" class="info-input" id="editPixes" style="display: none;">
+                    </div>
+                </div>
+                <!-- Jogos 9 números -->
                 <div class="info-card">
                     <div class="info-icon">9️⃣</div>
                     <div class="info-content">
                         <span class="info-label">Jogos de 9 números</span>
-                        <span class="info-value">1.065 jogos</span>
-                        <span class="info-sub">R$ 536.760,00</span>
-                    </div>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">6️⃣</div>
-                    <div class="info-content">
-                        <span class="info-label">Jogos de 6 números</span>
-                        <span class="info-value">39 jogos</span>
-                        <span class="info-sub">R$ 234,00</span>
+                        <span class="info-value" id="viewJogos9">1.065 jogos</span>
                     </div>
                 </div>
             </div>
@@ -127,8 +137,8 @@
                         <span class="input-icon">🎫</span>
                         Quantas cotas você comprou?
                     </label>
-                    <input type="number" id="quotasInput" placeholder="Ex: 10" min="1" max="21309">
-                    <span class="input-helper">Cada cota: R$ 25,20</span>
+                    <input type="number" id="quotasInput" placeholder="Ex: 10" min="1" max="50000">
+                    <span class="input-helper">Cada cota: <span id="helperValorCota">R$ 25,20</span></span>
                 </div>
                 <div class="calculator-results" id="calculatorResults">
                     <div class="result-item">

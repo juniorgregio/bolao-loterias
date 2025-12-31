@@ -1483,6 +1483,7 @@ textarea::placeholder {
     }
 }
 
+
 .confetti-piece {
     position: fixed;
     width: 10px;
@@ -1490,4 +1491,37 @@ textarea::placeholder {
     top: 0;
     animation: confetti 3s ease-out forwards;
     z-index: 1000;
+}
+
+/* Edit Bolão Info */
+.info-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-sm);
+    padding: 2px 5px;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.btn-icon-small {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.btn-icon-small:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
 }
