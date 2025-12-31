@@ -1009,6 +1009,59 @@ textarea::placeholder {
     border: 2px solid rgba(102, 126, 234, 0.3);
 }
 
+/* API Status */
+.api-status {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+    font-size: 0.9rem;
+}
+
+.api-status .status-icon {
+    font-size: 1.25rem;
+}
+
+.api-status.loading {
+    background: rgba(102, 126, 234, 0.1);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+}
+
+.api-status.loading .status-icon {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.api-status.success {
+    background: rgba(56, 239, 125, 0.1);
+    border: 1px solid rgba(56, 239, 125, 0.3);
+}
+
+.api-status.success .status-text {
+    color: #38ef7d;
+}
+
+.api-status.error {
+    background: rgba(255, 75, 75, 0.1);
+    border: 1px solid rgba(255, 75, 75, 0.3);
+}
+
+.api-status.error .status-text {
+    color: #ff6b6b;
+}
+
 .config-instruction {
     color: var(--text-secondary);
     margin-bottom: var(--spacing-md);

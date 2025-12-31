@@ -322,6 +322,92 @@ function initEventListeners() {
             });
         }
     });
+
+    // Botão buscar resultado da Caixa
+    document.getElementById('fetchResultBtn').addEventListener('click', fetchCaixaResult);
+}
+
+/**
+ * Busca o resultado oficial da API da Caixa
+ */
+async function fetchCaixaResult() {
+    const statusEl = document.getElementById('apiStatus');
+    const statusIcon = statusEl.querySelector('.status-icon');
+    const statusText = statusEl.querySelector('.status-text');
+
+    // Estado de loading
+    statusEl.className = 'api-status loading';
+    statusIcon.textContent = '🔄';
+    statusText.textContent = 'Buscando dados oficiais da Caixa...';
+
+    try {
+        // Tenta a API oficial da Caixa primeiro
+        const response = await fetch('https://servicebus2.caixa.gov.br/portaldeloterias/api/megasena');
+
+        if (!response.ok) {
+            throw new Error('API da Caixa indisponível');
+        }
+
+        const data = await response.json();
+
+        // Extrai os dados de ganhadores
+        const premiacoes = data.listaRateioPremio || [];
+
+        let senaWinners = 0;
+        let quinaWinners = 0;
+        let quadraWinners = 0;
+
+        premiacoes.forEach(p => {
+            if (p.faixa === 1) senaWinners = p.numeroDeGanhadores;
+            if (p.faixa === 2) quinaWinners = p.numeroDeGanhadores;
+            if (p.faixa === 3) quadraWinners = p.numeroDeGanhadores;
+        });
+
+        // Preenche os campos (como default, editável)
+        document.getElementById('totalSenaWinners').value = senaWinners || '';
+        document.getElementById('totalQuinaWinners').value = quinaWinners || '';
+        document.getElementById('totalQuadraWinners').value = quadraWinners || '';
+
+        // Se tiver números sorteados, preenche automaticamente
+        const dezenas = data.listaDezenas || [];
+        if (dezenas.length === 6) {
+            // Limpa seleção atual
+            state.selectedNumbers = [];
+
+            // Seleciona os números do sorteio
+            dezenas.forEach(d => {
+                const num = parseInt(d);
+                if (!state.selectedNumbers.includes(num)) {
+                    state.selectedNumbers.push(num);
+                }
+            });
+
+            updateNumbersUI();
+        }
+
+        // Estado de sucesso
+        statusEl.className = 'api-status success';
+        statusIcon.textContent = '✅';
+        statusText.textContent = `Concurso ${data.numero} (${data.dataApuracao}) - Números: ${dezenas.join(', ')} | SENA: ${senaWinners}, QUINA: ${quinaWinners}, QUADRA: ${quadraWinners}`;
+
+        // Recalcula se já tem resultados
+        if (state.validationResults) {
+            displayResults();
+        }
+        updateCalculator();
+
+        showToast('✅ Dados oficiais carregados com sucesso!');
+
+    } catch (error) {
+        console.error('Erro ao buscar API da Caixa:', error);
+
+        // Estado de erro
+        statusEl.className = 'api-status error';
+        statusIcon.textContent = '❌';
+        statusText.textContent = 'Erro ao buscar dados. O resultado pode ainda não estar disponível ou a API está fora do ar.';
+
+        showToast('❌ Não foi possível buscar dados da Caixa', 'error');
+    }
 }
 
 /**
