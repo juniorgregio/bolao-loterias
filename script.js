@@ -336,15 +336,15 @@ function initVisitCounter() {
         localStorage.setItem('bolao_total_visits', totalVisits.toString());
         document.getElementById('totalVisits').textContent = formatNumber(totalVisits);
 
-        // Contador de visitantes únicos (baseado em sessão única)
+        // Contador de visitantes únicos (1x por navegador/dispositivo - primeiro acesso)
         let uniqueVisits = parseInt(localStorage.getItem('bolao_unique_visits') || '0');
-        const hasVisitedSession = sessionStorage.getItem('bolao_session_visited');
+        const isFirstVisit = !localStorage.getItem('bolao_first_visit_done');
 
-        if (!hasVisitedSession) {
-            // Nova sessão = novo visitante único
+        if (isFirstVisit) {
+            // Primeira vez neste navegador = novo visitante único
             uniqueVisits++;
             localStorage.setItem('bolao_unique_visits', uniqueVisits.toString());
-            sessionStorage.setItem('bolao_session_visited', 'true');
+            localStorage.setItem('bolao_first_visit_done', 'true');
         }
 
         document.getElementById('uniqueVisits').textContent = formatNumber(uniqueVisits);
