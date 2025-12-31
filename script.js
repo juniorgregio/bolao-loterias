@@ -336,7 +336,33 @@ function initEventListeners() {
     });
 
     // Botão buscar resultado da Caixa
+    // Botão buscar resultado da Caixa
     document.getElementById('fetchResultBtn').addEventListener('click', fetchCaixaResult);
+
+    // Botões de Exportação e Visualização
+    const viewGamesBtn = document.getElementById('viewGamesBtn');
+    if (viewGamesBtn) viewGamesBtn.addEventListener('click', showGamesModal);
+
+    const downloadExcelBtn = document.getElementById('downloadExcelBtn');
+    if (downloadExcelBtn) downloadExcelBtn.addEventListener('click', () => downloadExcel());
+
+    const downloadCsvBtn = document.getElementById('downloadCsvBtn');
+    if (downloadCsvBtn) downloadCsvBtn.addEventListener('click', () => downloadCSV());
+
+    // Botões do Modal
+    const downloadExcelModalBtn = document.getElementById('downloadExcelModalBtn');
+    if (downloadExcelModalBtn) downloadExcelModalBtn.addEventListener('click', () => downloadExcel());
+
+    const downloadCsvModalBtn = document.getElementById('downloadCsvModalBtn');
+    if (downloadCsvModalBtn) downloadCsvModalBtn.addEventListener('click', () => downloadCSV());
+
+    // Fechar Modal de Jogos
+    const closeGamesListModal = document.getElementById('closeGamesListModal');
+    if (closeGamesListModal) closeGamesListModal.addEventListener('click', closeGamesModal);
+
+    // Busca no modal
+    const searchGameInput = document.getElementById('searchGameInput');
+    if (searchGameInput) searchGameInput.addEventListener('input', (e) => filterGamesList(e.target.value));
 
     // Botão limpar e inserir jogos
     const clearGamesBtn = document.getElementById('clearGamesBtn');
@@ -419,6 +445,9 @@ async function fetchCaixaResult() {
             });
 
             updateNumbersUI();
+
+            // Valida automaticamente os jogos já cadastrados
+            validateGames();
         }
 
         // Estado de sucesso
@@ -607,6 +636,11 @@ function toggleNumber(number) {
     }
 
     updateNumbersUI();
+
+    // Validação automática ao completar 6 números
+    if (state.selectedNumbers.length === 6) {
+        validateGames();
+    }
 }
 
 /**
@@ -1270,4 +1304,146 @@ function triggerConfetti() {
             setTimeout(() => confetti.remove(), 4000);
         }, i * 50);
     }
+}
+
+/* ============================================
+   FUNCIONALIDADES DE EXPORTAÇÃO E VISUALIZAÇÃO
+   ============================================ */
+
+function showGamesModal() {
+    const modal = document.getElementById('gamesListModal');
+    if (!modal) return;
+
+    modal.style.display = 'flex';
+    document.getElementById('searchGameInput').value = '';
+    filterGamesList('');
+}
+
+function closeGamesModal() {
+    const modal = document.getElementById('gamesListModal');
+    if (modal) modal.style.display = 'none';
+}
+
+function getGamesFromStruct() {
+    let list = [];
+    if (typeof GAMES_DATABASE !== 'undefined') {
+        GAMES_DATABASE.forEach(group => {
+            group.games.forEach(g => list.push({ source: group.source, numbers: g }));
+        });
+    }
+    return list;
+}
+
+function parseTextareaToGames(text) {
+    let list = [];
+    const lines = text.split('\n');
+    let currentSource = 'Manual / Desconhecido';
+    lines.forEach(line => {
+        const l = line.trim();
+        if (!l) return;
+        if (l.startsWith('# Arquivo:')) {
+            currentSource = l.replace('# Arquivo:', '').trim();
+        } else if (l.replace(/[^0-9]/g, '').length >= 6) {
+            list.push({ source: currentSource, numbers: l });
+        }
+    });
+    return list;
+}
+
+function getFlatGamesList() {
+    const textarea = document.getElementById('gamesTextarea');
+    if (textarea && typeof DEFAULT_GAMES_LIST !== 'undefined') {
+        // Comparação aproximada para performance
+        if (Math.abs(textarea.value.length - DEFAULT_GAMES_LIST.length) < 50) {
+            return getGamesFromStruct();
+        }
+    }
+    return textarea ? parseTextareaToGames(textarea.value) : [];
+}
+
+function filterGamesList(query) {
+    const allGames = getFlatGamesList();
+    const searchTerm = query.toLowerCase().trim();
+
+    const filtered = allGames.filter(g => {
+        return g.numbers.includes(searchTerm) || g.source.toLowerCase().includes(searchTerm);
+    });
+
+    populateGamesTable(filtered);
+}
+
+function populateGamesTable(games) {
+    const table = document.getElementById('gamesTablePreview');
+    if (!table) return;
+    const actualTbody = table.getElementsByTagName('tbody')[0];
+
+    actualTbody.innerHTML = '';
+
+    const gamesToShow = games.slice(0, 500);
+
+    gamesToShow.forEach((game, index) => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">${index + 1}</td>
+            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 0.9em; color: #aaa;">${game.source}</td>
+            <td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); font-family: monospace; font-size: 1.1em; color: #ffd700;">
+                ${game.numbers.split(' ').map(n => `<span style="display:inline-block; padding:2px 6px; background:rgba(255,255,255,0.1); border-radius:4px; margin:0 2px;">${n}</span>`).join('')}
+            </td>
+        `;
+        actualTbody.appendChild(row);
+    });
+
+    if (games.length > 500) {
+        const row = document.createElement('tr');
+        row.innerHTML = `<td colspan="3" style="text-align:center; padding: 15px; color: #aaa;">... e mais ${games.length - 500} jogos (use a busca ou baixe o Excel)</td>`;
+        actualTbody.appendChild(row);
+    }
+
+    if (games.length === 0) {
+        actualTbody.innerHTML = '<tr><td colspan="3" style="text-align:center; padding: 20px;">Nenhum jogo encontrado.</td></tr>';
+    }
+}
+
+function downloadExcel() {
+    const games = getFlatGamesList();
+    if (games.length === 0) {
+        showToast('Nenhum jogo para baixar.', 'warning');
+        return;
+    }
+
+    const data = games.map((g, i) => ({
+        'ID': i + 1,
+        'Arquivo de Origem': g.source,
+        'Dezenas': g.numbers
+    }));
+
+    const wb = XLSX.utils.book_new();
+    const ws = XLSX.utils.json_to_sheet(data);
+    const wscols = [{ wch: 6 }, { wch: 50 }, { wch: 30 }];
+    ws['!cols'] = wscols;
+
+    XLSX.utils.book_append_sheet(wb, ws, "Jogos Bolão");
+    XLSX.writeFile(wb, "Jogos_Bolao_Mega_Virada_2025.xlsx");
+    showToast('📊 Download do Excel iniciado!');
+}
+
+function downloadCSV() {
+    const games = getFlatGamesList();
+    if (games.length === 0) return;
+
+    let csvContent = "data:text/csv;charset=utf-8,";
+    csvContent += "ID,Origem,Dezenas\r\n";
+
+    games.forEach((g, i) => {
+        csvContent += `${i + 1},"${g.source}","${g.numbers}"\r\n`;
+    });
+
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "jogos_bolao.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    showToast('📄 Download do CSV iniciado!');
 }

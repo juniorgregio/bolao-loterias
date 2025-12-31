@@ -213,6 +213,20 @@
             <div class="games-stats" id="gamesStats">
                 <span id="gamesCount">0 jogos carregados</span>
             </div>
+
+            <!-- Botões de Ação e Exportação -->
+            <div class="games-export-container"
+                style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                <button class="btn btn-outline" id="viewGamesBtn" title="Visualizar todos os jogos cadastrados">
+                    👁️ Ver Lista
+                </button>
+                <button class="btn btn-outline" id="downloadExcelBtn" title="Baixar planilha Excel (.xlsx)">
+                    📊 Excel
+                </button>
+                <button class="btn btn-outline" id="downloadCsvBtn" title="Baixar arquivo CSV">
+                    📄 CSV
+                </button>
+            </div>
         </section>
 
         <!-- Configuração de Ganhadores no Brasil -->
@@ -412,6 +426,45 @@
             <p class="footer-credits">por <span class="organizer">@JonasNonato</span></p>
         </div>
     </footer>
+
+    <!-- Modal Lista de Jogos -->
+    <div id="gamesListModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content glass-card large-modal"
+            style="max-width: 900px; height: 80vh; display: flex; flex-direction: column;">
+            <div class="modal-header">
+                <h3>📋 Todos os Jogos Cadastrados</h3>
+                <button class="close-modal" id="closeGamesListModal">✖</button>
+            </div>
+            <div class="modal-body" style="flex: 1; overflow: hidden; display: flex; flex-direction: column;">
+                <div class="games-list-filters" style="margin-bottom: 15px;">
+                    <input type="text" id="searchGameInput" placeholder="🔍 Buscar por número ou arquivo..."
+                        class="search-input"
+                        style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); color: white;">
+                </div>
+                <div class="table-responsive" style="flex: 1; overflow-y: auto;">
+                    <table class="games-table" id="gamesTablePreview" style="width: 100%; border-collapse: collapse;">
+                        <thead style="position: sticky; top: 0; background: #2a2a4a; z-index: 1;">
+                            <tr>
+                                <th style="padding: 10px; text-align: left;">#</th>
+                                <th style="padding: 10px; text-align: left;">Origem</th>
+                                <th style="padding: 10px; text-align: left;">Dezenas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Preenchido via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer" style="padding-top: 15px; display: flex; gap: 10px; justify-content: flex-end;">
+                <button class="btn btn-outline" id="downloadExcelModalBtn">📊 Baixar Excel</button>
+                <button class="btn btn-outline" id="downloadCsvModalBtn">📄 Baixar CSV</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SheetJS para Excel Export -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
 
     <script src="games-data.js"></script>
     <script src="script.js"></script>
