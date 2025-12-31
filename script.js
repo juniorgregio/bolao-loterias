@@ -421,6 +421,100 @@ async function fetchCaixaResult() {
 }
 
 /**
+ * Abre/Fecha modal do último sorteio
+ */
+function toggleLastDraw() {
+    const modal = document.getElementById('lastDrawModal');
+
+    if (modal.style.display === 'none') {
+        modal.style.display = 'flex';
+        // Carrega dados se estiver vazio ou com loading
+        const content = document.getElementById('lastDrawContent');
+        if (content.querySelector('.loading-draw')) {
+            fetchLastDrawData();
+        }
+    } else {
+        modal.style.display = 'none';
+    }
+}
+
+/**
+ * Busca dados detalhados do último sorteio para o modal
+ */
+async function fetchLastDrawData() {
+    const content = document.getElementById('lastDrawContent');
+
+    try {
+        const response = await fetch('https://servicebus2.caixa.gov.br/portaldeloterias/api/megasena');
+        if (!response.ok) throw new Error('API Indisponível');
+
+        const data = await response.json();
+
+        // Formata data
+        const premios = data.listaRateioPremio || [];
+        const sena = premios.find(p => p.faixa === 1) || { numeroDeGanhadores: 0, valorPremio: 0 };
+        const quina = premios.find(p => p.faixa === 2) || { numeroDeGanhadores: 0, valorPremio: 0 };
+        const quadra = premios.find(p => p.faixa === 3) || { numeroDeGanhadores: 0, valorPremio: 0 };
+
+        const html = `
+            <div class="draw-info-header">
+                <span class="draw-number-badge">Concurso ${data.numero}</span>
+                <span class="draw-date">${data.dataApuracao} - ${data.localSorteio} (${data.nomeMunicipioUFSorteio})</span>
+            </div>
+            
+            <div class="draw-numbers-container">
+                ${data.listaDezenas.map(d => `<div class="draw-ball">${d}</div>`).join('')}
+            </div>
+            
+            <div class="awards-list">
+                <div class="award-item">
+                    <span class="award-category">SENA (6 acertos)</span>
+                    <div class="game-result">
+                        <span class="award-value">${sena.numeroDeGanhadores === 0 ? 'ACUMULOU!' : 'R$ ' + formatCurrencyValue(sena.valorPremio)}</span>
+                        <span class="award-winners">${sena.numeroDeGanhadores} ganhadores</span>
+                    </div>
+                </div>
+                <div class="award-item">
+                    <span class="award-category">QUINA (5 acertos)</span>
+                    <div class="game-result">
+                        <span class="award-value">R$ ${formatCurrencyValue(quina.valorPremio)}</span>
+                        <span class="award-winners">${quina.numeroDeGanhadores} ganhadores</span>
+                    </div>
+                </div>
+                <div class="award-item">
+                    <span class="award-category">QUADRA (4 acertos)</span>
+                    <div class="game-result">
+                        <span class="award-value">R$ ${formatCurrencyValue(quadra.valorPremio)}</span>
+                        <span class="award-winners">${quadra.numeroDeGanhadores} ganhadores</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="explain-card" style="margin-top: 20px;">
+                <p><strong>Arrecadação Total:</strong> R$ ${formatCurrencyValue(data.valorArrecadado)}</p>
+                <p><strong>Acumulado Próximo:</strong> R$ ${formatCurrencyValue(data.valorAcumuladoProximoConcurso)}</p>
+            </div>
+        `;
+
+        content.innerHTML = html;
+
+    } catch (error) {
+        content.innerHTML = `
+            <div class="loading-draw" style="color: #ff6b6b">
+                ❌ Erro ao carregar dados. Tente novamente mais tarde.
+            </div>
+        `;
+    }
+}
+
+/**
+ * Formata valor monetário sem cifrão
+ */
+function formatCurrencyValue(value) {
+    return value.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+/**
  * Inicializa o contador de visitas
  * Usando localStorage para contagem local (funciona sem backend)
  */
