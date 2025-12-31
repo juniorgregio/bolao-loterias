@@ -1172,14 +1172,22 @@ function updatePrizeNote(senaWinners, quinaWinners, quadraWinners) {
 
 /**
  * Renderiza a lista de jogos com resultados
+ * @param {Array} results - Resultados da validação
+ * @param {string} filter - Filtro: 'all', 'sena', 'quina', 'quadra', 'bolao-principal', 'bolao-2'
  */
 function renderGamesList(results, filter = 'all') {
     const list = document.getElementById('gamesList');
     list.innerHTML = '';
 
-    const filtered = filter === 'all'
-        ? results
-        : results.filter(g => g.categoria === filter);
+    // Aplica filtro
+    let filtered = results;
+    if (filter === 'bolao-principal') {
+        filtered = results.filter(g => g.bolao === 'Principal');
+    } else if (filter === 'bolao-2') {
+        filtered = results.filter(g => g.bolao === 'Bolão 2');
+    } else if (filter !== 'all') {
+        filtered = results.filter(g => g.categoria === filter);
+    }
 
     if (filtered.length === 0) {
         list.innerHTML = '<p style="text-align: center; color: var(--text-muted);">Nenhum jogo encontrado nesta categoria.</p>';
@@ -1192,6 +1200,7 @@ function renderGamesList(results, filter = 'all') {
         const div = document.createElement('div');
         div.className = `game-item ${game.categoria}`;
         div.dataset.categoria = game.categoria;
+        div.dataset.bolao = game.bolao || '';
 
         // Números do jogo
         let numbersHtml = '<div class="game-numbers">';
@@ -1217,12 +1226,21 @@ function renderGamesList(results, filter = 'all') {
         }
         resultHtml += '</div>';
 
-        // Badge de Origem
-        const sourceBadge = game.source ? `<span class="game-source-badge" style="display: inline-block; background: rgba(255, 255, 255, 0.1); color: #aaa; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; margin-left: 8px; border: 1px solid rgba(255, 255, 255, 0.2);">📂 ${game.source}</span>` : '';
+        // Badge de Bolão (colorido)
+        let bolaoBadge = '';
+        if (game.bolao === 'Principal') {
+            bolaoBadge = '<span style="display: inline-block; background: linear-gradient(135deg, #FFD700, #FFA500); color: #000; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; margin-left: 6px;">🏆 PRINCIPAL</span>';
+        } else if (game.bolao === 'Bolão 2') {
+            bolaoBadge = '<span style="display: inline-block; background: linear-gradient(135deg, #4CAF50, #2E7D32); color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 600; margin-left: 6px;">🎲 BOLÃO 2</span>';
+        }
+
+        // Badge de Origem (arquivo)
+        const sourceBadge = game.source ? `<span style="display: inline-block; background: rgba(255, 255, 255, 0.1); color: #aaa; padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; margin-left: 6px; border: 1px solid rgba(255, 255, 255, 0.2);">📂 ${game.source}</span>` : '';
 
         div.innerHTML = `
             <div>
                 <span style="font-size: 0.8rem; color: var(--text-muted);">Jogo #${game.id} (${game.numbers.length} nums)</span>
+                ${bolaoBadge}
                 ${sourceBadge}
                 ${numbersHtml}
             </div>
