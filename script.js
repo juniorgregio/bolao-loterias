@@ -587,40 +587,48 @@ function formatCurrencyValue(value) {
  */
 /**
  * Inicializa o contador de visitas GLOBAL
- * Usa biblioteca oficial CounterAPI com token V2
+ * Usa API V2 do CounterAPI com autenticação Bearer
  */
 async function initVisitCounter() {
     const totalEl = document.getElementById('totalVisits');
     const uniqueEl = document.getElementById('uniqueVisits');
 
-    try {
-        // Cria o client com Token V2
-        const counter = new Counter({
-            workspace: 'bolao-virada-2025',
-            accessToken: 'ut_da9zZ4NuufGB8aWF30lQ7FLIigCYKtf2iBDKwigQ'
-        });
+    const API_BASE = 'https://api.counterapi.dev/v2';
+    const WORKSPACE = 'bolao-virada-2025';
+    const TOKEN = 'ut_da9zZ4NuufGB8aWF30lQ7FLIigCYKtf2iBDKwigQ';
 
-        // 1. Total de Visitas: Incrementa sempre
-        const totalResult = await counter.up('pageviews');
-        totalEl.textContent = formatNumber(totalResult.value);
+    const headers = {
+        'Authorization': `Bearer ${TOKEN}`,
+        'Content-Type': 'application/json'
+    };
+
+    try {
+        // 1. Total de Visitas: Incrementa sempre (UP)
+        const totalResp = await fetch(`${API_BASE}/${WORKSPACE}/pageviews/up`, { headers });
+        const totalData = await totalResp.json();
+        console.log('Total visits response:', totalData);
+        totalEl.textContent = formatNumber(totalData.count || totalData.value || 1);
 
         // 2. Visitas Únicas: Verifica localStorage
-        const hasVisited = localStorage.getItem('bolao_v3_unique');
+        const hasVisited = localStorage.getItem('bolao_v4_unique');
 
         if (!hasVisited) {
             // Primeira vez: Incrementa
-            const uniqueResult = await counter.up('visitors');
-            uniqueEl.textContent = formatNumber(uniqueResult.value);
-            localStorage.setItem('bolao_v3_unique', 'true');
+            const uniqueResp = await fetch(`${API_BASE}/${WORKSPACE}/visitors/up`, { headers });
+            const uniqueData = await uniqueResp.json();
+            console.log('Unique visits response:', uniqueData);
+            uniqueEl.textContent = formatNumber(uniqueData.count || uniqueData.value || 1);
+            localStorage.setItem('bolao_v4_unique', 'true');
         } else {
-            // Recorrente: Apenas lê (get)
-            const uniqueResult = await counter.get('visitors');
-            uniqueEl.textContent = formatNumber(uniqueResult.value);
+            // Recorrente: Apenas lê (GET)
+            const uniqueResp = await fetch(`${API_BASE}/${WORKSPACE}/visitors`, { headers });
+            const uniqueData = await uniqueResp.json();
+            console.log('Unique visits GET response:', uniqueData);
+            uniqueEl.textContent = formatNumber(uniqueData.count || uniqueData.value || 1);
         }
 
     } catch (error) {
         console.error('Erro no contador:', error);
-        // Fallback visual
         if (totalEl.textContent === '-') totalEl.textContent = '1';
         if (uniqueEl.textContent === '-') uniqueEl.textContent = '1';
     }
