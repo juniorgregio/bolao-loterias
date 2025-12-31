@@ -1831,7 +1831,7 @@ const GAMES_DATABASE_6 = [
         ]
     },
     {
-        source: "800 a1.pdf - Recibo Final 3A-3",
+        source: "800 1a.pdf - Recibo Final 3A-3",
         games: [
             "10 11 21 30 37 42", "24 30 34 41 53 55", "14 22 24 37 43 54",
             "06 21 29 35 46 48", "09 25 31 34 40 42", "02 18 19 22 45 56",
@@ -1839,7 +1839,7 @@ const GAMES_DATABASE_6 = [
         ]
     },
     {
-        source: "800 a1.pdf - Recibo Final C8-5",
+        source: "800 1a.pdf - Recibo Final C8-5",
         games: [
             "01 16 17 27 30 33", "02 17 19 27 34 37", "15 17 19 23 25 54",
             "05 18 34 40 46 54", "13 14 17 40 46 59", "11 14 27 31 54 55",
@@ -1848,7 +1848,7 @@ const GAMES_DATABASE_6 = [
         ]
     },
     {
-        source: "800 a1.pdf - Recibo Final 41-6",
+        source: "800 1a.pdf - Recibo Final 41-6",
         games: [
             "03 08 13 35 37 55", "39 40 45 49 52 57", "09 34 36 38 39 47",
             "15 18 26 31 33 36", "05 12 13 36 51 55", "04 06 16 26 31 37",
@@ -1857,7 +1857,7 @@ const GAMES_DATABASE_6 = [
         ]
     },
     {
-        source: "800 a1.pdf - Recibo Final 36-6",
+        source: "800 1a.pdf - Recibo Final 36-6",
         games: [
             "01 05 15 18 48 49", "03 12 22 33 38 48", "01 22 25 40 50 54",
             "13 17 21 28 34 38", "06 14 25 43 50 53", "26 31 33 44 54 59",
@@ -1866,7 +1866,7 @@ const GAMES_DATABASE_6 = [
         ]
     },
     {
-        source: "800 a1.pdf - Recibo Final 2F-3",
+        source: "800 1a.pdf - Recibo Final 2F-3",
         games: [
             "06 27 28 37 52 55", "06 18 25 26 33 35", "07 09 47 50 54 57",
             "06 17 24 37 43 59", "31 39 44 45 54 57", "13 20 22 30 49 58",
@@ -1875,7 +1875,7 @@ const GAMES_DATABASE_6 = [
         ]
     },
     {
-        source: "800 a1.pdf - Recibo Final F3-8",
+        source: "800 1a.pdf - Recibo Final F3-8",
         games: [
             "07 09 10 12 55 60", "08 33 34 39 54 58", "08 16 20 35 40 48",
             "08 12 21 29 31 49", "03 35 36 38 52 57", "12 17 34 47 56 59",
@@ -1884,7 +1884,7 @@ const GAMES_DATABASE_6 = [
         ]
     },
     {
-        source: "800 a1.pdf - Recibo Final 08-9",
+        source: "800 1a.pdf - Recibo Final 08-9",
         games: [
             "06 14 46 48 53 56", "03 19 28 32 34 57", "06 09 15 16 29 36",
             "01 18 24 31 39 59", "12 15 36 40 48 59", "17 20 24 28 46 47",
@@ -1893,7 +1893,7 @@ const GAMES_DATABASE_6 = [
         ]
     },
     {
-        source: "800 a1.pdf - Recibo Final 86-9",
+        source: "800 1a.pdf - Recibo Final 86-9",
         games: [
             "10 29 35 45 46 54", "03 37 45 47 52 54", "06 16 25 28 33 34",
             "06 27 30 33 40 50", "03 26 32 57 59 60", "11 33 38 42 49 54",

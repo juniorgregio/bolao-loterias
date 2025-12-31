@@ -85,9 +85,17 @@
                 <div class="info-card">
                     <div class="info-icon">🎫</div>
                     <div class="info-content">
-                        <span class="info-label">Total de Cotas</span>
+                        <span class="info-label">Cotas (Principal)</span>
                         <span class="info-value" id="viewTotalCotas">21.309</span>
                         <input type="number" class="info-input" id="editTotalCotas" style="display: none;">
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🎟️</div>
+                    <div class="info-content">
+                        <span class="info-label">Cotas (Bolão 2)</span>
+                        <span class="info-value" id="viewTotalCotasBolao2">436</span>
+                        <input type="number" class="info-input" id="editTotalCotasBolao2" style="display: none;">
                     </div>
                 </div>
                 <!-- Card Valor da Cota (Explícito para edição) -->
@@ -125,33 +133,48 @@
                 <span class="badge badge-gold">Sua Participação</span>
             </div>
             <div class="calculator-content">
-                <div class="input-group">
-                    <label for="quotasInput">
-                        <span class="input-icon">🎫</span>
-                        Quantas cotas você comprou?
-                    </label>
-                    <input type="number" id="quotasInput" placeholder="Ex: 10" min="1" max="50000">
-                    <span class="input-helper">Cada cota: <span id="helperValorCota">R$ 25,20</span></span>
+                <div class="calculator-inputs-grid"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div class="input-group">
+                        <label for="quotasInput">
+                            <span class="input-icon">🏆</span>
+                            Cotas (Principal)
+                        </label>
+                        <input type="number" id="quotasInput" placeholder="Qtd" min="0" max="50000">
+                        <span class="input-helper">Valor: R$ 25,20</span>
+                    </div>
+                    <div class="input-group">
+                        <label for="quotasInputBolao2">
+                            <span class="input-icon">🎲</span>
+                            Cotas (Bolão 2)
+                        </label>
+                        <input type="number" id="quotasInputBolao2" placeholder="Qtd" min="0" max="50000">
+                        <span class="input-helper">Valor: R$ 6,00</span>
+                    </div>
                 </div>
+
                 <div class="calculator-results" id="calculatorResults">
                     <div class="result-item">
-                        <span class="result-label">💵 Valor Investido</span>
+                        <span class="result-label">💵 Investimento Total</span>
                         <span class="result-value" id="investedValue">R$ 0,00</span>
                     </div>
+
+                    <div class="result-divider"
+                        style="height: 1px; background: rgba(255,255,255,0.1); margin: 0.5rem 0;"></div>
+
                     <div class="result-item">
-                        <span class="result-label">📊 Sua Participação</span>
-                        <span class="result-value" id="participationPercent">0%</span>
+                        <span class="result-label">🏆 Retorno Principal</span>
+                        <span class="result-value" id="returnPrincipal">R$ 0,00</span>
                     </div>
+                    <div class="result-item">
+                        <span class="result-label">🎲 Retorno Bolão 2</span>
+                        <span class="result-value" id="returnBolao2">R$ 0,00</span>
+                    </div>
+
+                    <div class="result-divider"
+                        style="height: 1px; background: rgba(255,255,255,0.1); margin: 0.5rem 0;"></div>
+
                     <div class="result-item highlight">
-                        <span class="result-label">🏆 Se ganhar SENA (após 10% admin)</span>
-                        <span class="result-value" id="senaReturn">R$ 0,00</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label">⭐ Se ganhar QUINA (após 10% admin)</span>
-                        <span class="result-value" id="quinaReturn">R$ 0,00</span>
-                    </div>
-                    <div class="result-item">
-                        <span class="result-label">🎯 Se ganhar QUADRA (após 10% admin)</span>
                         <span class="result-value" id="quadraReturn">R$ 0,00</span>
                     </div>
                 </div>

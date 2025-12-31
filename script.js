@@ -29,6 +29,10 @@ const BOLAO_CONFIG = {
     jogos9Numeros: 1065,
     jogos6Numeros: 39,
 
+    // Dados do Bolão 2
+    totalCotasBolao2: 436, // Valor inicial (igual ao n de jogos por enquanto, usuário edita)
+    valorCotaBolao2: 6.00,
+
     // Estimativas de ganhadores (para cálculo)
     // Estes valores seriam atualizados após o sorteio oficial
     estimativaGanhadoresSena: 1,
@@ -112,6 +116,8 @@ let state = {
     selectedNumbers: [],
     parsedGames: [],
     validationResults: null,
+    totalLiquidoPrincipal: 0, // Prêmio líquido do Bolão Principal
+    totalLiquidoBolao2: 0,    // Prêmio líquido do Bolão 2
     activeBolao: 9,  // 9 ou 6 - qual bolão está sendo visualizado
     participaBolao9: true,  // Usuário participa do bolão de 9 números
     participaBolao6: false  // Usuário participa do bolão de 6 números
@@ -768,85 +774,60 @@ function clearSelection() {
 /**
  * Atualiza os cálculos da calculadora de cotas
  */
+/**
+ * Atualiza os cálculos da calculadora de cotas
+ */
 function updateCalculator() {
-    const input = document.getElementById('quotasInput');
-    const cotas = parseInt(input.value) || 0;
+    // Inputs de cotas
+    const inputPrincipal = document.getElementById('quotasInput');
+    const inputBolao2 = document.getElementById('quotasInputBolao2');
+
+    const cotasPrincipal = parseInt(inputPrincipal?.value) || 0;
+    const cotasBolao2 = parseInt(inputBolao2?.value) || 0;
 
     // Valor investido
-    const investido = cotas * BOLAO_CONFIG.valorCota;
-    document.getElementById('investedValue').textContent = formatCurrency(investido);
+    const investidoPrincipal = cotasPrincipal * BOLAO_CONFIG.valorCota; // 25.20
+    const investidoBolao2 = cotasBolao2 * BOLAO_CONFIG.valorCotaBolao2; // 6.00
+    const investidoTotal = investidoPrincipal + investidoBolao2;
 
-    // Participação percentual
-    const participacao = cotas / BOLAO_CONFIG.totalCotas;
-    document.getElementById('participationPercent').textContent = formatPercent(participacao);
+    document.getElementById('investedValue').textContent = formatCurrency(investidoTotal);
+
+    // Participação percentual (apenas para referência interna ou tooltip, não exibido diretamente mais como % único)
+    const partPrincipal = cotasPrincipal / BOLAO_CONFIG.totalCotas;
+    const partBolao2 = cotasBolao2 / BOLAO_CONFIG.totalCotasBolao2;
 
     // SE TEMOS DADOS REAIS DE VALIDAÇÃO (O BOLÃO GANHOU ALGO?)
     if (state.totalLiquidoValidado !== undefined && state.totalLiquidoValidado >= 0) {
-        // Modo: RESULTADO REAL
-        const retornoReal = state.totalLiquidoValidado * participacao;
+        // Cálculo de Retorno Real
 
-        // Atualiza labels para indicar que é real
-        const labelSena = document.querySelector('#senaReturn').closest('.result-item').querySelector('.result-label');
-        if (labelSena) labelSena.innerHTML = '💰 RETORNO TOTAL (CONFIRMADO)';
+        // Retorno vindo do Bolão Principal
+        // (Prêmio Líquido Principal / Total Cotas Princ) * Minhas Cotas Princ
+        // Mas calculate prêmio líquido total já, então:
+        // state.totalLiquidoPrincipal é o valor TOTAL ganho pelo bolão inteiro.
+        const retornoPrincipal = state.totalLiquidoPrincipal * partPrincipal;
 
-        document.querySelector('#quinaReturn').parentElement.querySelector('.result-label').textContent = '...';
-        document.querySelector('#quadraReturn').parentElement.querySelector('.result-label').textContent = '...';
+        // Retorno vindo do Bolão 2
+        const retornoBolao2 = state.totalLiquidoBolao2 * partBolao2;
 
-        // Mostra valor total na primeira linha e limpa as outras (pois já é a soma de tudo)
-        document.getElementById('senaReturn').innerHTML = `<span style="color: #2ecc71; font-weight: bold; font-size: 1.2em">${formatCurrency(retornoReal)}</span>`;
-        document.getElementById('quinaReturn').textContent = "-";
-        document.getElementById('quadraReturn').textContent = "-";
+        const retornoTotal = retornoPrincipal + retornoBolao2;
+
+        // Atualiza UI
+        const elReturnPrincipal = document.getElementById('returnPrincipal');
+        const elReturnBolao2 = document.getElementById('returnBolao2');
+        const elReturnTotal = document.getElementById('estimatedReturn');
+
+        if (elReturnPrincipal) elReturnPrincipal.textContent = formatCurrency(retornoPrincipal);
+        if (elReturnBolao2) elReturnBolao2.textContent = formatCurrency(retornoBolao2);
+        if (elReturnTotal) {
+            elReturnTotal.innerHTML = `<span style="color: #2ecc71; font-weight: bold; font-size: 1.2em">${formatCurrency(retornoTotal)}</span>`;
+        }
 
     } else {
-        // Modo: ESTIMATIVA (SIMULADOR)
-
-        // Restaura labels originais
-        const labelSena = document.querySelector('#senaReturn').closest('.result-item').querySelector('.result-label');
-        if (labelSena) labelSena.innerHTML = '🏆 Se der Sena (Estimado)';
-        document.querySelector('#quinaReturn').parentElement.querySelector('.result-label').textContent = '⭐ Se der Quina (Estimado)';
-        document.querySelector('#quadraReturn').parentElement.querySelector('.result-label').textContent = '🍀 Se der Quadra (Estimado)';
-
-        // Lê os valores dos campos de ganhadores (se preenchidos)
-        const totalSenaWinnersInput = document.getElementById('totalSenaWinners');
-        const totalQuinaWinnersInput = document.getElementById('totalQuinaWinners');
-        const totalQuadraWinnersInput = document.getElementById('totalQuadraWinners');
-
-        const totalSenaWinners = parseInt(totalSenaWinnersInput?.value) || BOLAO_CONFIG.estimativaGanhadoresSena;
-        const totalQuinaWinners = parseInt(totalQuinaWinnersInput?.value) || BOLAO_CONFIG.estimativaGanhadoresQuina;
-        const totalQuadraWinners = parseInt(totalQuadraWinnersInput?.value) || BOLAO_CONFIG.estimativaGanhadoresQuadra;
-
-        // Prêmio total por categoria
-        const premioTotalSena = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualSena;
-        const premioTotalQuina = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuina;
-        const premioTotalQuadra = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuadra;
-
-        // Prêmio que o bolão receberia se ganhasse (1 sena / quina / quadra)
-        // Dividido pelo número de ganhadores no Brasil
-        // NOTA: Se ganhadores for 0 (ninguém acertou), divisão por zero dá Infinity. 
-        // Vamos considerar que se ganhadores é 0, o prêmio acumula, mas para fins de "se eu ganhar sozinho", usamos 1.
-        // Mas se o usuário colocar 0, assumimos 1 (ele ganha sozinho).
-
-        const divSena = totalSenaWinners > 0 ? totalSenaWinners : 1;
-        const divQuina = totalQuinaWinners > 0 ? totalQuinaWinners : 1;
-        const divQuadra = totalQuadraWinners > 0 ? totalQuadraWinners : 1;
-
-        const premioSenaBolao = premioTotalSena / divSena;
-        const premioQuinaBolao = premioTotalQuina / divQuina;
-        const premioQuadraBolao = premioTotalQuadra / divQuadra;
-
-        // Após desconto de 10% do admin
-        const parteSenaBolao = premioSenaBolao * (1 - BOLAO_CONFIG.descontoAdmin);
-        const parteQuinaBolao = premioQuinaBolao * (1 - BOLAO_CONFIG.descontoAdmin);
-        const parteQuadraBolao = premioQuadraBolao * (1 - BOLAO_CONFIG.descontoAdmin);
-
-        // Parte individual baseada nas cotas
-        const senaReturn = parteSenaBolao * participacao;
-        const quinaReturn = parteQuinaBolao * participacao;
-        const quadraReturn = parteQuadraBolao * participacao;
-
-        document.getElementById('senaReturn').textContent = formatCurrency(senaReturn);
-        document.getElementById('quinaReturn').textContent = formatCurrency(quinaReturn);
-        document.getElementById('quadraReturn').textContent = formatCurrency(quadraReturn);
+        // Modo Estimativa (sem validação)
+        // Mostra zerado ou traços
+        document.getElementById('returnPrincipal').textContent = "R$ 0,00";
+        document.getElementById('returnBolao2').textContent = "R$ 0,00";
+        document.getElementById('estimatedReturn').textContent = "R$ 0,00";
     }
 }
 
@@ -1006,6 +987,10 @@ function validateGames() {
     let totalQuinas = 0;
     let totalQuadras = 0;
 
+    // Totais separados por bolão
+    let totalsPrincipal = { senas: 0, quinas: 0, quadras: 0 };
+    let totalsBolao2 = { senas: 0, quinas: 0, quadras: 0 };
+
     for (const game of allGames) {
         // Conta quantos números do jogo foram sorteados
         const acertos = game.numbers.filter(n => sorteados.has(n));
@@ -1017,6 +1002,17 @@ function validateGames() {
         totalSenas += combinacoes.senas;
         totalQuinas += combinacoes.quinas;
         totalQuadras += combinacoes.quadras;
+
+        // Soma nos totais específicos
+        if (game.bolao === 'Principal') {
+            totalsPrincipal.senas += combinacoes.senas;
+            totalsPrincipal.quinas += combinacoes.quinas;
+            totalsPrincipal.quadras += combinacoes.quadras;
+        } else if (game.bolao === 'Bolão 2') {
+            totalsBolao2.senas += combinacoes.senas;
+            totalsBolao2.quinas += combinacoes.quinas;
+            totalsBolao2.quadras += combinacoes.quadras;
+        }
 
         // Determina a melhor categoria (para exibição)
         let categoria = 'none';
@@ -1046,7 +1042,9 @@ function validateGames() {
             senas: totalSenas,
             quinas: totalQuinas,
             quadras: totalQuadras
-        }
+        },
+        totalsPrincipal: totalsPrincipal,
+        totalsBolao2: totalsBolao2
     };
 
     // Exibe resultados
@@ -1088,13 +1086,21 @@ function displayResults() {
         badge.className = 'badge';
     }
 
-    // Lê os valores dos campos de ganhadores no Brasil
-    // Se vazio, usa os valores padrão
+    // Lê os valores dos campos    // Calculadora de Cotas
+    const quotasInput = document.getElementById('quotasInput'); // Principal
+    const quotasInputBolao2 = document.getElementById('quotasInputBolao2'); // Bolão 2
+
+    // Ganhadores Brasil
     const totalSenaWinnersInput = document.getElementById('totalSenaWinners');
     const totalQuinaWinnersInput = document.getElementById('totalQuinaWinners');
     const totalQuadraWinnersInput = document.getElementById('totalQuadraWinners');
 
-    // Pega o valor do input ou usa o padrão
+    if (quotasInput) {
+        quotasInput.addEventListener('input', updateCalculator);
+    }
+    if (quotasInputBolao2) {
+        quotasInputBolao2.addEventListener('input', updateCalculator);
+    }
     const totalSenaWinners = parseInt(totalSenaWinnersInput.value) || BOLAO_CONFIG.estimativaGanhadoresSena;
     const totalQuinaWinners = parseInt(totalQuinaWinnersInput.value) || BOLAO_CONFIG.estimativaGanhadoresQuina;
     const totalQuadraWinners = parseInt(totalQuadraWinnersInput.value) || BOLAO_CONFIG.estimativaGanhadoresQuadra;
@@ -1116,14 +1122,33 @@ function displayResults() {
     const quadraBruto = totals.quadras * premioQuadraPorGanhador;
     const totalBruto = senaBruto + quinaBruto + quadraBruto;
 
-    // Prêmio líquido (após desconto do admin de 10%)
+    // Prêmio líquido geral (após desconto do admin de 10%)
     const senaLiquido = senaBruto * (1 - BOLAO_CONFIG.descontoAdmin);
     const quinaLiquido = quinaBruto * (1 - BOLAO_CONFIG.descontoAdmin);
     const quadraLiquido = quadraBruto * (1 - BOLAO_CONFIG.descontoAdmin);
     const totalLiquido = totalBruto * (1 - BOLAO_CONFIG.descontoAdmin);
 
-    // Salva no estado para a calculadora usar o valor REAL
+    // CÁLCULO SEPARADO POR BOLÃO
+    // Bolão Principal
+    const { totalsPrincipal } = state.validationResults;
+    const brutoPrincipal =
+        (totalsPrincipal.senas * premioSenaPorGanhador) +
+        (totalsPrincipal.quinas * premioQuinaPorGanhador) +
+        (totalsPrincipal.quadras * premioQuadraPorGanhador);
+    const liquidoPrincipal = brutoPrincipal * (1 - BOLAO_CONFIG.descontoAdmin);
+
+    // Bolão 2
+    const { totalsBolao2 } = state.validationResults;
+    const brutoBolao2 =
+        (totalsBolao2.senas * premioSenaPorGanhador) +
+        (totalsBolao2.quinas * premioQuinaPorGanhador) +
+        (totalsBolao2.quadras * premioQuadraPorGanhador);
+    const liquidoBolao2 = brutoBolao2 * (1 - BOLAO_CONFIG.descontoAdmin);
+
+    // Salva no estado para a calculadora usar
     state.totalLiquidoValidado = totalLiquido;
+    state.totalLiquidoPrincipal = liquidoPrincipal;
+    state.totalLiquidoBolao2 = liquidoBolao2;
 
     // Atualiza tabela de prêmios
     document.getElementById('senaQty').textContent = totals.senas;
@@ -1332,8 +1357,8 @@ function toggleEditBolao() {
     const isEditing = document.getElementById('saveBolaoBtn').style.display !== 'none';
 
     // Elementos
-    const viewEls = ['viewArrecadacao', 'viewParticipantes', 'viewTotalCotas', 'viewValorCota', 'viewPixes'];
-    const editEls = ['editArrecadacao', 'editParticipantes', 'editTotalCotas', 'editValorCota', 'editPixes'];
+    const viewEls = ['viewArrecadacao', 'viewParticipantes', 'viewTotalCotas', 'viewTotalCotasBolao2', 'viewValorCota', 'viewPixes'];
+    const editEls = ['editArrecadacao', 'editParticipantes', 'editTotalCotas', 'editTotalCotasBolao2', 'editValorCota', 'editPixes'];
 
     // Toggle buttons
     document.getElementById('editBolaoBtn').style.display = isEditing ? 'block' : 'none';
@@ -1349,7 +1374,9 @@ function toggleEditBolao() {
         document.getElementById('editParticipantes').value = BOLAO_CONFIG.participantes;
 
         // Total Cotas
+        // Total Cotas
         document.getElementById('editTotalCotas').value = BOLAO_CONFIG.totalCotas;
+        document.getElementById('editTotalCotasBolao2').value = BOLAO_CONFIG.totalCotasBolao2;
 
         // Valor Cota
         document.getElementById('editValorCota').value = BOLAO_CONFIG.valorCota.toFixed(2);
@@ -1375,6 +1402,7 @@ function saveBolaoInfo() {
     const newArrecadacao = parseFloat(document.getElementById('editArrecadacao').value);
     const newParticipantes = parseInt(document.getElementById('editParticipantes').value);
     const newTotalCotas = parseInt(document.getElementById('editTotalCotas').value);
+    const newTotalCotasBolao2 = parseInt(document.getElementById('editTotalCotasBolao2').value);
     const newValorCota = parseFloat(document.getElementById('editValorCota').value);
     const newPixes = parseInt(document.getElementById('editPixes').value);
 
@@ -1387,6 +1415,7 @@ function saveBolaoInfo() {
     BOLAO_CONFIG.arrecadacaoTotal = newArrecadacao;
     BOLAO_CONFIG.participantes = newParticipantes;
     BOLAO_CONFIG.totalCotas = newTotalCotas;
+    BOLAO_CONFIG.totalCotasBolao2 = newTotalCotasBolao2;
     BOLAO_CONFIG.valorCota = newValorCota;
     BOLAO_CONFIG.pixes = newPixes;
 
@@ -1394,6 +1423,7 @@ function saveBolaoInfo() {
     document.getElementById('viewArrecadacao').textContent = formatCurrency(newArrecadacao);
     document.getElementById('viewParticipantes').textContent = newParticipantes.toLocaleString('pt-BR') + ' pessoas';
     document.getElementById('viewTotalCotas').textContent = newTotalCotas.toLocaleString('pt-BR');
+    document.getElementById('viewTotalCotasBolao2').textContent = newTotalCotasBolao2.toLocaleString('pt-BR');
     document.getElementById('viewValorCota').textContent = formatCurrency(newValorCota);
     document.getElementById('viewPixes').textContent = newPixes.toLocaleString('pt-BR');
 
