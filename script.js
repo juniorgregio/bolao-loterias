@@ -412,6 +412,14 @@ async function fetchCaixaResult() {
 
         const data = await response.json();
 
+        // VALIDAÇÃO DE SEGURANÇA: Garante que é o sorteio da Virada
+        if (data.dataApuracao !== '31/12/2025') {
+            statusEl.className = 'api-status error';
+            statusIcon.textContent = '⚠️';
+            statusText.textContent = `Ainda não saiu! Último sorteio disponível: ${data.dataApuracao} (Conc. ${data.numero}). Tente novamente em alguns minutos.`;
+            return;
+        }
+
         // Extrai os dados de ganhadores
         const premiacoes = data.listaRateioPremio || [];
 
