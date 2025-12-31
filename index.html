@@ -180,14 +180,53 @@
                         <span class="result-value" id="returnBolao2">R$ 0,00</span>
                     </div>
 
-                    <div class="result-divider"
-                        style="height: 1px; background: rgba(255,255,255,0.1); margin: 0.5rem 0;"></div>
-
                     <div class="result-item highlight">
-                        <span class="result-value" id="quadraReturn">R$ 0,00</span>
+                        <span class="result-label">💰 Lucro Líquido</span>
+                        <span class="result-value" id="netProfit">R$ 0,00</span>
+                    </div>
+
+                    <div class="result-details" id="resultDetails" style="display: none; margin-top: 15px;">
+                        <div style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 10px;">
+                            <h4
+                                style="color: #ddd; font-size: 0.9em; margin-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 4px;">
+                                📊 Extrato Detalhado do Seu Retorno</h4>
+
+                            <!-- Detalhes Bolão Principal -->
+                            <div class="bolao-detail-row"
+                                style="display: flex; justify-content: space-between; font-size: 0.85em; margin-bottom: 4px; color: #aaa;">
+                                <span>🏆 Princ. (Sena):</span> <span style="color: var(--sena-color);"
+                                    id="detailPrincipalSena">R$ 0,00</span>
+                            </div>
+                            <div class="bolao-detail-row"
+                                style="display: flex; justify-content: space-between; font-size: 0.85em; margin-bottom: 4px; color: #aaa;">
+                                <span>🏆 Princ. (Quina):</span> <span style="color: var(--quina-color);"
+                                    id="detailPrincipalQuina">R$ 0,00</span>
+                            </div>
+                            <div class="bolao-detail-row"
+                                style="display: flex; justify-content: space-between; font-size: 0.85em; margin-bottom: 8px; color: #aaa;">
+                                <span>🏆 Princ. (Quadra):</span> <span style="color: var(--quadra-color);"
+                                    id="detailPrincipalQuadra">R$ 0,00</span>
+                            </div>
+
+                            <!-- Detalhes Bolão 2 -->
+                            <div class="bolao-detail-row"
+                                style="display: flex; justify-content: space-between; font-size: 0.85em; margin-bottom: 4px; color: #aaa; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 4px;">
+                                <span>🎲 Bolão 2 (Sena):</span> <span style="color: var(--sena-color);"
+                                    id="detailBolao2Sena">R$ 0,00</span>
+                            </div>
+                            <div class="bolao-detail-row"
+                                style="display: flex; justify-content: space-between; font-size: 0.85em; margin-bottom: 4px; color: #aaa;">
+                                <span>🎲 Bolão 2 (Quina):</span> <span style="color: var(--quina-color);"
+                                    id="detailBolao2Quina">R$ 0,00</span>
+                            </div>
+                            <div class="bolao-detail-row"
+                                style="display: flex; justify-content: space-between; font-size: 0.85em; color: #aaa;">
+                                <span>🎲 Bolão 2 (Quadra):</span> <span style="color: var(--quadra-color);"
+                                    id="detailBolao2Quadra">R$ 0,00</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
         </section>
 
         <!-- Seletor de Números Sorteados -->
@@ -225,12 +264,12 @@
                 <button class="bolao-toggle-btn active" id="toggleBolao9" data-bolao="9">
                     <span class="toggle-icon">🏆</span>
                     <span class="toggle-label">Bolão Principal</span>
-                    <span class="toggle-badge">1065 jogos</span>
+                    <span class="toggle-badge">1087 jogos</span>
                 </button>
                 <button class="bolao-toggle-btn" id="toggleBolao6" data-bolao="6">
                     <span class="toggle-icon">🎲</span>
                     <span class="toggle-label">Bolão 2</span>
-                    <span class="toggle-badge">4.818 jogos simples</span>
+                    <span class="toggle-badge">2.021 jogos simples</span>
                 </button>
             </div>
 

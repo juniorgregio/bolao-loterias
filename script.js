@@ -852,6 +852,47 @@ function updateCalculator() {
             elReturnTotal.innerHTML = `<span style="color: #2ecc71; font-weight: bold; font-size: 1.2em">${formatCurrency(retornoTotal)}</span>`;
         }
 
+        // Resultados Detalhados
+        const detailsContainer = document.getElementById('resultDetails');
+        if (state.breakdown && (retornoPrincipal > 0 || retornoBolao2 > 0)) {
+            if (detailsContainer) detailsContainer.style.display = 'block';
+
+            // Helper para calcular parcela
+            const calcParcela = (valorTotal, totalCotas, minhasCotas) => {
+                if (!valorTotal || totalCotas === 0) return 0;
+                return (valorTotal / totalCotas) * minhasCotas;
+            };
+
+            // Principal
+            const senaP = calcParcela(state.breakdown.principal?.sena, BOLAO_CONFIG.totalCotas, cotasPrincipal);
+            const quinaP = calcParcela(state.breakdown.principal?.quina, BOLAO_CONFIG.totalCotas, cotasPrincipal);
+            const quadraP = calcParcela(state.breakdown.principal?.quadra, BOLAO_CONFIG.totalCotas, cotasPrincipal);
+
+            const elPrincSena = document.getElementById('detailPrincipalSena');
+            const elPrincQuina = document.getElementById('detailPrincipalQuina');
+            const elPrincQuadra = document.getElementById('detailPrincipalQuadra');
+
+            if (elPrincSena) elPrincSena.textContent = formatCurrency(senaP);
+            if (elPrincQuina) elPrincQuina.textContent = formatCurrency(quinaP);
+            if (elPrincQuadra) elPrincQuadra.textContent = formatCurrency(quadraP);
+
+            // Bolao 2
+            const senaB2 = calcParcela(state.breakdown.bolao2?.sena, BOLAO_CONFIG.totalCotasBolao2, cotasBolao2);
+            const quinaB2 = calcParcela(state.breakdown.bolao2?.quina, BOLAO_CONFIG.totalCotasBolao2, cotasBolao2);
+            const quadraB2 = calcParcela(state.breakdown.bolao2?.quadra, BOLAO_CONFIG.totalCotasBolao2, cotasBolao2);
+
+            const elB2Sena = document.getElementById('detailBolao2Sena');
+            const elB2Quina = document.getElementById('detailBolao2Quina');
+            const elB2Quadra = document.getElementById('detailBolao2Quadra');
+
+            if (elB2Sena) elB2Sena.textContent = formatCurrency(senaB2);
+            if (elB2Quina) elB2Quina.textContent = formatCurrency(quinaB2);
+            if (elB2Quadra) elB2Quadra.textContent = formatCurrency(quadraB2);
+
+        } else {
+            if (detailsContainer) detailsContainer.style.display = 'none';
+        }
+
     } else {
         // Modo Estimativa (sem validação)
         // Mostra zerado ou traços
@@ -1158,27 +1199,43 @@ function displayResults() {
     const quadraLiquido = quadraBruto * (1 - BOLAO_CONFIG.descontoAdmin);
     const totalLiquido = totalBruto * (1 - BOLAO_CONFIG.descontoAdmin);
 
-    // CÁLCULO SEPARADO POR BOLÃO
+    // CÁLCULO SEPARADO POR BOLÃO E POR CATEGORIA
+    const desconto = 1 - BOLAO_CONFIG.descontoAdmin;
+
     // Bolão Principal
     const { totalsPrincipal } = state.validationResults;
-    const brutoPrincipal =
-        (totalsPrincipal.senas * premioSenaPorGanhador) +
-        (totalsPrincipal.quinas * premioQuinaPorGanhador) +
-        (totalsPrincipal.quadras * premioQuadraPorGanhador);
-    const liquidoPrincipal = brutoPrincipal * (1 - BOLAO_CONFIG.descontoAdmin);
+
+    const senaBrutoPrincipal = totalsPrincipal.senas * premioSenaPorGanhador;
+    const quinaBrutoPrincipal = totalsPrincipal.quinas * premioQuinaPorGanhador;
+    const quadraBrutoPrincipal = totalsPrincipal.quadras * premioQuadraPorGanhador;
 
     // Bolão 2
     const { totalsBolao2 } = state.validationResults;
-    const brutoBolao2 =
-        (totalsBolao2.senas * premioSenaPorGanhador) +
-        (totalsBolao2.quinas * premioQuinaPorGanhador) +
-        (totalsBolao2.quadras * premioQuadraPorGanhador);
-    const liquidoBolao2 = brutoBolao2 * (1 - BOLAO_CONFIG.descontoAdmin);
 
-    // Salva no estado para a calculadora usar
+    const senaBrutoBolao2 = totalsBolao2.senas * premioSenaPorGanhador;
+    const quinaBrutoBolao2 = totalsBolao2.quinas * premioQuinaPorGanhador;
+    const quadraBrutoBolao2 = totalsBolao2.quadras * premioQuadraPorGanhador;
+
+    // Totais Líquidos
+    const liquidoPrincipal = (senaBrutoPrincipal + quinaBrutoPrincipal + quadraBrutoPrincipal) * desconto;
+    const liquidoBolao2 = (senaBrutoBolao2 + quinaBrutoBolao2 + quadraBrutoBolao2) * desconto;
+
+    // Salva no estado para a calculadora usar, incluindo breakdown
     state.totalLiquidoValidado = totalLiquido;
     state.totalLiquidoPrincipal = liquidoPrincipal;
     state.totalLiquidoBolao2 = liquidoBolao2;
+    state.breakdown = {
+        principal: {
+            sena: senaBrutoPrincipal * desconto,
+            quina: quinaBrutoPrincipal * desconto,
+            quadra: quadraBrutoPrincipal * desconto
+        },
+        bolao2: {
+            sena: senaBrutoBolao2 * desconto,
+            quina: quinaBrutoBolao2 * desconto,
+            quadra: quadraBrutoBolao2 * desconto
+        }
+    };
 
     // Atualiza tabela de prêmios
     document.getElementById('senaQty').textContent = totals.senas;
