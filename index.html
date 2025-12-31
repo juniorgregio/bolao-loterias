@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎰 Bolão Mega da Virada 2025 - Validador de Jogos</title>
+    <meta name="description" content="Valide seus jogos do bolão da Mega da Virada 2025/2026. Confira quadras, quinas e senas, calcule seus prêmios!">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Partículas de fundo -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">🎰</span>
+                <div class="logo-text">
+                    <h1>Mega da Virada</h1>
+                    <span class="logo-subtitle">2025 → 2026</span>
+                </div>
+            </div>
+            <div class="prize-badge">
+                <span class="prize-label">Prêmio Estimado</span>
+                <span class="prize-value">R$ 1 BILHÃO</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Informações do Bolão -->
+        <section class="bolao-info glass-card">
+            <div class="section-header">
+                <h2>📊 Informações do Bolão</h2>
+                <span class="badge">Dados Oficiais</span>
+            </div>
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">💰</div>
+                    <div class="info-content">
+                        <span class="info-label">Arrecadação Total</span>
+                        <span class="info-value">R$ 536.993,99</span>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">👥</div>
+                    <div class="info-content">
+                        <span class="info-label">Participantes</span>
+                        <span class="info-value">1.743 pessoas</span>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📱</div>
+                    <div class="info-content">
+                        <span class="info-label">Pixes Realizados</span>
+                        <span class="info-value">3.410</span>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🎫</div>
+                    <div class="info-content">
+                        <span class="info-label">Total de Cotas</span>
+                        <span class="info-value">21.309</span>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">9️⃣</div>
+                    <div class="info-content">
+                        <span class="info-label">Jogos de 9 números</span>
+                        <span class="info-value">1.065 jogos</span>
+                        <span class="info-sub">R$ 536.760,00</span>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">6️⃣</div>
+                    <div class="info-content">
+                        <span class="info-label">Jogos de 6 números</span>
+                        <span class="info-value">39 jogos</span>
+                        <span class="info-sub">R$ 234,00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculadora de Cotas Pessoais -->
+        <section class="quota-calculator glass-card">
+            <div class="section-header">
+                <h2>🧮 Calculadora de Retorno Pessoal</h2>
+                <span class="badge badge-gold">Sua Participação</span>
+            </div>
+            <div class="calculator-content">
+                <div class="input-group">
+                    <label for="quotasInput">
+                        <span class="input-icon">🎫</span>
+                        Quantas cotas você comprou?
+                    </label>
+                    <input type="number" id="quotasInput" placeholder="Ex: 10" min="1" max="21309">
+                    <span class="input-helper">Cada cota: R$ 25,20</span>
+                </div>
+                <div class="calculator-results" id="calculatorResults">
+                    <div class="result-item">
+                        <span class="result-label">💵 Valor Investido</span>
+                        <span class="result-value" id="investedValue">R$ 0,00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">📊 Sua Participação</span>
+                        <span class="result-value" id="participationPercent">0%</span>
+                    </div>
+                    <div class="result-item highlight">
+                        <span class="result-label">🏆 Se ganhar SENA (após 10% admin)</span>
+                        <span class="result-value" id="senaReturn">R$ 0,00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">⭐ Se ganhar QUINA (após 10% admin)</span>
+                        <span class="result-value" id="quinaReturn">R$ 0,00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">🎯 Se ganhar QUADRA (após 10% admin)</span>
+                        <span class="result-value" id="quadraReturn">R$ 0,00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seletor de Números Sorteados -->
+        <section class="number-selector glass-card">
+            <div class="section-header">
+                <h2>🎱 Números Sorteados</h2>
+                <span class="badge badge-red">Selecione 6 números</span>
+            </div>
+            <p class="selector-instruction">Clique nos 6 números que foram sorteados:</p>
+            <div class="numbers-grid" id="numbersGrid">
+                <!-- Números serão gerados via JS -->
+            </div>
+            <div class="selected-numbers" id="selectedNumbers">
+                <h3>Números selecionados:</h3>
+                <div class="selected-balls" id="selectedBalls">
+                    <span class="empty-slot">-</span>
+                    <span class="empty-slot">-</span>
+                    <span class="empty-slot">-</span>
+                    <span class="empty-slot">-</span>
+                    <span class="empty-slot">-</span>
+                    <span class="empty-slot">-</span>
+                </div>
+                <button class="btn btn-clear" id="clearSelection">🗑️ Limpar Seleção</button>
+            </div>
+        </section>
+
+        <!-- Input de Jogos -->
+        <section class="games-input glass-card">
+            <div class="section-header">
+                <h2>📝 Cole seus Jogos</h2>
+                <span class="badge">Formato: um jogo por linha</span>
+            </div>
+            <div class="input-container">
+                <textarea id="gamesTextarea" placeholder="Cole aqui os jogos do bolão...
+Exemplo:
+01 05 12 23 34 45 56 58 60
+02 08 15 27 38 49
+03 11 22 33 44 55 59 60 01
+
+Aceita jogos de 6 a 15 números, separados por espaço, vírgula ou hífen."></textarea>
+                <div class="input-actions">
+                    <button class="btn btn-secondary" id="loadSampleBtn">📋 Carregar Exemplo</button>
+                    <button class="btn btn-primary" id="validateBtn">
+                        <span class="btn-icon">🔍</span>
+                        Validar Jogos
+                    </button>
+                </div>
+            </div>
+            <div class="games-stats" id="gamesStats">
+                <span id="gamesCount">0 jogos carregados</span>
+            </div>
+        </section>
+
+        <!-- Resultados -->
+        <section class="results-section glass-card" id="resultsSection" style="display: none;">
+            <div class="section-header">
+                <h2>🏆 Resultados da Validação</h2>
+                <span class="badge badge-success" id="resultsBadge">Processando...</span>
+            </div>
+            
+            <!-- Resumo Geral -->
+            <div class="results-summary" id="resultsSummary">
+                <div class="summary-card sena">
+                    <div class="summary-icon">🏆</div>
+                    <div class="summary-content">
+                        <span class="summary-label">SENAS</span>
+                        <span class="summary-value" id="senasCount">0</span>
+                    </div>
+                </div>
+                <div class="summary-card quina">
+                    <div class="summary-icon">⭐</div>
+                    <div class="summary-content">
+                        <span class="summary-label">QUINAS</span>
+                        <span class="summary-value" id="quinasCount">0</span>
+                    </div>
+                </div>
+                <div class="summary-card quadra">
+                    <div class="summary-icon">🎯</div>
+                    <div class="summary-content">
+                        <span class="summary-label">QUADRAS</span>
+                        <span class="summary-value" id="quadrasCount">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Prêmios Estimados -->
+            <div class="prize-breakdown" id="prizeBreakdown">
+                <h3>💰 Estimativa de Prêmios</h3>
+                <div class="prize-info-note">
+                    <em>⚠️ Valores estimados baseados na distribuição de ~90% SENA, ~5% QUINA, ~5% QUADRA do prêmio de R$1 bilhão</em>
+                </div>
+                <div class="prize-table">
+                    <div class="prize-row header">
+                        <span>Categoria</span>
+                        <span>Quantidade</span>
+                        <span>Prêmio Bruto Est.</span>
+                        <span>(-10% Admin)</span>
+                    </div>
+                    <div class="prize-row" id="senaPrizeRow">
+                        <span class="prize-category sena">🏆 SENA</span>
+                        <span id="senaQty">0</span>
+                        <span id="senaBruto">R$ 0,00</span>
+                        <span id="senaLiquido">R$ 0,00</span>
+                    </div>
+                    <div class="prize-row" id="quinaPrizeRow">
+                        <span class="prize-category quina">⭐ QUINA</span>
+                        <span id="quinaQty">0</span>
+                        <span id="quinaBruto">R$ 0,00</span>
+                        <span id="quinaLiquido">R$ 0,00</span>
+                    </div>
+                    <div class="prize-row" id="quadraPrizeRow">
+                        <span class="prize-category quadra">🎯 QUADRA</span>
+                        <span id="quadraQty">0</span>
+                        <span id="quadraBruto">R$ 0,00</span>
+                        <span id="quadraLiquido">R$ 0,00</span>
+                    </div>
+                    <div class="prize-row total">
+                        <span>TOTAL DO BOLÃO</span>
+                        <span>-</span>
+                        <span id="totalBruto">R$ 0,00</span>
+                        <span id="totalLiquido">R$ 0,00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lista Detalhada -->
+            <div class="detailed-results">
+                <h3>📋 Detalhamento por Jogo</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="sena">Senas</button>
+                    <button class="filter-btn" data-filter="quina">Quinas</button>
+                    <button class="filter-btn" data-filter="quadra">Quadras</button>
+                    <button class="filter-btn" data-filter="none">Sem Prêmio</button>
+                </div>
+                <div class="games-list" id="gamesList">
+                    <!-- Resultados serão inseridos via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Explicação da Lógica -->
+        <section class="explanation glass-card">
+            <div class="section-header">
+                <h2>📚 Como Funciona a Validação</h2>
+            </div>
+            <div class="explanation-content">
+                <div class="explain-card">
+                    <h4>🎲 Jogos com 6 números</h4>
+                    <p>Aposta simples. Compara diretamente com os 6 números sorteados.</p>
+                    <ul>
+                        <li>6 acertos = <strong>1 SENA</strong></li>
+                        <li>5 acertos = <strong>1 QUINA</strong></li>
+                        <li>4 acertos = <strong>1 QUADRA</strong></li>
+                    </ul>
+                </div>
+                <div class="explain-card">
+                    <h4>🎰 Jogos com 9 números</h4>
+                    <p>Equivale a <strong>84 combinações</strong> de 6 números (C(9,6) = 84).</p>
+                    <p><strong>Se acertar 6 dos 9:</strong></p>
+                    <ul>
+                        <li>1 SENA + 18 QUINAS + 45 QUADRAS</li>
+                    </ul>
+                    <p><strong>Se acertar 5 dos 9:</strong></p>
+                    <ul>
+                        <li>4 QUINAS + 30 QUADRAS</li>
+                    </ul>
+                    <p><strong>Se acertar 4 dos 9:</strong></p>
+                    <ul>
+                        <li>15 QUADRAS</li>
+                    </ul>
+                </div>
+                <div class="explain-card">
+                    <h4>💸 Desconto do Admin</h4>
+                    <p>Todo prêmio tem desconto de <strong>10%</strong> para o administrador do bolão.</p>
+                    <p>Exemplo: Se ganhar R$ 100.000, recebe R$ 90.000.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>🍀 Boa sorte a todos do bolão! Feliz 2026!</p>
+            <p class="footer-credits">Desenvolvido para o Bolão da Mega da Virada 2025</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
