@@ -685,8 +685,8 @@ function switchBolao(bolaoType) {
     const indicator = document.getElementById('bolaoIndicator');
     if (indicator) {
         indicator.innerHTML = bolaoType === 9
-            ? '🎱 Bolão 9 Números'
-            : '🎲 Bolão 6 Números';
+            ? '🏆 Bolão Principal'
+            : '🎲 Bolão 2';
     }
 
     // Carrega jogos do bolão selecionado
@@ -695,15 +695,15 @@ function switchBolao(bolaoType) {
         if (bolaoType === 9 && typeof DEFAULT_GAMES_LIST !== 'undefined') {
             textarea.value = DEFAULT_GAMES_LIST.trim();
         } else if (bolaoType === 6 && typeof DEFAULT_GAMES_LIST_6 !== 'undefined') {
-            textarea.value = DEFAULT_GAMES_LIST_6.trim() || '# Bolão de 6 números\n# Jogos ainda não cadastrados...';
+            textarea.value = DEFAULT_GAMES_LIST_6.trim() || '# Bolão 2\n# Jogos ainda não cadastrados...';
         }
         updateGamesCount();
     }
 
     // Toast de feedback
     showToast(bolaoType === 9
-        ? '🎱 Visualizando Bolão de 9 Números'
-        : '🎲 Visualizando Bolão de 6 Números', 'info');
+        ? '🏆 Visualizando Bolão Principal'
+        : '🎲 Visualizando Bolão 2', 'info');
 }
 
 // ============================================
