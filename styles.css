@@ -294,6 +294,28 @@ body::before {
     text-transform: uppercase;
 }
 
+.counter-item.online .counter-icon {
+    animation: onlinePulse 1.5s ease-in-out infinite;
+}
+
+@keyframes onlinePulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scale(1.2);
+    }
+}
+
+.counter-item.online .counter-value {
+    color: #38ef7d;
+}
+
 /* Countdown Timer */
 .countdown-timer {
     display: flex;
