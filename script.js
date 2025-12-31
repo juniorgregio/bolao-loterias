@@ -325,36 +325,32 @@ function initEventListeners() {
 }
 
 /**
- * Inicializa o contador de visitas usando CountAPI
+ * Inicializa o contador de visitas
+ * Usando localStorage para contagem local (funciona sem backend)
  */
-async function initVisitCounter() {
-    const namespace = 'bolao-loterias-jonas';
-    const keyTotal = 'total-visits';
-    const keyUnique = 'unique-visits';
-
+function initVisitCounter() {
     try {
-        // Incrementa visita total
-        const totalResponse = await fetch(`https://api.countapi.xyz/hit/${namespace}/${keyTotal}`);
-        const totalData = await totalResponse.json();
-        document.getElementById('totalVisits').textContent = formatNumber(totalData.value);
+        // Contador de visitas totais (incrementa a cada page load)
+        let totalVisits = parseInt(localStorage.getItem('bolao_total_visits') || '0');
+        totalVisits++;
+        localStorage.setItem('bolao_total_visits', totalVisits.toString());
+        document.getElementById('totalVisits').textContent = formatNumber(totalVisits);
 
-        // Verifica se é visita única (usando localStorage)
-        const hasVisited = localStorage.getItem('bolao_visited');
+        // Contador de visitantes únicos (baseado em sessão única)
+        let uniqueVisits = parseInt(localStorage.getItem('bolao_unique_visits') || '0');
+        const hasVisitedSession = sessionStorage.getItem('bolao_session_visited');
 
-        if (!hasVisited) {
-            // Primeira visita - incrementa contador de únicos
-            const uniqueResponse = await fetch(`https://api.countapi.xyz/hit/${namespace}/${keyUnique}`);
-            const uniqueData = await uniqueResponse.json();
-            document.getElementById('uniqueVisits').textContent = formatNumber(uniqueData.value);
-            localStorage.setItem('bolao_visited', 'true');
-        } else {
-            // Já visitou - apenas pega o valor atual
-            const uniqueResponse = await fetch(`https://api.countapi.xyz/get/${namespace}/${keyUnique}`);
-            const uniqueData = await uniqueResponse.json();
-            document.getElementById('uniqueVisits').textContent = formatNumber(uniqueData.value);
+        if (!hasVisitedSession) {
+            // Nova sessão = novo visitante único
+            uniqueVisits++;
+            localStorage.setItem('bolao_unique_visits', uniqueVisits.toString());
+            sessionStorage.setItem('bolao_session_visited', 'true');
         }
+
+        document.getElementById('uniqueVisits').textContent = formatNumber(uniqueVisits);
+
     } catch (error) {
-        console.log('Contador de visitas indisponível:', error);
+        console.log('Contador de visitas erro:', error);
         document.getElementById('totalVisits').textContent = '-';
         document.getElementById('uniqueVisits').textContent = '-';
     }
