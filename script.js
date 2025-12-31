@@ -587,46 +587,47 @@ function formatCurrencyValue(value) {
  */
 /**
  * Inicializa o contador de visitas GLOBAL
- * Usa API externa (countapi.xyz) para persistir dados entre usuários
+ * Usa API externa (counterapi.dev) para persistir dados entre usuários
  */
 async function initVisitCounter() {
-    const namespace = 'bolao-mega-virada-2025-prod';
-    const keyTotal = 'total-visits';
-    const keyUnique = 'unique-visits';
+    const namespace = 'bolao-virada-2025';
+    const keyTotal = 'pageviews';
+    const keyUnique = 'visitors';
 
     const totalEl = document.getElementById('totalVisits');
     const uniqueEl = document.getElementById('uniqueVisits');
 
     try {
-        // 1. Total de Visitas: Incrementa sempre (HIT)
-        // Usando no-cors ou fetch normal. A countapi retorna JSON.
-        const totalReq = await fetch(`https://api.countapi.xyz/hit/${namespace}/${keyTotal}?t=${Date.now()}`);
+        // 1. Total de Visitas: Incrementa sempre (UP)
+        const totalReq = await fetch(`https://api.counterapi.dev/v1/${namespace}/${keyTotal}/up`);
         const totalData = await totalReq.json();
-        totalEl.textContent = formatNumber(totalData.value);
+        totalEl.textContent = formatNumber(totalData.count || 1);
 
         // 2. Visitas Únicas: Verifica localStorage
-        const hasVisited = localStorage.getItem('bolao_v1_counted');
+        const hasVisited = localStorage.getItem('bolao_v2_unique');
 
-        let uniqueData;
+        let uniqueCount;
         if (!hasVisited) {
-            // Primeira vez: HIT (incrementa)
-            const uniqueReq = await fetch(`https://api.countapi.xyz/hit/${namespace}/${keyUnique}?t=${Date.now()}`);
-            uniqueData = await uniqueReq.json();
+            // Primeira vez: UP (incrementa)
+            const uniqueReq = await fetch(`https://api.counterapi.dev/v1/${namespace}/${keyUnique}/up`);
+            const uniqueData = await uniqueReq.json();
+            uniqueCount = uniqueData.count || 1;
             // Marca como contado
-            localStorage.setItem('bolao_v1_counted', 'true');
+            localStorage.setItem('bolao_v2_unique', 'true');
         } else {
             // Recorrente: GET (apenas lê)
-            const uniqueReq = await fetch(`https://api.countapi.xyz/get/${namespace}/${keyUnique}?t=${Date.now()}`);
-            uniqueData = await uniqueReq.json();
+            const uniqueReq = await fetch(`https://api.counterapi.dev/v1/${namespace}/${keyUnique}`);
+            const uniqueData = await uniqueReq.json();
+            uniqueCount = uniqueData.count || 1;
         }
 
-        uniqueEl.textContent = formatNumber(uniqueData.value);
+        uniqueEl.textContent = formatNumber(uniqueCount);
 
     } catch (error) {
-        console.error('Erro no contador (CountAPI):', error);
+        console.error('Erro no contador:', error);
         // Fallback visual
-        if (totalEl.textContent === '-' || totalEl.textContent === '') totalEl.textContent = '1';
-        if (uniqueEl.textContent === '-' || uniqueEl.textContent === '') uniqueEl.textContent = '1';
+        totalEl.textContent = totalEl.textContent === '-' ? '1' : totalEl.textContent;
+        uniqueEl.textContent = uniqueEl.textContent === '-' ? '1' : uniqueEl.textContent;
     }
 }
 
