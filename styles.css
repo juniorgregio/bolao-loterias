@@ -710,6 +710,24 @@ textarea::placeholder {
     color: var(--text-muted);
 }
 
+/* OCR Alert */
+.ocr-alert {
+    background: rgba(255, 193, 7, 0.1);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+    border-radius: var(--radius-sm);
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: #ffc107;
+    font-size: 0.9rem;
+}
+
+.ocr-alert .ocr-icon {
+    font-size: 1.25rem;
+}
+
 .input-actions {
     display: flex;
     gap: var(--spacing-sm);

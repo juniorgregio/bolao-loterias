@@ -335,6 +335,30 @@ function initEventListeners() {
 
     // Botão buscar resultado da Caixa
     document.getElementById('fetchResultBtn').addEventListener('click', fetchCaixaResult);
+
+    // Botão limpar e inserir jogos
+    const clearGamesBtn = document.getElementById('clearGamesBtn');
+    if (clearGamesBtn) {
+        clearGamesBtn.addEventListener('click', () => {
+            const textarea = document.getElementById('gamesTextarea');
+            if (textarea.value.trim() !== '' && !confirm('Tem certeza que deseja limpar todos os jogos atuais?')) {
+                return;
+            }
+            textarea.value = '';
+            textarea.focus();
+            updateGamesCount();
+            showToast('🗑️ Área de jogos limpa. Cole seus jogos!', 'info');
+        });
+    }
+
+    // Carrega jogos padrão se disponíveis (vindo de games-data.js)
+    if (typeof DEFAULT_GAMES_LIST !== 'undefined') {
+        const textarea = document.getElementById('gamesTextarea');
+        if (textarea && textarea.value.trim() === '') {
+            textarea.value = DEFAULT_GAMES_LIST.trim();
+            updateGamesCount();
+        }
+    }
 }
 
 /**

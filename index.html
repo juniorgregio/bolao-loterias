@@ -186,15 +186,14 @@
                 <span class="badge">Formato: um jogo por linha</span>
             </div>
             <div class="input-container">
-                <textarea id="gamesTextarea" placeholder="Cole aqui os jogos do bolão...
-Exemplo:
-01 05 12 23 34 45 56 58 60
-02 08 15 27 38 49
-03 11 22 33 44 55 59 60 01
-
-Aceita jogos de 6 a 15 números, separados por espaço, vírgula ou hífen."></textarea>
+                <div class="ocr-alert">
+                    <span class="ocr-icon">⚠️</span>
+                    <p><strong>Atenção:</strong> Estes jogos foram lidos automaticamente por IA e podem conter erros de
+                        transcrição. Confira antes de validar!</p>
+                </div>
+                <textarea id="gamesTextarea" placeholder="Cole aqui os jogos do bolão..."></textarea>
                 <div class="input-actions">
-                    <button class="btn btn-secondary" id="loadSampleBtn">📋 Carregar Exemplo</button>
+                    <button class="btn btn-secondary" id="clearGamesBtn">🗑️ Limpar e Inserir Meus Jogos</button>
                     <button class="btn btn-primary" id="validateBtn">
                         <span class="btn-icon">🔍</span>
                         Validar Jogos
@@ -404,6 +403,7 @@ Aceita jogos de 6 a 15 números, separados por espaço, vírgula ou hífen."></t
         </div>
     </footer>
 
+    <script src="games-data.js"></script>
     <script src="script.js"></script>
 </body>
 
