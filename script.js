@@ -753,12 +753,22 @@ function updateCalculator() {
 function parseGames(text) {
     const lines = text.trim().split('\n');
     const games = [];
+    let currentSource = null;
 
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i].trim();
-        if (!line) continue;
 
-        // Remove múltiplos espaços e divide por espaço, vírgula, hífen ou ponto-vírgula
+        // Detecta marcador de arquivo (Ex: # Arquivo: XYZ.pdf ou // Arquivo: XYZ)
+        if (/^([#\/]+)\s*Arquivo:/i.test(line)) {
+            // Extrai o nome do arquivo
+            currentSource = line.replace(/^([#\/]+)\s*Arquivo:\s*/i, '').trim();
+            continue;
+        }
+
+        // Ignora linhas de comentário que não são de arquivo, ou vazias
+        if (line === '' || line.startsWith('//') || (line.startsWith('#') && !line.toLowerCase().includes('arquivo'))) continue;
+
+        // Remove múltiplos espaços e divide
         const numbers = line
             .replace(/[\s,;\-]+/g, ' ')
             .trim()
@@ -766,14 +776,14 @@ function parseGames(text) {
             .map(n => parseInt(n))
             .filter(n => !isNaN(n) && n >= 1 && n <= 60);
 
-        // Remove duplicatas
         const uniqueNumbers = [...new Set(numbers)];
 
         if (uniqueNumbers.length >= 6 && uniqueNumbers.length <= 15) {
             games.push({
                 id: games.length + 1,
                 numbers: uniqueNumbers.sort((a, b) => a - b),
-                lineNumber: i + 1
+                lineNumber: i + 1,
+                source: currentSource
             });
         }
     }
@@ -1065,9 +1075,13 @@ function renderGamesList(results, filter = 'all') {
         }
         resultHtml += '</div>';
 
+        // Badge de Origem
+        const sourceBadge = game.source ? `<span class="game-source-badge" style="display: inline-block; background: rgba(255, 255, 255, 0.1); color: #aaa; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; margin-left: 8px; border: 1px solid rgba(255, 255, 255, 0.2);">📂 ${game.source}</span>` : '';
+
         div.innerHTML = `
             <div>
                 <span style="font-size: 0.8rem; color: var(--text-muted);">Jogo #${game.id} (${game.numbers.length} nums)</span>
+                ${sourceBadge}
                 ${numbersHtml}
             </div>
             ${resultHtml}
