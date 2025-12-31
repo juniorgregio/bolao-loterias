@@ -30,7 +30,7 @@ const BOLAO_CONFIG = {
     jogos6Numeros: 63,
 
     // Dados do Bolão 2
-    totalCotasBolao2: 2024, // Atualizado com jogos do 800 4.pdf e 800 3.pdf
+    totalCotasBolao2: 4818, // Atualizado manual user
     valorCotaBolao2: 6.00,
 
     // Estimativas de ganhadores (para cálculo)
@@ -227,16 +227,33 @@ function initCountdown() {
         const timerEl = document.getElementById('countdownTimer');
 
         if (diff <= 0) {
-            // Sorteio já aconteceu
-            countdownEl.textContent = 'SORTEADO!';
+            // Sorteio já aconteceu ou está acontecendo
+            const countdownContainer = document.querySelector('.hero-content h1');
+            if (countdownContainer) countdownContainer.textContent = 'SORTEIO EM APURAÇÃO';
+
+            countdownEl.textContent = 'Aguardando Resultados Oficial...';
+            countdownEl.style.color = '#FFD700';
+            countdownEl.style.fontSize = '1.5rem';
+
             timerEl.classList.add('ended');
+            timerEl.innerHTML = `
+                <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+                    <p style="font-size: 1rem; opacity: 0.8;">Os resultados podem levar alguns minutos para serem divulgados pela Caixa.</p>
+                    <button class="btn btn-primary" onclick="window.fetchCaixaResult()" style="margin-top: 10px;">
+                        🔄 Verificar Resultado Agora
+                    </button>
+                    <button class="btn btn-outline" onclick="document.getElementById('calculatorSection').scrollIntoView({behavior: 'smooth'})">
+                        ⬇️ Ir para Conferência
+                    </button>
+                </div>
+            `;
 
             // Busca automaticamente os dados da Caixa (apenas 1x)
             if (!autoFetchDone) {
                 autoFetchDone = true;
-                // Aguarda 2 segundos para o usuário ver a interface primeiro
+                showToast('⏳ Verificando resultados na Caixa...', 'info');
                 setTimeout(() => {
-                    fetchCaixaResult();
+                    fetchCaixaResult(true); // true indica que foi chamado automaticamente
                 }, 2000);
             }
             return;
@@ -353,29 +370,42 @@ function initEventListeners() {
     document.getElementById('fetchResultBtn').addEventListener('click', fetchCaixaResult);
 
     // Botões de Exportação e Visualização
-    const viewGamesBtn = document.getElementById('viewGamesBtn');
-    if (viewGamesBtn) viewGamesBtn.addEventListener('click', showGamesModal);
+    const btnConfetti = document.getElementById('confettiBtn');
+    const btnDownloadExcel = document.getElementById('downloadExcelBtn');
+    const btnDownloadCsv = document.getElementById('downloadCsvBtn');
+    const btnDownloadTxt = document.getElementById('downloadTxtBtn');
 
-    const downloadExcelBtn = document.getElementById('downloadExcelBtn');
-    if (downloadExcelBtn) downloadExcelBtn.addEventListener('click', () => downloadExcel());
+    // Listeners diretos
+    if (btnDownloadExcel) btnDownloadExcel.addEventListener('click', downloadExcel);
+    if (btnDownloadCsv) btnDownloadCsv.addEventListener('click', downloadCSV);
+    if (btnDownloadTxt) btnDownloadTxt.addEventListener('click', downloadTXT);
+    if (btnConfetti) btnConfetti.addEventListener('click', triggerConfetti);
 
-    const downloadCsvBtn = document.getElementById('downloadCsvBtn');
-    if (downloadCsvBtn) downloadCsvBtn.addEventListener('click', () => downloadCSV());
+    // Botao de visualizar/ocultar lista
+    const btnViewGames = document.getElementById('viewGamesBtn');
+    if (btnViewGames) {
+        btnViewGames.addEventListener('click', () => {
+            showGamesModal();
+        });
+    }
 
-    // Botões do Modal
-    const downloadExcelModalBtn = document.getElementById('downloadExcelModalBtn');
-    if (downloadExcelModalBtn) downloadExcelModalBtn.addEventListener('click', () => downloadExcel());
+    // Modal de Jogos
+    const modalClose = document.querySelector('.modal-close');
+    if (modalClose) modalClose.addEventListener('click', closeGamesModal);
 
-    const downloadCsvModalBtn = document.getElementById('downloadCsvModalBtn');
-    if (downloadCsvModalBtn) downloadCsvModalBtn.addEventListener('click', () => downloadCSV());
+    // Fechar modal ao clicar fora
+    window.addEventListener('click', (e) => {
+        const modal = document.getElementById('gamesListModal');
+        if (e.target === modal) closeGamesModal();
+    });
 
-    // Fechar Modal de Jogos
-    const closeGamesListModal = document.getElementById('closeGamesListModal');
-    if (closeGamesListModal) closeGamesListModal.addEventListener('click', closeGamesModal);
-
-    // Busca no modal
-    const searchGameInput = document.getElementById('searchGameInput');
-    if (searchGameInput) searchGameInput.addEventListener('input', (e) => filterGamesList(e.target.value));
+    // Busca de jogos no modal
+    const searchInput = document.getElementById('searchGameInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            filterGamesList(e.target.value);
+        });
+    }
 
     // Botão limpar e inserir jogos
     const clearGamesBtn = document.getElementById('clearGamesBtn');
@@ -1482,8 +1512,12 @@ function closeGamesModal() {
 
 function getGamesFromStruct() {
     let list = [];
-    if (typeof GAMES_DATABASE !== 'undefined') {
-        GAMES_DATABASE.forEach(group => {
+
+    // Seleciona banco de dados baseado no bolão ativo
+    const db = state.activeBolao === 6 ? GAMES_DATABASE_6 : GAMES_DATABASE_9;
+
+    if (db && Array.isArray(db)) {
+        db.forEach(group => {
             group.games.forEach(g => list.push({ source: group.source, numbers: g }));
         });
     }
@@ -1508,13 +1542,9 @@ function parseTextareaToGames(text) {
 
 function getFlatGamesList() {
     const textarea = document.getElementById('gamesTextarea');
-    if (textarea && typeof DEFAULT_GAMES_LIST !== 'undefined') {
-        // Comparação aproximada para performance
-        if (Math.abs(textarea.value.length - DEFAULT_GAMES_LIST.length) < 50) {
-            return getGamesFromStruct();
-        }
-    }
-    return textarea ? parseTextareaToGames(textarea.value) : [];
+    // Se o textarea estiver vazio ou oculto, usa a estrutura de dados interna
+    // Isso prioriza os dados carregados do arquivo .js
+    return getGamesFromStruct();
 }
 
 function filterGamesList(query) {
@@ -1560,6 +1590,11 @@ function populateGamesTable(games) {
     }
 }
 
+function getDownloadFilename(ext) {
+    const tipo = state.activeBolao === 6 ? 'Bolao2_Jogos' : 'BolaoPrincipal_Jogos';
+    return `${tipo}_MegaVirada2025.${ext}`;
+}
+
 function downloadExcel() {
     const games = getFlatGamesList();
     if (games.length === 0) {
@@ -1579,7 +1614,7 @@ function downloadExcel() {
     ws['!cols'] = wscols;
 
     XLSX.utils.book_append_sheet(wb, ws, "Jogos Bolão");
-    XLSX.writeFile(wb, "Jogos_Bolao_Mega_Virada_2025.xlsx");
+    XLSX.writeFile(wb, getDownloadFilename('xlsx'));
     showToast('📊 Download do Excel iniciado!');
 }
 
@@ -1597,9 +1632,39 @@ function downloadCSV() {
     const encodedUri = encodeURI(csvContent);
     const link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "jogos_bolao.csv");
+    link.setAttribute("download", getDownloadFilename('csv'));
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
     showToast('📄 Download do CSV iniciado!');
+}
+
+function downloadTXT() {
+    const games = getFlatGamesList();
+    if (games.length === 0) return;
+
+    let txtContent = "";
+    let lastSource = "";
+
+    games.forEach((g) => {
+        // Agrupa por fonte para ficar mais legível
+        if (g.source !== lastSource) {
+            txtContent += `\n# Arquivo: ${g.source}\n`;
+            lastSource = g.source;
+        }
+        txtContent += `${g.numbers}\n`;
+    });
+
+    // Remove primeira quebra de linha se houver
+    txtContent = txtContent.trim();
+
+    const blob = new Blob([txtContent], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = getDownloadFilename('txt');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    showToast('📝 Download do TXT iniciado!');
 }
