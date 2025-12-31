@@ -587,47 +587,42 @@ function formatCurrencyValue(value) {
  */
 /**
  * Inicializa o contador de visitas GLOBAL
- * Usa API externa (counterapi.dev) para persistir dados entre usuários
+ * Usa biblioteca oficial CounterAPI com token V2
  */
 async function initVisitCounter() {
-    const namespace = 'bolao-virada-2025';
-    const keyTotal = 'pageviews';
-    const keyUnique = 'visitors';
-
     const totalEl = document.getElementById('totalVisits');
     const uniqueEl = document.getElementById('uniqueVisits');
 
     try {
-        // 1. Total de Visitas: Incrementa sempre (UP)
-        const totalReq = await fetch(`https://api.counterapi.dev/v1/${namespace}/${keyTotal}/up`);
-        const totalData = await totalReq.json();
-        totalEl.textContent = formatNumber(totalData.count || 1);
+        // Cria o client com Token V2
+        const counter = new Counter({
+            workspace: 'bolao-virada-2025',
+            accessToken: 'ut_da9zZ4NuufGB8aWF30lQ7FLIigCYKtf2iBDKwigQ'
+        });
+
+        // 1. Total de Visitas: Incrementa sempre
+        const totalResult = await counter.up('pageviews');
+        totalEl.textContent = formatNumber(totalResult.value);
 
         // 2. Visitas Únicas: Verifica localStorage
-        const hasVisited = localStorage.getItem('bolao_v2_unique');
+        const hasVisited = localStorage.getItem('bolao_v3_unique');
 
-        let uniqueCount;
         if (!hasVisited) {
-            // Primeira vez: UP (incrementa)
-            const uniqueReq = await fetch(`https://api.counterapi.dev/v1/${namespace}/${keyUnique}/up`);
-            const uniqueData = await uniqueReq.json();
-            uniqueCount = uniqueData.count || 1;
-            // Marca como contado
-            localStorage.setItem('bolao_v2_unique', 'true');
+            // Primeira vez: Incrementa
+            const uniqueResult = await counter.up('visitors');
+            uniqueEl.textContent = formatNumber(uniqueResult.value);
+            localStorage.setItem('bolao_v3_unique', 'true');
         } else {
-            // Recorrente: GET (apenas lê)
-            const uniqueReq = await fetch(`https://api.counterapi.dev/v1/${namespace}/${keyUnique}`);
-            const uniqueData = await uniqueReq.json();
-            uniqueCount = uniqueData.count || 1;
+            // Recorrente: Apenas lê (get)
+            const uniqueResult = await counter.get('visitors');
+            uniqueEl.textContent = formatNumber(uniqueResult.value);
         }
-
-        uniqueEl.textContent = formatNumber(uniqueCount);
 
     } catch (error) {
         console.error('Erro no contador:', error);
         // Fallback visual
-        totalEl.textContent = totalEl.textContent === '-' ? '1' : totalEl.textContent;
-        uniqueEl.textContent = uniqueEl.textContent === '-' ? '1' : uniqueEl.textContent;
+        if (totalEl.textContent === '-') totalEl.textContent = '1';
+        if (uniqueEl.textContent === '-') uniqueEl.textContent = '1';
     }
 }
 
