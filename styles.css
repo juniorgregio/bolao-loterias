@@ -1525,3 +1525,167 @@ textarea::placeholder {
     background: rgba(255, 255, 255, 0.1);
     transform: scale(1.1);
 }
+
+/* ============================================
+   SELETOR DE BOLÕES
+   ============================================ */
+
+.bolao-selector {
+    margin-bottom: 20px;
+}
+
+.bolao-toggle-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.bolao-toggle-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 30px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 180px;
+}
+
+.bolao-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+}
+
+.bolao-toggle-btn.active {
+    background: linear-gradient(135deg, rgba(0, 200, 83, 0.2), rgba(0, 150, 136, 0.2));
+    border-color: #00c853;
+    box-shadow: 0 0 20px rgba(0, 200, 83, 0.3);
+}
+
+.toggle-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.toggle-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.toggle-badge {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    background: rgba(0, 0, 0, 0.2);
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.bolao-toggle-btn.active .toggle-badge {
+    background: rgba(0, 200, 83, 0.3);
+    color: #00c853;
+}
+
+/* Checkboxes de Participação */
+.participation-container {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.participation-label {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.participation-checkboxes {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.checkbox-card {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkbox-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.checkbox-card input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-card input[type="checkbox"]:checked+.checkbox-content {
+    color: #00c853;
+}
+
+.checkbox-card:has(input:checked) {
+    border-color: #00c853;
+    background: rgba(0, 200, 83, 0.1);
+}
+
+.checkbox-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.checkbox-icon {
+    font-size: 1.5rem;
+}
+
+.checkbox-text {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Indicador de bolão ativo na área de jogos */
+.bolao-active-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, rgba(0, 200, 83, 0.2), rgba(0, 150, 136, 0.2));
+    border: 1px solid #00c853;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    color: #00c853;
+    margin-left: 10px;
+}
+
+@media (max-width: 600px) {
+    .bolao-toggle-btn {
+        min-width: 140px;
+        padding: 15px 20px;
+    }
+
+    .toggle-icon {
+        font-size: 2rem;
+    }
+
+    .toggle-label {
+        font-size: 0.95rem;
+    }
+
+    .checkbox-card {
+        padding: 12px 18px;
+    }
+}

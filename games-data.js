@@ -1,8 +1,8 @@
 /**
- * BANCO DE DADOS DE JOGOS DO BOLÃO
+ * BANCO DE DADOS DE JOGOS DO BOLÃO - 9 NÚMEROS
  * Estruturado por arquivo de origem para facilitar conferência física.
  */
-const GAMES_DATABASE = [
+const GAMES_DATABASE_9 = [
     {
         source: "409046893 4032.pdf",
         games: [
@@ -1511,7 +1511,22 @@ const GAMES_DATABASE = [
     }
 ];
 
-// Compatibilidade com código antigo (gera lista plana se necessário, mas idealmente o script.js será atualizado)
-const DEFAULT_GAMES_LIST = GAMES_DATABASE.map(group =>
+// ============================================
+// BOLÃO DE 6 NÚMEROS (Jogos simples)
+// ============================================
+const GAMES_DATABASE_6 = [
+    // Estrutura: { source: "nome do arquivo", games: ["01 02 03 04 05 06", ...] }
+    // TODO: Preencher com os jogos do bolão de 6 números
+];
+
+// Alias para compatibilidade (bolão de 9 números é o padrão)
+const GAMES_DATABASE = GAMES_DATABASE_9;
+
+// Compatibilidade com código antigo (gera lista plana se necessário)
+const DEFAULT_GAMES_LIST = GAMES_DATABASE_9.map(group =>
+    `# Arquivo: ${group.source}\n` + group.games.join('\n')
+).join('\n\n');
+
+const DEFAULT_GAMES_LIST_6 = GAMES_DATABASE_6.map(group =>
     `# Arquivo: ${group.source}\n` + group.games.join('\n')
 ).join('\n\n');

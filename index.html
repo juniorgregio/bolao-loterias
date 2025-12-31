@@ -189,6 +189,48 @@
             </div>
         </section>
 
+        <!-- Seletor de Bolão -->
+        <section class="bolao-selector glass-card">
+            <div class="section-header">
+                <h2>🎰 Selecione o Bolão</h2>
+            </div>
+
+            <!-- Toggle de Visualização -->
+            <div class="bolao-toggle-container">
+                <button class="bolao-toggle-btn active" id="toggleBolao9" data-bolao="9">
+                    <span class="toggle-icon">🎱</span>
+                    <span class="toggle-label">Bolão 9 Números</span>
+                    <span class="toggle-badge">84 combinações/jogo</span>
+                </button>
+                <button class="bolao-toggle-btn" id="toggleBolao6" data-bolao="6">
+                    <span class="toggle-icon">🎲</span>
+                    <span class="toggle-label">Bolão 6 Números</span>
+                    <span class="toggle-badge">Jogo simples</span>
+                </button>
+            </div>
+
+            <!-- Checkboxes de Participação -->
+            <div class="participation-container">
+                <p class="participation-label">📋 Você participou de qual(is) bolão(ões)?</p>
+                <div class="participation-checkboxes">
+                    <label class="checkbox-card">
+                        <input type="checkbox" id="participaBolao9" checked>
+                        <span class="checkbox-content">
+                            <span class="checkbox-icon">🎱</span>
+                            <span class="checkbox-text">Bolão 9 Números</span>
+                        </span>
+                    </label>
+                    <label class="checkbox-card">
+                        <input type="checkbox" id="participaBolao6">
+                        <span class="checkbox-content">
+                            <span class="checkbox-icon">🎲</span>
+                            <span class="checkbox-text">Bolão 6 Números</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </section>
+
         <!-- Input de Jogos -->
         <section class="games-input glass-card">
             <div class="section-header">
@@ -212,6 +254,7 @@
             </div>
             <div class="games-stats" id="gamesStats">
                 <span id="gamesCount">0 jogos carregados</span>
+                <span class="bolao-active-indicator" id="bolaoIndicator">🎱 Bolão 9 Números</span>
             </div>
 
             <!-- Botões de Ação e Exportação -->

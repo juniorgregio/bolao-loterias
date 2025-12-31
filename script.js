@@ -111,7 +111,10 @@ const COMBINACOES = {
 let state = {
     selectedNumbers: [],
     parsedGames: [],
-    validationResults: null
+    validationResults: null,
+    activeBolao: 9,  // 9 ou 6 - qual bolão está sendo visualizado
+    participaBolao9: true,  // Usuário participa do bolão de 9 números
+    participaBolao6: false  // Usuário participa do bolão de 6 números
 };
 
 // ============================================
@@ -391,6 +394,34 @@ function initEventListeners() {
             updateGamesCount();
         }
     }
+
+    // Toggle de Bolões
+    const toggleBolao9 = document.getElementById('toggleBolao9');
+    const toggleBolao6 = document.getElementById('toggleBolao6');
+
+    if (toggleBolao9) {
+        toggleBolao9.addEventListener('click', () => switchBolao(9));
+    }
+    if (toggleBolao6) {
+        toggleBolao6.addEventListener('click', () => switchBolao(6));
+    }
+
+    // Checkboxes de Participação
+    const participaBolao9 = document.getElementById('participaBolao9');
+    const participaBolao6 = document.getElementById('participaBolao6');
+
+    if (participaBolao9) {
+        participaBolao9.addEventListener('change', (e) => {
+            state.participaBolao9 = e.target.checked;
+            updateCalculator();
+        });
+    }
+    if (participaBolao6) {
+        participaBolao6.addEventListener('change', (e) => {
+            state.participaBolao6 = e.target.checked;
+            updateCalculator();
+        });
+    }
 }
 
 /**
@@ -635,6 +666,44 @@ function formatNumber(num) {
         return (num / 1000).toFixed(1) + 'K';
     }
     return num.toString();
+}
+
+/**
+ * Alterna entre bolões (9 ou 6 números)
+ */
+function switchBolao(bolaoType) {
+    state.activeBolao = bolaoType;
+
+    // Atualiza botões toggle
+    const toggle9 = document.getElementById('toggleBolao9');
+    const toggle6 = document.getElementById('toggleBolao6');
+
+    if (toggle9) toggle9.classList.toggle('active', bolaoType === 9);
+    if (toggle6) toggle6.classList.toggle('active', bolaoType === 6);
+
+    // Atualiza indicador
+    const indicator = document.getElementById('bolaoIndicator');
+    if (indicator) {
+        indicator.innerHTML = bolaoType === 9
+            ? '🎱 Bolão 9 Números'
+            : '🎲 Bolão 6 Números';
+    }
+
+    // Carrega jogos do bolão selecionado
+    const textarea = document.getElementById('gamesTextarea');
+    if (textarea) {
+        if (bolaoType === 9 && typeof DEFAULT_GAMES_LIST !== 'undefined') {
+            textarea.value = DEFAULT_GAMES_LIST.trim();
+        } else if (bolaoType === 6 && typeof DEFAULT_GAMES_LIST_6 !== 'undefined') {
+            textarea.value = DEFAULT_GAMES_LIST_6.trim() || '# Bolão de 6 números\n# Jogos ainda não cadastrados...';
+        }
+        updateGamesCount();
+    }
+
+    // Toast de feedback
+    showToast(bolaoType === 9
+        ? '🎱 Visualizando Bolão de 9 Números'
+        : '🎲 Visualizando Bolão de 6 Números', 'info');
 }
 
 // ============================================
