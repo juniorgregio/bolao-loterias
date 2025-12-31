@@ -622,36 +622,16 @@ function formatCurrencyValue(value) {
  */
 async function initVisitCounter() {
     const totalEl = document.getElementById('totalVisits');
-    const uniqueEl = document.getElementById('uniqueVisits');
-
     const NAMESPACE = 'bolao-mega-virada-2025';
 
     try {
-        // 1. Total de Visitas: Incrementa sempre
+        // Total de Visitas: Incrementa sempre
         const totalResp = await fetch(`https://api.counterapi.dev/v1/${NAMESPACE}/visitas/up`);
         const totalData = await totalResp.json();
         totalEl.textContent = formatNumber(totalData.count);
-
-        // 2. Visitas Únicas
-        const hasVisited = localStorage.getItem('bolao_v5_unique');
-
-        if (!hasVisited) {
-            // Primeira vez: Incrementa
-            const uniqueResp = await fetch(`https://api.counterapi.dev/v1/${NAMESPACE}/unicos/up`);
-            const uniqueData = await uniqueResp.json();
-            uniqueEl.textContent = formatNumber(uniqueData.count);
-            localStorage.setItem('bolao_v5_unique', 'true');
-        } else {
-            // Recorrente: Apenas lê
-            const uniqueResp = await fetch(`https://api.counterapi.dev/v1/${NAMESPACE}/unicos`);
-            const uniqueData = await uniqueResp.json();
-            uniqueEl.textContent = formatNumber(uniqueData.count);
-        }
-
     } catch (error) {
         console.error('Erro no contador:', error);
         if (totalEl.textContent === '-') totalEl.textContent = '1';
-        if (uniqueEl.textContent === '-') uniqueEl.textContent = '1';
     }
 }
 
@@ -970,6 +950,7 @@ function loadSampleGames() {
 
 /**
  * Valida todos os jogos contra os números sorteados
+ * Considera jogos de ambos os bolões se os checkboxes estiverem marcados
  */
 function validateGames() {
     // Verifica se 6 números foram selecionados
@@ -978,10 +959,44 @@ function validateGames() {
         return;
     }
 
-    // Verifica se há jogos para validar
-    if (state.parsedGames.length === 0) {
-        showToast('Por favor, cole os jogos do bolão!', 'error');
-        return;
+    // Coleta jogos de todos os bolões marcados para participação
+    let allGames = [];
+
+    // Bolão Principal
+    if (state.participaBolao9 && typeof GAMES_DATABASE_9 !== 'undefined') {
+        GAMES_DATABASE_9.forEach(group => {
+            group.games.forEach(game => {
+                const numbers = game.split(/\s+/).map(n => parseInt(n));
+                allGames.push({
+                    numbers: numbers,
+                    source: group.source,
+                    bolao: 'Principal'
+                });
+            });
+        });
+    }
+
+    // Bolão 2
+    if (state.participaBolao6 && typeof GAMES_DATABASE_6 !== 'undefined') {
+        GAMES_DATABASE_6.forEach(group => {
+            group.games.forEach(game => {
+                const numbers = game.split(/\s+/).map(n => parseInt(n));
+                allGames.push({
+                    numbers: numbers,
+                    source: group.source,
+                    bolao: 'Bolão 2'
+                });
+            });
+        });
+    }
+
+    // Se nenhum bolão marcado, usa os jogos do textarea (como fallback)
+    if (allGames.length === 0) {
+        if (state.parsedGames.length === 0) {
+            showToast('Marque pelo menos um bolão ou cole jogos no campo!', 'error');
+            return;
+        }
+        allGames = state.parsedGames;
     }
 
     const sorteados = new Set(state.selectedNumbers);
@@ -991,7 +1006,7 @@ function validateGames() {
     let totalQuinas = 0;
     let totalQuadras = 0;
 
-    for (const game of state.parsedGames) {
+    for (const game of allGames) {
         // Conta quantos números do jogo foram sorteados
         const acertos = game.numbers.filter(n => sorteados.has(n));
         const numAcertos = acertos.length;
