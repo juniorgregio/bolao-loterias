@@ -232,14 +232,27 @@ function initDefaultNumbers() {
         }
     });
 
-    // Atualiza UI
+    // Atualiza UI da grade de números
     updateNumbersGrid();
 
-    // Mostra toast de boas-vindas
+    // Transição do Splash após 2.5 segundos
     setTimeout(() => {
-        showToast('🎉 PARABÉNS! Ganhamos a SENA da Mega da Virada!', 'success');
-        triggerConfetti();
-    }, 1000);
+        const splash = document.getElementById('victorySplash');
+        if (splash) {
+            splash.classList.add('hidden');
+        }
+
+        // Após a transição, dispara confetti e valida jogos
+        setTimeout(() => {
+            triggerConfetti();
+            showToast('🎉 PARABÉNS! Ganhamos a SENA da Mega da Virada!', 'success');
+
+            // Valida os jogos automaticamente após pequeno delay
+            setTimeout(() => {
+                validateGames();
+            }, 500);
+        }, 800);
+    }, 2500);
 }
 
 /**
