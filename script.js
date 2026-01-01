@@ -722,10 +722,6 @@ function formatCurrencyValue(value) {
 }
 
 /**
- * Inicializa o contador de visitas
- * Usando localStorage para contagem local (funciona sem backend)
- */
-/**
  * Inicializa o contador de visitas GLOBAL
  * Usa API V1 pública do CounterAPI (sem token)
  */
