@@ -1349,9 +1349,9 @@ function displayResults() {
         taxaAdmin: totalBruto * BOLAO_CONFIG.descontoAdmin,
         totalLiquido: totalLiquido,
 
-        // Cálculo por cota
-        totalCotas: BOLAO_CONFIG.totalCotas + BOLAO_CONFIG.totalCotasBolao2,
-        premioPorCota: totalLiquido / (BOLAO_CONFIG.totalCotas + BOLAO_CONFIG.totalCotasBolao2)
+        // Cálculo por cota (apenas Bolão Principal)
+        totalCotas: BOLAO_CONFIG.totalCotas,
+        premioPorCota: totalLiquido / BOLAO_CONFIG.totalCotas
     };
 
     // Atualiza tabela de prêmios
