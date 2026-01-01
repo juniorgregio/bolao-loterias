@@ -42,8 +42,8 @@ const BOLAO_CONFIG = {
     // Valores REAIS de prêmio por ganhador (default até API funcionar)
     // Esses valores são usados diretamente no cálculo
     premioSenaPorGanhadorDefault: 181_000_000, // R$ 181 milhões (valor real divulgado)
-    premioQuinaPorGanhadorDefault: null,       // Será calculado proporcionalmente
-    premioQuadraPorGanhadorDefault: null       // Será calculado proporcionalmente
+    premioQuinaPorGanhadorDefault: 11_931.42,
+    premioQuadraPorGanhadorDefault: 216.76
 };
 
 // ============================================
@@ -1287,12 +1287,20 @@ function displayResults() {
         // Usa valor fixo divulgado para Sena (R$ 181 milhões por ganhador)
         premioSenaPorGanhador = BOLAO_CONFIG.premioSenaPorGanhadorDefault;
 
-        // Para Quina e Quadra, calcula proporcionalmente
-        const premioTotalQuina = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuina;
-        const premioTotalQuadra = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuadra;
+        // Para Quina e Quadra, usa defaults se definidos, senão calcula proporcionalmente
+        if (BOLAO_CONFIG.premioQuinaPorGanhadorDefault) {
+            premioQuinaPorGanhador = BOLAO_CONFIG.premioQuinaPorGanhadorDefault;
+        } else {
+            const premioTotalQuina = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuina;
+            premioQuinaPorGanhador = premioTotalQuina / totalQuinaWinners;
+        }
 
-        premioQuinaPorGanhador = premioTotalQuina / totalQuinaWinners;
-        premioQuadraPorGanhador = premioTotalQuadra / totalQuadraWinners;
+        if (BOLAO_CONFIG.premioQuadraPorGanhadorDefault) {
+            premioQuadraPorGanhador = BOLAO_CONFIG.premioQuadraPorGanhadorDefault;
+        } else {
+            const premioTotalQuadra = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuadra;
+            premioQuadraPorGanhador = premioTotalQuadra / totalQuadraWinners;
+        }
     }
 
     // Prêmio bruto do bolão (multiplicado pela quantidade que o bolão ganhou)
