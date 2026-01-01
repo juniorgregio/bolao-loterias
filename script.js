@@ -214,29 +214,28 @@ document.addEventListener('DOMContentLoaded', () => {
 /**
  * Inicializa o cronômetro regressivo até o sorteio
  */
-function initCountdown() {
-    // Data do sorteio: 31/12/2025 às 22:00:00 (Passado simulado para teste)
-    const sorteioDate = new Date('2025-12-31T22:00:00-03:00');
-    let autoFetchDone = false;
+// Data do sorteio: 01/01/2026 às 10:00:00
+const sorteioDate = new Date('2026-01-01T10:00:00-03:00');
+let autoFetchDone = false;
 
-    function updateCountdown() {
-        const now = new Date();
-        const diff = sorteioDate - now;
+function updateCountdown() {
+    const now = new Date();
+    const diff = sorteioDate - now;
 
-        const countdownEl = document.getElementById('countdownTime');
-        const timerEl = document.getElementById('countdownTimer');
+    const countdownEl = document.getElementById('countdownTime');
+    const timerEl = document.getElementById('countdownTimer');
 
-        if (diff <= 0) {
-            // Sorteio já aconteceu ou está acontecendo
-            const countdownContainer = document.querySelector('.hero-content h1');
-            if (countdownContainer) countdownContainer.textContent = 'SORTEIO EM APURAÇÃO';
+    if (diff <= 0) {
+        // Sorteio já aconteceu ou está acontecendo
+        const countdownContainer = document.querySelector('.hero-content h1');
+        if (countdownContainer) countdownContainer.textContent = 'SORTEIO EM APURAÇÃO';
 
-            // Versão compacta para não quebrar o header mobile
-            countdownEl.style.display = 'none'; // Esconde o relógio
-            timerEl.classList.add('ended');
+        // Versão compacta para não quebrar o header mobile
+        countdownEl.style.display = 'none'; // Esconde o relógio
+        timerEl.classList.add('ended');
 
-            // Injeta controles compactos
-            timerEl.innerHTML = `
+        // Injeta controles compactos
+        timerEl.innerHTML = `
                 <div class="result-actions-compact" style="display: flex; gap: 8px; align-items: center; justify-content: center; flex-wrap: wrap;">
                     <span style="color: #FFD700; font-weight: bold; font-size: 0.9rem; margin-right: 5px;">⚠️ Em Apuração</span>
                     <button class="btn btn-primary btn-sm" onclick="window.fetchCaixaResult()" style="padding: 4px 12px; font-size: 0.8rem; height: auto;">
@@ -248,36 +247,37 @@ function initCountdown() {
                 </div>
             `;
 
-            // Busca automaticamente os dados da Caixa (apenas 1x)
-            if (!autoFetchDone) {
-                autoFetchDone = true;
-                showToast('⏳ Verificando resultados na Caixa...', 'info');
-                setTimeout(() => {
-                    fetchCaixaResult(true); // true indica que foi chamado automaticamente
-                }, 2000);
-            }
-            return;
+        // Busca automaticamente os dados da Caixa (apenas 1x)
+        if (!autoFetchDone) {
+            autoFetchDone = true;
+            showToast('⏳ Verificando resultados na Caixa...', 'info');
+            setTimeout(() => {
+                fetchCaixaResult(true); // true indica que foi chamado automaticamente
+            }, 2000);
         }
-
-        // Calcula horas, minutos e segundos
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-        // Formata com zeros à esquerda
-        const formatted = [
-            hours.toString().padStart(2, '0'),
-            minutes.toString().padStart(2, '0'),
-            seconds.toString().padStart(2, '0')
-        ].join(':');
-
-        countdownEl.textContent = formatted;
+        return;
     }
 
-    // Atualiza imediatamente e depois a cada segundo
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+    // Calcula horas, minutos e segundos
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    // Formata com zeros à esquerda
+    const formatted = [
+        hours.toString().padStart(2, '0'),
+        minutes.toString().padStart(2, '0'),
+        seconds.toString().padStart(2, '0')
+    ].join(':');
+
+    countdownEl.textContent = formatted;
 }
+
+// Atualiza imediatamente e depois a cada segundo
+updateCountdown();
+setInterval(updateCountdown, 1000);
+}
+
 
 /**
  * Cria partículas animadas no fundo
@@ -484,8 +484,6 @@ async function fetchCaixaResult(isAuto = false) {
         const data = await response.json();
 
         // VALIDAÇÃO DE SEGURANÇA: Garante que é o sorteio da Virada
-        // [MODO TESTE ATIVADO] - Validação relaxada para simulação
-        /* 
         if (data.dataApuracao !== '31/12/2025' && data.dataApuracao !== '01/01/2026') {
             statusEl.className = 'api-status error';
             statusIcon.textContent = '⚠️';
@@ -493,26 +491,40 @@ async function fetchCaixaResult(isAuto = false) {
 
             showToast(`⚠️ Resultado ainda não disponível! Último: ${data.dataApuracao}`, 'warning');
             return;
-        } 
-        */
-
-        // Feedback visual de que é uma simulação com dados antigos
-        if (data.dataApuracao !== '31/12/2025' && data.dataApuracao !== '01/01/2026') {
-            showToast(`🧪 MODO TESTE: Carregando Concurso ${data.numero} (${data.dataApuracao})`, 'info');
         }
 
-        // Extrai os dados de ganhadores
+        // Extrai os dados de ganhadores E valores dos prêmios
         const premiacoes = data.listaRateioPremio || [];
 
         let senaWinners = 0;
         let quinaWinners = 0;
         let quadraWinners = 0;
 
+        let valorSena = 0;
+        let valorQuina = 0;
+        let valorQuadra = 0;
+
         premiacoes.forEach(p => {
-            if (p.faixa === 1) senaWinners = p.numeroDeGanhadores;
-            if (p.faixa === 2) quinaWinners = p.numeroDeGanhadores;
-            if (p.faixa === 3) quadraWinners = p.numeroDeGanhadores;
+            if (p.faixa === 1) {
+                senaWinners = p.numeroDeGanhadores;
+                valorSena = p.valorPremio;
+            }
+            if (p.faixa === 2) {
+                quinaWinners = p.numeroDeGanhadores;
+                valorQuina = p.valorPremio;
+            }
+            if (p.faixa === 3) {
+                quadraWinners = p.numeroDeGanhadores;
+                valorQuadra = p.valorPremio;
+            }
         });
+
+        // Salva os valores reais no state para usar no displayResults
+        state.premiosReais = {
+            sena: valorSena,
+            quina: valorQuina,
+            quadra: valorQuadra
+        };
 
         // Preenche os campos (como default, editável)
         document.getElementById('totalSenaWinners').value = senaWinners || '';
@@ -1187,15 +1199,23 @@ function displayResults() {
     const totalQuadraWinners = parseInt(totalQuadraWinnersInput.value) || BOLAO_CONFIG.estimativaGanhadoresQuadra;
 
     // Calcula prêmios baseados nos ganhadores informados
-    // Prêmio total por categoria
-    const premioTotalSena = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualSena;
-    const premioTotalQuina = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuina;
-    const premioTotalQuadra = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuadra;
+    // Se tivermos os valores reais da API, usamos eles. Senão, estimamos.
+    let premioSenaPorGanhador, premioQuinaPorGanhador, premioQuadraPorGanhador;
 
-    // Prêmio por ganhador (dividido pelo total de ganhadores no Brasil)
-    const premioSenaPorGanhador = premioTotalSena / totalSenaWinners;
-    const premioQuinaPorGanhador = premioTotalQuina / totalQuinaWinners;
-    const premioQuadraPorGanhador = premioTotalQuadra / totalQuadraWinners;
+    if (state.premiosReais && state.premiosReais.sena > 0) {
+        premioSenaPorGanhador = state.premiosReais.sena;
+        premioQuinaPorGanhador = state.premiosReais.quina;
+        premioQuadraPorGanhador = state.premiosReais.quadra;
+    } else {
+        // Estimativa baseada no rateio teórico
+        const premioTotalSena = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualSena;
+        const premioTotalQuina = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuina;
+        const premioTotalQuadra = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuadra;
+
+        premioSenaPorGanhador = premioTotalSena / totalSenaWinners;
+        premioQuinaPorGanhador = premioTotalQuina / totalQuinaWinners;
+        premioQuadraPorGanhador = premioTotalQuadra / totalQuadraWinners;
+    }
 
     // Prêmio bruto do bolão (multiplicado pela quantidade que o bolão ganhou)
     const senaBruto = totals.senas * premioSenaPorGanhador;
