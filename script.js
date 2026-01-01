@@ -215,8 +215,8 @@ document.addEventListener('DOMContentLoaded', () => {
  * Inicializa o cronômetro regressivo até o sorteio
  */
 function initCountdown() {
-    // Data do sorteio: 01/01/2026 às 10:00:00
-    const sorteioDate = new Date('2026-01-01T10:00:00-03:00');
+    // Data do sorteio: 31/12/2025 às 22:00:00 (Passado simulado para teste)
+    const sorteioDate = new Date('2025-12-31T22:00:00-03:00');
     let autoFetchDone = false;
 
     function updateCountdown() {
@@ -463,7 +463,7 @@ function initEventListeners() {
 /**
  * Busca o resultado oficial da API da Caixa
  */
-async function fetchCaixaResult() {
+async function fetchCaixaResult(isAuto = false) {
     const statusEl = document.getElementById('apiStatus');
     const statusIcon = statusEl.querySelector('.status-icon');
     const statusText = statusEl.querySelector('.status-text');
