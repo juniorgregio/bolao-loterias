@@ -215,8 +215,8 @@ document.addEventListener('DOMContentLoaded', () => {
  * Inicializa o cronômetro regressivo até o sorteio
  */
 function initCountdown() {
-    // Data do sorteio: 31/12/2025 às 22:00:00 (horário de Brasília)
-    const sorteioDate = new Date('2025-12-31T22:00:00-03:00');
+    // Data do sorteio: 01/01/2026 às 10:00:00
+    const sorteioDate = new Date('2026-01-01T10:00:00-03:00');
     let autoFetchDone = false;
 
     function updateCountdown() {
@@ -231,19 +231,19 @@ function initCountdown() {
             const countdownContainer = document.querySelector('.hero-content h1');
             if (countdownContainer) countdownContainer.textContent = 'SORTEIO EM APURAÇÃO';
 
-            countdownEl.textContent = 'Aguardando Resultados Oficial...';
-            countdownEl.style.color = '#FFD700';
-            countdownEl.style.fontSize = '1.5rem';
-
+            // Versão compacta para não quebrar o header mobile
+            countdownEl.style.display = 'none'; // Esconde o relógio
             timerEl.classList.add('ended');
+
+            // Injeta controles compactos
             timerEl.innerHTML = `
-                <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
-                    <p style="font-size: 1rem; opacity: 0.8;">Os resultados podem levar alguns minutos para serem divulgados pela Caixa.</p>
-                    <button class="btn btn-primary" onclick="window.fetchCaixaResult()" style="margin-top: 10px;">
-                        🔄 Verificar Resultado Agora
+                <div class="result-actions-compact" style="display: flex; gap: 8px; align-items: center; justify-content: center; flex-wrap: wrap;">
+                    <span style="color: #FFD700; font-weight: bold; font-size: 0.9rem; margin-right: 5px;">⚠️ Em Apuração</span>
+                    <button class="btn btn-primary btn-sm" onclick="window.fetchCaixaResult()" style="padding: 4px 12px; font-size: 0.8rem; height: auto;">
+                        🔄 Verificar
                     </button>
-                    <button class="btn btn-outline" onclick="document.getElementById('calculatorSection').scrollIntoView({behavior: 'smooth'})">
-                        ⬇️ Ir para Conferência
+                    <button class="btn btn-outline btn-sm" onclick="document.getElementById('calculatorSection').scrollIntoView({behavior: 'smooth'})" style="padding: 4px 12px; font-size: 0.8rem; height: auto;">
+                        ⬇️ Conferir
                     </button>
                 </div>
             `;
@@ -484,10 +484,12 @@ async function fetchCaixaResult() {
         const data = await response.json();
 
         // VALIDAÇÃO DE SEGURANÇA: Garante que é o sorteio da Virada
-        if (data.dataApuracao !== '31/12/2025') {
+        if (data.dataApuracao !== '31/12/2025' && data.dataApuracao !== '01/01/2026') {
             statusEl.className = 'api-status error';
             statusIcon.textContent = '⚠️';
             statusText.textContent = `Ainda não saiu! Último sorteio disponível: ${data.dataApuracao} (Conc. ${data.numero}). Tente novamente em alguns minutos.`;
+
+            showToast(`⚠️ Resultado ainda não disponível! Último: ${data.dataApuracao}`, 'warning');
             return;
         }
 
