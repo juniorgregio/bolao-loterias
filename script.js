@@ -214,28 +214,29 @@ document.addEventListener('DOMContentLoaded', () => {
 /**
  * Inicializa o cronômetro regressivo até o sorteio
  */
-// Data do sorteio: 01/01/2026 às 10:00:00
-const sorteioDate = new Date('2026-01-01T10:00:00-03:00');
-let autoFetchDone = false;
+function initCountdown() {
+    // Data do sorteio: 01/01/2026 às 10:00:00
+    const sorteioDate = new Date('2026-01-01T10:00:00-03:00');
+    let autoFetchDone = false;
 
-function updateCountdown() {
-    const now = new Date();
-    const diff = sorteioDate - now;
+    function updateCountdown() {
+        const now = new Date();
+        const diff = sorteioDate - now;
 
-    const countdownEl = document.getElementById('countdownTime');
-    const timerEl = document.getElementById('countdownTimer');
+        const countdownEl = document.getElementById('countdownTime');
+        const timerEl = document.getElementById('countdownTimer');
 
-    if (diff <= 0) {
-        // Sorteio já aconteceu ou está acontecendo
-        const countdownContainer = document.querySelector('.hero-content h1');
-        if (countdownContainer) countdownContainer.textContent = 'SORTEIO EM APURAÇÃO';
+        if (diff <= 0) {
+            // Sorteio já aconteceu ou está acontecendo
+            const countdownContainer = document.querySelector('.hero-content h1');
+            if (countdownContainer) countdownContainer.textContent = 'SORTEIO EM APURAÇÃO';
 
-        // Versão compacta para não quebrar o header mobile
-        countdownEl.style.display = 'none'; // Esconde o relógio
-        timerEl.classList.add('ended');
+            // Versão compacta para não quebrar o header mobile
+            countdownEl.style.display = 'none'; // Esconde o relógio
+            timerEl.classList.add('ended');
 
-        // Injeta controles compactos
-        timerEl.innerHTML = `
+            // Injeta controles compactos
+            timerEl.innerHTML = `
                 <div class="result-actions-compact" style="display: flex; gap: 8px; align-items: center; justify-content: center; flex-wrap: wrap;">
                     <span style="color: #FFD700; font-weight: bold; font-size: 0.9rem; margin-right: 5px;">⚠️ Em Apuração</span>
                     <button class="btn btn-primary btn-sm" onclick="window.fetchCaixaResult()" style="padding: 4px 12px; font-size: 0.8rem; height: auto;">
@@ -247,35 +248,35 @@ function updateCountdown() {
                 </div>
             `;
 
-        // Busca automaticamente os dados da Caixa (apenas 1x)
-        if (!autoFetchDone) {
-            autoFetchDone = true;
-            showToast('⏳ Verificando resultados na Caixa...', 'info');
-            setTimeout(() => {
-                fetchCaixaResult(true); // true indica que foi chamado automaticamente
-            }, 2000);
+            // Busca automaticamente os dados da Caixa (apenas 1x)
+            if (!autoFetchDone) {
+                autoFetchDone = true;
+                showToast('⏳ Verificando resultados na Caixa...', 'info');
+                setTimeout(() => {
+                    fetchCaixaResult(true); // true indica que foi chamado automaticamente
+                }, 2000);
+            }
+            return;
         }
-        return;
+
+        // Calcula horas, minutos e segundos
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        // Formata com zeros à esquerda
+        const formatted = [
+            hours.toString().padStart(2, '0'),
+            minutes.toString().padStart(2, '0'),
+            seconds.toString().padStart(2, '0')
+        ].join(':');
+
+        countdownEl.textContent = formatted;
     }
 
-    // Calcula horas, minutos e segundos
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-    // Formata com zeros à esquerda
-    const formatted = [
-        hours.toString().padStart(2, '0'),
-        minutes.toString().padStart(2, '0'),
-        seconds.toString().padStart(2, '0')
-    ].join(':');
-
-    countdownEl.textContent = formatted;
-}
-
-// Atualiza imediatamente e depois a cada segundo
-updateCountdown();
-setInterval(updateCountdown, 1000);
+    // Atualiza imediatamente e depois a cada segundo
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
 }
 
 
