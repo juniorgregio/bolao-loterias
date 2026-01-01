@@ -629,6 +629,7 @@ function toggleLastDraw() {
 
 /**
  * Busca dados detalhados do último sorteio para o modal
+ * Só exibe se for o concurso da Virada (31/12/2025 ou 01/01/2026)
  */
 async function fetchLastDrawData() {
     const content = document.getElementById('lastDrawContent');
@@ -639,6 +640,20 @@ async function fetchLastDrawData() {
 
         const data = await response.json();
 
+        // VALIDAÇÃO: Só exibe se for o concurso da Virada
+        if (data.dataApuracao !== '31/12/2025' && data.dataApuracao !== '01/01/2026') {
+            content.innerHTML = `
+                <div class="loading-draw" style="text-align: center; padding: 40px;">
+                    <div style="font-size: 3rem; margin-bottom: 20px;">⚠️</div>
+                    <h3 style="color: #FFD700; margin-bottom: 10px;">Dados Não Disponíveis</h3>
+                    <p style="color: var(--text-secondary);">A API oficial da Caixa ainda não atualizou com o resultado da Mega da Virada 2025.</p>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 15px;">Último concurso disponível: ${data.numero} (${data.dataApuracao})</p>
+                    <button class="btn btn-primary" onclick="fetchLastDrawData()" style="margin-top: 20px;">🔄 Tentar Novamente</button>
+                </div>
+            `;
+            return;
+        }
+
         // Formata data
         const premios = data.listaRateioPremio || [];
         const sena = premios.find(p => p.faixa === 1) || { numeroDeGanhadores: 0, valorPremio: 0 };
@@ -647,7 +662,7 @@ async function fetchLastDrawData() {
 
         const html = `
             <div class="draw-info-header">
-                <span class="draw-number-badge">Concurso ${data.numero}</span>
+                <span class="draw-number-badge">🎉 Concurso ${data.numero} - MEGA DA VIRADA!</span>
                 <span class="draw-date">${data.dataApuracao} - ${data.localSorteio} (${data.nomeMunicipioUFSorteio})</span>
             </div>
             
@@ -681,7 +696,7 @@ async function fetchLastDrawData() {
             
             <div class="explain-card" style="margin-top: 20px;">
                 <p><strong>Arrecadação Total:</strong> R$ ${formatCurrencyValue(data.valorArrecadado)}</p>
-                <p><strong>Acumulado Próximo:</strong> R$ ${formatCurrencyValue(data.valorAcumuladoProximoConcurso)}</p>
+                <p><strong>Prêmio Total:</strong> R$ ${formatCurrencyValue(data.valorAcumuladoConcurso_0_5 || data.valorEstimadoProximoConcurso)}</p>
             </div>
         `;
 
@@ -689,8 +704,11 @@ async function fetchLastDrawData() {
 
     } catch (error) {
         content.innerHTML = `
-            <div class="loading-draw" style="color: #ff6b6b">
-                ❌ Erro ao carregar dados. Tente novamente mais tarde.
+            <div class="loading-draw" style="text-align: center; padding: 40px;">
+                <div style="font-size: 3rem; margin-bottom: 20px;">❌</div>
+                <h3 style="color: #ff6b6b; margin-bottom: 10px;">Erro de Conexão</h3>
+                <p style="color: var(--text-secondary);">Não foi possível conectar à API oficial da Caixa.</p>
+                <button class="btn btn-primary" onclick="fetchLastDrawData()" style="margin-top: 20px;">🔄 Tentar Novamente</button>
             </div>
         `;
     }
