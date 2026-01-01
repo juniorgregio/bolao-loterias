@@ -8,7 +8,7 @@
 // ============================================
 const BOLAO_CONFIG = {
     // Prêmio estimado da Mega da Virada 2025
-    premioTotal: 1_000_000_000, // R$ 1 bilhão
+    premioTotal: 1_090_000_000, // R$ 1,09 bilhão
 
     // Distribuição dos prêmios
     percentualSena: 0.90,    // 90% para sena
@@ -958,8 +958,29 @@ function updateCalculator() {
             if (elB2Quina) elB2Quina.textContent = formatCurrency(quinaB2);
             if (elB2Quadra) elB2Quadra.textContent = formatCurrency(quadraB2);
 
+            // MEMÓRIA DE CÁLCULO VISUAL
+            const calcMemory = document.getElementById('calculationMemory');
+            if (calcMemory && state.calculoDetalhado) {
+                calcMemory.style.display = 'block';
+                const cd = state.calculoDetalhado;
+
+                document.getElementById('calcPremioTotal').textContent = formatCurrency(cd.premioTotalSena);
+                document.getElementById('calcGanhadores').textContent = cd.ganhadoresSena;
+                document.getElementById('calcPremioPorGanhador').textContent = formatCurrency(cd.premioPorGanhadorSena);
+                document.getElementById('calcSenasBolao').textContent = cd.senasBolao;
+                document.getElementById('calcPremioBruto').textContent = formatCurrency(cd.premioBrutoBolao);
+                document.getElementById('calcTaxaAdmin').textContent = formatCurrency(cd.taxaAdmin);
+                document.getElementById('calcPremioLiquido').textContent = formatCurrency(cd.premioLiquidoBolao);
+                document.getElementById('calcTotalCotas').textContent = cd.totalCotas.toLocaleString('pt-BR');
+                document.getElementById('calcPremioPorCota').textContent = formatCurrency(cd.premioPorCota);
+                document.getElementById('calcSuasCotas').textContent = (cotasPrincipal + cotasBolao2).toLocaleString('pt-BR');
+                document.getElementById('calcSeuPremio').textContent = formatCurrency(retornoTotal);
+            }
+
         } else {
             if (detailsContainer) detailsContainer.style.display = 'none';
+            const calcMemory = document.getElementById('calculationMemory');
+            if (calcMemory) calcMemory.style.display = 'none';
         }
 
     } else {
@@ -1312,6 +1333,20 @@ function displayResults() {
             quina: quinaBrutoBolao2 * desconto,
             quadra: quadraBrutoBolao2 * desconto
         }
+    };
+
+    // MEMÓRIA DE CÁLCULO DETALHADO (para exibição visual passo a passo)
+    const premioTotalSena = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualSena;
+    state.calculoDetalhado = {
+        premioTotalSena: premioTotalSena,
+        ganhadoresSena: totalSenaWinners,
+        premioPorGanhadorSena: premioSenaPorGanhador,
+        senasBolao: totals.senas,
+        premioBrutoBolao: senaBruto,
+        taxaAdmin: senaBruto * BOLAO_CONFIG.descontoAdmin,
+        premioLiquidoBolao: senaLiquido,
+        totalCotas: BOLAO_CONFIG.totalCotas + BOLAO_CONFIG.totalCotasBolao2,
+        premioPorCota: totalLiquido / (BOLAO_CONFIG.totalCotas + BOLAO_CONFIG.totalCotasBolao2)
     };
 
     // Atualiza tabela de prêmios
