@@ -37,7 +37,13 @@ const BOLAO_CONFIG = {
     // Valores default baseados no resultado real - serão sobrescritos pela API
     estimativaGanhadoresSena: 6,
     estimativaGanhadoresQuina: 3921,
-    estimativaGanhadoresQuadra: 308315
+    estimativaGanhadoresQuadra: 308315,
+
+    // Valores REAIS de prêmio por ganhador (default até API funcionar)
+    // Esses valores são usados diretamente no cálculo
+    premioSenaPorGanhadorDefault: 181_000_000, // R$ 181 milhões (valor real divulgado)
+    premioQuinaPorGanhadorDefault: null,       // Será calculado proporcionalmente
+    premioQuadraPorGanhadorDefault: null       // Será calculado proporcionalmente
 };
 
 // ============================================
@@ -1273,16 +1279,18 @@ function displayResults() {
     let premioSenaPorGanhador, premioQuinaPorGanhador, premioQuadraPorGanhador;
 
     if (state.premiosReais && state.premiosReais.sena > 0) {
+        // Usa valores reais da API
         premioSenaPorGanhador = state.premiosReais.sena;
         premioQuinaPorGanhador = state.premiosReais.quina;
         premioQuadraPorGanhador = state.premiosReais.quadra;
     } else {
-        // Estimativa baseada no rateio teórico
-        const premioTotalSena = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualSena;
+        // Usa valor fixo divulgado para Sena (R$ 181 milhões por ganhador)
+        premioSenaPorGanhador = BOLAO_CONFIG.premioSenaPorGanhadorDefault;
+
+        // Para Quina e Quadra, calcula proporcionalmente
         const premioTotalQuina = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuina;
         const premioTotalQuadra = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualQuadra;
 
-        premioSenaPorGanhador = premioTotalSena / totalSenaWinners;
         premioQuinaPorGanhador = premioTotalQuina / totalQuinaWinners;
         premioQuadraPorGanhador = premioTotalQuadra / totalQuadraWinners;
     }
