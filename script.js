@@ -209,10 +209,42 @@ document.addEventListener('DOMContentLoaded', () => {
     try { initVisitCounter(); } catch (e) { console.error('Erro visit counter:', e); }
     try { initCountdown(); } catch (e) { console.error('Erro countdown:', e); }
     try { initBolaoEdit(); } catch (e) { console.error('Erro bolao edit:', e); }
+
+    // Carrega números sorteados por default (enquanto API não funciona)
+    try { initDefaultNumbers(); } catch (e) { console.error('Erro default numbers:', e); }
 });
 
 /**
+ * Carrega os números sorteados por default (resultado confirmado)
+ * Quando a API funcionar, ela sobrescreverá esses valores
+ */
+function initDefaultNumbers() {
+    // Números sorteados da Mega da Virada 2025 (Concurso 2955)
+    const numerosOficiais = [9, 13, 21, 32, 33, 59];
+
+    // Limpa seleção atual
+    state.selectedNumbers = [];
+
+    // Seleciona cada número
+    numerosOficiais.forEach(num => {
+        if (!state.selectedNumbers.includes(num)) {
+            state.selectedNumbers.push(num);
+        }
+    });
+
+    // Atualiza UI
+    updateNumbersGrid();
+
+    // Mostra toast de boas-vindas
+    setTimeout(() => {
+        showToast('🎉 PARABÉNS! Ganhamos a SENA da Mega da Virada!', 'success');
+        triggerConfetti();
+    }, 1000);
+}
+
+/**
  * Inicializa o cronômetro regressivo até o sorteio
+ * (Mantido para compatibilidade, mas no modo vitória ele apenas tenta buscar a API)
  */
 function initCountdown() {
     // Data do sorteio: 01/01/2026 às 10:00:00
@@ -223,48 +255,26 @@ function initCountdown() {
         const now = new Date();
         const diff = sorteioDate - now;
 
-        const countdownEl = document.getElementById('countdownTime');
-        const timerEl = document.getElementById('countdownTimer');
-
         if (diff <= 0) {
-            // Sorteio já aconteceu ou está acontecendo
-            const countdownContainer = document.querySelector('.hero-content h1');
-            if (countdownContainer) countdownContainer.textContent = 'SORTEIO EM APURAÇÃO';
-
-            // Versão compacta para não quebrar o header mobile
-            countdownEl.style.display = 'none'; // Esconde o relógio
-            timerEl.classList.add('ended');
-
-            // Injeta controles compactos
-            timerEl.innerHTML = `
-                <div class="result-actions-compact" style="display: flex; gap: 8px; align-items: center; justify-content: center; flex-wrap: wrap;">
-                    <span style="color: #FFD700; font-weight: bold; font-size: 0.9rem; margin-right: 5px;">⚠️ Em Apuração</span>
-                    <button class="btn btn-primary btn-sm" onclick="window.fetchCaixaResult()" style="padding: 4px 12px; font-size: 0.8rem; height: auto;">
-                        🔄 Verificar
-                    </button>
-                    <button class="btn btn-outline btn-sm" onclick="document.getElementById('calculatorSection').scrollIntoView({behavior: 'smooth'})" style="padding: 4px 12px; font-size: 0.8rem; height: auto;">
-                        ⬇️ Conferir
-                    </button>
-                </div>
-            `;
-
-            // Busca automaticamente os dados da Caixa (apenas 1x)
+            // Sorteio já aconteceu - tenta buscar API automaticamente (apenas 1x)
             if (!autoFetchDone) {
                 autoFetchDone = true;
-                showToast('⏳ Verificando resultados na Caixa...', 'info');
+                // Tenta buscar resultado da API em segundo plano
                 setTimeout(() => {
-                    fetchCaixaResult(true); // true indica que foi chamado automaticamente
-                }, 2000);
+                    fetchCaixaResult(true);
+                }, 3000);
             }
-            return;
+            return; // Não altera mais o HTML - o banner de vitória já está lá
         }
 
-        // Calcula horas, minutos e segundos
+        // Se ainda não passou, mostra countdown (caso de uso futuro)
+        const countdownEl = document.getElementById('countdownTime');
+        if (!countdownEl) return;
+
         const hours = Math.floor(diff / (1000 * 60 * 60));
         const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-        // Formata com zeros à esquerda
         const formatted = [
             hours.toString().padStart(2, '0'),
             minutes.toString().padStart(2, '0'),

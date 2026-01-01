@@ -17,10 +17,10 @@
     <div class="particles" id="particles"></div>
 
     <!-- Header -->
-    <header class="header">
+    <header class="header header-compact">
         <div class="header-content">
             <div class="logo">
-                <span class="logo-icon">🎰</span>
+                <span class="logo-icon">�</span>
                 <div class="logo-text">
                     <h1>Bolão de Loterias</h1>
                     <span class="logo-subtitle">Mega da Virada 2025</span>
@@ -35,20 +35,20 @@
                     </div>
                 </div>
             </div>
-            <div class="countdown-timer" id="countdownTimer">
-                <span class="countdown-icon">⏱️</span>
-                <div class="countdown-display">
-                    <span class="countdown-label">Sorteio em (Conc. 2955):</span>
-                    <span class="countdown-time" id="countdownTime">--:--:--</span>
+            <div class="victory-banner" id="countdownTimer">
+                <span class="victory-icon">🏆</span>
+                <div class="victory-text">
+                    <span class="victory-title">🎉 GANHAMOS A SENA! 🎉</span>
+                    <span class="victory-subtitle" id="countdownTime">Concurso 2955 - Mega da Virada</span>
                 </div>
             </div>
-            <div class="prize-badge">
-                <span class="prize-label">Prêmio Estimado</span>
-                <span class="prize-value">R$ 1 BILHÃO</span>
+            <div class="prize-badge prize-won">
+                <span class="prize-label">Prêmio Real</span>
+                <span class="prize-value">R$ 635 MILHÕES</span>
             </div>
             <button class="btn-last-draw" id="viewLastDrawBtn" onclick="toggleLastDraw()">
                 <span class="btn-icon">📅</span>
-                Ver Último Sorteio
+                Ver Detalhes
             </button>
         </div>
     </header>

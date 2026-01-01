@@ -255,6 +255,80 @@ body::before {
     color: #000;
 }
 
+/* Header Compacto (Modo Vitória) */
+.header-compact {
+    padding: var(--spacing-sm) var(--spacing-lg);
+}
+
+.header-compact .header-content {
+    gap: var(--spacing-sm);
+}
+
+/* Banner de Vitória */
+.victory-banner {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
+    border-radius: var(--radius-md);
+    animation: victoryPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes victoryPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(56, 239, 125, 0.6);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(56, 239, 125, 1);
+        transform: scale(1.02);
+    }
+}
+
+.victory-icon {
+    font-size: 2rem;
+    animation: trophySpin 2s ease-in-out infinite;
+}
+
+@keyframes trophySpin {
+
+    0%,
+    100% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+}
+
+.victory-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.victory-title {
+    font-size: 1rem;
+    font-weight: 900;
+    color: #000;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.victory-subtitle {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* Badge de Prêmio Ganho */
+.prize-won {
+    background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
+}
+
 /* Visit Counter */
 .visit-counter {
     display: flex;
