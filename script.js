@@ -212,6 +212,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Carrega números sorteados por default (enquanto API não funciona)
     try { initDefaultNumbers(); } catch (e) { console.error('Erro default numbers:', e); }
+
+    // FALLBACK: Garante que o splash será escondido mesmo se houver erro
+    setTimeout(() => {
+        const splash = document.getElementById('victorySplash');
+        if (splash && !splash.classList.contains('hidden')) {
+            console.log('Fallback: Escondendo splash');
+            splash.classList.add('hidden');
+        }
+    }, 3000);
 });
 
 /**
