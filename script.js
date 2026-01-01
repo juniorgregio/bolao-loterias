@@ -242,7 +242,7 @@ function initDefaultNumbers() {
     });
 
     // Atualiza UI da grade de números
-    updateNumbersGrid();
+    updateNumbersUI();
 
     // Transição do Splash após 2.5 segundos
     setTimeout(() => {
