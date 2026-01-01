@@ -34,10 +34,10 @@ const BOLAO_CONFIG = {
     valorCotaBolao2: 6.00,
 
     // Estimativas de ganhadores (para cálculo)
-    // Estes valores seriam atualizados após o sorteio oficial
-    estimativaGanhadoresSena: 1,
-    estimativaGanhadoresQuina: 500,
-    estimativaGanhadoresQuadra: 50000
+    // Valores default baseados no resultado real - serão sobrescritos pela API
+    estimativaGanhadoresSena: 6,
+    estimativaGanhadoresQuina: 3921,
+    estimativaGanhadoresQuadra: 308315
 };
 
 // ============================================
