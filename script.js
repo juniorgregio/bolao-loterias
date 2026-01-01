@@ -964,13 +964,15 @@ function updateCalculator() {
                 calcMemory.style.display = 'block';
                 const cd = state.calculoDetalhado;
 
-                document.getElementById('calcPremioTotal').textContent = formatCurrency(cd.premioTotalSena);
-                document.getElementById('calcGanhadores').textContent = cd.ganhadoresSena;
-                document.getElementById('calcPremioPorGanhador').textContent = formatCurrency(cd.premioPorGanhadorSena);
-                document.getElementById('calcSenasBolao').textContent = cd.senasBolao;
-                document.getElementById('calcPremioBruto').textContent = formatCurrency(cd.premioBrutoBolao);
+                // Detalhamento por faixa
+                document.getElementById('calcSenaTotal').textContent = formatCurrency(cd.senaBruto);
+                document.getElementById('calcQuinaTotal').textContent = formatCurrency(cd.quinaBruto);
+                document.getElementById('calcQuadraTotal').textContent = formatCurrency(cd.quadraBruto);
+
+                // Totais consolidados
+                document.getElementById('calcPremioBruto').textContent = formatCurrency(cd.totalBruto);
                 document.getElementById('calcTaxaAdmin').textContent = formatCurrency(cd.taxaAdmin);
-                document.getElementById('calcPremioLiquido').textContent = formatCurrency(cd.premioLiquidoBolao);
+                document.getElementById('calcPremioLiquido').textContent = formatCurrency(cd.totalLiquido);
                 document.getElementById('calcTotalCotas').textContent = cd.totalCotas.toLocaleString('pt-BR');
                 document.getElementById('calcPremioPorCota').textContent = formatCurrency(cd.premioPorCota);
                 document.getElementById('calcSuasCotas').textContent = (cotasPrincipal + cotasBolao2).toLocaleString('pt-BR');
@@ -1336,15 +1338,18 @@ function displayResults() {
     };
 
     // MEMÓRIA DE CÁLCULO DETALHADO (para exibição visual passo a passo)
-    const premioTotalSena = BOLAO_CONFIG.premioTotal * BOLAO_CONFIG.percentualSena;
     state.calculoDetalhado = {
-        premioTotalSena: premioTotalSena,
-        ganhadoresSena: totalSenaWinners,
-        premioPorGanhadorSena: premioSenaPorGanhador,
-        senasBolao: totals.senas,
-        premioBrutoBolao: senaBruto,
-        taxaAdmin: senaBruto * BOLAO_CONFIG.descontoAdmin,
-        premioLiquidoBolao: senaLiquido,
+        // Valores por faixa (bruto)
+        senaBruto: senaBruto,
+        quinaBruto: quinaBruto,
+        quadraBruto: quadraBruto,
+
+        // Totais consolidados
+        totalBruto: totalBruto,
+        taxaAdmin: totalBruto * BOLAO_CONFIG.descontoAdmin,
+        totalLiquido: totalLiquido,
+
+        // Cálculo por cota
         totalCotas: BOLAO_CONFIG.totalCotas + BOLAO_CONFIG.totalCotasBolao2,
         premioPorCota: totalLiquido / (BOLAO_CONFIG.totalCotas + BOLAO_CONFIG.totalCotasBolao2)
     };
