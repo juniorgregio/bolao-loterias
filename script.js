@@ -484,6 +484,8 @@ async function fetchCaixaResult() {
         const data = await response.json();
 
         // VALIDAÇÃO DE SEGURANÇA: Garante que é o sorteio da Virada
+        // [MODO TESTE ATIVADO] - Validação relaxada para simulação
+        /* 
         if (data.dataApuracao !== '31/12/2025' && data.dataApuracao !== '01/01/2026') {
             statusEl.className = 'api-status error';
             statusIcon.textContent = '⚠️';
@@ -491,6 +493,12 @@ async function fetchCaixaResult() {
 
             showToast(`⚠️ Resultado ainda não disponível! Último: ${data.dataApuracao}`, 'warning');
             return;
+        } 
+        */
+
+        // Feedback visual de que é uma simulação com dados antigos
+        if (data.dataApuracao !== '31/12/2025' && data.dataApuracao !== '01/01/2026') {
+            showToast(`🧪 MODO TESTE: Carregando Concurso ${data.numero} (${data.dataApuracao})`, 'info');
         }
 
         // Extrai os dados de ganhadores
