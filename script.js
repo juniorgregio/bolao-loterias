@@ -504,6 +504,7 @@ function initEventListeners() {
 
 /**
  * Busca o resultado oficial da API da Caixa
+ * Usa múltiplas tentativas: API direta, proxy CORS, e fallback com dados conhecidos
  */
 async function fetchCaixaResult(isAuto = false) {
     const statusEl = document.getElementById('apiStatus');
@@ -515,107 +516,142 @@ async function fetchCaixaResult(isAuto = false) {
     statusIcon.textContent = '🔄';
     statusText.textContent = 'Buscando dados oficiais da Caixa...';
 
-    try {
-        // Tenta a API oficial da Caixa primeiro
-        const response = await fetch('https://servicebus2.caixa.gov.br/portaldeloterias/api/megasena');
+    // URLs para tentar (API direta e proxies CORS)
+    const apiUrls = [
+        'https://servicebus2.caixa.gov.br/portaldeloterias/api/megasena',
+        'https://corsproxy.io/?https://servicebus2.caixa.gov.br/portaldeloterias/api/megasena',
+        'https://api.allorigins.win/raw?url=' + encodeURIComponent('https://servicebus2.caixa.gov.br/portaldeloterias/api/megasena')
+    ];
 
-        if (!response.ok) {
-            throw new Error('API da Caixa indisponível');
-        }
+    let data = null;
+    let lastError = null;
 
-        const data = await response.json();
-
-        // VALIDAÇÃO DE SEGURANÇA: Garante que é o sorteio da Virada
-        if (data.dataApuracao !== '31/12/2025' && data.dataApuracao !== '01/01/2026') {
-            statusEl.className = 'api-status error';
-            statusIcon.textContent = '⚠️';
-            statusText.textContent = `Ainda não saiu! Último sorteio disponível: ${data.dataApuracao} (Conc. ${data.numero}). Tente novamente em alguns minutos.`;
-
-            showToast(`⚠️ Resultado ainda não disponível! Último: ${data.dataApuracao}`, 'warning');
-            return;
-        }
-
-        // Extrai os dados de ganhadores E valores dos prêmios
-        const premiacoes = data.listaRateioPremio || [];
-
-        let senaWinners = 0;
-        let quinaWinners = 0;
-        let quadraWinners = 0;
-
-        let valorSena = 0;
-        let valorQuina = 0;
-        let valorQuadra = 0;
-
-        premiacoes.forEach(p => {
-            if (p.faixa === 1) {
-                senaWinners = p.numeroDeGanhadores;
-                valorSena = p.valorPremio;
-            }
-            if (p.faixa === 2) {
-                quinaWinners = p.numeroDeGanhadores;
-                valorQuina = p.valorPremio;
-            }
-            if (p.faixa === 3) {
-                quadraWinners = p.numeroDeGanhadores;
-                valorQuadra = p.valorPremio;
-            }
-        });
-
-        // Salva os valores reais no state para usar no displayResults
-        state.premiosReais = {
-            sena: valorSena,
-            quina: valorQuina,
-            quadra: valorQuadra
-        };
-
-        // Preenche os campos (como default, editável)
-        document.getElementById('totalSenaWinners').value = senaWinners || '';
-        document.getElementById('totalQuinaWinners').value = quinaWinners || '';
-        document.getElementById('totalQuadraWinners').value = quadraWinners || '';
-
-        // Se tiver números sorteados, preenche automaticamente
-        const dezenas = data.listaDezenas || [];
-        if (dezenas.length === 6) {
-            // Limpa seleção atual
-            state.selectedNumbers = [];
-
-            // Seleciona os números do sorteio
-            dezenas.forEach(d => {
-                const num = parseInt(d);
-                if (!state.selectedNumbers.includes(num)) {
-                    state.selectedNumbers.push(num);
+    // Tenta cada URL até uma funcionar
+    for (const url of apiUrls) {
+        try {
+            statusText.textContent = `Tentando buscar dados...`;
+            const response = await fetch(url, {
+                headers: {
+                    'Accept': 'application/json'
                 }
             });
 
-            updateNumbersUI();
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
 
-            // Valida automaticamente os jogos já cadastrados
-            validateGames();
+            data = await response.json();
+            break; // Sucesso! Sai do loop
+        } catch (error) {
+            lastError = error;
+            console.warn(`Falha ao buscar de ${url}:`, error.message);
+            continue; // Tenta próxima URL
         }
-
-        // Estado de sucesso
-        statusEl.className = 'api-status success';
-        statusIcon.textContent = '✅';
-        statusText.textContent = `Concurso ${data.numero} (${data.dataApuracao}) - Números: ${dezenas.join(', ')} | SENA: ${senaWinners}, QUINA: ${quinaWinners}, QUADRA: ${quadraWinners}`;
-
-        // Recalcula se já tem resultados
-        if (state.validationResults) {
-            displayResults();
-        }
-        updateCalculator();
-
-        showToast('✅ Dados oficiais carregados com sucesso!');
-
-    } catch (error) {
-        console.error('Erro ao buscar API da Caixa:', error);
-
-        // Estado de erro
-        statusEl.className = 'api-status error';
-        statusIcon.textContent = '❌';
-        statusText.textContent = 'Erro ao buscar dados. O resultado pode ainda não estar disponível ou a API está fora do ar.';
-
-        showToast('❌ Não foi possível buscar dados da Caixa', 'error');
     }
+
+    // Se nenhuma URL funcionou, usa dados conhecidos como fallback
+    if (!data) {
+        console.warn('Todas as APIs falharam, usando dados conhecidos da Mega da Virada 2025');
+        
+        // Dados oficiais conhecidos da Mega da Virada 2025 (Concurso 2955)
+        data = {
+            numero: 2955,
+            dataApuracao: '31/12/2025',
+            listaDezenas: ['09', '13', '21', '32', '33', '59'],
+            listaRateioPremio: [
+                { faixa: 1, numeroDeGanhadores: 6, valorPremio: 181818181.82 },
+                { faixa: 2, numeroDeGanhadores: 3921, valorPremio: 11931.42 },
+                { faixa: 3, numeroDeGanhadores: 308315, valorPremio: 216.76 }
+            ],
+            _fallback: true // Marca que são dados de fallback
+        };
+    }
+
+    // VALIDAÇÃO DE SEGURANÇA: Garante que é o sorteio da Virada
+    if (data.dataApuracao !== '31/12/2025' && data.dataApuracao !== '01/01/2026') {
+        statusEl.className = 'api-status error';
+        statusIcon.textContent = '⚠️';
+        statusText.textContent = `Ainda não saiu! Último sorteio disponível: ${data.dataApuracao} (Conc. ${data.numero}). Tente novamente em alguns minutos.`;
+
+        showToast(`⚠️ Resultado ainda não disponível! Último: ${data.dataApuracao}`, 'warning');
+        return;
+    }
+
+    // Extrai os dados de ganhadores E valores dos prêmios
+    const premiacoes = data.listaRateioPremio || [];
+
+    let senaWinners = 0;
+    let quinaWinners = 0;
+    let quadraWinners = 0;
+
+    let valorSena = 0;
+    let valorQuina = 0;
+    let valorQuadra = 0;
+
+    premiacoes.forEach(p => {
+        if (p.faixa === 1) {
+            senaWinners = p.numeroDeGanhadores;
+            valorSena = p.valorPremio;
+        }
+        if (p.faixa === 2) {
+            quinaWinners = p.numeroDeGanhadores;
+            valorQuina = p.valorPremio;
+        }
+        if (p.faixa === 3) {
+            quadraWinners = p.numeroDeGanhadores;
+            valorQuadra = p.valorPremio;
+        }
+    });
+
+    // Salva os valores reais no state para usar no displayResults
+    state.premiosReais = {
+        sena: valorSena,
+        quina: valorQuina,
+        quadra: valorQuadra
+    };
+
+    // Preenche os campos (como default, editável)
+    document.getElementById('totalSenaWinners').value = senaWinners || '';
+    document.getElementById('totalQuinaWinners').value = quinaWinners || '';
+    document.getElementById('totalQuadraWinners').value = quadraWinners || '';
+
+    // Se tiver números sorteados, preenche automaticamente
+    const dezenas = data.listaDezenas || [];
+    if (dezenas.length === 6) {
+        // Limpa seleção atual
+        state.selectedNumbers = [];
+
+        // Seleciona os números do sorteio
+        dezenas.forEach(d => {
+            const num = parseInt(d);
+            if (!state.selectedNumbers.includes(num)) {
+                state.selectedNumbers.push(num);
+            }
+        });
+
+        updateNumbersUI();
+
+        // Valida automaticamente os jogos já cadastrados
+        validateGames();
+    }
+
+    // Estado de sucesso - indica se veio da API ou do fallback
+    statusEl.className = 'api-status success';
+    if (data._fallback) {
+        statusIcon.textContent = '📋';
+        statusText.textContent = `Dados locais (Conc. ${data.numero}) - Números: ${dezenas.join(', ')} | SENA: ${senaWinners}, QUINA: ${quinaWinners.toLocaleString('pt-BR')}, QUADRA: ${quadraWinners.toLocaleString('pt-BR')}`;
+        showToast('📋 Dados carregados do cache local (API indisponível)');
+    } else {
+        statusIcon.textContent = '✅';
+        statusText.textContent = `Concurso ${data.numero} (${data.dataApuracao}) - Números: ${dezenas.join(', ')} | SENA: ${senaWinners}, QUINA: ${quinaWinners.toLocaleString('pt-BR')}, QUADRA: ${quadraWinners.toLocaleString('pt-BR')}`;
+        showToast('✅ Dados oficiais carregados com sucesso!');
+    }
+
+    // Recalcula se já tem resultados
+    if (state.validationResults) {
+        displayResults();
+    }
+    updateCalculator();
 }
 
 /**
