@@ -751,6 +751,111 @@ function toggleLastDraw() {
     }
 }
 
+// Fecha modais ao clicar fora deles
+window.onclick = function (event) {
+    const lastDrawModal = document.getElementById('lastDrawModal');
+    if (event.target === lastDrawModal) {
+        lastDrawModal.style.display = "none";
+    }
+    const faqModal = document.getElementById('faqModal');
+    if (event.target === faqModal) {
+        faqModal.style.display = "none";
+    }
+    const bettorsModal = document.getElementById('bettorsModal');
+    if (event.target === bettorsModal) {
+        bettorsModal.style.display = "none";
+    }
+}
+
+// ============================================
+// CONSULTA DE APOSTADORES
+// ============================================
+
+function toggleBettorsModal() {
+    const modal = document.getElementById('bettorsModal');
+    if (!modal) return;
+
+    if (modal.style.display === 'none' || modal.style.display === '') {
+        modal.style.display = 'flex';
+        // Foca no input
+        setTimeout(() => document.getElementById('bettorNameInput').focus(), 100);
+    } else {
+        modal.style.display = 'none';
+        // Limpa resultados ao fechar para privacidade
+        document.getElementById('bettorNameInput').value = '';
+        document.getElementById('bettorResult').style.display = 'none';
+        document.getElementById('searchError').style.display = 'none';
+    }
+}
+
+function handleBettorSearch() {
+    const input = document.getElementById('bettorNameInput');
+    const resultDiv = document.getElementById('bettorResult');
+    const errorMsg = document.getElementById('searchError');
+    const nameDisplay = document.getElementById('bettorNameDisplay');
+    const totalValueDisplay = document.getElementById('bettorTotalValue');
+    const totalQuotasDisplay = document.getElementById('bettorTotalQuotas');
+    const historyBody = document.getElementById('bettorHistoryBody');
+
+    const name = input.value.trim().toUpperCase();
+
+    // Reset display
+    resultDiv.style.display = 'none';
+    errorMsg.style.display = 'none';
+
+    if (!name) return;
+
+    // Busca no "banco de dados" (objeto carregado de bettors-data.js)
+    if (typeof BETTORS_DATABASE === 'undefined') {
+        alert('Erro: Base de dados de apostadores não carregada.');
+        return;
+    }
+
+    const bettorData = BETTORS_DATABASE[name];
+
+    if (bettorData) {
+        // Encontrou!
+        nameDisplay.textContent = bettorData.name;
+
+        // Formata Totais
+        totalValueDisplay.textContent = bettorData.totalValue.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        totalQuotasDisplay.textContent = bettorData.totalQuotas + (bettorData.totalQuotas === 1 ? ' cota' : ' cotas');
+
+        // Renderiza Histórico
+        historyBody.innerHTML = '';
+        bettorData.entries.forEach(entry => {
+            const row = document.createElement('tr');
+            row.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
+
+            row.innerHTML = `
+                <td style="padding: 8px;">${entry.date}</td>
+                <td style="padding: 8px; text-align: right; color: #38ef7d; font-weight: 600;">
+                    ${entry.value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+                </td>
+                <td style="padding: 8px; text-align: center;">${entry.quotas}</td>
+            `;
+            historyBody.appendChild(row);
+        });
+
+        resultDiv.style.display = 'block';
+    } else {
+        // Não encontrou
+        errorMsg.style.display = 'block';
+    }
+}
+
+// Adiciona listener para tecla Enter no input
+document.addEventListener('DOMContentLoaded', () => {
+    const bettorInput = document.getElementById('bettorNameInput');
+    if (bettorInput) {
+        bettorInput.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                handleBettorSearch();
+            }
+        });
+    }
+});
+
 /**
  * Alterna visibilidade do Modal de FAQ
  */
