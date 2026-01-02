@@ -533,55 +533,118 @@ async function fetchCaixaResult(isAuto = false) {
     statusText.textContent = 'Buscando dados oficiais da Caixa...';
 
     // URLs para tentar (API direta e proxies CORS)
+    /* 
     const apiUrls = [
         'https://servicebus2.caixa.gov.br/portaldeloterias/api/megasena',
         'https://corsproxy.io/?https://servicebus2.caixa.gov.br/portaldeloterias/api/megasena',
         'https://api.allorigins.win/raw?url=' + encodeURIComponent('https://servicebus2.caixa.gov.br/portaldeloterias/api/megasena')
     ];
+    */
 
     let data = null;
     let lastError = null;
 
-    // Tenta cada URL até uma funcionar
-    for (const url of apiUrls) {
-        try {
-            statusText.textContent = `Tentando buscar dados...`;
-            const response = await fetch(url, {
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}`);
+    // DATA FIXADA MANUALMENTE (TEMPORARIO)
+    data = {
+        "acumulado": false,
+        "dataApuracao": "01/01/2026",
+        "dataProximoConcurso": "06/01/2026",
+        "dezenasSorteadasOrdemSorteio": [
+            "59",
+            "21",
+            "32",
+            "13",
+            "33",
+            "09"
+        ],
+        "exibirDetalhamentoPorCidade": false,
+        "id": null,
+        "indicadorConcursoEspecial": 2,
+        "listaDezenas": [
+            "09",
+            "13",
+            "21",
+            "32",
+            "33",
+            "59"
+        ],
+        "listaDezenasSegundoSorteio": null,
+        "listaMunicipioUFGanhadores": [
+            {
+                "ganhadores": 3,
+                "municipio": "CANAL ELETRONICO",
+                "nomeFatansiaUL": "",
+                "posicao": 1,
+                "serie": "",
+                "uf": "--"
+            },
+            {
+                "ganhadores": 1,
+                "municipio": "PONTA PORA",
+                "nomeFatansiaUL": "",
+                "posicao": 1,
+                "serie": "",
+                "uf": "MS"
+            },
+            {
+                "ganhadores": 1,
+                "municipio": "JOAO PESSOA",
+                "nomeFatansiaUL": "",
+                "posicao": 1,
+                "serie": "",
+                "uf": "PB"
+            },
+            {
+                "ganhadores": 1,
+                "municipio": "FRANCO DA ROCHA",
+                "nomeFatansiaUL": "",
+                "posicao": 1,
+                "serie": "",
+                "uf": "SP"
             }
-
-            data = await response.json();
-            break; // Sucesso! Sai do loop
-        } catch (error) {
-            lastError = error;
-            console.warn(`Falha ao buscar de ${url}:`, error.message);
-            continue; // Tenta próxima URL
-        }
-    }
-
-    // Se nenhuma URL funcionou, usa dados conhecidos como fallback
-    if (!data) {
-        console.warn('Todas as APIs falharam, usando dados conhecidos da Mega da Virada 2025');
-
-        // Dados oficiais conhecidos da Mega da Virada 2025 (Concurso 2955)
-        data = {
-            numero: 2955,
-            dataApuracao: '31/12/2025',
-            listaDezenas: ['09', '13', '21', '32', '33', '59'],
-            listaRateioPremio: [
-                { faixa: 1, numeroDeGanhadores: 6, valorPremio: 181818181.82 },
-                { faixa: 2, numeroDeGanhadores: 3921, valorPremio: 11931.42 },
-                { faixa: 3, numeroDeGanhadores: 308315, valorPremio: 216.76 }
-            ],
-            _fallback: true // Marca que são dados de fallback
-        };
-    }
+        ],
+        "listaRateioPremio": [
+            {
+                "descricaoFaixa": "6 acertos",
+                "faixa": 1,
+                "numeroDeGanhadores": 6,
+                "valorPremio": 181892881.09
+            },
+            {
+                "descricaoFaixa": "5 acertos",
+                "faixa": 2,
+                "numeroDeGanhadores": 3921,
+                "valorPremio": 11931.42
+            },
+            {
+                "descricaoFaixa": "4 acertos",
+                "faixa": 3,
+                "numeroDeGanhadores": 308315,
+                "valorPremio": 216.76
+            }
+        ],
+        "listaResultadoEquipeEsportiva": null,
+        "localSorteio": "ESPAÇO DA SORTE",
+        "nomeMunicipioUFSorteio": "SÃO PAULO,  SP",
+        "nomeTimeCoracaoMesSorte": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+        "numero": 2955,
+        "numeroConcursoAnterior": 2954,
+        "numeroConcursoFinal_0_5": 2960,
+        "numeroConcursoProximo": 2956,
+        "numeroJogo": 2,
+        "observacao": "",
+        "premiacaoContingencia": null,
+        "tipoJogo": "MEGA_SENA",
+        "tipoPublicacao": 3,
+        "ultimoConcurso": true,
+        "valorArrecadado": 3052431720.0,
+        "valorAcumuladoConcurso_0_5": 0.0,
+        "valorAcumuladoConcursoEspecial": 0.0,
+        "valorAcumuladoProximoConcurso": 0.0,
+        "valorEstimadoProximoConcurso": 3500000.0,
+        "valorSaldoReservaGarantidora": 0.0,
+        "valorTotalPremioFaixaUm": 0.0
+    };
 
     // VALIDAÇÃO DE SEGURANÇA: Garante que é o sorteio da Virada
     if (data.dataApuracao !== '31/12/2025' && data.dataApuracao !== '01/01/2026') {
