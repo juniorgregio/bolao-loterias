@@ -280,8 +280,20 @@
                             </div>
 
                             <div class="calc-step"
+                                style="font-size: 0.85em; margin-bottom: 8px; color: #f39c12; display: flex; justify-content: space-between;">
+                                <span>= Após Admin:</span>
+                                <span id="calcAposAdmin">R$ 0</span>
+                            </div>
+
+                            <div class="calc-step"
+                                style="font-size: 0.85em; margin-bottom: 8px; color: #e74c3c; display: flex; justify-content: space-between;">
+                                <span>− ITCMD SP (4%):</span>
+                                <span id="calcITCMD">R$ 0</span>
+                            </div>
+
+                            <div class="calc-step"
                                 style="font-size: 0.9em; margin-bottom: 12px; color: #2ecc71; font-weight: 600; display: flex; justify-content: space-between; padding: 8px; background: rgba(46,204,113,0.1); border-radius: 6px;">
-                                <span>✅ PRÊMIO LÍQUIDO BOLÃO:</span>
+                                <span>✅ PRÊMIO LÍQUIDO FINAL:</span>
                                 <span id="calcPremioLiquido">R$ 0</span>
                             </div>
 
@@ -310,7 +322,7 @@
                             </div>
 
                             <p style="font-size: 0.75em; color: #888; margin-top: 10px; text-align: center;">
-                                * Os 10% são descontados do prêmio bruto total (Sena + Quina + Quadra).
+                                * Taxa Admin (10%) + ITCMD SP (4%) = 13,6% total de desconto sobre o bruto.
                             </p>
                         </div>
                     </div>
@@ -508,14 +520,14 @@
                 <h3>💰 Estimativa de Prêmios</h3>
                 <div class="prize-info-note">
                     <em>⚠️ Valores baseados na distribuição: ~90% SENA, ~5% QUINA, ~5% QUADRA do prêmio de R$ 1,09
-                        bilhão. O desconto de 10% do administrador já está aplicado.</em>
+                        bilhão. <strong>Descontos já aplicados:</strong> 10% Admin + 4% ITCMD (SP).</em>
                 </div>
                 <div class="prize-table">
                     <div class="prize-row header">
                         <span>Categoria</span>
                         <span>Quantidade</span>
                         <span>Prêmio Bruto Est.</span>
-                        <span>(-10% Admin)</span>
+                        <span>Líquido (-14%)</span>
                     </div>
                     <div class="prize-row" id="senaPrizeRow">
                         <span class="prize-category sena">🏆 SENA</span>
@@ -602,6 +614,30 @@
                     <h4>💸 Desconto do Admin</h4>
                     <p>Todo prêmio tem desconto de <strong>10%</strong> para o administrador do bolão.</p>
                     <p>Exemplo: Se ganhar R$ 100.000, recebe R$ 90.000.</p>
+                </div>
+                <div class="explain-card" style="border-left: 4px solid #e74c3c;">
+                    <h4>🏛️ ITCMD - Imposto Estadual (4% em SP)</h4>
+                    <p><strong>O que é?</strong> ITCMD significa <em>Imposto sobre Transmissão Causa Mortis e Doação</em>. É um imposto estadual cobrado sobre:</p>
+                    <ul>
+                        <li><strong>Heranças</strong> (causa mortis) - quando alguém falece e deixa bens</li>
+                        <li><strong>Doações</strong> - transferência gratuita de bens ou valores</li>
+                    </ul>
+                    <p><strong>Por que se aplica ao bolão?</strong></p>
+                    <p>Quando o prêmio da loteria é dividido entre os participantes do bolão, a Receita Estadual pode entender como uma <em>doação</em> entre os ganhadores. Por isso, incide o ITCMD sobre cada cota recebida.</p>
+                    <p><strong>Alíquota em São Paulo:</strong></p>
+                    <ul>
+                        <li>A alíquota em SP é de <strong>4%</strong> (fixa)</li>
+                        <li>É uma das mais baixas do Brasil</li>
+                        <li>Outros estados podem ter até 8%</li>
+                    </ul>
+                    <p><strong>Exemplo de Cálculo:</strong></p>
+                    <ul>
+                        <li>Prêmio Bruto: R$ 100.000</li>
+                        <li>Após Admin (-10%): R$ 90.000</li>
+                        <li>ITCMD (-4%): R$ 3.600</li>
+                        <li><strong>Líquido Final: R$ 86.400</strong></li>
+                    </ul>
+                    <p style="font-size: 0.85em; color: #aaa; margin-top: 10px;">⚠️ <em>Importante: O ITCMD deve ser pago antes da liberação do prêmio ou em até 30 dias após o recebimento. A falta de pagamento gera multa e juros.</em></p>
                 </div>
         </section>
     </main>

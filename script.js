@@ -18,6 +18,9 @@ const BOLAO_CONFIG = {
     // Desconto do administrador do bolão
     descontoAdmin: 0.10, // 10%
 
+    // ITCMD - Imposto sobre Transmissão Causa Mortis e Doação (SP = 4%)
+    aliquotaITCMD: 0.04, // 4% em São Paulo
+
     // Dados do bolão
     arrecadacaoTotal: 536993.99,
     participantes: 1743,
@@ -970,19 +973,21 @@ function updateCalculator() {
                 calcMemory.style.display = 'block';
                 const cd = state.calculoDetalhado;
 
-                // Detalhamento por faixa
-                document.getElementById('calcSenaTotal').textContent = formatCurrency(cd.senaBruto);
-                document.getElementById('calcQuinaTotal').textContent = formatCurrency(cd.quinaBruto);
-                document.getElementById('calcQuadraTotal').textContent = formatCurrency(cd.quadraBruto);
+                            // Detalhamento por faixa
+                                document.getElementById('calcSenaTotal').textContent = formatCurrency(cd.senaBruto);
+                                document.getElementById('calcQuinaTotal').textContent = formatCurrency(cd.quinaBruto);
+                                document.getElementById('calcQuadraTotal').textContent = formatCurrency(cd.quadraBruto);
 
-                // Totais consolidados
-                document.getElementById('calcPremioBruto').textContent = formatCurrency(cd.totalBruto);
-                document.getElementById('calcTaxaAdmin').textContent = formatCurrency(cd.taxaAdmin);
-                document.getElementById('calcPremioLiquido').textContent = formatCurrency(cd.totalLiquido);
-                document.getElementById('calcTotalCotas').textContent = cd.totalCotas.toLocaleString('pt-BR');
-                document.getElementById('calcPremioPorCota').textContent = formatCurrency(cd.premioPorCota);
-                document.getElementById('calcSuasCotas').textContent = (cotasPrincipal + cotasBolao2).toLocaleString('pt-BR');
-                document.getElementById('calcSeuPremio').textContent = formatCurrency(retornoTotal);
+                                // Totais consolidados
+                                document.getElementById('calcPremioBruto').textContent = formatCurrency(cd.totalBruto);
+                                document.getElementById('calcTaxaAdmin').textContent = formatCurrency(cd.taxaAdmin);
+                                document.getElementById('calcAposAdmin').textContent = formatCurrency(cd.totalAposAdmin);
+                                document.getElementById('calcITCMD').textContent = formatCurrency(cd.valorITCMD);
+                                document.getElementById('calcPremioLiquido').textContent = formatCurrency(cd.totalLiquido);
+                                document.getElementById('calcTotalCotas').textContent = cd.totalCotas.toLocaleString('pt-BR');
+                                document.getElementById('calcPremioPorCota').textContent = formatCurrency(cd.premioPorCota);
+                                document.getElementById('calcSuasCotas').textContent = (cotasPrincipal + cotasBolao2).toLocaleString('pt-BR');
+                                document.getElementById('calcSeuPremio').textContent = formatCurrency(retornoTotal);
             }
 
         } else {
@@ -1309,14 +1314,32 @@ function displayResults() {
     const quadraBruto = totals.quadras * premioQuadraPorGanhador;
     const totalBruto = senaBruto + quinaBruto + quadraBruto;
 
-    // Prêmio líquido geral (após desconto do admin de 10%)
-    const senaLiquido = senaBruto * (1 - BOLAO_CONFIG.descontoAdmin);
-    const quinaLiquido = quinaBruto * (1 - BOLAO_CONFIG.descontoAdmin);
-    const quadraLiquido = quadraBruto * (1 - BOLAO_CONFIG.descontoAdmin);
-    const totalLiquido = totalBruto * (1 - BOLAO_CONFIG.descontoAdmin);
+    // Taxa do Admin (10%)
+    const taxaAdmin = BOLAO_CONFIG.descontoAdmin;
+    
+    // ITCMD - Imposto Estadual SP (4%)
+    const taxaITCMD = BOLAO_CONFIG.aliquotaITCMD;
+    
+    // Fator líquido total: (1 - 10% admin) * (1 - 4% ITCMD) = 0.90 * 0.96 = 0.864
+    const fatorLiquidoTotal = (1 - taxaAdmin) * (1 - taxaITCMD);
+
+    // Prêmio após Admin (antes do ITCMD)
+    const senaAposAdmin = senaBruto * (1 - taxaAdmin);
+    const quinaAposAdmin = quinaBruto * (1 - taxaAdmin);
+    const quadraAposAdmin = quadraBruto * (1 - taxaAdmin);
+    const totalAposAdmin = totalBruto * (1 - taxaAdmin);
+
+    // Prêmio líquido final (após Admin E ITCMD)
+    const senaLiquido = senaBruto * fatorLiquidoTotal;
+    const quinaLiquido = quinaBruto * fatorLiquidoTotal;
+    const quadraLiquido = quadraBruto * fatorLiquidoTotal;
+    const totalLiquido = totalBruto * fatorLiquidoTotal;
+    
+    // Valor do ITCMD (calculado sobre o valor após admin)
+    const valorITCMD = totalAposAdmin * taxaITCMD;
 
     // CÁLCULO SEPARADO POR BOLÃO E POR CATEGORIA
-    const desconto = 1 - BOLAO_CONFIG.descontoAdmin;
+    // Agora inclui tanto o desconto do Admin (10%) quanto o ITCMD (4%)
 
     // Bolão Principal
     const { totalsPrincipal } = state.validationResults;
@@ -1332,9 +1355,9 @@ function displayResults() {
     const quinaBrutoBolao2 = totalsBolao2.quinas * premioQuinaPorGanhador;
     const quadraBrutoBolao2 = totalsBolao2.quadras * premioQuadraPorGanhador;
 
-    // Totais Líquidos
-    const liquidoPrincipal = (senaBrutoPrincipal + quinaBrutoPrincipal + quadraBrutoPrincipal) * desconto;
-    const liquidoBolao2 = (senaBrutoBolao2 + quinaBrutoBolao2 + quadraBrutoBolao2) * desconto;
+    // Totais Líquidos (com Admin -10% e ITCMD -4%)
+    const liquidoPrincipal = (senaBrutoPrincipal + quinaBrutoPrincipal + quadraBrutoPrincipal) * fatorLiquidoTotal;
+    const liquidoBolao2 = (senaBrutoBolao2 + quinaBrutoBolao2 + quadraBrutoBolao2) * fatorLiquidoTotal;
 
     // Salva no estado para a calculadora usar, incluindo breakdown
     state.totalLiquidoValidado = totalLiquido;
@@ -1342,14 +1365,14 @@ function displayResults() {
     state.totalLiquidoBolao2 = liquidoBolao2;
     state.breakdown = {
         principal: {
-            sena: senaBrutoPrincipal * desconto,
-            quina: quinaBrutoPrincipal * desconto,
-            quadra: quadraBrutoPrincipal * desconto
+            sena: senaBrutoPrincipal * fatorLiquidoTotal,
+            quina: quinaBrutoPrincipal * fatorLiquidoTotal,
+            quadra: quadraBrutoPrincipal * fatorLiquidoTotal
         },
         bolao2: {
-            sena: senaBrutoBolao2 * desconto,
-            quina: quinaBrutoBolao2 * desconto,
-            quadra: quadraBrutoBolao2 * desconto
+            sena: senaBrutoBolao2 * fatorLiquidoTotal,
+            quina: quinaBrutoBolao2 * fatorLiquidoTotal,
+            quadra: quadraBrutoBolao2 * fatorLiquidoTotal
         }
     };
 
@@ -1363,6 +1386,12 @@ function displayResults() {
         // Totais consolidados
         totalBruto: totalBruto,
         taxaAdmin: totalBruto * BOLAO_CONFIG.descontoAdmin,
+        totalAposAdmin: totalAposAdmin,
+        
+        // ITCMD - 4% sobre valor após admin
+        valorITCMD: valorITCMD,
+        aliquotaITCMD: BOLAO_CONFIG.aliquotaITCMD * 100, // Em percentual para exibição
+        
         totalLiquido: totalLiquido,
 
         // Cálculo por cota (apenas Bolão Principal)
@@ -1410,7 +1439,7 @@ function updatePrizeNote(senaWinners, quinaWinners, quadraWinners) {
             <strong>${quinaWinners.toLocaleString('pt-BR')}</strong> de QUINA, 
             <strong>${quadraWinners.toLocaleString('pt-BR')}</strong> de QUADRA no Brasil. 
             Prêmio total: R$1 bilhão (~90% SENA, ~5% QUINA, ~5% QUADRA). 
-            Desconto de 10% do admin já aplicado.</em>
+            <strong>Descontos aplicados:</strong> 10% Admin + 4% ITCMD (SP).</em>
         `;
     }
 }
