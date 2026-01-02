@@ -552,7 +552,7 @@ async function fetchCaixaResult(isAuto = false) {
     // Se nenhuma URL funcionou, usa dados conhecidos como fallback
     if (!data) {
         console.warn('Todas as APIs falharam, usando dados conhecidos da Mega da Virada 2025');
-        
+
         // Dados oficiais conhecidos da Mega da Virada 2025 (Concurso 2955)
         data = {
             numero: 2955,
@@ -1009,21 +1009,21 @@ function updateCalculator() {
                 calcMemory.style.display = 'block';
                 const cd = state.calculoDetalhado;
 
-                            // Detalhamento por faixa
-                                document.getElementById('calcSenaTotal').textContent = formatCurrency(cd.senaBruto);
-                                document.getElementById('calcQuinaTotal').textContent = formatCurrency(cd.quinaBruto);
-                                document.getElementById('calcQuadraTotal').textContent = formatCurrency(cd.quadraBruto);
+                // Detalhamento por faixa
+                document.getElementById('calcSenaTotal').textContent = formatCurrency(cd.senaBruto);
+                document.getElementById('calcQuinaTotal').textContent = formatCurrency(cd.quinaBruto);
+                document.getElementById('calcQuadraTotal').textContent = formatCurrency(cd.quadraBruto);
 
-                                // Totais consolidados
-                                document.getElementById('calcPremioBruto').textContent = formatCurrency(cd.totalBruto);
-                                document.getElementById('calcTaxaAdmin').textContent = formatCurrency(cd.taxaAdmin);
-                                document.getElementById('calcAposAdmin').textContent = formatCurrency(cd.totalAposAdmin);
-                                document.getElementById('calcITCMD').textContent = formatCurrency(cd.valorITCMD);
-                                document.getElementById('calcPremioLiquido').textContent = formatCurrency(cd.totalLiquido);
-                                document.getElementById('calcTotalCotas').textContent = cd.totalCotas.toLocaleString('pt-BR');
-                                document.getElementById('calcPremioPorCota').textContent = formatCurrency(cd.premioPorCota);
-                                document.getElementById('calcSuasCotas').textContent = (cotasPrincipal + cotasBolao2).toLocaleString('pt-BR');
-                                document.getElementById('calcSeuPremio').textContent = formatCurrency(retornoTotal);
+                // Totais consolidados
+                document.getElementById('calcPremioBruto').textContent = formatCurrency(cd.totalBruto);
+                document.getElementById('calcTaxaAdmin').textContent = formatCurrency(cd.taxaAdmin);
+                document.getElementById('calcAposAdmin').textContent = formatCurrency(cd.totalAposAdmin);
+                document.getElementById('calcITCMD').textContent = formatCurrency(cd.valorITCMD);
+                document.getElementById('calcPremioLiquido').textContent = formatCurrency(cd.totalLiquido);
+                document.getElementById('calcTotalCotas').textContent = cd.totalCotas.toLocaleString('pt-BR');
+                document.getElementById('calcPremioPorCota').textContent = formatCurrency(cd.premioPorCota);
+                document.getElementById('calcSuasCotas').textContent = (cotasPrincipal + cotasBolao2).toLocaleString('pt-BR');
+                document.getElementById('calcSeuPremio').textContent = formatCurrency(retornoTotal);
             }
 
         } else {
@@ -1141,7 +1141,7 @@ function loadSampleGames() {
 
 /**
  * Valida todos os jogos contra os números sorteados
- * Considera jogos de ambos os bolões se os checkboxes estiverem marcados
+ * SEMPRE valida ambos os bolões (Principal e Bolão 2)
  */
 function validateGames() {
     // Verifica se 6 números foram selecionados
@@ -1150,11 +1150,11 @@ function validateGames() {
         return;
     }
 
-    // Coleta jogos de todos os bolões marcados para participação
+    // SEMPRE coleta jogos de ambos os bolões
     let allGames = [];
 
-    // Bolão Principal
-    if (state.participaBolao9 && typeof GAMES_DATABASE_9 !== 'undefined') {
+    // Bolão Principal (9 números por jogo)
+    if (typeof GAMES_DATABASE_9 !== 'undefined') {
         GAMES_DATABASE_9.forEach(group => {
             group.games.forEach(game => {
                 const numbers = game.split(/\s+/).map(n => parseInt(n));
@@ -1167,8 +1167,8 @@ function validateGames() {
         });
     }
 
-    // Bolão 2
-    if (state.participaBolao6 && typeof GAMES_DATABASE_6 !== 'undefined') {
+    // Bolão 2 (6 números por jogo)
+    if (typeof GAMES_DATABASE_6 !== 'undefined') {
         GAMES_DATABASE_6.forEach(group => {
             group.games.forEach(game => {
                 const numbers = game.split(/\s+/).map(n => parseInt(n));
@@ -1181,17 +1181,15 @@ function validateGames() {
         });
     }
 
-    // Se nenhum bolão marcado, usa os jogos do textarea (como fallback)
+    // Se nenhum jogo encontrado, mostra erro
     if (allGames.length === 0) {
-        if (state.parsedGames.length === 0) {
-            showToast('Marque pelo menos um bolão ou cole jogos no campo!', 'error');
-            return;
-        }
-        allGames = state.parsedGames;
+        showToast('Nenhum jogo encontrado nos bolões!', 'error');
+        return;
     }
 
     const sorteados = new Set(state.selectedNumbers);
-    const results = [];
+    const resultsPrincipal = [];
+    const resultsBolao2 = [];
 
     let totalSenas = 0;
     let totalQuinas = 0;
@@ -1230,20 +1228,41 @@ function validateGames() {
         else if (combinacoes.quinas > 0) categoria = 'quina';
         else if (combinacoes.quadras > 0) categoria = 'quadra';
 
-        results.push({
+        const resultado = {
             ...game,
             acertos: acertos,
             numAcertos: numAcertos,
             combinacoes: combinacoes,
             categoria: categoria
-        });
+        };
+
+        // Separa os resultados por bolão
+        if (game.bolao === 'Principal') {
+            resultsPrincipal.push(resultado);
+        } else {
+            resultsBolao2.push(resultado);
+        }
     }
 
-    // Ordena por categoria (senas primeiro, depois quinas, depois quadras)
-    results.sort((a, b) => {
+    // Ordena Bolão Principal por categoria (senas primeiro, depois quinas, depois quadras)
+    resultsPrincipal.sort((a, b) => {
         const order = { sena: 0, quina: 1, quadra: 2, none: 3 };
         return order[a.categoria] - order[b.categoria];
     });
+
+    // Ordena Bolão 2 por QUANTIDADE DE ACERTOS (mais acertos primeiro)
+    resultsBolao2.sort((a, b) => {
+        // Primeiro por número de acertos (decrescente)
+        if (b.numAcertos !== a.numAcertos) {
+            return b.numAcertos - a.numAcertos;
+        }
+        // Depois por categoria como desempate
+        const order = { sena: 0, quina: 1, quadra: 2, none: 3 };
+        return order[a.categoria] - order[b.categoria];
+    });
+
+    // Combina resultados: Principal primeiro, depois Bolão 2
+    const results = [...resultsPrincipal, ...resultsBolao2];
 
     // Salva resultados no estado
     state.validationResults = {
@@ -1352,10 +1371,10 @@ function displayResults() {
 
     // Taxa do Admin (10%)
     const taxaAdmin = BOLAO_CONFIG.descontoAdmin;
-    
+
     // ITCMD - Imposto Estadual SP (4%)
     const taxaITCMD = BOLAO_CONFIG.aliquotaITCMD;
-    
+
     // Fator líquido total: (1 - 10% admin) * (1 - 4% ITCMD) = 0.90 * 0.96 = 0.864
     const fatorLiquidoTotal = (1 - taxaAdmin) * (1 - taxaITCMD);
 
@@ -1370,7 +1389,7 @@ function displayResults() {
     const quinaLiquido = quinaBruto * fatorLiquidoTotal;
     const quadraLiquido = quadraBruto * fatorLiquidoTotal;
     const totalLiquido = totalBruto * fatorLiquidoTotal;
-    
+
     // Valor do ITCMD (calculado sobre o valor após admin)
     const valorITCMD = totalAposAdmin * taxaITCMD;
 
@@ -1423,11 +1442,11 @@ function displayResults() {
         totalBruto: totalBruto,
         taxaAdmin: totalBruto * BOLAO_CONFIG.descontoAdmin,
         totalAposAdmin: totalAposAdmin,
-        
+
         // ITCMD - 4% sobre valor após admin
         valorITCMD: valorITCMD,
         aliquotaITCMD: BOLAO_CONFIG.aliquotaITCMD * 100, // Em percentual para exibição
-        
+
         totalLiquido: totalLiquido,
 
         // Cálculo por cota (apenas Bolão Principal)
