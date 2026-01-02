@@ -65,193 +65,6 @@
     </header>
 
     <main class="main-container">
-        <!-- Informações do Bolão -->
-        <section class="bolao-info glass-card">
-            <div class="section-header">
-                <h2>📊 Informações do Bolão</h2>
-                <div class="header-actions">
-                    <span class="badge">Dados Oficiais</span>
-                    <button class="btn-icon-small" id="editBolaoBtn" title="Editar Dados">✏️</button>
-                    <button class="btn-icon-small" id="saveBolaoBtn" title="Salvar Dados"
-                        style="display: none;">💾</button>
-                </div>
-            </div>
-            <div class="info-grid" id="bolaoInfoGrid">
-                <div class="info-card">
-                    <div class="info-icon">💰</div>
-                    <div class="info-content">
-                        <span class="info-label">Arrecadação Total</span>
-                        <span class="info-value" id="viewArrecadacao">R$ 536.993,99</span>
-                        <input type="number" step="0.01" class="info-input" id="editArrecadacao" style="display: none;">
-                    </div>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">👥</div>
-                    <div class="info-content">
-                        <span class="info-label">Participantes</span>
-                        <span class="info-value" id="viewParticipantes">1.743 pessoas</span>
-                        <input type="number" class="info-input" id="editParticipantes" style="display: none;">
-                    </div>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">🎫</div>
-                    <div class="info-content">
-                        <span class="info-label">Cotas (Principal)</span>
-                        <span class="info-value" id="viewTotalCotas">21.309</span>
-                        <input type="number" class="info-input" id="editTotalCotas" style="display: none;">
-                    </div>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">🎟️</div>
-                    <div class="info-content">
-                        <span class="info-label">Cotas (Bolão 2)</span>
-                        <span class="info-value" id="viewTotalCotasBolao2">4.818</span>
-                        <input type="number" class="info-input" id="editTotalCotasBolao2" style="display: none;">
-                    </div>
-                </div>
-                <!-- Card Valor da Cota (Explícito para edição) -->
-                <div class="info-card">
-                    <div class="info-icon">💲</div>
-                    <div class="info-content">
-                        <span class="info-label">Valor da Cota</span>
-                        <span class="info-value" id="viewValorCota">R$ 25,20</span>
-                        <input type="number" step="0.01" class="info-input" id="editValorCota" style="display: none;">
-                    </div>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">📱</div>
-                    <div class="info-content">
-                        <span class="info-label">Pixes Realizados</span>
-                        <span class="info-value" id="viewPixes">3.410</span>
-                        <input type="number" class="info-input" id="editPixes" style="display: none;">
-                    </div>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">9️⃣</div>
-                    <div class="info-content">
-                        <span class="info-label">Jogos de 9 números</span>
-                        <span class="info-value" id="viewJogos9">1101</span>
-                        <input type="number" class="info-input" id="editJogos9" style="display: none;">
-                    </div>
-                </div>
-                <div class="info-card">
-                    <div class="info-icon">🎲</div>
-                    <div class="info-content">
-                        <span class="info-label">Jogos de 6 números</span>
-                        <span class="info-value" id="viewJogos6">63</span>
-                        <input type="number" class="info-input" id="editJogos6" style="display: none;">
-                    </div>
-                </div>
-            </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="faq-section glass-card">
-            <div class="section-header">
-                <h2>❓ Principais Dúvidas - Bolão Oficial</h2>
-            </div>
-
-            <div class="faq-list">
-                <details class="faq-item">
-                    <summary>1. Qual bolão ganhou o prêmio principal?</summary>
-                    <div class="faq-answer">
-                        <ul>
-                            <li>Bolão com valor da cota de R$ 25,20.</li>
-                            <li>Valeram os PIX realizados entre 7h de 12/11/2025 e 17h de 28/12/2025.</li>
-                            <li>Grupos de WhatsApp: 1️⃣ Mega da Virada 2026 🍀 e 2️⃣ Mega da Virada 2026 🍀.</li>
-                            <li>O comprovante do PIX é a prova de participação no bolão, conforme regras.</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>2. Houve outros prêmios nos jogos do bolão?</summary>
-                    <div class="faq-answer">
-                        <ul>
-                            <li>Sim, houve diversos outros jogos com acerto de 4 dezenas (quadra) nos jogos oficiais do
-                                bolão da Mega-Sena.</li>
-                            <li>Assim que todos forem contabilizados, o saldo total será informado nos grupos: 1️⃣ Mega
-                                da Virada 2026 🍀 e 2️⃣ Mega da Virada 2026 🍀.</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>3. Qual o valor do prêmio por cota?</summary>
-                    <div class="faq-answer">
-                        <ul>
-                            <li>Ainda não há valor oficial informado pela Caixa.</li>
-                            <li>A estimativa atual é de aproximadamente R$ 7.000,00 por cota, mas esse valor pode mudar
-                                após o resgate oficial do prêmio.</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>4. Quando o prêmio será pago?</summary>
-                    <div class="faq-answer">
-                        <ul>
-                            <li>No momento, não há previsão exata para o pagamento.</li>
-                            <li>A intenção é que o pagamento seja feito o mais rápido possível, assim que todos os
-                                trâmites forem concluídos.</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>5. Como vou receber o prêmio?</summary>
-                    <div class="faq-answer">
-                        <ul>
-                            <li>Será disponibilizado um formulário on-line para preenchimento dos dados bancários de
-                                cada participante.</li>
-                            <li>Após o envio correto dos dados, será feito o depósito do valor correspondente à sua
-                                cota.</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>6. Posso receber em conta de terceiro?</summary>
-                    <div class="faq-answer">
-                        <ul>
-                            <li>Não. O pagamento será feito apenas para a pessoa que realizou o PIX da cota.</li>
-                            <li>Exemplo: se João Manoel Silva fez o PIX, o prêmio será pago em conta bancária no nome de
-                                João Manoel Silva, igual ao nome que aparece no comprovante do PIX.</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>7. Vai continuar fazendo bolão?</summary>
-                    <div class="faq-answer">
-                        <ul>
-                            <li>Sim, a ideia é continuar organizando bolões.</li>
-                            <li>O objetivo é seguir criando oportunidades e transformando vidas por meio dos prêmios.
-                            </li>
-                        </ul>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>8. Outros bolões com prêmio</summary>
-                    <div class="faq-answer">
-                        <ul>
-                            <li><strong>Bolão saldo da Quina de Independência:</strong> houve prêmio de R$ 2.167,60; o
-                                saldo do grupo será reinvestido em um novo bolão.</li>
-                            <li><strong>Último bolão da Mega:</strong> estão sendo validados todos os 4.820 jogos
-                                realizados na lotérica física; assim que a conferência terminar, o resultado será
-                                compartilhado no grupo.</li>
-                        </ul>
-                    </div>
-                </details>
-            </div>
-
-            <p style="margin-top: 20px; text-align: center; color: var(--text-secondary); font-style: italic;">
-                Demais dúvidas, estou à disposição.
-            </p>
-        </section>
-
         <!-- Calculadora de Cotas Pessoais -->
         <section class="quota-calculator glass-card" id="calculatorSection">
             <div class="section-header">
@@ -433,6 +246,196 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+
+
+        <!-- FAQ Section -->
+        <section class="faq-section glass-card">
+            <div class="section-header">
+                <h2>❓ Principais Dúvidas - Bolão Oficial</h2>
+            </div>
+
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>1. Qual bolão ganhou o prêmio principal?</summary>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>Bolão com valor da cota de R$ 25,20.</li>
+                            <li>Valeram os PIX realizados entre 7h de 12/11/2025 e 17h de 28/12/2025.</li>
+                            <li>Grupos de WhatsApp: 1️⃣ Mega da Virada 2026 🍀 e 2️⃣ Mega da Virada 2026 🍀.</li>
+                            <li>O comprovante do PIX é a prova de participação no bolão, conforme regras.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>2. Houve outros prêmios nos jogos do bolão?</summary>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>Sim, houve diversos outros jogos com acerto de 4 dezenas (quadra) nos jogos oficiais do
+                                bolão da Mega-Sena.</li>
+                            <li>Assim que todos forem contabilizados, o saldo total será informado nos grupos: 1️⃣ Mega
+                                da Virada 2026 🍀 e 2️⃣ Mega da Virada 2026 🍀.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>3. Qual o valor do prêmio por cota?</summary>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>Ainda não há valor oficial informado pela Caixa.</li>
+                            <li>A estimativa atual é de aproximadamente R$ 7.000,00 por cota, mas esse valor pode mudar
+                                após o resgate oficial do prêmio.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>4. Quando o prêmio será pago?</summary>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>No momento, não há previsão exata para o pagamento.</li>
+                            <li>A intenção é que o pagamento seja feito o mais rápido possível, assim que todos os
+                                trâmites forem concluídos.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>5. Como vou receber o prêmio?</summary>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>Será disponibilizado um formulário on-line para preenchimento dos dados bancários de
+                                cada participante.</li>
+                            <li>Após o envio correto dos dados, será feito o depósito do valor correspondente à sua
+                                cota.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>6. Posso receber em conta de terceiro?</summary>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>Não. O pagamento será feito apenas para a pessoa que realizou o PIX da cota.</li>
+                            <li>Exemplo: se João Manoel Silva fez o PIX, o prêmio será pago em conta bancária no nome de
+                                João Manoel Silva, igual ao nome que aparece no comprovante do PIX.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>7. Vai continuar fazendo bolão?</summary>
+                    <div class="faq-answer">
+                        <ul>
+                            <li>Sim, a ideia é continuar organizando bolões.</li>
+                            <li>O objetivo é seguir criando oportunidades e transformando vidas por meio dos prêmios.
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>8. Outros bolões com prêmio</summary>
+                    <div class="faq-answer">
+                        <ul>
+                            <li><strong>Bolão saldo da Quina de Independência:</strong> houve prêmio de R$ 2.167,60; o
+                                saldo do grupo será reinvestido em um novo bolão.</li>
+                            <li><strong>Último bolão da Mega:</strong> estão sendo validados todos os 4.820 jogos
+                                realizados na lotérica física; assim que a conferência terminar, o resultado será
+                                compartilhado no grupo.</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+
+            <p style="margin-top: 20px; text-align: center; color: var(--text-secondary); font-style: italic;">
+                Demais dúvidas, estou à disposição.
+            </p>
+        </section>
+
+        <!-- Informações do Bolão -->
+        <section class="bolao-info glass-card">
+            <div class="section-header">
+                <h2>📊 Informações do Bolão</h2>
+                <div class="header-actions">
+                    <span class="badge">Dados Oficiais</span>
+                    <button class="btn-icon-small" id="editBolaoBtn" title="Editar Dados">✏️</button>
+                    <button class="btn-icon-small" id="saveBolaoBtn" title="Salvar Dados"
+                        style="display: none;">💾</button>
+                </div>
+            </div>
+            <div class="info-grid" id="bolaoInfoGrid">
+                <div class="info-card">
+                    <div class="info-icon">💰</div>
+                    <div class="info-content">
+                        <span class="info-label">Arrecadação Total</span>
+                        <span class="info-value" id="viewArrecadacao">R$ 536.993,99</span>
+                        <input type="number" step="0.01" class="info-input" id="editArrecadacao" style="display: none;">
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">👥</div>
+                    <div class="info-content">
+                        <span class="info-label">Participantes</span>
+                        <span class="info-value" id="viewParticipantes">1.743 pessoas</span>
+                        <input type="number" class="info-input" id="editParticipantes" style="display: none;">
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🎫</div>
+                    <div class="info-content">
+                        <span class="info-label">Cotas (Principal)</span>
+                        <span class="info-value" id="viewTotalCotas">21.309</span>
+                        <input type="number" class="info-input" id="editTotalCotas" style="display: none;">
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🎟️</div>
+                    <div class="info-content">
+                        <span class="info-label">Cotas (Bolão 2)</span>
+                        <span class="info-value" id="viewTotalCotasBolao2">4.818</span>
+                        <input type="number" class="info-input" id="editTotalCotasBolao2" style="display: none;">
+                    </div>
+                </div>
+                <!-- Card Valor da Cota (Explícito para edição) -->
+                <div class="info-card">
+                    <div class="info-icon">💲</div>
+                    <div class="info-content">
+                        <span class="info-label">Valor da Cota</span>
+                        <span class="info-value" id="viewValorCota">R$ 25,20</span>
+                        <input type="number" step="0.01" class="info-input" id="editValorCota" style="display: none;">
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">📱</div>
+                    <div class="info-content">
+                        <span class="info-label">Pixes Realizados</span>
+                        <span class="info-value" id="viewPixes">3.410</span>
+                        <input type="number" class="info-input" id="editPixes" style="display: none;">
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">9️⃣</div>
+                    <div class="info-content">
+                        <span class="info-label">Jogos de 9 números</span>
+                        <span class="info-value" id="viewJogos9">1101</span>
+                        <input type="number" class="info-input" id="editJogos9" style="display: none;">
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🎲</div>
+                    <div class="info-content">
+                        <span class="info-label">Jogos de 6 números</span>
+                        <span class="info-value" id="viewJogos6">63</span>
+                        <input type="number" class="info-input" id="editJogos6" style="display: none;">
+                    </div>
+                </div>
+            </div>
             </div>
         </section>
 
