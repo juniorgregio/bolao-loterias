@@ -57,9 +57,9 @@
                 <span class="prize-label">Prêmio Real</span>
                 <span class="prize-value">R$ 1,09 BI</span>
             </div>
-            <button class="btn-last-draw" id="viewLastDrawBtn" onclick="toggleLastDraw()">
-                <span class="btn-icon">📅</span>
-                Ver Detalhes
+            <button class="btn-last-draw" id="viewFaqBtn" onclick="toggleFaqModal()">
+                <span class="btn-icon">❓</span>
+                Principais Dúvidas para os ganhadores
             </button>
         </div>
     </header>
@@ -252,111 +252,7 @@
         <!-- FAQ Section -->
 
 
-        <!-- FAQ Section -->
-        <section class="faq-section glass-card">
-            <div class="section-header">
-                <h2>❓ Principais Dúvidas - Bolão Oficial</h2>
-            </div>
 
-            <div class="faq-list">
-                <details class="faq-item">
-                    <summary>1. Qual bolão ganhou o prêmio principal?</summary>
-                    <div class="faq-answer">
-                        <ul>
-                            <li>Bolão com valor da cota de R$ 25,20.</li>
-                            <li>Valeram os PIX realizados entre 7h de 12/11/2025 e 17h de 28/12/2025.</li>
-                            <li>Grupos de WhatsApp: 1️⃣ Mega da Virada 2026 🍀 e 2️⃣ Mega da Virada 2026 🍀.</li>
-                            <li>O comprovante do PIX é a prova de participação no bolão, conforme regras.</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>2. Houve outros prêmios nos jogos do bolão?</summary>
-                    <div class="faq-answer">
-                        <ul>
-                            <li>Sim, houve diversos outros jogos com acerto de 4 dezenas (quadra) nos jogos oficiais do
-                                bolão da Mega-Sena.</li>
-                            <li>Assim que todos forem contabilizados, o saldo total será informado nos grupos: 1️⃣ Mega
-                                da Virada 2026 🍀 e 2️⃣ Mega da Virada 2026 🍀.</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>3. Qual o valor do prêmio por cota?</summary>
-                    <div class="faq-answer">
-                        <ul>
-                            <li>Ainda não há valor oficial informado pela Caixa.</li>
-                            <li>A estimativa atual é de aproximadamente R$ 7.000,00 por cota, mas esse valor pode mudar
-                                após o resgate oficial do prêmio.</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>4. Quando o prêmio será pago?</summary>
-                    <div class="faq-answer">
-                        <ul>
-                            <li>No momento, não há previsão exata para o pagamento.</li>
-                            <li>A intenção é que o pagamento seja feito o mais rápido possível, assim que todos os
-                                trâmites forem concluídos.</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>5. Como vou receber o prêmio?</summary>
-                    <div class="faq-answer">
-                        <ul>
-                            <li>Será disponibilizado um formulário on-line para preenchimento dos dados bancários de
-                                cada participante.</li>
-                            <li>Após o envio correto dos dados, será feito o depósito do valor correspondente à sua
-                                cota.</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>6. Posso receber em conta de terceiro?</summary>
-                    <div class="faq-answer">
-                        <ul>
-                            <li>Não. O pagamento será feito apenas para a pessoa que realizou o PIX da cota.</li>
-                            <li>Exemplo: se João Manoel Silva fez o PIX, o prêmio será pago em conta bancária no nome de
-                                João Manoel Silva, igual ao nome que aparece no comprovante do PIX.</li>
-                        </ul>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>7. Vai continuar fazendo bolão?</summary>
-                    <div class="faq-answer">
-                        <ul>
-                            <li>Sim, a ideia é continuar organizando bolões.</li>
-                            <li>O objetivo é seguir criando oportunidades e transformando vidas por meio dos prêmios.
-                            </li>
-                        </ul>
-                    </div>
-                </details>
-
-                <details class="faq-item">
-                    <summary>8. Outros bolões com prêmio</summary>
-                    <div class="faq-answer">
-                        <ul>
-                            <li><strong>Bolão saldo da Quina de Independência:</strong> houve prêmio de R$ 2.167,60; o
-                                saldo do grupo será reinvestido em um novo bolão.</li>
-                            <li><strong>Último bolão da Mega:</strong> estão sendo validados todos os 4.820 jogos
-                                realizados na lotérica física; assim que a conferência terminar, o resultado será
-                                compartilhado no grupo.</li>
-                        </ul>
-                    </div>
-                </details>
-            </div>
-
-            <p style="margin-top: 20px; text-align: center; color: var(--text-secondary); font-style: italic;">
-                Demais dúvidas, estou à disposição.
-            </p>
-        </section>
 
         <!-- Informações do Bolão -->
         <section class="bolao-info glass-card">
@@ -827,6 +723,113 @@
             <div class="modal-footer" style="padding-top: 15px; display: flex; gap: 10px; justify-content: flex-end;">
                 <button class="btn btn-outline" id="downloadExcelModalBtn">📊 Baixar Excel</button>
                 <button class="btn btn-outline" id="downloadCsvModalBtn">📄 Baixar CSV</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal FAQ -->
+    <div id="faqModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content glass-card large-modal" style="max-width: 800px; max-height: 85vh; overflow-y: auto;">
+            <div class="modal-header">
+                <h3>❓ Principais Dúvidas - Bolão Oficial</h3>
+                <button class="close-modal" onclick="toggleFaqModal()">✖</button>
+            </div>
+
+            <div class="modal-body">
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>1. Qual bolão ganhou o prêmio principal?</summary>
+                        <div class="faq-answer">
+                            <ul>
+                                <li>Bolão com valor da cota de R$ 25,20.</li>
+                                <li>Valeram os PIX realizados entre 7h de 12/11/2025 e 17h de 28/12/2025.</li>
+                                <li>Grupos de WhatsApp: 1️⃣ Mega da Virada 2026 🍀 e 2️⃣ Mega da Virada 2026 🍀.</li>
+                                <li>O comprovante do PIX é a prova de participação no bolão, conforme regras.</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>2. Houve outros prêmios nos jogos do bolão?</summary>
+                        <div class="faq-answer">
+                            <ul>
+                                <li>Sim, houve diversos outros jogos com acerto de 4 dezenas (quadra) nos jogos oficiais
+                                    do bolão da Mega-Sena.</li>
+                                <li>Assim que todos forem contabilizados, o saldo total será informado nos grupos: 1️⃣
+                                    Mega da Virada 2026 🍀 e 2️⃣ Mega da Virada 2026 🍀.</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>3. Qual o valor do prêmio por cota?</summary>
+                        <div class="faq-answer">
+                            <ul>
+                                <li>Ainda não há valor oficial informado pela Caixa.</li>
+                                <li>A estimativa atual é de aproximadamente R$ 7.000,00 por cota, mas esse valor pode
+                                    mudar após o resgate oficial do prêmio.</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>4. Quando o prêmio será pago?</summary>
+                        <div class="faq-answer">
+                            <ul>
+                                <li>No momento, não há previsão exata para o pagamento.</li>
+                                <li>A intenção é que o pagamento seja feito o mais rápido possível, assim que todos os
+                                    trâmites forem concluídos.</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>5. Como vou receber o prêmio?</summary>
+                        <div class="faq-answer">
+                            <ul>
+                                <li>Será disponibilizado um formulário on-line para preenchimento dos dados bancários de
+                                    cada participante.</li>
+                                <li>Após o envio correto dos dados, será feito o depósito do valor correspondente à sua
+                                    cota.</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>6. Posso receber em conta de terceiro?</summary>
+                        <div class="faq-answer">
+                            <ul>
+                                <li>Não. O pagamento será feito apenas para a pessoa que realizou o PIX da cota.</li>
+                                <li>Exemplo: se João Manoel Silva fez o PIX, o prêmio será pago em conta bancária no
+                                    nome de João Manoel Silva, igual ao nome que aparece no comprovante do PIX.</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>7. Vai continuar fazendo bolão?</summary>
+                        <div class="faq-answer">
+                            <ul>
+                                <li>Sim, a ideia é continuar organizando bolões.</li>
+                                <li>O objetivo é seguir criando oportunidades e transformando vidas por meio dos
+                                    prêmios.</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>8. Outros bolões com prêmio</summary>
+                        <div class="faq-answer">
+                            <ul>
+                                <li><strong>Bolão saldo da Quina de Independência:</strong> houve prêmio de R$ 2.167,60;
+                                    o saldo do grupo será reinvestido em um novo bolão.</li>
+                                <li><strong>Último bolão da Mega:</strong> estão sendo validados todos os 4.820 jogos
+                                    realizados na lotérica física; assim que a conferência terminar, o resultado será
+                                    compartilhado no grupo.</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
             </div>
         </div>
     </div>

@@ -752,6 +752,20 @@ function toggleLastDraw() {
 }
 
 /**
+ * Alterna visibilidade do Modal de FAQ
+ */
+function toggleFaqModal() {
+    const modal = document.getElementById('faqModal');
+    if (!modal) return;
+
+    if (modal.style.display === 'none' || modal.style.display === '') {
+        modal.style.display = 'flex';
+    } else {
+        modal.style.display = 'none';
+    }
+}
+
+/**
  * Busca dados detalhados do último sorteio para o modal
  * Só exibe se for o concurso da Virada (31/12/2025 ou 01/01/2026)
  */
