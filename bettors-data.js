@@ -120,8 +120,8 @@ const BETTORS_DATABASE = {
     },
     "PEDRO MARQUES DE SOUSA NETO": {
         "name": "PEDRO MARQUES DE SOUSA NETO",
-        "totalValue": 252.0,
-        "totalQuotas": 10.0,
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
         "entries": [
             {
                 "date": "01/12/2025",
@@ -137,6 +137,11 @@ const BETTORS_DATABASE = {
                 "date": "24/12/2025",
                 "value": 50.4,
                 "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
             }
         ]
     },
@@ -183,8 +188,8 @@ const BETTORS_DATABASE = {
     },
     "WAGNER MARQUES BEZERRA": {
         "name": "WAGNER MARQUES BEZERRA",
-        "totalValue": 378.0,
-        "totalQuotas": 15.0,
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
         "entries": [
             {
                 "date": "12/11/2025",
@@ -200,6 +205,16 @@ const BETTORS_DATABASE = {
                 "date": "25/12/2025",
                 "value": 126.0,
                 "quotas": 5.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
             }
         ]
     },
@@ -11408,9 +11423,14 @@ const BETTORS_DATABASE = {
     },
     "GILSON SOARES CAVALCANTE": {
         "name": "GILSON SOARES CAVALCANTE",
-        "totalValue": 25.0,
-        "totalQuotas": 1.0,
+        "totalValue": 50.0,
+        "totalQuotas": 2.0,
         "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            },
             {
                 "date": "22/12/2025",
                 "value": 25.0,
@@ -14817,6 +14837,14298 @@ const BETTORS_DATABASE = {
             },
             {
                 "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "KAREN LINA KIKU": {
+        "name": "KAREN LINA KIKU",
+        "totalValue": 1134.0,
+        "totalQuotas": 45.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "KARIN RODRIGUES CORREIA": {
+        "name": "KARIN RODRIGUES CORREIA",
+        "totalValue": 655.2,
+        "totalQuotas": 26.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "KARINA APARECIDA MATHIAS": {
+        "name": "KARINA APARECIDA MATHIAS",
+        "totalValue": 478.79999999999995,
+        "totalQuotas": 19.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "KARINA C M AZEVEDO": {
+        "name": "KARINA C M AZEVEDO",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "KARINA CRISTINA MATTOS AZEVEDO": {
+        "name": "KARINA CRISTINA MATTOS AZEVEDO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "KARINA GOMES DO NASCIMENTO": {
+        "name": "KARINA GOMES DO NASCIMENTO",
+        "totalValue": 352.8,
+        "totalQuotas": 14.0,
+        "entries": [
+            {
+                "date": "08/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 100.0,
+                "quotas": 4.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 0.8,
+                "quotas": 0.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "KARINA ROMAO DE CARVALHO": {
+        "name": "KARINA ROMAO DE CARVALHO",
+        "totalValue": 50.45,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 25.25,
+                "quotas": 1.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "KARINE HYGINO RANGEL DE OLIVEIRA": {
+        "name": "KARINE HYGINO RANGEL DE OLIVEIRA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "KARINE MAIA SOUZA": {
+        "name": "KARINE MAIA SOUZA",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "07/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "KAROLINE DE OLIVEIRA": {
+        "name": "KAROLINE DE OLIVEIRA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "KATIA GUEDES BRANDAO": {
+        "name": "KATIA GUEDES BRANDAO",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "KATIUCA ALBERTI REALI": {
+        "name": "KATIUCA ALBERTI REALI",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "KATYA REGINA ROTHSTEIN RIBEIRO": {
+        "name": "KATYA REGINA ROTHSTEIN RIBEIRO",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "KAUE TADEU DOBRIOGLO": {
+        "name": "KAUE TADEU DOBRIOGLO",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "KEILA CRISTINA CORREA FERRO": {
+        "name": "KEILA CRISTINA CORREA FERRO",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "24/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "09/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "KEILA REGINA AMARAL DE OLIVEIRA": {
+        "name": "KEILA REGINA AMARAL DE OLIVEIRA",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "KEITH DAYANE FORTES SERRA": {
+        "name": "KEITH DAYANE FORTES SERRA",
+        "totalValue": 3024.0,
+        "totalQuotas": 120.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 1260.0,
+                "quotas": 50.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 756.0,
+                "quotas": 30.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 1008.0,
+                "quotas": 40.0
+            }
+        ]
+    },
+    "KELLER ROSSI": {
+        "name": "KELLER ROSSI",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "KELLY CRISTINA MONTEIRO": {
+        "name": "KELLY CRISTINA MONTEIRO",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "KENER MARDEN DE OLIVEIRA": {
+        "name": "KENER MARDEN DE OLIVEIRA",
+        "totalValue": 302.4,
+        "totalQuotas": 12.0,
+        "entries": [
+            {
+                "date": "18/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 176.4,
+                "quotas": 7.0
+            }
+        ]
+    },
+    "KETLEY DUARTE DE MOURA": {
+        "name": "KETLEY DUARTE DE MOURA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "KEVIN LINCON DE SOUZA": {
+        "name": "KEVIN LINCON DE SOUZA",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "KEVIN SADAO NAKAKITA": {
+        "name": "KEVIN SADAO NAKAKITA",
+        "totalValue": 1008.0,
+        "totalQuotas": 40.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 1008.0,
+                "quotas": 40.0
+            }
+        ]
+    },
+    "KIYOMI IIDA YAMAMOTO": {
+        "name": "KIYOMI IIDA YAMAMOTO",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "04/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "KLEBER SIQUEIRA": {
+        "name": "KLEBER SIQUEIRA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "09/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "LAERTE GRIGOLETTO TORETTA": {
+        "name": "LAERTE GRIGOLETTO TORETTA",
+        "totalValue": 1260.0,
+        "totalQuotas": 50.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 1260.0,
+                "quotas": 50.0
+            }
+        ]
+    },
+    "LAIANE DE SOUSA MARTINS": {
+        "name": "LAIANE DE SOUSA MARTINS",
+        "totalValue": 176.4,
+        "totalQuotas": 7.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LAIS SOMERA DE ARAUJO": {
+        "name": "LAIS SOMERA DE ARAUJO",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "LANIO DO NASCIMENTO AMARAL": {
+        "name": "LANIO DO NASCIMENTO AMARAL",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LARISSA DA SILVA SANTOS": {
+        "name": "LARISSA DA SILVA SANTOS",
+        "totalValue": 100.83,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/11/2025",
+                "value": 25.21,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/11/2025",
+                "value": 25.22,
+                "quotas": 1.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LARISSA DE OLIVEIRA ARAUJO CAMPOLONGO": {
+        "name": "LARISSA DE OLIVEIRA ARAUJO CAMPOLONGO",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "LARISSA DE PAIVA ROCHA": {
+        "name": "LARISSA DE PAIVA ROCHA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LARISSA DIAS DOS SANTOS": {
+        "name": "LARISSA DIAS DOS SANTOS",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "LAZARO A DE TOLEDO": {
+        "name": "LAZARO A DE TOLEDO",
+        "totalValue": 302.8,
+        "totalQuotas": 12.0,
+        "entries": [
+            {
+                "date": "25/11/2025",
+                "value": 50.8,
+                "quotas": 2.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "LEANDRO ADALBERTO LEAO": {
+        "name": "LEANDRO ADALBERTO LEAO",
+        "totalValue": 1512.0,
+        "totalQuotas": 60.0,
+        "entries": [
+            {
+                "date": "14/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "14/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "LEANDRO CERRO DE MOURA": {
+        "name": "LEANDRO CERRO DE MOURA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "LEANDRO CUSTODIO MENEGAZZO": {
+        "name": "LEANDRO CUSTODIO MENEGAZZO",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "17/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "LEANDRO DA SILVA SANTOS": {
+        "name": "LEANDRO DA SILVA SANTOS",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LEANDRO DE ALMEIDA MAGRO": {
+        "name": "LEANDRO DE ALMEIDA MAGRO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LEANDRO DE PAIVA FLORENTINO": {
+        "name": "LEANDRO DE PAIVA FLORENTINO",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "14/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LEANDRO DE SOUZA CAMARGO": {
+        "name": "LEANDRO DE SOUZA CAMARGO",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "LEANDRO DOS SANTOS SIQUEIRA": {
+        "name": "LEANDRO DOS SANTOS SIQUEIRA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "LEANDRO FERREIRA OLIVEIRA": {
+        "name": "LEANDRO FERREIRA OLIVEIRA",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LEANDRO GARCIA": {
+        "name": "LEANDRO GARCIA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "LEANDRO GOUVEIA": {
+        "name": "LEANDRO GOUVEIA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "18/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LEANDRO LUÍS SEVERINO DE SOUZA": {
+        "name": "LEANDRO LUÍS SEVERINO DE SOUZA",
+        "totalValue": 201.6,
+        "totalQuotas": 8.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LEANDRO MIRABELLI": {
+        "name": "LEANDRO MIRABELLI",
+        "totalValue": 428.4,
+        "totalQuotas": 17.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "LEANDRO PINHEIRO DE CARVALHO": {
+        "name": "LEANDRO PINHEIRO DE CARVALHO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LEANDRO PINHEIRO DE MASENO": {
+        "name": "LEANDRO PINHEIRO DE MASENO",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "LEANDRO RENATO SOAVE SPOLADORE": {
+        "name": "LEANDRO RENATO SOAVE SPOLADORE",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "LEANDRO TIETZ DE OLIVEIRA": {
+        "name": "LEANDRO TIETZ DE OLIVEIRA",
+        "totalValue": 756.0,
+        "totalQuotas": 30.0,
+        "entries": [
+            {
+                "date": "17/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "LEE MO LING": {
+        "name": "LEE MO LING",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LEIA REGINA DA CUNHA AZARIAS": {
+        "name": "LEIA REGINA DA CUNHA AZARIAS",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "12/12/2025",
+                "value": 75.0,
+                "quotas": 3.0
+            },
+            {
+                "date": "12/12/2025",
+                "value": 0.6,
+                "quotas": 0.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LEIDY COROMOTO ESCOBAR BRICENO": {
+        "name": "LEIDY COROMOTO ESCOBAR BRICENO",
+        "totalValue": 352.8,
+        "totalQuotas": 14.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 327.6,
+                "quotas": 13.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LEILA SOARES DE LIMA": {
+        "name": "LEILA SOARES DE LIMA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "LEIVA BARBOSA": {
+        "name": "LEIVA BARBOSA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LEONARDO A D TOFOLI": {
+        "name": "LEONARDO A D TOFOLI",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "17/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "LEONARDO AUGUSTO FLORENCIO RAMOS": {
+        "name": "LEONARDO AUGUSTO FLORENCIO RAMOS",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "15/11/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "LEONARDO AUGUSTO GARCIA LEME": {
+        "name": "LEONARDO AUGUSTO GARCIA LEME",
+        "totalValue": 176.4,
+        "totalQuotas": 7.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LEONARDO COSTA VIANNA": {
+        "name": "LEONARDO COSTA VIANNA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LEONARDO FERNANDO FINI": {
+        "name": "LEONARDO FERNANDO FINI",
+        "totalValue": 176.4,
+        "totalQuotas": 7.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 176.4,
+                "quotas": 7.0
+            }
+        ]
+    },
+    "LEONARDO GONÇALVES XAVIER": {
+        "name": "LEONARDO GONÇALVES XAVIER",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LEONARDO HENRIQUE RIZZOLA": {
+        "name": "LEONARDO HENRIQUE RIZZOLA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LEONARDO LORENZETI GINCO": {
+        "name": "LEONARDO LORENZETI GINCO",
+        "totalValue": 2016.0,
+        "totalQuotas": 80.0,
+        "entries": [
+            {
+                "date": "13/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "LEONARDO LYRIO RODRIGUES": {
+        "name": "LEONARDO LYRIO RODRIGUES",
+        "totalValue": 1008.0,
+        "totalQuotas": 40.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 1008.0,
+                "quotas": 40.0
+            }
+        ]
+    },
+    "LEONARDO PEREZ FERNANDES": {
+        "name": "LEONARDO PEREZ FERNANDES",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "LEONARDO TORRES DE MENDONCA": {
+        "name": "LEONARDO TORRES DE MENDONCA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LEONE RODRIGUES TEODORO": {
+        "name": "LEONE RODRIGUES TEODORO",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "LEONEL DASSO MARTINS": {
+        "name": "LEONEL DASSO MARTINS",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "LESLIE URANI DA SILVA": {
+        "name": "LESLIE URANI DA SILVA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LETICIA BARBOSA DE SOUSA": {
+        "name": "LETICIA BARBOSA DE SOUSA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "LETICIA DE LIMA AUGUSTO": {
+        "name": "LETICIA DE LIMA AUGUSTO",
+        "totalValue": 176.6,
+        "totalQuotas": 7.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "13/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 50.6,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LETICIA FERREIRA TAVARES": {
+        "name": "LETICIA FERREIRA TAVARES",
+        "totalValue": 50.0,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 50.0,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LETICIA MARQUES DE CASTRO": {
+        "name": "LETICIA MARQUES DE CASTRO",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LETICIA MONTEIRO DEALIS": {
+        "name": "LETICIA MONTEIRO DEALIS",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "LETICIA ROCHA DE SIQUEIRA": {
+        "name": "LETICIA ROCHA DE SIQUEIRA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "LICIONEVITO DIAS DE ARAUJO": {
+        "name": "LICIONEVITO DIAS DE ARAUJO",
+        "totalValue": 1008.0,
+        "totalQuotas": 40.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "LIDIA APARECIDA BARBOSA": {
+        "name": "LIDIA APARECIDA BARBOSA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "26/11/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LIDIANE MARCELE CONSTANTINO": {
+        "name": "LIDIANE MARCELE CONSTANTINO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LILIAN MARIA DEL CANTONI": {
+        "name": "LILIAN MARIA DEL CANTONI",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "LILIANE BARON MELARA": {
+        "name": "LILIANE BARON MELARA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LILIANE MERCES TORRES": {
+        "name": "LILIANE MERCES TORRES",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LIMA GESSO COMERCIO E INSTALACAO LTDA": {
+        "name": "LIMA GESSO COMERCIO E INSTALACAO LTDA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "LINCOLN LIMA BENHOSSI": {
+        "name": "LINCOLN LIMA BENHOSSI",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LISIANE DE ALMEIDA PEREIRA": {
+        "name": "LISIANE DE ALMEIDA PEREIRA",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 378.0,
+                "quotas": 15.0
+            }
+        ]
+    },
+    "LOHANA CARVALHO SOARES": {
+        "name": "LOHANA CARVALHO SOARES",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "25/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "LORIVAL PEREIRA DE SOUZA": {
+        "name": "LORIVAL PEREIRA DE SOUZA",
+        "totalValue": 3578.4,
+        "totalQuotas": 142.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            },
+            {
+                "date": "30/11/2025",
+                "value": 302.4,
+                "quotas": 12.0
+            },
+            {
+                "date": "14/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "15/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 554.4,
+                "quotas": 22.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 352.8,
+                "quotas": 14.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 756.0,
+                "quotas": 30.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 554.4,
+                "quotas": 22.0
+            }
+        ]
+    },
+    "LUAN DA SILVA": {
+        "name": "LUAN DA SILVA",
+        "totalValue": 730.8,
+        "totalQuotas": 29.0,
+        "entries": [
+            {
+                "date": "06/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "11/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "15/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 226.8,
+                "quotas": 9.0
+            }
+        ]
+    },
+    "LUAN JUNIOR DA SILVA FARIAS": {
+        "name": "LUAN JUNIOR DA SILVA FARIAS",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "LUANA APARECIDA ALVES DE ARAUJO": {
+        "name": "LUANA APARECIDA ALVES DE ARAUJO",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LUANA BIZARRE": {
+        "name": "LUANA BIZARRE",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LUANA CRISTINA CORREA LIMA": {
+        "name": "LUANA CRISTINA CORREA LIMA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LUANA MELOQUERO": {
+        "name": "LUANA MELOQUERO",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LUCAS A MAGALHAES": {
+        "name": "LUCAS A MAGALHAES",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "LUCAS BARBOSA GUARNIERI": {
+        "name": "LUCAS BARBOSA GUARNIERI",
+        "totalValue": 1260.0,
+        "totalQuotas": 50.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 1260.0,
+                "quotas": 50.0
+            }
+        ]
+    },
+    "LUCAS CAMPOS DE LIMA": {
+        "name": "LUCAS CAMPOS DE LIMA",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LUCAS DAL BELLO FONTES": {
+        "name": "LUCAS DAL BELLO FONTES",
+        "totalValue": 786.3,
+        "totalQuotas": 31.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 100.0,
+                "quotas": 4.0
+            },
+            {
+                "date": "17/12/2025",
+                "value": 125.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 100.0,
+                "quotas": 4.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 100.0,
+                "quotas": 4.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 3.5,
+                "quotas": 0.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 5.0,
+                "quotas": 0.0
+            }
+        ]
+    },
+    "LUCAS EDUARDO DE LIMA SILVA": {
+        "name": "LUCAS EDUARDO DE LIMA SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LUCAS FERNANDES BOTELHO": {
+        "name": "LUCAS FERNANDES BOTELHO",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LUCAS FERREIRA BRUNHOLE": {
+        "name": "LUCAS FERREIRA BRUNHOLE",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "18/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "LUCAS FERREIRA DOS SANTOS": {
+        "name": "LUCAS FERREIRA DOS SANTOS",
+        "totalValue": 251.99999999999997,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "LUCAS H UNO NISHIMURA": {
+        "name": "LUCAS H UNO NISHIMURA",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "LUCAS HENRIQUE STURARO": {
+        "name": "LUCAS HENRIQUE STURARO",
+        "totalValue": 176.4,
+        "totalQuotas": 7.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "29/11/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LUCAS LEME DE MOURA": {
+        "name": "LUCAS LEME DE MOURA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "LUCAS MELCHIORI ROVINA": {
+        "name": "LUCAS MELCHIORI ROVINA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "LUCAS MENDES DA SILVA": {
+        "name": "LUCAS MENDES DA SILVA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "LUCAS ORLANDO SARTORI DE OLIVEIRA": {
+        "name": "LUCAS ORLANDO SARTORI DE OLIVEIRA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "LUCAS PEREIRA DE QUEIROZ": {
+        "name": "LUCAS PEREIRA DE QUEIROZ",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 378.0,
+                "quotas": 15.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "LUCAS PIAUILINO DA SILVA": {
+        "name": "LUCAS PIAUILINO DA SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LUCAS ROBERTO MAGALHÃES": {
+        "name": "LUCAS ROBERTO MAGALHÃES",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "06/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LUCAS ROBERTO MAGALHAES": {
+        "name": "LUCAS ROBERTO MAGALHAES",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LUCAS RODRIGUES SILVA": {
+        "name": "LUCAS RODRIGUES SILVA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 100.08,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/11/2025",
+                "value": 0.12,
+                "quotas": 0.0
+            },
+            {
+                "date": "28/11/2025",
+                "value": 0.6,
+                "quotas": 0.0
+            }
+        ]
+    },
+    "LUCAS SÉRGIO ROSA": {
+        "name": "LUCAS SÉRGIO ROSA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "LUCAS SANTANA TEIXEIRA": {
+        "name": "LUCAS SANTANA TEIXEIRA",
+        "totalValue": 2998.8,
+        "totalQuotas": 119.0,
+        "entries": [
+            {
+                "date": "18/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 630.0,
+                "quotas": 25.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 0.2,
+                "quotas": 0.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "LUCAS SANTOS LORAS": {
+        "name": "LUCAS SANTOS LORAS",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LUCAS SATZINGER GOMES": {
+        "name": "LUCAS SATZINGER GOMES",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LUCAS SERGIO ROSA": {
+        "name": "LUCAS SERGIO ROSA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "18/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "LUCAS SIQUEIRA BARCACA": {
+        "name": "LUCAS SIQUEIRA BARCACA",
+        "totalValue": 6300.0,
+        "totalQuotas": 250.0,
+        "entries": [
+            {
+                "date": "25/12/2025",
+                "value": 2520.0,
+                "quotas": 100.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 2520.0,
+                "quotas": 100.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 1260.0,
+                "quotas": 50.0
+            }
+        ]
+    },
+    "LUCAS SOUSA SILVA": {
+        "name": "LUCAS SOUSA SILVA",
+        "totalValue": 705.5999999999999,
+        "totalQuotas": 28.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 302.4,
+                "quotas": 12.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "LUCAS ZANCANARO BISON": {
+        "name": "LUCAS ZANCANARO BISON",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "LUCIANA A RODRIGUES": {
+        "name": "LUCIANA A RODRIGUES",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LUCIANA BALBINO": {
+        "name": "LUCIANA BALBINO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "14/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "LUCIANA BUENO DE MORAIS": {
+        "name": "LUCIANA BUENO DE MORAIS",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LUCIANA CARAM SIMON RONDONI": {
+        "name": "LUCIANA CARAM SIMON RONDONI",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LUCIANA LOPES SHIBUYA": {
+        "name": "LUCIANA LOPES SHIBUYA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "12/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LUCIANA MEROLIN VIEIRA MACHADO": {
+        "name": "LUCIANA MEROLIN VIEIRA MACHADO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "30/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "LUCIANA S L VASSOLER": {
+        "name": "LUCIANA S L VASSOLER",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LUCIANA SOARES DE CAMARGO JORGETO FERNANDES": {
+        "name": "LUCIANA SOARES DE CAMARGO JORGETO FERNANDES",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "25/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LUCIANO APARECIDO DE SALES": {
+        "name": "LUCIANO APARECIDO DE SALES",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "LUCIANO DE MORAES DIAS": {
+        "name": "LUCIANO DE MORAES DIAS",
+        "totalValue": 201.6,
+        "totalQuotas": 8.0,
+        "entries": [
+            {
+                "date": "30/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "LUCIANO LOPES DE OLIVEIRA": {
+        "name": "LUCIANO LOPES DE OLIVEIRA",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "LUCIANO MUCHA ECCLISSI": {
+        "name": "LUCIANO MUCHA ECCLISSI",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LUCILAINE APARECIDA F SANTOS": {
+        "name": "LUCILAINE APARECIDA F SANTOS",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "25/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LUCILENA DE MORAIS DIAS RAMOS": {
+        "name": "LUCILENA DE MORAIS DIAS RAMOS",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LUCILENE DA COSTA": {
+        "name": "LUCILENE DA COSTA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "08/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "LUCILENE DIAS VEDEKIN LOPES": {
+        "name": "LUCILENE DIAS VEDEKIN LOPES",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "LUCIMARA APARECIDA ALVES": {
+        "name": "LUCIMARA APARECIDA ALVES",
+        "totalValue": 45.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "18/12/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 20.4,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LUCIMAURO DE OLIVEIRA JUNIOR": {
+        "name": "LUCIMAURO DE OLIVEIRA JUNIOR",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "17/12/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            },
+            {
+                "date": "17/12/2025",
+                "value": 0.2,
+                "quotas": 0.0
+            }
+        ]
+    },
+    "LUCIO SATO": {
+        "name": "LUCIO SATO",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "LUIS CLAUDIO KANAZAWA": {
+        "name": "LUIS CLAUDIO KANAZAWA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "18/12/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 101.0,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "LUIS FELIPE MARTINS DA SILVA": {
+        "name": "LUIS FELIPE MARTINS DA SILVA",
+        "totalValue": 1764.0,
+        "totalQuotas": 70.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 1000.08,
+                "quotas": 40.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 7.92,
+                "quotas": 0.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 352.8,
+                "quotas": 14.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 277.2,
+                "quotas": 11.0
+            }
+        ]
+    },
+    "LUIS FERNANDO CORREA": {
+        "name": "LUIS FERNANDO CORREA",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "LUIS FERNANDO FALCIM GRIGOLON FRE": {
+        "name": "LUIS FERNANDO FALCIM GRIGOLON FRE",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "LUIS GABRIEL FERREIRA": {
+        "name": "LUIS GABRIEL FERREIRA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LUIS MIGUEL DE PÁDUA DOS SANTOS": {
+        "name": "LUIS MIGUEL DE PÁDUA DOS SANTOS",
+        "totalValue": 176.4,
+        "totalQuotas": 7.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LUIS PREVITALLI JUNIOR": {
+        "name": "LUIS PREVITALLI JUNIOR",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LUIZ ANDERSON GONCALVES LOPES DA SILVA": {
+        "name": "LUIZ ANDERSON GONCALVES LOPES DA SILVA",
+        "totalValue": 150.0,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 150.0,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "LUIZ CARLOS DE MORAES BORGES": {
+        "name": "LUIZ CARLOS DE MORAES BORGES",
+        "totalValue": 781.2,
+        "totalQuotas": 31.0,
+        "entries": [
+            {
+                "date": "05/12/2025",
+                "value": 378.0,
+                "quotas": 15.0
+            },
+            {
+                "date": "15/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LUIZ DUARTE JUNIOR": {
+        "name": "LUIZ DUARTE JUNIOR",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "18/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LUIZ EDUARDO ROSA TARDIO": {
+        "name": "LUIZ EDUARDO ROSA TARDIO",
+        "totalValue": 756.0,
+        "totalQuotas": 30.0,
+        "entries": [
+            {
+                "date": "14/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "15/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "18/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "LUIZ FABIANO FERREIRA": {
+        "name": "LUIZ FABIANO FERREIRA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LUIZ FELIPE FELIX NOGUEIRA": {
+        "name": "LUIZ FELIPE FELIX NOGUEIRA",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "02/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LUIZ FERMINO DOS SANTOS": {
+        "name": "LUIZ FERMINO DOS SANTOS",
+        "totalValue": 1008.0,
+        "totalQuotas": 40.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 756.0,
+                "quotas": 30.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "LUIZ FLÁVIO FONSECA DE LIMA": {
+        "name": "LUIZ FLÁVIO FONSECA DE LIMA",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "14/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LUIZ FLAVIO FONSECA DE LIMA": {
+        "name": "LUIZ FLAVIO FONSECA DE LIMA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LUIZ GUILHERME F PALAZZO": {
+        "name": "LUIZ GUILHERME F PALAZZO",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "18/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "LUIZ HENRIQUE M DE LIMA": {
+        "name": "LUIZ HENRIQUE M DE LIMA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "LUIZ HENRIQUE ZANARDO": {
+        "name": "LUIZ HENRIQUE ZANARDO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LUIZ MORAES DA SILVA": {
+        "name": "LUIZ MORAES DA SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "LUIZ PAULO CIMAS SILVA": {
+        "name": "LUIZ PAULO CIMAS SILVA",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "LUIZ SERGIO ADATHI": {
+        "name": "LUIZ SERGIO ADATHI",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "LUIZ TIOTEI GENKA": {
+        "name": "LUIZ TIOTEI GENKA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "13/11/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MÁRCIO DA SILVA SANTOS": {
+        "name": "MÁRCIO DA SILVA SANTOS",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 100.0,
+                "quotas": 4.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 0.8,
+                "quotas": 0.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MÁRCIO RAFAEL BATISTA": {
+        "name": "MÁRCIO RAFAEL BATISTA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "17/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MÔNICA APARECIDA VIEIRA": {
+        "name": "MÔNICA APARECIDA VIEIRA",
+        "totalValue": 50.0,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.0,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MAISA ALANA ACUNA HONORIO": {
+        "name": "MAISA ALANA ACUNA HONORIO",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "MANOEL AMBROZIO DE SOUZA": {
+        "name": "MANOEL AMBROZIO DE SOUZA",
+        "totalValue": 1267.2,
+        "totalQuotas": 50.0,
+        "entries": [
+            {
+                "date": "23/11/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "01/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "02/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "07/12/2025",
+                "value": 108.0,
+                "quotas": 4.0
+            },
+            {
+                "date": "13/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "MANOEL DE SOUZA DA SILVA": {
+        "name": "MANOEL DE SOUZA DA SILVA",
+        "totalValue": 1764.0,
+        "totalQuotas": 70.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 378.0,
+                "quotas": 15.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 882.0,
+                "quotas": 35.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "MANOEL RENATO SANTOS DE SOUZA": {
+        "name": "MANOEL RENATO SANTOS DE SOUZA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "09/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARCEL FERREIRA PINTO": {
+        "name": "MARCEL FERREIRA PINTO",
+        "totalValue": 176.39999999999998,
+        "totalQuotas": 7.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MARCELA FONSECA DE LIMA": {
+        "name": "MARCELA FONSECA DE LIMA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARCELI GREGORIO RAVAGNANI": {
+        "name": "MARCELI GREGORIO RAVAGNANI",
+        "totalValue": 630.0,
+        "totalQuotas": 25.0,
+        "entries": [
+            {
+                "date": "08/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "09/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "14/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "MARCELLE APARECIDA DE ARAUJO": {
+        "name": "MARCELLE APARECIDA DE ARAUJO",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MARCELLE J C A CARDOSO": {
+        "name": "MARCELLE J C A CARDOSO",
+        "totalValue": 302.4,
+        "totalQuotas": 12.0,
+        "entries": [
+            {
+                "date": "30/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "10/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARCELLO TADEU SILVA CRUZ ISIDORO": {
+        "name": "MARCELLO TADEU SILVA CRUZ ISIDORO",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "MARCELLO VINICIUS ALVES OZZETTI CRUZ": {
+        "name": "MARCELLO VINICIUS ALVES OZZETTI CRUZ",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "MARCELO ALVES RIBEIRO": {
+        "name": "MARCELO ALVES RIBEIRO",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 403.2,
+                "quotas": 16.0
+            }
+        ]
+    },
+    "MARCELO AUGUSTO JORDAO": {
+        "name": "MARCELO AUGUSTO JORDAO",
+        "totalValue": 1008.0,
+        "totalQuotas": 40.0,
+        "entries": [
+            {
+                "date": "11/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "MARCELO BANDEIRA CARCAMO": {
+        "name": "MARCELO BANDEIRA CARCAMO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARCELO BORGES DE OLIVEIRA": {
+        "name": "MARCELO BORGES DE OLIVEIRA",
+        "totalValue": 201.6,
+        "totalQuotas": 8.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MARCELO CORREA MIRANDA": {
+        "name": "MARCELO CORREA MIRANDA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MARCELO DE ALMEIDA FULADOR": {
+        "name": "MARCELO DE ALMEIDA FULADOR",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "09/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "MARCELO DE JESUS RODRIGUES PEREIRA": {
+        "name": "MARCELO DE JESUS RODRIGUES PEREIRA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MARCELO DOMINGOS": {
+        "name": "MARCELO DOMINGOS",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "MARCELO ED CAMP NUNES VIVEIROS": {
+        "name": "MARCELO ED CAMP NUNES VIVEIROS",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARCELO EDUARDO C COSTA": {
+        "name": "MARCELO EDUARDO C COSTA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "27/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MARCELO FACAO": {
+        "name": "MARCELO FACAO",
+        "totalValue": 2016.0,
+        "totalQuotas": 80.0,
+        "entries": [
+            {
+                "date": "13/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/11/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "12/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "15/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "MARCELO FERREIRA DE SOUZA": {
+        "name": "MARCELO FERREIRA DE SOUZA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MARCELO HENRIQUE VICENTIN": {
+        "name": "MARCELO HENRIQUE VICENTIN",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MARCELO HITOSHI HORI": {
+        "name": "MARCELO HITOSHI HORI",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "MARCELO LUIS RIBEIRO": {
+        "name": "MARCELO LUIS RIBEIRO",
+        "totalValue": 403.2,
+        "totalQuotas": 16.0,
+        "entries": [
+            {
+                "date": "18/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            }
+        ]
+    },
+    "MARCELO NAKAMOTO FATORELLI": {
+        "name": "MARCELO NAKAMOTO FATORELLI",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARCELO NUNES DA SILVA": {
+        "name": "MARCELO NUNES DA SILVA",
+        "totalValue": 378.8,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 100.4,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/11/2025",
+                "value": 1.2,
+                "quotas": 0.0
+            },
+            {
+                "date": "18/12/2025",
+                "value": 176.4,
+                "quotas": 7.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MARCELO SABINO DOS SANTOS": {
+        "name": "MARCELO SABINO DOS SANTOS",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "MARCELO SANTANA DE OLIVEIRA": {
+        "name": "MARCELO SANTANA DE OLIVEIRA",
+        "totalValue": 554.4,
+        "totalQuotas": 22.0,
+        "entries": [
+            {
+                "date": "25/12/2025",
+                "value": 302.4,
+                "quotas": 12.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "MARCELO TADEU DE MESQUITA": {
+        "name": "MARCELO TADEU DE MESQUITA",
+        "totalValue": 302.4,
+        "totalQuotas": 12.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 176.64,
+                "quotas": 7.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 75.36,
+                "quotas": 3.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARCELO TEODORO DE CAMARGO BARROS": {
+        "name": "MARCELO TEODORO DE CAMARGO BARROS",
+        "totalValue": 100.81,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 100.81,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MARCIA PAULINO DOS SANTOS": {
+        "name": "MARCIA PAULINO DOS SANTOS",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MARCIA PEREIRA DOS S SOARES": {
+        "name": "MARCIA PEREIRA DOS S SOARES",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARCIA REGINA FURINI": {
+        "name": "MARCIA REGINA FURINI",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "MARCIANO VILELA RODRIGUES": {
+        "name": "MARCIANO VILELA RODRIGUES",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MARCIO ANDRE DOS SANTOS": {
+        "name": "MARCIO ANDRE DOS SANTOS",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MARCIO DA SILVA": {
+        "name": "MARCIO DA SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "25/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARCIO DA SILVA SANTOS": {
+        "name": "MARCIO DA SILVA SANTOS",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "MARCIO DE PAULA QUERODIA": {
+        "name": "MARCIO DE PAULA QUERODIA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARCIO FELIX DOS SANTOS": {
+        "name": "MARCIO FELIX DOS SANTOS",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "17/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "MARCIO HERNANDES DE SOUZA": {
+        "name": "MARCIO HERNANDES DE SOUZA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "18/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "MARCIO JOSE PEREIRA DE ALMEIDA": {
+        "name": "MARCIO JOSE PEREIRA DE ALMEIDA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MARCIO MERINO DE LIMA": {
+        "name": "MARCIO MERINO DE LIMA",
+        "totalValue": 1638.0,
+        "totalQuotas": 65.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "02/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 781.2,
+                "quotas": 31.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 378.0,
+                "quotas": 15.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "MARCIO RIBEIRO PEREIRA": {
+        "name": "MARCIO RIBEIRO PEREIRA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "MARCIO ROGERIO SIETO": {
+        "name": "MARCIO ROGERIO SIETO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARCO ANTONIO FLOR DA SILVA": {
+        "name": "MARCO ANTONIO FLOR DA SILVA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "MARCO ANTONIO OLIVEIRA FORTUNATO": {
+        "name": "MARCO ANTONIO OLIVEIRA FORTUNATO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARCOS ALBINO DE MELLO TAVARES": {
+        "name": "MARCOS ALBINO DE MELLO TAVARES",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "10/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "MARCOS ANTONIO DA SILVA VIANA": {
+        "name": "MARCOS ANTONIO DA SILVA VIANA",
+        "totalValue": 54.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 54.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARCOS ANTONIO DO CARMO": {
+        "name": "MARCOS ANTONIO DO CARMO",
+        "totalValue": 353.6,
+        "totalQuotas": 14.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 152.0,
+                "quotas": 6.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MARCOS APARECIDO DE OLIVEIRA": {
+        "name": "MARCOS APARECIDO DE OLIVEIRA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "MARCOS BATISTA GOMES": {
+        "name": "MARCOS BATISTA GOMES",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "12/12/2025",
+                "value": 180.6,
+                "quotas": 7.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 71.4,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "MARCOS DONIZETI ROQUE": {
+        "name": "MARCOS DONIZETI ROQUE",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MARCOS EDSON BRASIL NETO": {
+        "name": "MARCOS EDSON BRASIL NETO",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MARCOS EZEQUIEL ALVES": {
+        "name": "MARCOS EZEQUIEL ALVES",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "08/12/2025",
+                "value": 100.0,
+                "quotas": 4.0
+            },
+            {
+                "date": "08/12/2025",
+                "value": 0.8,
+                "quotas": 0.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "MARCOS FABRICIO MORALES NUNEZ": {
+        "name": "MARCOS FABRICIO MORALES NUNEZ",
+        "totalValue": 1260.0,
+        "totalQuotas": 50.0,
+        "entries": [
+            {
+                "date": "07/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "10/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "MARCOS FERREIRA": {
+        "name": "MARCOS FERREIRA",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "14/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "MARCOS FERREIRA HENRIQUE": {
+        "name": "MARCOS FERREIRA HENRIQUE",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "13/11/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "04/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "15/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 302.4,
+                "quotas": 12.0
+            }
+        ]
+    },
+    "MARCOS HERINGER JUNIOR": {
+        "name": "MARCOS HERINGER JUNIOR",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "01/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARCOS LUIZ GONCALVES": {
+        "name": "MARCOS LUIZ GONCALVES",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "09/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MARCOS PAULO SZMYHIEL": {
+        "name": "MARCOS PAULO SZMYHIEL",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "MARCOS ROBERTO FERREIRA": {
+        "name": "MARCOS ROBERTO FERREIRA",
+        "totalValue": 201.6,
+        "totalQuotas": 8.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MARCOS ROBERTO GREGIO": {
+        "name": "MARCOS ROBERTO GREGIO",
+        "totalValue": 352.8,
+        "totalQuotas": 14.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "MARCOS ROBERTO MIRANDA DOS SANTOS": {
+        "name": "MARCOS ROBERTO MIRANDA DOS SANTOS",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MARCOS TAKAMATU": {
+        "name": "MARCOS TAKAMATU",
+        "totalValue": 1260.0,
+        "totalQuotas": 50.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "MARCOS TOKIO INOUE": {
+        "name": "MARCOS TOKIO INOUE",
+        "totalValue": 1335.6,
+        "totalQuotas": 53.0,
+        "entries": [
+            {
+                "date": "01/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 327.6,
+                "quotas": 13.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "MARCOS VINÍCIUS QUIO": {
+        "name": "MARCOS VINÍCIUS QUIO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARCOS VINICIUS SANTOS VIEIRA": {
+        "name": "MARCOS VINICIUS SANTOS VIEIRA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MARCUS ROBERTO SOUZA MOURA": {
+        "name": "MARCUS ROBERTO SOUZA MOURA",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "06/12/2025",
+                "value": 50.0,
+                "quotas": 2.0
+            },
+            {
+                "date": "09/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "13/12/2025",
+                "value": 0.4,
+                "quotas": 0.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "MARCUS VINICIUS DE SOUZA DUA": {
+        "name": "MARCUS VINICIUS DE SOUZA DUA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MARIA APARECIDA D FERREIRA": {
+        "name": "MARIA APARECIDA D FERREIRA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MARIA CLAUDIANE DE SANTANA CAPASSO": {
+        "name": "MARIA CLAUDIANE DE SANTANA CAPASSO",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "MARIA CRISTINA MONTEIRO": {
+        "name": "MARIA CRISTINA MONTEIRO",
+        "totalValue": 78.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 28.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARIA DA GLORIA SOUZA": {
+        "name": "MARIA DA GLORIA SOUZA",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "12/12/2025",
+                "value": 75.0,
+                "quotas": 3.0
+            },
+            {
+                "date": "12/12/2025",
+                "value": 0.6,
+                "quotas": 0.0
+            },
+            {
+                "date": "18/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "MARIA DA PENHA VIEIRA": {
+        "name": "MARIA DA PENHA VIEIRA",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "09/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARIA DE LOURDES PIRES AYRES BARRETO": {
+        "name": "MARIA DE LOURDES PIRES AYRES BARRETO",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "18/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MARIA ELENA MEDICINA GUERINO": {
+        "name": "MARIA ELENA MEDICINA GUERINO",
+        "totalValue": 579.6,
+        "totalQuotas": 23.0,
+        "entries": [
+            {
+                "date": "08/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            },
+            {
+                "date": "14/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MARIA FERNANDA A RIBEIRO": {
+        "name": "MARIA FERNANDA A RIBEIRO",
+        "totalValue": 1512.0,
+        "totalQuotas": 60.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 756.0,
+                "quotas": 30.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 756.0,
+                "quotas": 30.0
+            }
+        ]
+    },
+    "MARIA HELIA DE OLIVEIRA": {
+        "name": "MARIA HELIA DE OLIVEIRA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "10/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "MARIA INES GALVAO PEREIRA": {
+        "name": "MARIA INES GALVAO PEREIRA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "13/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARIA JOSE DA SILVA DIAS": {
+        "name": "MARIA JOSE DA SILVA DIAS",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "17/12/2025",
+                "value": 50.0,
+                "quotas": 2.0
+            },
+            {
+                "date": "18/12/2025",
+                "value": 0.4,
+                "quotas": 0.0
+            }
+        ]
+    },
+    "MARIA JOSE DOS SANTOS KAPPLER": {
+        "name": "MARIA JOSE DOS SANTOS KAPPLER",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MARIA L SILVA GONCALVES": {
+        "name": "MARIA L SILVA GONCALVES",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MARIA LUCIA RIBEIRO CALIMANIS": {
+        "name": "MARIA LUCIA RIBEIRO CALIMANIS",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARIA LUIZA DA SILVA DE SOUZA GONCALVES": {
+        "name": "MARIA LUIZA DA SILVA DE SOUZA GONCALVES",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARIA LUIZA MENDES OLIVEIRA": {
+        "name": "MARIA LUIZA MENDES OLIVEIRA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MARIA REGINA AMOROSO BORGES": {
+        "name": "MARIA REGINA AMOROSO BORGES",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "MARIA SOLANGE SOUZA SABINO": {
+        "name": "MARIA SOLANGE SOUZA SABINO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARIA VANUSA G SAMPAIO": {
+        "name": "MARIA VANUSA G SAMPAIO",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "MARIANA BERNARDI CORREA": {
+        "name": "MARIANA BERNARDI CORREA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "05/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MARIANA FARIA DA CUNHA": {
+        "name": "MARIANA FARIA DA CUNHA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MARIANA FERREIRA MAIA": {
+        "name": "MARIANA FERREIRA MAIA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MARIANA ROCHA SIQUEIRA": {
+        "name": "MARIANA ROCHA SIQUEIRA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "MARIANE APARECIDA YANO": {
+        "name": "MARIANE APARECIDA YANO",
+        "totalValue": 403.2,
+        "totalQuotas": 16.0,
+        "entries": [
+            {
+                "date": "18/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MARIANGELA CAMILO DE ALMEIDA LEITE": {
+        "name": "MARIANGELA CAMILO DE ALMEIDA LEITE",
+        "totalValue": 252.8,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "08/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 152.0,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "MARIANY VIEIRA DOS SANTOS": {
+        "name": "MARIANY VIEIRA DOS SANTOS",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MARILDO PEREIRA DOS SANTOS": {
+        "name": "MARILDO PEREIRA DOS SANTOS",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MARILENE LIMA BARBOSA SANTOS": {
+        "name": "MARILENE LIMA BARBOSA SANTOS",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "09/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "MARINA BUENO SILVA": {
+        "name": "MARINA BUENO SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARINES DA SILVA RIBEIRO": {
+        "name": "MARINES DA SILVA RIBEIRO",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MARIO TAKAO OHNO": {
+        "name": "MARIO TAKAO OHNO",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARISE MIYAZAKI": {
+        "name": "MARISE MIYAZAKI",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "MARISELMA FUNARI": {
+        "name": "MARISELMA FUNARI",
+        "totalValue": 529.2,
+        "totalQuotas": 21.0,
+        "entries": [
+            {
+                "date": "12/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "18/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "MARISTELA PEREIRA DOS SANTOS": {
+        "name": "MARISTELA PEREIRA DOS SANTOS",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MARLEY PASCHOA L FERREIRA": {
+        "name": "MARLEY PASCHOA L FERREIRA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "MARLI B RODRIGUES SILVA": {
+        "name": "MARLI B RODRIGUES SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 0.2,
+                "quotas": 0.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MARLON LUIZ BORGES COSTA": {
+        "name": "MARLON LUIZ BORGES COSTA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.0,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 0.4,
+                "quotas": 0.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "MARLON NELSON ARAUJO": {
+        "name": "MARLON NELSON ARAUJO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARLON PAULINO MARQUES": {
+        "name": "MARLON PAULINO MARQUES",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "17/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "MARLON TIAGO P NASCIMENTO": {
+        "name": "MARLON TIAGO P NASCIMENTO",
+        "totalValue": 201.6,
+        "totalQuotas": 8.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            }
+        ]
+    },
+    "MARTA BEIO CANO": {
+        "name": "MARTA BEIO CANO",
+        "totalValue": 453.59999999999997,
+        "totalQuotas": 18.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "17/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARTA MARCILENE GONCALVES RAMOS": {
+        "name": "MARTA MARCILENE GONCALVES RAMOS",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "17/12/2025",
+                "value": 125.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "17/12/2025",
+                "value": 1.0,
+                "quotas": 0.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "MARTON ANDERSON ARANTES FILHO": {
+        "name": "MARTON ANDERSON ARANTES FILHO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MARX VINÍCIUS NUNES PEREIRA": {
+        "name": "MARX VINÍCIUS NUNES PEREIRA",
+        "totalValue": 453.6,
+        "totalQuotas": 18.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 352.8,
+                "quotas": 14.0
+            }
+        ]
+    },
+    "MARX VINICIUS NUNES PEREIRA": {
+        "name": "MARX VINICIUS NUNES PEREIRA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MATHEUS AVANÇO GONÇALVES": {
+        "name": "MATHEUS AVANÇO GONÇALVES",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MATHEUS DA SILVA GUERRA": {
+        "name": "MATHEUS DA SILVA GUERRA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 0.2,
+                "quotas": 0.0
+            }
+        ]
+    },
+    "MATHEUS HENRIQUE PEREIRA": {
+        "name": "MATHEUS HENRIQUE PEREIRA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MATHEUS LUCAS BARBOZA COQUEIRO": {
+        "name": "MATHEUS LUCAS BARBOZA COQUEIRO",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "MATHEUS LUIZ TREVISAN": {
+        "name": "MATHEUS LUIZ TREVISAN",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MATHEUS SANTOS CATARINO": {
+        "name": "MATHEUS SANTOS CATARINO",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "25/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MATHEUS TOSTES BETARELI": {
+        "name": "MATHEUS TOSTES BETARELI",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MAURÍCIO APARECIDO DELFINO": {
+        "name": "MAURÍCIO APARECIDO DELFINO",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MAURICIO APARECIDO DELFINO JUNIOR": {
+        "name": "MAURICIO APARECIDO DELFINO JUNIOR",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MAURICIO DE REZENDE MARTINS DOS ANJOS": {
+        "name": "MAURICIO DE REZENDE MARTINS DOS ANJOS",
+        "totalValue": 2016.2,
+        "totalQuotas": 80.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 252.2,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 630.0,
+                "quotas": 25.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 226.8,
+                "quotas": 9.0
+            }
+        ]
+    },
+    "MAURICIO NUNES TEIXEIRA S LIMA": {
+        "name": "MAURICIO NUNES TEIXEIRA S LIMA",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "04/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "05/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "MAURICIO NUNES TEIXEIRA SOUZA LIMA": {
+        "name": "MAURICIO NUNES TEIXEIRA SOUZA LIMA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "MAURICIO VOLCI FURLAN": {
+        "name": "MAURICIO VOLCI FURLAN",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MAURO DELAVIA DE SANTANA": {
+        "name": "MAURO DELAVIA DE SANTANA",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "13/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MAXIMILIANO SANTOS ROSA": {
+        "name": "MAXIMILIANO SANTOS ROSA",
+        "totalValue": 503.99999999999994,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "02/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "09/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "12/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MAYARA JULIANA CAMARGO DA SILVA": {
+        "name": "MAYARA JULIANA CAMARGO DA SILVA",
+        "totalValue": 453.6,
+        "totalQuotas": 18.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MAYARA REGINA DE OLIVEIRA": {
+        "name": "MAYARA REGINA DE OLIVEIRA",
+        "totalValue": 151.8,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "20/11/2025",
+                "value": 51.0,
+                "quotas": 2.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MAYCON HENRIQUE DA SILVA FERREIRA": {
+        "name": "MAYCON HENRIQUE DA SILVA FERREIRA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MELISSA ARAÚJO CHIMENTO": {
+        "name": "MELISSA ARAÚJO CHIMENTO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "05/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MELISSA LAM NG": {
+        "name": "MELISSA LAM NG",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MICARLA SILVA CRUZ": {
+        "name": "MICARLA SILVA CRUZ",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MICHAEL JEAN DE SOUZA GROTO": {
+        "name": "MICHAEL JEAN DE SOUZA GROTO",
+        "totalValue": 6300.0,
+        "totalQuotas": 250.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 1260.0,
+                "quotas": 50.0
+            },
+            {
+                "date": "18/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 3528.0,
+                "quotas": 140.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 1260.0,
+                "quotas": 50.0
+            }
+        ]
+    },
+    "MICHEL HEBERT SANTOS JORDAO": {
+        "name": "MICHEL HEBERT SANTOS JORDAO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MICHEL PEREIRA DOS SANTOS": {
+        "name": "MICHEL PEREIRA DOS SANTOS",
+        "totalValue": 1260.0,
+        "totalQuotas": 50.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 176.4,
+                "quotas": 7.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "MICHELE ANDREA DA ROCHA OLIVEIRA": {
+        "name": "MICHELE ANDREA DA ROCHA OLIVEIRA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "MICHELE ZANNON CLEMENTINO": {
+        "name": "MICHELE ZANNON CLEMENTINO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "17/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MICHELI ALVES ORMON RIBEIRO": {
+        "name": "MICHELI ALVES ORMON RIBEIRO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "06/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MICHELLE CHRISTINE POON HO": {
+        "name": "MICHELLE CHRISTINE POON HO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MICHELLE MARQUES COSTA": {
+        "name": "MICHELLE MARQUES COSTA",
+        "totalValue": 201.6,
+        "totalQuotas": 8.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MICHELLE TASSIA MARTINS COLASSO": {
+        "name": "MICHELLE TASSIA MARTINS COLASSO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MIDORI ISHIGURI NOZAWA": {
+        "name": "MIDORI ISHIGURI NOZAWA",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "02/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "MIGUEL E TEIXEIRA": {
+        "name": "MIGUEL E TEIXEIRA",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "05/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "MIGUEL SANCHES BARBOSA FIASQUI": {
+        "name": "MIGUEL SANCHES BARBOSA FIASQUI",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "05/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "MILENA MARIGO": {
+        "name": "MILENA MARIGO",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "10/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "MILENA R DE CARVALHO": {
+        "name": "MILENA R DE CARVALHO",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "10/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "MIRELA LIMA SANTANA": {
+        "name": "MIRELA LIMA SANTANA",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MIRIAM DE CARVALHO ALMEIDA": {
+        "name": "MIRIAM DE CARVALHO ALMEIDA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "06/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MOACIR FELISBERTO DO NASCIMENT": {
+        "name": "MOACIR FELISBERTO DO NASCIMENT",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "MOACIR MIGUEL CARMESIM JUNIOR": {
+        "name": "MOACIR MIGUEL CARMESIM JUNIOR",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "18/11/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            }
+        ]
+    },
+    "MOACIR RAMOS BARBOZA": {
+        "name": "MOACIR RAMOS BARBOZA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MOISÉS FRANCISCO DA SILVA FILHO": {
+        "name": "MOISÉS FRANCISCO DA SILVA FILHO",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "MOISES FELIPE TELES DA SILVA": {
+        "name": "MOISES FELIPE TELES DA SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MOISES FRANCISCO DA SILVA FILHO": {
+        "name": "MOISES FRANCISCO DA SILVA FILHO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MOISES PIMENTEL ROCHA": {
+        "name": "MOISES PIMENTEL ROCHA",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "01/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "13/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "MOISES TEIXEIRA SILVA": {
+        "name": "MOISES TEIXEIRA SILVA",
+        "totalValue": 756.0,
+        "totalQuotas": 30.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "02/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "MONICA APARECIDA VIEIRA": {
+        "name": "MONICA APARECIDA VIEIRA",
+        "totalValue": 0.4,
+        "totalQuotas": 0.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 0.4,
+                "quotas": 0.0
+            }
+        ]
+    },
+    "MONICA PETER DE CAMARGO": {
+        "name": "MONICA PETER DE CAMARGO",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "MONIQUE AMORIM BLAUDT": {
+        "name": "MONIQUE AMORIM BLAUDT",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MONIQUE GONCALVES DA PAIXAO": {
+        "name": "MONIQUE GONCALVES DA PAIXAO",
+        "totalValue": 104.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 54.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MRB": {
+        "name": "MRB",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "07/12/2025",
+                "value": 50.0,
+                "quotas": 2.0
+            },
+            {
+                "date": "07/12/2025",
+                "value": 0.4,
+                "quotas": 0.0
+            }
+        ]
+    },
+    "MURILO ANDRADE LIMA": {
+        "name": "MURILO ANDRADE LIMA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "MURILO LIMA SANTANA": {
+        "name": "MURILO LIMA SANTANA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MURILO RODELLA": {
+        "name": "MURILO RODELLA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "MYLENA REBELO FERREIRA": {
+        "name": "MYLENA REBELO FERREIRA",
+        "totalValue": 352.8,
+        "totalQuotas": 14.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 176.4,
+                "quotas": 7.0
+            }
+        ]
+    },
+    "NADIA  MARIA BACELLAR PINTO": {
+        "name": "NADIA  MARIA BACELLAR PINTO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "NADIA CHARLENE MORAIS DA SILVA": {
+        "name": "NADIA CHARLENE MORAIS DA SILVA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "NADIA RAMALDES DOS SANTOS": {
+        "name": "NADIA RAMALDES DOS SANTOS",
+        "totalValue": 1134.0,
+        "totalQuotas": 45.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 1134.0,
+                "quotas": 45.0
+            }
+        ]
+    },
+    "NADYNE NAYARA VICENTE DA SILVA": {
+        "name": "NADYNE NAYARA VICENTE DA SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "18/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "NAGA FREITAS DE SOUZA": {
+        "name": "NAGA FREITAS DE SOUZA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "NAIARA DE SÁ FERREIRA DE SOUZA": {
+        "name": "NAIARA DE SÁ FERREIRA DE SOUZA",
+        "totalValue": 201.6,
+        "totalQuotas": 8.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            }
+        ]
+    },
+    "NANCY KANASHIRO MORI": {
+        "name": "NANCY KANASHIRO MORI",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "08/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "15/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "NAPOLEAO KAZU ONAYA": {
+        "name": "NAPOLEAO KAZU ONAYA",
+        "totalValue": 302.4,
+        "totalQuotas": 12.0,
+        "entries": [
+            {
+                "date": "19/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "NATÁLIA SOUZA": {
+        "name": "NATÁLIA SOUZA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "29/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "09/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "NATALE CICHELLO": {
+        "name": "NATALE CICHELLO",
+        "totalValue": 705.6,
+        "totalQuotas": 28.0,
+        "entries": [
+            {
+                "date": "25/11/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "04/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "13/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "NATALIA ALEGRIN CONDE": {
+        "name": "NATALIA ALEGRIN CONDE",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "18/12/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.4,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "NATALIA DE SOUZA": {
+        "name": "NATALIA DE SOUZA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "NATALIA GABRIELI MASCHIETTO VERATI": {
+        "name": "NATALIA GABRIELI MASCHIETTO VERATI",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "02/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "04/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "09/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "15/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "NATALIA GUIMARAES RODRIGUES": {
+        "name": "NATALIA GUIMARAES RODRIGUES",
+        "totalValue": 1310.6,
+        "totalQuotas": 52.0,
+        "entries": [
+            {
+                "date": "01/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "07/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 252.2,
+                "quotas": 10.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "NATALIA OLIVEIRA MENDES BAPTISTA": {
+        "name": "NATALIA OLIVEIRA MENDES BAPTISTA",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "NATANIEL DE SOUSA CARDOSO": {
+        "name": "NATANIEL DE SOUSA CARDOSO",
+        "totalValue": 1008.0,
+        "totalQuotas": 40.0,
+        "entries": [
+            {
+                "date": "02/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 756.0,
+                "quotas": 30.0
+            }
+        ]
+    },
+    "NATERCIO ALENCAR DA SILVA": {
+        "name": "NATERCIO ALENCAR DA SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "NATHALIA BARON MELARA MELO": {
+        "name": "NATHALIA BARON MELARA MELO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "NATHALIA DA SILVA DE OLIVEIRA": {
+        "name": "NATHALIA DA SILVA DE OLIVEIRA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "08/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "NEIRAN BASTOS LIMA": {
+        "name": "NEIRAN BASTOS LIMA",
+        "totalValue": 655.2,
+        "totalQuotas": 26.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 655.2,
+                "quotas": 26.0
+            }
+        ]
+    },
+    "NELSON APARECIDO DOS SANTOS JUNIOR": {
+        "name": "NELSON APARECIDO DOS SANTOS JUNIOR",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "09/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "NELSON BISON": {
+        "name": "NELSON BISON",
+        "totalValue": 1512.0,
+        "totalQuotas": 60.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 756.0,
+                "quotas": 30.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "NELSON EIJI KAWAHARA": {
+        "name": "NELSON EIJI KAWAHARA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "NELSON KOITI NAKAYAMA": {
+        "name": "NELSON KOITI NAKAYAMA",
+        "totalValue": 1260.0,
+        "totalQuotas": 50.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 378.0,
+                "quotas": 15.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "NELSON NARDONI": {
+        "name": "NELSON NARDONI",
+        "totalValue": 756.0,
+        "totalQuotas": 30.0,
+        "entries": [
+            {
+                "date": "03/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "NELSON TERUYA": {
+        "name": "NELSON TERUYA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "NELSON VIEIRA FILHO": {
+        "name": "NELSON VIEIRA FILHO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "NELY TIEMI KUMASAKA": {
+        "name": "NELY TIEMI KUMASAKA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "NEUSA SANTOS FERREIRA": {
+        "name": "NEUSA SANTOS FERREIRA",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "05/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "11/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "NEUTRI VERZA FERRO": {
+        "name": "NEUTRI VERZA FERRO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "NICAEL DA COSTA LIMA": {
+        "name": "NICAEL DA COSTA LIMA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "18/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "NICOLAS DOS SANTOS PEREIRA": {
+        "name": "NICOLAS DOS SANTOS PEREIRA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "NIDIA MARIA DA SILVA BASTOS": {
+        "name": "NIDIA MARIA DA SILVA BASTOS",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "05/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "NILSON BENEDITO DA SILVA": {
+        "name": "NILSON BENEDITO DA SILVA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "02/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "NILZA FIASQUI SIMÕES SANCHES": {
+        "name": "NILZA FIASQUI SIMÕES SANCHES",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "NIVALDO DA SILVA SANTOS": {
+        "name": "NIVALDO DA SILVA SANTOS",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "NOEMIA RUIZ DIAS": {
+        "name": "NOEMIA RUIZ DIAS",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "NOVA VITORIA TRANSPORTES RODOVIARIOS LTDA": {
+        "name": "NOVA VITORIA TRANSPORTES RODOVIARIOS LTDA",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "ODIRLEY LEANDRO RIBEIRO": {
+        "name": "ODIRLEY LEANDRO RIBEIRO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "OSNI FRANCISCO MACHADO": {
+        "name": "OSNI FRANCISCO MACHADO",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "04/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "10/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "15/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "OSNI JOSE DOS SANTOS": {
+        "name": "OSNI JOSE DOS SANTOS",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "OSVALDO CEZAR DE NOVAES": {
+        "name": "OSVALDO CEZAR DE NOVAES",
+        "totalValue": 302.4,
+        "totalQuotas": 12.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "OSWALDO GRIMALDI COUTINHO": {
+        "name": "OSWALDO GRIMALDI COUTINHO",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 0.2,
+                "quotas": 0.0
+            }
+        ]
+    },
+    "OSWALDO VITAL NETO": {
+        "name": "OSWALDO VITAL NETO",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "OTAVIO BORTOLOZZO X SOUZA": {
+        "name": "OTAVIO BORTOLOZZO X SOUZA",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "18/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "OTAVIO DE OLIVEIRA PIRES": {
+        "name": "OTAVIO DE OLIVEIRA PIRES",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "OTAVIO DO NASCIMENTO ANTONIO": {
+        "name": "OTAVIO DO NASCIMENTO ANTONIO",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "03/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "OTHON JOSE FULANETE CEZAR": {
+        "name": "OTHON JOSE FULANETE CEZAR",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "OVIDIO DOS REIS DOMINGUES": {
+        "name": "OVIDIO DOS REIS DOMINGUES",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "03/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "03/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "04/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "13/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "18/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "PALLOMA STEPHANY DA ROCHA SOARES": {
+        "name": "PALLOMA STEPHANY DA ROCHA SOARES",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 25.4,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "PALOMA CRISTINA PEREIRA SANTOS": {
+        "name": "PALOMA CRISTINA PEREIRA SANTOS",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "PALOMA MILENE SILVA DOS SANTOS": {
+        "name": "PALOMA MILENE SILVA DOS SANTOS",
+        "totalValue": 579.6,
+        "totalQuotas": 23.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "PALOMA PEREIRA DE LIMA BATISTA": {
+        "name": "PALOMA PEREIRA DE LIMA BATISTA",
+        "totalValue": 302.4,
+        "totalQuotas": 12.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 302.4,
+                "quotas": 12.0
+            }
+        ]
+    },
+    "PAMELA MASO": {
+        "name": "PAMELA MASO",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "PAOLA BARON MELARA": {
+        "name": "PAOLA BARON MELARA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "PAOLA DOMINIQUE BASTOS YAMAMOTO": {
+        "name": "PAOLA DOMINIQUE BASTOS YAMAMOTO",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "PATRICIA ALENCAR POLONI": {
+        "name": "PATRICIA ALENCAR POLONI",
+        "totalValue": 327.6,
+        "totalQuotas": 13.0,
+        "entries": [
+            {
+                "date": "14/11/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "PATRICIA BUENO LIMA": {
+        "name": "PATRICIA BUENO LIMA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "13/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "PATRICIA CORREIA CLARO": {
+        "name": "PATRICIA CORREIA CLARO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "01/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "PATRICIA DUCCI DE RIZZO": {
+        "name": "PATRICIA DUCCI DE RIZZO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "PATRICIA MOCHIDA": {
+        "name": "PATRICIA MOCHIDA",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "02/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "PATRICIA PEREIRA SANTOS": {
+        "name": "PATRICIA PEREIRA SANTOS",
+        "totalValue": 201.6,
+        "totalQuotas": 8.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "PATRICIA RAMOS SALES": {
+        "name": "PATRICIA RAMOS SALES",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "PATRICIA THEODORO COPELAND": {
+        "name": "PATRICIA THEODORO COPELAND",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "11/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "PAULA KAROLINE SANTOS QUEIROZ": {
+        "name": "PAULA KAROLINE SANTOS QUEIROZ",
+        "totalValue": 75.8,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 25.6,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "PAULA MARQUES COELHO": {
+        "name": "PAULA MARQUES COELHO",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 226.8,
+                "quotas": 9.0
+            }
+        ]
+    },
+    "PAULINO BATISTA REIS JUNIOR": {
+        "name": "PAULINO BATISTA REIS JUNIOR",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "PAULO ALEXANDRE GARBELINI": {
+        "name": "PAULO ALEXANDRE GARBELINI",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "PAULO CESAR MARTINS MELLO DOS SANTOS": {
+        "name": "PAULO CESAR MARTINS MELLO DOS SANTOS",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "PAULO CESAR TRIDICO": {
+        "name": "PAULO CESAR TRIDICO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "PAULO GRIGOROPOULOS": {
+        "name": "PAULO GRIGOROPOULOS",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "PAULO GUIMARAES MARTINS": {
+        "name": "PAULO GUIMARAES MARTINS",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "14/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "PAULO H RIBEIRO ALVES": {
+        "name": "PAULO H RIBEIRO ALVES",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "PAULO HENRIQUE APOLINARIO": {
+        "name": "PAULO HENRIQUE APOLINARIO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "PAULO HENRIQUE DA SILVA RIBEIRO": {
+        "name": "PAULO HENRIQUE DA SILVA RIBEIRO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "PAULO HENRIQUE MACERATESI": {
+        "name": "PAULO HENRIQUE MACERATESI",
+        "totalValue": 125.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "22/11/2025",
+                "value": 125.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "PAULO HENRIQUE RIBEIRO ALVES": {
+        "name": "PAULO HENRIQUE RIBEIRO ALVES",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "PAULO HENRIQUE SILVA BARBOSA": {
+        "name": "PAULO HENRIQUE SILVA BARBOSA",
+        "totalValue": 5544.0,
+        "totalQuotas": 220.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 4788.0,
+                "quotas": 190.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "PAULO KAZUKI NACAMURA": {
+        "name": "PAULO KAZUKI NACAMURA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "PAULO OMAR LIMA LEAL": {
+        "name": "PAULO OMAR LIMA LEAL",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "PAULO R A SOUSA": {
+        "name": "PAULO R A SOUSA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "25/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "PAULO RICARDO DO NASCIMENTO DE PAULA": {
+        "name": "PAULO RICARDO DO NASCIMENTO DE PAULA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "27/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "PAULO RICARDO ROCHA MARCHIORI": {
+        "name": "PAULO RICARDO ROCHA MARCHIORI",
+        "totalValue": 226.8,
+        "totalQuotas": 9.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "PAULO RICARDO SILVINO DOS SANT": {
+        "name": "PAULO RICARDO SILVINO DOS SANT",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "30/11/2025",
+                "value": 176.4,
+                "quotas": 7.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "PAULO ROBERTO DA SILVA TEIXEIRA": {
+        "name": "PAULO ROBERTO DA SILVA TEIXEIRA",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "PAULO ROGERIO OLIVEIRA DOS SANTOS": {
+        "name": "PAULO ROGERIO OLIVEIRA DOS SANTOS",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 50.0,
+                "quotas": 2.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 0.4,
+                "quotas": 0.0
+            }
+        ]
+    },
+    "PAULO ROGERIO P OLIVEIRA": {
+        "name": "PAULO ROGERIO P OLIVEIRA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "03/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "PAULO SÉRGIO FONSECA DOS SANTOS": {
+        "name": "PAULO SÉRGIO FONSECA DOS SANTOS",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "02/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "PAULO SERGIO VELA": {
+        "name": "PAULO SERGIO VELA",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "04/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "PAULO VARGAS NETO": {
+        "name": "PAULO VARGAS NETO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "PAULO VICTOR G FERREIRA": {
+        "name": "PAULO VICTOR G FERREIRA",
+        "totalValue": 757.2,
+        "totalQuotas": 30.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 250.2,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 255.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "PAULO VINICIUS DE JESUS": {
+        "name": "PAULO VINICIUS DE JESUS",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "PAULO VITOR TOSTES BETARELI": {
+        "name": "PAULO VITOR TOSTES BETARELI",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "PEDRO AUGUSTO DOS REIS MENDES": {
+        "name": "PEDRO AUGUSTO DOS REIS MENDES",
+        "totalValue": 1008.0,
+        "totalQuotas": 40.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 1008.0,
+                "quotas": 40.0
+            }
+        ]
+    },
+    "PEDRO HENRIQUE ALVES DO NASCIMENTO": {
+        "name": "PEDRO HENRIQUE ALVES DO NASCIMENTO",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "PEDRO HENRIQUE OTRENTE MACHADO": {
+        "name": "PEDRO HENRIQUE OTRENTE MACHADO",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "PEDRO HENRIQUE RELVAS": {
+        "name": "PEDRO HENRIQUE RELVAS",
+        "totalValue": 201.6,
+        "totalQuotas": 8.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            }
+        ]
+    },
+    "PETERSON DA SILVA BALDUINO DE ARRUDA": {
+        "name": "PETERSON DA SILVA BALDUINO DE ARRUDA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 25.4,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "PETERSON KENTO IMAYOSHI PEREIRA": {
+        "name": "PETERSON KENTO IMAYOSHI PEREIRA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "PIERO FERRAZ DE MOURA PRADO CHEFFER": {
+        "name": "PIERO FERRAZ DE MOURA PRADO CHEFFER",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "02/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "PILADE PEREIRA SILVEIRA": {
+        "name": "PILADE PEREIRA SILVEIRA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "PRISCILA MARIA RAMOS": {
+        "name": "PRISCILA MARIA RAMOS",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "PRISCILLA FERNANDA SILVA E SILVA": {
+        "name": "PRISCILLA FERNANDA SILVA E SILVA",
+        "totalValue": 100.2,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 50.0,
+                "quotas": 2.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 50.2,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RACHEL MENDES F OLIVEIRA": {
+        "name": "RACHEL MENDES F OLIVEIRA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RAFAEL AMOROSO RACHED BORGES": {
+        "name": "RAFAEL AMOROSO RACHED BORGES",
+        "totalValue": 756.0,
+        "totalQuotas": 30.0,
+        "entries": [
+            {
+                "date": "21/11/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RAFAEL ANDRADE BELLOTI": {
+        "name": "RAFAEL ANDRADE BELLOTI",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "RAFAEL ARSLAN NISSAN": {
+        "name": "RAFAEL ARSLAN NISSAN",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RAFAEL AUGUSTO DOS SANTOS": {
+        "name": "RAFAEL AUGUSTO DOS SANTOS",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "13/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RAFAEL CALDANA": {
+        "name": "RAFAEL CALDANA",
+        "totalValue": 756.0,
+        "totalQuotas": 30.0,
+        "entries": [
+            {
+                "date": "22/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RAFAEL COSTA JATOBA": {
+        "name": "RAFAEL COSTA JATOBA",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "17/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 302.4,
+                "quotas": 12.0
+            }
+        ]
+    },
+    "RAFAEL DA SILVA ROSA": {
+        "name": "RAFAEL DA SILVA ROSA",
+        "totalValue": 882.0,
+        "totalQuotas": 35.0,
+        "entries": [
+            {
+                "date": "08/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 554.4,
+                "quotas": 22.0
+            }
+        ]
+    },
+    "RAFAEL DE ALMEIDA COSTA": {
+        "name": "RAFAEL DE ALMEIDA COSTA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RAFAEL DE MENEZES NEVES": {
+        "name": "RAFAEL DE MENEZES NEVES",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "11/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RAFAEL DE SOUZA PIOL": {
+        "name": "RAFAEL DE SOUZA PIOL",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "RAFAEL DOMINGOS MASCHIO": {
+        "name": "RAFAEL DOMINGOS MASCHIO",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "RAFAEL EDUARDO DEL VECCHIO RASCALHIA": {
+        "name": "RAFAEL EDUARDO DEL VECCHIO RASCALHIA",
+        "totalValue": 1008.0,
+        "totalQuotas": 40.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RAFAEL FEITOSA BARBOSA": {
+        "name": "RAFAEL FEITOSA BARBOSA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "RAFAEL FERRACE MUZAQUE CASTILHO": {
+        "name": "RAFAEL FERRACE MUZAQUE CASTILHO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RAFAEL FERREIRA NASCIMENTO": {
+        "name": "RAFAEL FERREIRA NASCIMENTO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "01/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RAFAEL FRANCISCO DE OLIVEIRA SILVA": {
+        "name": "RAFAEL FRANCISCO DE OLIVEIRA SILVA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "RAFAEL GONÇALVES DOS SANTOS": {
+        "name": "RAFAEL GONÇALVES DOS SANTOS",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RAFAEL HENRIQUE DOS SANTOS": {
+        "name": "RAFAEL HENRIQUE DOS SANTOS",
+        "totalValue": 302.4,
+        "totalQuotas": 12.0,
+        "entries": [
+            {
+                "date": "12/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "RAFAEL HENRIQUE V BINDILLATI": {
+        "name": "RAFAEL HENRIQUE V BINDILLATI",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "16/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "RAFAEL MERINO ALVARES ARMANDO": {
+        "name": "RAFAEL MERINO ALVARES ARMANDO",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "05/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RAFAEL RODRIGO DO NASCIMENTO": {
+        "name": "RAFAEL RODRIGO DO NASCIMENTO",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "08/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RAFAEL RODRIGUES OLIVEIRA": {
+        "name": "RAFAEL RODRIGUES OLIVEIRA",
+        "totalValue": 756.0,
+        "totalQuotas": 30.0,
+        "entries": [
+            {
+                "date": "12/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "15/12/2025",
+                "value": 705.6,
+                "quotas": 28.0
+            }
+        ]
+    },
+    "RAFAEL SILVA DE MORAIS MAGALHAES": {
+        "name": "RAFAEL SILVA DE MORAIS MAGALHAES",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "RAFAEL TETZNER ROSSETTO": {
+        "name": "RAFAEL TETZNER ROSSETTO",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "04/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RAFAEL VIEIRA DOS SANTOS": {
+        "name": "RAFAEL VIEIRA DOS SANTOS",
+        "totalValue": 253.2,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "05/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "10/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 152.4,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "RAFAEL ZANCHETTA TAVARES": {
+        "name": "RAFAEL ZANCHETTA TAVARES",
+        "totalValue": 604.8,
+        "totalQuotas": 24.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RAFAEL ZANETI DA SILVA": {
+        "name": "RAFAEL ZANETI DA SILVA",
+        "totalValue": 201.6,
+        "totalQuotas": 8.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 100.0,
+                "quotas": 4.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 0.8,
+                "quotas": 0.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "RAFAELA CORDIOLI AZZI": {
+        "name": "RAFAELA CORDIOLI AZZI",
+        "totalValue": 52.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 52.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RAFAELA DE CASSIA PEREIRA": {
+        "name": "RAFAELA DE CASSIA PEREIRA",
+        "totalValue": 428.4,
+        "totalQuotas": 17.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 226.8,
+                "quotas": 9.0
+            }
+        ]
+    },
+    "RAFAELA DOS SANTOS SILVA": {
+        "name": "RAFAELA DOS SANTOS SILVA",
+        "totalValue": 176.39999999999998,
+        "totalQuotas": 7.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.0,
+                "quotas": 2.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 0.4,
+                "quotas": 0.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "RAFAELA FERNANDA DA SILVA MAIA": {
+        "name": "RAFAELA FERNANDA DA SILVA MAIA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RAFAELA HAYASHI MAGRINI": {
+        "name": "RAFAELA HAYASHI MAGRINI",
+        "totalValue": 453.59999999999997,
+        "totalQuotas": 18.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RAFAELA MILHOMENS NOGUEIRA": {
+        "name": "RAFAELA MILHOMENS NOGUEIRA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "RAFAELA SILVEIRA DE CASTRO": {
+        "name": "RAFAELA SILVEIRA DE CASTRO",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RAILANY SANTOS DURVAL": {
+        "name": "RAILANY SANTOS DURVAL",
+        "totalValue": 100.88,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 100.08,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 0.8,
+                "quotas": 0.0
+            }
+        ]
+    },
+    "RAPHAEL DE ALVARENGA": {
+        "name": "RAPHAEL DE ALVARENGA",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "03/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "04/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "15/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "RAPHAEL MARQUES DA SILVA": {
+        "name": "RAPHAEL MARQUES DA SILVA",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "04/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RAPHAEL RODRIGUES MACHADO DA SILVA": {
+        "name": "RAPHAEL RODRIGUES MACHADO DA SILVA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "RAPHAEL RODRIGUES MOREIRA": {
+        "name": "RAPHAEL RODRIGUES MOREIRA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "17/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RAPHAEL RODRIGUES PERES LOPES": {
+        "name": "RAPHAEL RODRIGUES PERES LOPES",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "12/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RAQUEL DANTAS DA COSTA": {
+        "name": "RAQUEL DANTAS DA COSTA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RAUL DE LIMA MAZZO": {
+        "name": "RAUL DE LIMA MAZZO",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 378.0,
+                "quotas": 15.0
+            }
+        ]
+    },
+    "RAUL JORGE NETO": {
+        "name": "RAUL JORGE NETO",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "18/11/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RAYANNE CRISTINA CODOGNO": {
+        "name": "RAYANNE CRISTINA CODOGNO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "REBECA CRISTINA DA SILVA": {
+        "name": "REBECA CRISTINA DA SILVA",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "REGIANE BABOLIM MARTOS": {
+        "name": "REGIANE BABOLIM MARTOS",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "10/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "15/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "REGIANE V DOS S ERMIDA": {
+        "name": "REGIANE V DOS S ERMIDA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "05/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "REGINA DE SOUZA": {
+        "name": "REGINA DE SOUZA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "19/11/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "REGINA MARGARETI PORTUGAL LEMES": {
+        "name": "REGINA MARGARETI PORTUGAL LEMES",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "REGINA SCHUMACHER BENEVENTI": {
+        "name": "REGINA SCHUMACHER BENEVENTI",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "25/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "REGINALDO DE QUEIROZ JUNIOR": {
+        "name": "REGINALDO DE QUEIROZ JUNIOR",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "REGINALDO DOS S ERMIDA": {
+        "name": "REGINALDO DOS S ERMIDA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "09/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "REGINALDO FRANCISCO LOPES RIBEIRO JUNIOR": {
+        "name": "REGINALDO FRANCISCO LOPES RIBEIRO JUNIOR",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "REGINALDO GONCALVES BRITO": {
+        "name": "REGINALDO GONCALVES BRITO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "REGINALDO ROGERIO BENTO JUNIOR": {
+        "name": "REGINALDO ROGERIO BENTO JUNIOR",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "REINALDO PIETOSO": {
+        "name": "REINALDO PIETOSO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "04/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "RENAN DE ALMEIDA JUSTO": {
+        "name": "RENAN DE ALMEIDA JUSTO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "RENAN RIBEIRO COSTA": {
+        "name": "RENAN RIBEIRO COSTA",
+        "totalValue": 1764.0,
+        "totalQuotas": 70.0,
+        "entries": [
+            {
+                "date": "25/11/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "06/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "18/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "18/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RENAN SANCHEZ VIESTEL": {
+        "name": "RENAN SANCHEZ VIESTEL",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "14/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RENATA ASCIOLA CORSATTO": {
+        "name": "RENATA ASCIOLA CORSATTO",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "09/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "RENATA DA SILVA GOMES": {
+        "name": "RENATA DA SILVA GOMES",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "12/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RENATA ESTELA MACHADO FERREIRA": {
+        "name": "RENATA ESTELA MACHADO FERREIRA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "13/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "RENATA GUEDES DE ANDRADE BRIGIDE": {
+        "name": "RENATA GUEDES DE ANDRADE BRIGIDE",
+        "totalValue": 553.6,
+        "totalQuotas": 22.0,
+        "entries": [
+            {
+                "date": "15/11/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "04/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "06/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 200.8,
+                "quotas": 8.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RENATA REGINA MODA": {
+        "name": "RENATA REGINA MODA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RENATO BARDI CABRAL": {
+        "name": "RENATO BARDI CABRAL",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "RENATO BUENO DE MORAIS": {
+        "name": "RENATO BUENO DE MORAIS",
+        "totalValue": 201.6,
+        "totalQuotas": 8.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            }
+        ]
+    },
+    "RENATO CARAVIELLO CIUFFA": {
+        "name": "RENATO CARAVIELLO CIUFFA",
+        "totalValue": 1386.0,
+        "totalQuotas": 55.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 1260.0,
+                "quotas": 50.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "RENATO DE ANDRADE TEIXEIRA": {
+        "name": "RENATO DE ANDRADE TEIXEIRA",
+        "totalValue": 100.0,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 100.0,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "RENATO DE SOUZA RIBEIRO COSTA": {
+        "name": "RENATO DE SOUZA RIBEIRO COSTA",
+        "totalValue": 579.6,
+        "totalQuotas": 23.0,
+        "entries": [
+            {
+                "date": "04/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "11/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "RENATO FRANCA DE SOUZA": {
+        "name": "RENATO FRANCA DE SOUZA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RENATO GRADWOOL PANIS": {
+        "name": "RENATO GRADWOOL PANIS",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "RENATO MATIAS DE FREITAS": {
+        "name": "RENATO MATIAS DE FREITAS",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "25/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "RENATO RESTIVO": {
+        "name": "RENATO RESTIVO",
+        "totalValue": 1260.0,
+        "totalQuotas": 50.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "12/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "RENATO RODRIGUES DE OLIVEIRA": {
+        "name": "RENATO RODRIGUES DE OLIVEIRA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RENATO TSUTOMU TAMAKI": {
+        "name": "RENATO TSUTOMU TAMAKI",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RENATO ZUGLIAN SOARES": {
+        "name": "RENATO ZUGLIAN SOARES",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "RF REPARAÇÃO AUTOMOTIVA": {
+        "name": "RF REPARAÇÃO AUTOMOTIVA",
+        "totalValue": 302.4,
+        "totalQuotas": 12.0,
+        "entries": [
+            {
+                "date": "17/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "RICARDO AOKI": {
+        "name": "RICARDO AOKI",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "RICARDO BAIOCCHI": {
+        "name": "RICARDO BAIOCCHI",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "RICARDO BARROTTI": {
+        "name": "RICARDO BARROTTI",
+        "totalValue": 630.0,
+        "totalQuotas": 25.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "29/11/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RICARDO BARTOLINI TAMBARA": {
+        "name": "RICARDO BARTOLINI TAMBARA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "RICARDO BEKISZ GUERRA": {
+        "name": "RICARDO BEKISZ GUERRA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "RICARDO FREITAS DA SILVA": {
+        "name": "RICARDO FREITAS DA SILVA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "RICARDO FUJITA": {
+        "name": "RICARDO FUJITA",
+        "totalValue": 756.0,
+        "totalQuotas": 30.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RICARDO JUSTINO ALVES": {
+        "name": "RICARDO JUSTINO ALVES",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "01/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            }
+        ]
+    },
+    "RICARDO KORCH RAMOS": {
+        "name": "RICARDO KORCH RAMOS",
+        "totalValue": 3150.0,
+        "totalQuotas": 125.0,
+        "entries": [
+            {
+                "date": "30/11/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "10/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "18/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 1008.0,
+                "quotas": 40.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 630.0,
+                "quotas": 25.0
+            }
+        ]
+    },
+    "RICARDO LEAO FERREIRA": {
+        "name": "RICARDO LEAO FERREIRA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "11/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "18/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RICARDO LUIZ MARZ CACERES": {
+        "name": "RICARDO LUIZ MARZ CACERES",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "14/11/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "RICARDO MELO DE ALMEIDA": {
+        "name": "RICARDO MELO DE ALMEIDA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RICARDO MENDES": {
+        "name": "RICARDO MENDES",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "10/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RICARDO PUCCIONI KATSUDA": {
+        "name": "RICARDO PUCCIONI KATSUDA",
+        "totalValue": 630.0,
+        "totalQuotas": 25.0,
+        "entries": [
+            {
+                "date": "17/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "RICARDO RIBEIRO LEMOS": {
+        "name": "RICARDO RIBEIRO LEMOS",
+        "totalValue": 2772.0,
+        "totalQuotas": 110.0,
+        "entries": [
+            {
+                "date": "05/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "09/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "10/12/2025",
+                "value": 756.0,
+                "quotas": 30.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 756.0,
+                "quotas": 30.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 604.8,
+                "quotas": 24.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RICARDO YUITI TANAKA": {
+        "name": "RICARDO YUITI TANAKA",
+        "totalValue": 1008.0,
+        "totalQuotas": 40.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "RITA DE CASSIA CALCHI CELESTINO": {
+        "name": "RITA DE CASSIA CALCHI CELESTINO",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "09/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "15/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "17/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "RITA DE CASSIA LEANDRO": {
+        "name": "RITA DE CASSIA LEANDRO",
+        "totalValue": 680.4,
+        "totalQuotas": 27.0,
+        "entries": [
+            {
+                "date": "12/12/2025",
+                "value": 100.0,
+                "quotas": 4.0
+            },
+            {
+                "date": "12/12/2025",
+                "value": 0.8,
+                "quotas": 0.0
+            },
+            {
+                "date": "12/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "14/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RITA FÉLIX PEREIRA": {
+        "name": "RITA FÉLIX PEREIRA",
+        "totalValue": 150.8,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 75.2,
+                "quotas": 3.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "RITA FELIX PEREIRA": {
+        "name": "RITA FELIX PEREIRA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "13/11/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "22/11/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "02/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "10/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "RITA VALERIA FREITAS": {
+        "name": "RITA VALERIA FREITAS",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "ROBERIO SANTOS DURVAL": {
+        "name": "ROBERIO SANTOS DURVAL",
+        "totalValue": 529.2,
+        "totalQuotas": 21.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "ROBERTA GASQUES TAVARES COSTA": {
+        "name": "ROBERTA GASQUES TAVARES COSTA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "ROBERTO ALVES PEREIRA DA SILVA": {
+        "name": "ROBERTO ALVES PEREIRA DA SILVA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "ROBERTO ALVES VIEIRA": {
+        "name": "ROBERTO ALVES VIEIRA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 176.4,
+                "quotas": 7.0
+            }
+        ]
+    },
+    "ROBERTO DIAS DE OLIVEIRA": {
+        "name": "ROBERTO DIAS DE OLIVEIRA",
+        "totalValue": 2520.0,
+        "totalQuotas": 100.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 2520.0,
+                "quotas": 100.0
+            }
+        ]
+    },
+    "ROBERTO FRANCELINO DA SILVA JUNIOR": {
+        "name": "ROBERTO FRANCELINO DA SILVA JUNIOR",
+        "totalValue": 1764.0,
+        "totalQuotas": 70.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 982.8,
+                "quotas": 39.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 781.2,
+                "quotas": 31.0
+            }
+        ]
+    },
+    "ROBERTO GUEDES DE ANDRADE FILHO": {
+        "name": "ROBERTO GUEDES DE ANDRADE FILHO",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "04/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "ROBERTO MACHADO LOPES RIBEIRO": {
+        "name": "ROBERTO MACHADO LOPES RIBEIRO",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "ROBERTO MARQUES BRAZ": {
+        "name": "ROBERTO MARQUES BRAZ",
+        "totalValue": 79.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 54.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "ROBERTO PAULO MC ALLISTER SETTANNI": {
+        "name": "ROBERTO PAULO MC ALLISTER SETTANNI",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "ROBERTO YUITI HIRATZUKA": {
+        "name": "ROBERTO YUITI HIRATZUKA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "18/11/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "ROBSON DE SOUSA SANTANA": {
+        "name": "ROBSON DE SOUSA SANTANA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "ROBSON MAIA NASCIMENTO": {
+        "name": "ROBSON MAIA NASCIMENTO",
+        "totalValue": 1688.4,
+        "totalQuotas": 67.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 756.0,
+                "quotas": 30.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 907.2,
+                "quotas": 36.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "ROBSON SILVA DO NASCIMENTO": {
+        "name": "ROBSON SILVA DO NASCIMENTO",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "05/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "RODNEI NOGUEIRA": {
+        "name": "RODNEI NOGUEIRA",
+        "totalValue": 730.8000000000001,
+        "totalQuotas": 29.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 108.0,
+                "quotas": 4.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 18.0,
+                "quotas": 1.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "RODOLFO JOSÉ CONRADO DA SILVA": {
+        "name": "RODOLFO JOSÉ CONRADO DA SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "RODOLFO SANTOS DA SILVA": {
+        "name": "RODOLFO SANTOS DA SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RODOLPHO VILLA DOS SANTOS ERMIDA": {
+        "name": "RODOLPHO VILLA DOS SANTOS ERMIDA",
+        "totalValue": 1512.0,
+        "totalQuotas": 60.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 1512.0,
+                "quotas": 60.0
+            }
+        ]
+    },
+    "RODOLPHO VILLA SANTOS ERMIDA": {
+        "name": "RODOLPHO VILLA SANTOS ERMIDA",
+        "totalValue": 4410.0,
+        "totalQuotas": 175.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 2520.0,
+                "quotas": 100.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 1260.0,
+                "quotas": 50.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 630.0,
+                "quotas": 25.0
+            }
+        ]
+    },
+    "RODRIGO ALEXANDRE DE SOUZA": {
+        "name": "RODRIGO ALEXANDRE DE SOUZA",
+        "totalValue": 1512.0,
+        "totalQuotas": 60.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 1260.0,
+                "quotas": 50.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RODRIGO ALVES PULSONE": {
+        "name": "RODRIGO ALVES PULSONE",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "RODRIGO APARECIDO CANDIDO": {
+        "name": "RODRIGO APARECIDO CANDIDO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "RODRIGO APARECIDO VIEIRA MOREIRA": {
+        "name": "RODRIGO APARECIDO VIEIRA MOREIRA",
+        "totalValue": 251.99999999999997,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "04/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "RODRIGO BENVENUTO": {
+        "name": "RODRIGO BENVENUTO",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "RODRIGO BUENO DE MORAIS": {
+        "name": "RODRIGO BUENO DE MORAIS",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "RODRIGO CARMONA": {
+        "name": "RODRIGO CARMONA",
+        "totalValue": 882.0,
+        "totalQuotas": 35.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 302.4,
+                "quotas": 12.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 327.6,
+                "quotas": 13.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "RODRIGO DA SILVA SOUSA": {
+        "name": "RODRIGO DA SILVA SOUSA",
+        "totalValue": 756.0,
+        "totalQuotas": 30.0,
+        "entries": [
+            {
+                "date": "10/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RODRIGO DE OLIVEIRA LOPES": {
+        "name": "RODRIGO DE OLIVEIRA LOPES",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "RODRIGO FERREIRA NASCIMENTO": {
+        "name": "RODRIGO FERREIRA NASCIMENTO",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "RODRIGO FRANKI BRAZ": {
+        "name": "RODRIGO FRANKI BRAZ",
+        "totalValue": 1764.0,
+        "totalQuotas": 70.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 831.6,
+                "quotas": 33.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 327.6,
+                "quotas": 13.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 604.8,
+                "quotas": 24.0
+            }
+        ]
+    },
+    "RODRIGO MANTOANELLI": {
+        "name": "RODRIGO MANTOANELLI",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "RODRIGO MARTINS CAETANO": {
+        "name": "RODRIGO MARTINS CAETANO",
+        "totalValue": 505.5,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "13/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 127.5,
+                "quotas": 5.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "RODRIGO MARTINS MARQUES": {
+        "name": "RODRIGO MARTINS MARQUES",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RODRIGO MOREIRA MALTA": {
+        "name": "RODRIGO MOREIRA MALTA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "10/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "14/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RODRIGO NICOLETTI AUGUSTO FERNANDES": {
+        "name": "RODRIGO NICOLETTI AUGUSTO FERNANDES",
+        "totalValue": 201.6,
+        "totalQuotas": 8.0,
+        "entries": [
+            {
+                "date": "06/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RODRIGO OTAVIO MAGALHAES SALGA": {
+        "name": "RODRIGO OTAVIO MAGALHAES SALGA",
+        "totalValue": 403.2,
+        "totalQuotas": 16.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RODRIGO OTAVIO MAGALHAES SALGADO": {
+        "name": "RODRIGO OTAVIO MAGALHAES SALGADO",
+        "totalValue": 1108.8,
+        "totalQuotas": 44.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 756.0,
+                "quotas": 30.0
+            }
+        ]
+    },
+    "RODRIGO PINEIRO DA COSTA": {
+        "name": "RODRIGO PINEIRO DA COSTA",
+        "totalValue": 201.6,
+        "totalQuotas": 8.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            }
+        ]
+    },
+    "RODRIGO SOUSA DE OLIVEIRA": {
+        "name": "RODRIGO SOUSA DE OLIVEIRA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "18/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "RODRIGO VASCONCELOS": {
+        "name": "RODRIGO VASCONCELOS",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RODRIGO VERISSIMO DA SILVA": {
+        "name": "RODRIGO VERISSIMO DA SILVA",
+        "totalValue": 352.8,
+        "totalQuotas": 14.0,
+        "entries": [
+            {
+                "date": "29/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RODRIGO VIEIRA DA SILVA": {
+        "name": "RODRIGO VIEIRA DA SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "ROGÉRIO JORGE GAMBERINI": {
+        "name": "ROGÉRIO JORGE GAMBERINI",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "ROGERIO ARTUR DA ROCHA": {
+        "name": "ROGERIO ARTUR DA ROCHA",
+        "totalValue": 1008.0,
+        "totalQuotas": 40.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "ROGERIO DA PENHA CAETANO": {
+        "name": "ROGERIO DA PENHA CAETANO",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "02/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "ROGERIO GARCIA MOURA": {
+        "name": "ROGERIO GARCIA MOURA",
+        "totalValue": 25.0,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "ROGERIO GOMES DE REZENDE JUNIOR": {
+        "name": "ROGERIO GOMES DE REZENDE JUNIOR",
+        "totalValue": 756.0,
+        "totalQuotas": 30.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "ROGERIO RIBEIRO PASSOS": {
+        "name": "ROGERIO RIBEIRO PASSOS",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "ROGERIO SILVA DE OLIVEIRA": {
+        "name": "ROGERIO SILVA DE OLIVEIRA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "27/11/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "ROGERSON ARAUJO CASTELO BRANCO": {
+        "name": "ROGERSON ARAUJO CASTELO BRANCO",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "ROMARIO CORREA": {
+        "name": "ROMARIO CORREA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "ROMUALDO FAUSTINO DE OLIVEIRA": {
+        "name": "ROMUALDO FAUSTINO DE OLIVEIRA",
+        "totalValue": 1537.2,
+        "totalQuotas": 61.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 806.4,
+                "quotas": 32.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 327.6,
+                "quotas": 13.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "ROMUALDO MOACIR DA SILVA": {
+        "name": "ROMUALDO MOACIR DA SILVA",
+        "totalValue": 1083.6,
+        "totalQuotas": 43.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 756.0,
+                "quotas": 30.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "RONALDO FARIAS JUNIOR": {
+        "name": "RONALDO FARIAS JUNIOR",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RONALDO FERREIRA DE ARAUJO": {
+        "name": "RONALDO FERREIRA DE ARAUJO",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "RONALDO FREITAS FELIPPE": {
+        "name": "RONALDO FREITAS FELIPPE",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "17/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "RONALDO SUVERATO LUCHIARI": {
+        "name": "RONALDO SUVERATO LUCHIARI",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "RONATY SOUZA REBUA": {
+        "name": "RONATY SOUZA REBUA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "RONI DIAS DOS SANTOS": {
+        "name": "RONI DIAS DOS SANTOS",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "ROSANA DA SILVA BEMFEITO": {
+        "name": "ROSANA DA SILVA BEMFEITO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "ROSANE ALEXANDRE ALVES": {
+        "name": "ROSANE ALEXANDRE ALVES",
+        "totalValue": 176.4,
+        "totalQuotas": 7.0,
+        "entries": [
+            {
+                "date": "17/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "ROSANE CRISTINA DOS SANTOS": {
+        "name": "ROSANE CRISTINA DOS SANTOS",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "ROSANGELA APARECIDA CORDIOLLI": {
+        "name": "ROSANGELA APARECIDA CORDIOLLI",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "ROSANGELA MARIA MANTOVANI CASTILHO": {
+        "name": "ROSANGELA MARIA MANTOVANI CASTILHO",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "10/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "ROSANGELA ROCHA DO VALE CANDIDO": {
+        "name": "ROSANGELA ROCHA DO VALE CANDIDO",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "01/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "ROSELI APARECIDA DE LIMA": {
+        "name": "ROSELI APARECIDA DE LIMA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "ROSEMEIRE NAGOSKI": {
+        "name": "ROSEMEIRE NAGOSKI",
+        "totalValue": 529.2,
+        "totalQuotas": 21.0,
+        "entries": [
+            {
+                "date": "01/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "12/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "ROSENILDA DA SILVA FERNANDES DOS SANTOS": {
+        "name": "ROSENILDA DA SILVA FERNANDES DOS SANTOS",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "ROSIANE APARECIDA DIAS WEILER": {
+        "name": "ROSIANE APARECIDA DIAS WEILER",
+        "totalValue": 176.4,
+        "totalQuotas": 7.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "ROSILANE LINDA DOS SANTOS": {
+        "name": "ROSILANE LINDA DOS SANTOS",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "11/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "ROSILDA FATIMA JARDIM NOGUEIRA": {
+        "name": "ROSILDA FATIMA JARDIM NOGUEIRA",
+        "totalValue": 1738.8,
+        "totalQuotas": 69.0,
+        "entries": [
+            {
+                "date": "12/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "15/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "ROSILENE BORGE OLIVEIRA DE SOUZA": {
+        "name": "ROSILENE BORGE OLIVEIRA DE SOUZA",
+        "totalValue": 1760.3999999999999,
+        "totalQuotas": 69.0,
+        "entries": [
+            {
+                "date": "16/11/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "20/11/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "20/11/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "30/11/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "03/12/2025",
+                "value": 540.0,
+                "quotas": 21.0
+            },
+            {
+                "date": "03/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "08/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "11/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "03/12/2025",
+                "value": 540.0,
+                "quotas": 21.0
+            }
+        ]
+    },
+    "ROSIMEIRI MUNIZ SOARES PALIALOL": {
+        "name": "ROSIMEIRI MUNIZ SOARES PALIALOL",
+        "totalValue": 277.2,
+        "totalQuotas": 11.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "29/11/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "17/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "RUBENS DE OLIVEIRA SANTANA": {
+        "name": "RUBENS DE OLIVEIRA SANTANA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "14/11/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "RUBENS JOSE ROCHA MARCHIORI": {
+        "name": "RUBENS JOSE ROCHA MARCHIORI",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "SÉRGIO VERONESI": {
+        "name": "SÉRGIO VERONESI",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "SABRINA ALESSANDRA RIBEIRO": {
+        "name": "SABRINA ALESSANDRA RIBEIRO",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "SABRINA DA SILVA PEREIRA": {
+        "name": "SABRINA DA SILVA PEREIRA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "SABRINA DE FARIA RIBEIRO": {
+        "name": "SABRINA DE FARIA RIBEIRO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "SABRINA LIMA DOS SANTOS": {
+        "name": "SABRINA LIMA DOS SANTOS",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "SACOLAO DO BAIRRO COMERCIO": {
+        "name": "SACOLAO DO BAIRRO COMERCIO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "12/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "SAMARA KEINE OLIVEIRA SANTOS": {
+        "name": "SAMARA KEINE OLIVEIRA SANTOS",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "07/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "SAMARA LIMA DA SILVA BARBOSA": {
+        "name": "SAMARA LIMA DA SILVA BARBOSA",
+        "totalValue": 579.5999999999999,
+        "totalQuotas": 23.0,
+        "entries": [
+            {
+                "date": "29/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "02/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "02/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "12/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "SAMARA SANTOS NERES": {
+        "name": "SAMARA SANTOS NERES",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "SAMUEL SANTOS EMBERSICS": {
+        "name": "SAMUEL SANTOS EMBERSICS",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "09/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "SANDRA MARA DOS SANTOS PAIVA": {
+        "name": "SANDRA MARA DOS SANTOS PAIVA",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 378.0,
+                "quotas": 15.0
+            }
+        ]
+    },
+    "SANDRA MARCIA JAKELAITIS": {
+        "name": "SANDRA MARCIA JAKELAITIS",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "06/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "SANDRA REGINA DE SOUSA NEVES": {
+        "name": "SANDRA REGINA DE SOUSA NEVES",
+        "totalValue": 752.0,
+        "totalQuotas": 30.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 250.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 250.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "SANDRA REGINA FOSSA ASSUMPCAO": {
+        "name": "SANDRA REGINA FOSSA ASSUMPCAO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "SANDRA REGINA JESUS DE SOUZA": {
+        "name": "SANDRA REGINA JESUS DE SOUZA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "SANDRA REGINA LEANDRO": {
+        "name": "SANDRA REGINA LEANDRO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "SANDRA SATO NAKAYAMA": {
+        "name": "SANDRA SATO NAKAYAMA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "30/11/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "SANDRO ALVES DE SOUZA": {
+        "name": "SANDRO ALVES DE SOUZA",
+        "totalValue": 302.4,
+        "totalQuotas": 12.0,
+        "entries": [
+            {
+                "date": "11/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "SANDRO OLIVEIRA SANTANA": {
+        "name": "SANDRO OLIVEIRA SANTANA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "13/12/2025",
+                "value": 101.0,
+                "quotas": 4.0
+            },
+            {
+                "date": "13/12/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "SANNY CHIOTTI CRISCUOLO SCOZZAFAVE": {
+        "name": "SANNY CHIOTTI CRISCUOLO SCOZZAFAVE",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "SANTIAGO REZENDE FREITAS": {
+        "name": "SANTIAGO REZENDE FREITAS",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "SAORI PEREIRA DA COSTA": {
+        "name": "SAORI PEREIRA DA COSTA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 0.2,
+                "quotas": 0.0
+            }
+        ]
+    },
+    "SARAH IGREJA DA SILVA": {
+        "name": "SARAH IGREJA DA SILVA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "SAYMON ALVES PERES": {
+        "name": "SAYMON ALVES PERES",
+        "totalValue": 478.8,
+        "totalQuotas": 19.0,
+        "entries": [
+            {
+                "date": "01/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "SERGIO APARECIDO ROSA": {
+        "name": "SERGIO APARECIDO ROSA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "SERGIO EDUARDO PALMIERE": {
+        "name": "SERGIO EDUARDO PALMIERE",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "SERGIO EIJI NAKAI": {
+        "name": "SERGIO EIJI NAKAI",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "SERGIO HENRIQUE DE PAULA": {
+        "name": "SERGIO HENRIQUE DE PAULA",
+        "totalValue": 756.0,
+        "totalQuotas": 30.0,
+        "entries": [
+            {
+                "date": "01/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "13/12/2025",
+                "value": 327.6,
+                "quotas": 13.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "SERGIO JUN IKEDA": {
+        "name": "SERGIO JUN IKEDA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "SERGIO RODRIGO CORREA": {
+        "name": "SERGIO RODRIGO CORREA",
+        "totalValue": 201.6,
+        "totalQuotas": 8.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            }
+        ]
+    },
+    "SERGIO RODRIGO RAMOS": {
+        "name": "SERGIO RODRIGO RAMOS",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "SERGIO SILVA MARTINS": {
+        "name": "SERGIO SILVA MARTINS",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "12/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "SERGIO VERONESI": {
+        "name": "SERGIO VERONESI",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "SEVERINO DOS RAMOS FONSECA DOS SANTOS": {
+        "name": "SEVERINO DOS RAMOS FONSECA DOS SANTOS",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 100.0,
+                "quotas": 4.0
+            },
+            {
+                "date": "03/12/2025",
+                "value": 0.8,
+                "quotas": 0.0
+            }
+        ]
+    },
+    "SHIRLEI APARECIDA MELO FREITAS": {
+        "name": "SHIRLEI APARECIDA MELO FREITAS",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "SIDNÉIA CACONDE DA SILVA DESTEFANI": {
+        "name": "SIDNÉIA CACONDE DA SILVA DESTEFANI",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 302.4,
+                "quotas": 12.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "SIDNEI FROES": {
+        "name": "SIDNEI FROES",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "SIDNEY ROBERTO DA SILVA": {
+        "name": "SIDNEY ROBERTO DA SILVA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "07/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "SILVANA BARBOSA RIBEIRO": {
+        "name": "SILVANA BARBOSA RIBEIRO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "05/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "SILVANA BASTOS DE MORAES": {
+        "name": "SILVANA BASTOS DE MORAES",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "SILVIA CAMPOS MENEZES": {
+        "name": "SILVIA CAMPOS MENEZES",
+        "totalValue": 1008.4,
+        "totalQuotas": 40.0,
+        "entries": [
+            {
+                "date": "13/11/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/11/2025",
+                "value": 252.2,
+                "quotas": 10.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 252.2,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "SILVIO ALEXANDRE DE SOUZA": {
+        "name": "SILVIO ALEXANDRE DE SOUZA",
+        "totalValue": 2142.0000000000005,
+        "totalQuotas": 85.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "03/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 529.2,
+                "quotas": 21.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 226.8,
+                "quotas": 9.0
+            }
+        ]
+    },
+    "SILVIO LUIZ DE SOUZA": {
+        "name": "SILVIO LUIZ DE SOUZA",
+        "totalValue": 856.8,
+        "totalQuotas": 34.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 756.0,
+                "quotas": 30.0
+            }
+        ]
+    },
+    "SIMONE ALVES EDUARDO": {
+        "name": "SIMONE ALVES EDUARDO",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "SIMONI DE OLIVEIRA MOURA SILVA": {
+        "name": "SIMONI DE OLIVEIRA MOURA SILVA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            },
+            {
+                "date": "15/12/2025",
+                "value": 0.2,
+                "quotas": 0.0
+            }
+        ]
+    },
+    "SINOMAR RONCALIO": {
+        "name": "SINOMAR RONCALIO",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "SIRLEI CAPISTANO DE SOUZA": {
+        "name": "SIRLEI CAPISTANO DE SOUZA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "07/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "SISSI OLIVEIRA AQUINO DE SOUZA": {
+        "name": "SISSI OLIVEIRA AQUINO DE SOUZA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "SIVALDO OLIVEIRA SENA": {
+        "name": "SIVALDO OLIVEIRA SENA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "03/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "SLA GESTAO EM TECNOLOGIA": {
+        "name": "SLA GESTAO EM TECNOLOGIA",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 378.0,
+                "quotas": 15.0
+            }
+        ]
+    },
+    "SOLANGE RICIOLI": {
+        "name": "SOLANGE RICIOLI",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "17/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "SONIA DE FATIMA GONCALVES": {
+        "name": "SONIA DE FATIMA GONCALVES",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "SONIA REGINA DOS SANTOS": {
+        "name": "SONIA REGINA DOS SANTOS",
+        "totalValue": 150.8,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 50.0,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "SORAIA LIMA DA SILVA STEFF": {
+        "name": "SORAIA LIMA DA SILVA STEFF",
+        "totalValue": 302.4,
+        "totalQuotas": 12.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "SORAYA MARIA DE GUADALUPE": {
+        "name": "SORAYA MARIA DE GUADALUPE",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "STEFANIA GUARDA CABRERA": {
+        "name": "STEFANIA GUARDA CABRERA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "STELA RITA BARBELLI": {
+        "name": "STELA RITA BARBELLI",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "STELLA MARIA PATRICIO VASCONCELLOS": {
+        "name": "STELLA MARIA PATRICIO VASCONCELLOS",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "STEPHANIE GONCALVES ALVES": {
+        "name": "STEPHANIE GONCALVES ALVES",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 302.4,
+                "quotas": 12.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            }
+        ]
+    },
+    "STEPHANNIE DE PAIVA RAMOS DE S": {
+        "name": "STEPHANNIE DE PAIVA RAMOS DE S",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "SUELI MORAES GARCIA": {
+        "name": "SUELI MORAES GARCIA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "09/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "SUELI PAIVA": {
+        "name": "SUELI PAIVA",
+        "totalValue": 630.0,
+        "totalQuotas": 25.0,
+        "entries": [
+            {
+                "date": "09/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "SUELI PARRA DOS PASSOS": {
+        "name": "SUELI PARRA DOS PASSOS",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "SULAMITA FONSECA DE LIMA": {
+        "name": "SULAMITA FONSECA DE LIMA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "SUMARA MARIA POSTELLARI ZANCOPE": {
+        "name": "SUMARA MARIA POSTELLARI ZANCOPE",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "SUZENI EZLA PIMENTA": {
+        "name": "SUZENI EZLA PIMENTA",
+        "totalValue": 1008.2,
+        "totalQuotas": 40.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 252.2,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "SYLVIA MARCIA DA SILVA": {
+        "name": "SYLVIA MARCIA DA SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "TAINARA DE MELO LIMA": {
+        "name": "TAINARA DE MELO LIMA",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "TALITA MOURA DE LIMA DA SILVA": {
+        "name": "TALITA MOURA DE LIMA DA SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "TALLES JUNIO GONÇALVES FREITAS": {
+        "name": "TALLES JUNIO GONÇALVES FREITAS",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "25/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "TAMARA BEZERRA DE ANDRADE": {
+        "name": "TAMARA BEZERRA DE ANDRADE",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "TANIA DA SILVA SOARES": {
+        "name": "TANIA DA SILVA SOARES",
+        "totalValue": 327.6,
+        "totalQuotas": 13.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 327.6,
+                "quotas": 13.0
+            }
+        ]
+    },
+    "TANIA OKUZONO": {
+        "name": "TANIA OKUZONO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "TARCISIO RODOLPHO SANTOS ARAUJO": {
+        "name": "TARCISIO RODOLPHO SANTOS ARAUJO",
+        "totalValue": 630.0,
+        "totalQuotas": 25.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "TARCIZO MAGNO FONSECA PEREIRA": {
+        "name": "TARCIZO MAGNO FONSECA PEREIRA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "17/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "TATIANA CHRISTINA REBELLO BARROS": {
+        "name": "TATIANA CHRISTINA REBELLO BARROS",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "TATIANE APARECIDA SILVA": {
+        "name": "TATIANE APARECIDA SILVA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "TATIANE CRISTINA SILVA CUNHA LABANCA": {
+        "name": "TATIANE CRISTINA SILVA CUNHA LABANCA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "TATIANE DE CARVALHO ABREU": {
+        "name": "TATIANE DE CARVALHO ABREU",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "TATIANE KARIN FLORENCIO": {
+        "name": "TATIANE KARIN FLORENCIO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "13/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "18/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "TATIANE LEITE GOMES": {
+        "name": "TATIANE LEITE GOMES",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "TATIANE OLIVEIRA FAM": {
+        "name": "TATIANE OLIVEIRA FAM",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "TERESA APARECIDA CORDIOLI AZZI": {
+        "name": "TERESA APARECIDA CORDIOLI AZZI",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "THAIANE OLIVEIRA DE JESUS": {
+        "name": "THAIANE OLIVEIRA DE JESUS",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "THAIS FRANCIELLE DA SILVA TAVARES BEZERRA": {
+        "name": "THAIS FRANCIELLE DA SILVA TAVARES BEZERRA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "THAIS LUCHIARI LUCATTO VISCARDI": {
+        "name": "THAIS LUCHIARI LUCATTO VISCARDI",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "THAIS PAOLA SANCHES DE CARVALHO": {
+        "name": "THAIS PAOLA SANCHES DE CARVALHO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "THAIS TIEMI TAKITA DE LIMA": {
+        "name": "THAIS TIEMI TAKITA DE LIMA",
+        "totalValue": 756.0,
+        "totalQuotas": 30.0,
+        "entries": [
+            {
+                "date": "13/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 453.6,
+                "quotas": 18.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "THALITA RINALDI RAMOS DE MATOS": {
+        "name": "THALITA RINALDI RAMOS DE MATOS",
+        "totalValue": 176.4,
+        "totalQuotas": 7.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "THALLES GUILHERME GATTI": {
+        "name": "THALLES GUILHERME GATTI",
+        "totalValue": 1512.0,
+        "totalQuotas": 60.0,
+        "entries": [
+            {
+                "date": "12/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "13/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "THALYTA CORRÊA DOS SANTOS": {
+        "name": "THALYTA CORRÊA DOS SANTOS",
+        "totalValue": 176.4,
+        "totalQuotas": 7.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 176.4,
+                "quotas": 7.0
+            }
+        ]
+    },
+    "THALYTA CORREA DOS SANTOS": {
+        "name": "THALYTA CORREA DOS SANTOS",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "THAYANNA FERREIRA TAVARES": {
+        "name": "THAYANNA FERREIRA TAVARES",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "THIAGO AGUIAR GASTARDELLI": {
+        "name": "THIAGO AGUIAR GASTARDELLI",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "THIAGO ALEXANDRE LUCATTO": {
+        "name": "THIAGO ALEXANDRE LUCATTO",
+        "totalValue": 3855.6,
+        "totalQuotas": 153.0,
+        "entries": [
+            {
+                "date": "08/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 2520.0,
+                "quotas": 100.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 1260.0,
+                "quotas": 50.0
+            }
+        ]
+    },
+    "THIAGO ARAUJO DOS SANTOS": {
+        "name": "THIAGO ARAUJO DOS SANTOS",
+        "totalValue": 302.4,
+        "totalQuotas": 12.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "THIAGO ARTAWASD OHANESIAN": {
+        "name": "THIAGO ARTAWASD OHANESIAN",
+        "totalValue": 327.6,
+        "totalQuotas": 13.0,
+        "entries": [
+            {
+                "date": "25/12/2025",
+                "value": 327.6,
+                "quotas": 13.0
+            }
+        ]
+    },
+    "THIAGO AUGUSTO C SANTOS": {
+        "name": "THIAGO AUGUSTO C SANTOS",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "THIAGO CAMPOS SILVA": {
+        "name": "THIAGO CAMPOS SILVA",
+        "totalValue": 226.8,
+        "totalQuotas": 9.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "THIAGO FERREIRA HENRIQUE": {
+        "name": "THIAGO FERREIRA HENRIQUE",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "10/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "THIAGO GOMES LIMA DA SILVA": {
+        "name": "THIAGO GOMES LIMA DA SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "THIAGO HENRIQUE SOARES DOS REIS": {
+        "name": "THIAGO HENRIQUE SOARES DOS REIS",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "THIAGO MATTOS AZEVEDO": {
+        "name": "THIAGO MATTOS AZEVEDO",
+        "totalValue": 932.4,
+        "totalQuotas": 37.0,
+        "entries": [
+            {
+                "date": "06/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "THIAGO SANTOS DE ANDRADE": {
+        "name": "THIAGO SANTOS DE ANDRADE",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "THIAGO SANTOS DE OLIVEIRA": {
+        "name": "THIAGO SANTOS DE OLIVEIRA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "05/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "THIAGO SOARES DIAS": {
+        "name": "THIAGO SOARES DIAS",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "THIAGO SOLER": {
+        "name": "THIAGO SOLER",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "THIAGO SOUZA DE ABREU": {
+        "name": "THIAGO SOUZA DE ABREU",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "THIAGO SOUZA MELO": {
+        "name": "THIAGO SOUZA MELO",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "03/12/2025",
+                "value": 176.4,
+                "quotas": 7.0
+            },
+            {
+                "date": "13/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "THIAGO T LEITE RODRIGUES": {
+        "name": "THIAGO T LEITE RODRIGUES",
+        "totalValue": 2772.0,
+        "totalQuotas": 110.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 2268.0,
+                "quotas": 90.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "THIAGO TAVARES CAMPOS": {
+        "name": "THIAGO TAVARES CAMPOS",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "THIAGO TOBIAS": {
+        "name": "THIAGO TOBIAS",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "THIAGO VIEIRA CORDEIRO FERNANDES": {
+        "name": "THIAGO VIEIRA CORDEIRO FERNANDES",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "14/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "TIAGO ALEXANDRE DELAMODARME": {
+        "name": "TIAGO ALEXANDRE DELAMODARME",
+        "totalValue": 226.8,
+        "totalQuotas": 9.0,
+        "entries": [
+            {
+                "date": "25/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "TIAGO BATISTA DA SILVA": {
+        "name": "TIAGO BATISTA DA SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "12/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "TIAGO DE ALBUQUERQUE SEQUEIRA": {
+        "name": "TIAGO DE ALBUQUERQUE SEQUEIRA",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "25/11/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "17/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "TIAGO DONAIRES GARCIA": {
+        "name": "TIAGO DONAIRES GARCIA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "TIAGO MAGALHAES VIANA": {
+        "name": "TIAGO MAGALHAES VIANA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "TIAGO MARTINS RODRIGUES": {
+        "name": "TIAGO MARTINS RODRIGUES",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "TIAGO N MIRANDA CREVILARI": {
+        "name": "TIAGO N MIRANDA CREVILARI",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "TIAGO PEREIRA DA SILVA": {
+        "name": "TIAGO PEREIRA DA SILVA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 0.2,
+                "quotas": 0.0
+            }
+        ]
+    },
+    "TIAGO POSTELLARI DA SILVA": {
+        "name": "TIAGO POSTELLARI DA SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "TULIO EDUARDO DE OLIVEIRA COELHO": {
+        "name": "TULIO EDUARDO DE OLIVEIRA COELHO",
+        "totalValue": 201.6,
+        "totalQuotas": 8.0,
+        "entries": [
+            {
+                "date": "10/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "UARLEI JOSE ALVES DE ALMEIDA": {
+        "name": "UARLEI JOSE ALVES DE ALMEIDA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "18/12/2025",
+                "value": 50.0,
+                "quotas": 2.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 0.4,
+                "quotas": 0.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "ULISSES FERNANDO CAMARA ASSIS": {
+        "name": "ULISSES FERNANDO CAMARA ASSIS",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "05/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "ULYSSES PEREIRA CYRILLO SILVA": {
+        "name": "ULYSSES PEREIRA CYRILLO SILVA",
+        "totalValue": 1915.2,
+        "totalQuotas": 76.0,
+        "entries": [
+            {
+                "date": "13/11/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "19/11/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "05/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "18/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 378.0,
+                "quotas": 15.0
+            }
+        ]
+    },
+    "VAGNER MENDES DE QUEIROZ": {
+        "name": "VAGNER MENDES DE QUEIROZ",
+        "totalValue": 554.4,
+        "totalQuotas": 22.0,
+        "entries": [
+            {
+                "date": "18/11/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "01/12/2025",
+                "value": 176.4,
+                "quotas": 7.0
+            },
+            {
+                "date": "15/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "VALDECI DE SOUZA RIBEIRO": {
+        "name": "VALDECI DE SOUZA RIBEIRO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "VALDEMAR FERREIRA SILVA": {
+        "name": "VALDEMAR FERREIRA SILVA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 250.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 2.0,
+                "quotas": 0.0
+            }
+        ]
+    },
+    "VALDEMIL JORGE": {
+        "name": "VALDEMIL JORGE",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "VALDENIA CARDOSO DE BARROS": {
+        "name": "VALDENIA CARDOSO DE BARROS",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "08/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "VALDIR PEREIRA RIBEIRO": {
+        "name": "VALDIR PEREIRA RIBEIRO",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "21/12/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 0.2,
+                "quotas": 0.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "VALDIRAN FERREIRA DOS SANTOS": {
+        "name": "VALDIRAN FERREIRA DOS SANTOS",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "14/11/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "VALERIA APARECIDA MARQUES": {
+        "name": "VALERIA APARECIDA MARQUES",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "VALKILEN NONATO DE SOUSA": {
+        "name": "VALKILEN NONATO DE SOUSA",
+        "totalValue": 75.8,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "14/11/2025",
+                "value": 25.4,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "VALKILEN NONATO DOS SANTOS": {
+        "name": "VALKILEN NONATO DOS SANTOS",
+        "totalValue": 25.0,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "VALMIR DA COSTA OLIVEIRA": {
+        "name": "VALMIR DA COSTA OLIVEIRA",
+        "totalValue": 1386.0,
+        "totalQuotas": 55.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 428.4,
+                "quotas": 17.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 302.4,
+                "quotas": 12.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 327.6,
+                "quotas": 13.0
+            }
+        ]
+    },
+    "VALQUIRIA ROBERTA DA SILVA": {
+        "name": "VALQUIRIA ROBERTA DA SILVA",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "VALTER ANTONIO CANO SANTOS": {
+        "name": "VALTER ANTONIO CANO SANTOS",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "05/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "VALTER APARECIDO RAMOS": {
+        "name": "VALTER APARECIDO RAMOS",
+        "totalValue": 629.9999999999999,
+        "totalQuotas": 25.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "07/12/2025",
+                "value": 176.4,
+                "quotas": 7.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "VANDERLEIA ALVES DE JESUS": {
+        "name": "VANDERLEIA ALVES DE JESUS",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "VANDERLEY GONCALVES DA ROCHA": {
+        "name": "VANDERLEY GONCALVES DA ROCHA",
+        "totalValue": 554.4,
+        "totalQuotas": 22.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "30/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "15/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "VANESSA BACELAR SANTANA": {
+        "name": "VANESSA BACELAR SANTANA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "VANESSA PAIVA RIBEIRO": {
+        "name": "VANESSA PAIVA RIBEIRO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "02/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "VANESSA SILVA DE LIMA": {
+        "name": "VANESSA SILVA DE LIMA",
+        "totalValue": 806.4,
+        "totalQuotas": 32.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "20/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 176.4,
+                "quotas": 7.0
+            }
+        ]
+    },
+    "VANESSA SOLIDADE DE MELO XAVIER": {
+        "name": "VANESSA SOLIDADE DE MELO XAVIER",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "VANILDO APARECIDO RAMOS": {
+        "name": "VANILDO APARECIDO RAMOS",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "14/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "VANUSA ROSA DE A SILVA": {
+        "name": "VANUSA ROSA DE A SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "VANYLLA FERREIRA DOS SANTOS": {
+        "name": "VANYLLA FERREIRA DOS SANTOS",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "VERA LUCIA GONCALVES": {
+        "name": "VERA LUCIA GONCALVES",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "VERA LUCIA VELOSO DE ANDRADE": {
+        "name": "VERA LUCIA VELOSO DE ANDRADE",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "07/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "VERONICA MARILYN SANCHEZ BARRETO": {
+        "name": "VERONICA MARILYN SANCHEZ BARRETO",
+        "totalValue": 277.2,
+        "totalQuotas": 11.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 277.2,
+                "quotas": 11.0
+            }
+        ]
+    },
+    "VICTOR BARYCZA FERNANDES RAMOS": {
+        "name": "VICTOR BARYCZA FERNANDES RAMOS",
+        "totalValue": 226.79999999999998,
+        "totalQuotas": 9.0,
+        "entries": [
+            {
+                "date": "29/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "04/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "VICTOR HUGO ALVES DE SOUSA FORMIGA": {
+        "name": "VICTOR HUGO ALVES DE SOUSA FORMIGA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "VICTOR LUIZ DE LIMA PEREIRA MONTEIRO": {
+        "name": "VICTOR LUIZ DE LIMA PEREIRA MONTEIRO",
+        "totalValue": 705.5999999999999,
+        "totalQuotas": 28.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 604.8,
+                "quotas": 24.0
+            }
+        ]
+    },
+    "VICTOR LUIZ VIEIRA": {
+        "name": "VICTOR LUIZ VIEIRA",
+        "totalValue": 403.2,
+        "totalQuotas": 16.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 403.2,
+                "quotas": 16.0
+            }
+        ]
+    },
+    "VICTOR RAMOS CANGUSSU": {
+        "name": "VICTOR RAMOS CANGUSSU",
+        "totalValue": 781.2,
+        "totalQuotas": 31.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 529.2,
+                "quotas": 21.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "VILMAR CRISTIANO RESENDE": {
+        "name": "VILMAR CRISTIANO RESENDE",
+        "totalValue": 75.6,
+        "totalQuotas": 3.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "VILSON ROBERTO CAVASSANA": {
+        "name": "VILSON ROBERTO CAVASSANA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "VINÍCIUS HIDEKI DA COSTA": {
+        "name": "VINÍCIUS HIDEKI DA COSTA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "VINÍCIUS NUNES BACELAR": {
+        "name": "VINÍCIUS NUNES BACELAR",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "VINICIUS DOS ANJOS SILVA": {
+        "name": "VINICIUS DOS ANJOS SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "VINICIUS ELIEL DE ABREU SILVA": {
+        "name": "VINICIUS ELIEL DE ABREU SILVA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "VINICIUS FERRARIZI MARTINS": {
+        "name": "VINICIUS FERRARIZI MARTINS",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "VINICIUS JULIANI ROSSI": {
+        "name": "VINICIUS JULIANI ROSSI",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "VINICIUS OLIVEIRA SILVA": {
+        "name": "VINICIUS OLIVEIRA SILVA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "VINICIUS PESANI": {
+        "name": "VINICIUS PESANI",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "VINICIUS RIBEIRO FILIZARDO": {
+        "name": "VINICIUS RIBEIRO FILIZARDO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "VINICIUS SOUZA SOARES LEONI": {
+        "name": "VINICIUS SOUZA SOARES LEONI",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "VITOR ANTUNES BASILE": {
+        "name": "VITOR ANTUNES BASILE",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "02/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "VITOR BARBOSA GUARNIERI": {
+        "name": "VITOR BARBOSA GUARNIERI",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "VITOR COSTA JOSE": {
+        "name": "VITOR COSTA JOSE",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "VITOR FERREIRA DA SILVA": {
+        "name": "VITOR FERREIRA DA SILVA",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "VITOR GABRIEL POMPEU B M SILVA": {
+        "name": "VITOR GABRIEL POMPEU B M SILVA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "17/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "VITOR LUIS DE VIETRO": {
+        "name": "VITOR LUIS DE VIETRO",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "VITOR MACEDO SABOIA DE ALMEIDA": {
+        "name": "VITOR MACEDO SABOIA DE ALMEIDA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "VITOR SAMUEL DOS SANTOS BARBOSA": {
+        "name": "VITOR SAMUEL DOS SANTOS BARBOSA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "VITORIA DO CARMO NOBRE": {
+        "name": "VITORIA DO CARMO NOBRE",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "VITORIA JAMILE ALVES ROCHA": {
+        "name": "VITORIA JAMILE ALVES ROCHA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "VIVIAN GOMES DA SOLEDADE": {
+        "name": "VIVIAN GOMES DA SOLEDADE",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "VIVIANE APARECIDA CABRAL DA SILVA": {
+        "name": "VIVIANE APARECIDA CABRAL DA SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "VIVIANE REIS DA SILVA": {
+        "name": "VIVIANE REIS DA SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "18/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "WAGNER AUGUSTO LOPES COSTA": {
+        "name": "WAGNER AUGUSTO LOPES COSTA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "WAGNER GUALTIERI DE LIMA": {
+        "name": "WAGNER GUALTIERI DE LIMA",
+        "totalValue": 126.0,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "25/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "WAGNER SILVA DE ARAUJO": {
+        "name": "WAGNER SILVA DE ARAUJO",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "WALACE PEREIRA SILVA": {
+        "name": "WALACE PEREIRA SILVA",
+        "totalValue": 201.67,
+        "totalQuotas": 8.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.47,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "WALERIA SILVA DE ARAUJO": {
+        "name": "WALERIA SILVA DE ARAUJO",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "18/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "WALMIR FERREIRA": {
+        "name": "WALMIR FERREIRA",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "WALMIR WEILER JUNIOR": {
+        "name": "WALMIR WEILER JUNIOR",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "WALTER SILVA DE ARAUJO": {
+        "name": "WALTER SILVA DE ARAUJO",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "WANDERSON SILVA ANICETO": {
+        "name": "WANDERSON SILVA ANICETO",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "WASHINGTON ZEFERINO DREGER": {
+        "name": "WASHINGTON ZEFERINO DREGER",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "WESLEY ADAN DE OLIVEIRA": {
+        "name": "WESLEY ADAN DE OLIVEIRA",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "WESLEY DA SILVA": {
+        "name": "WESLEY DA SILVA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "WESLEY ELIAS TEIXEIRA": {
+        "name": "WESLEY ELIAS TEIXEIRA",
+        "totalValue": 856.8,
+        "totalQuotas": 34.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 176.4,
+                "quotas": 7.0
+            },
+            {
+                "date": "02/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "WESLEY PAULIN VICENTE": {
+        "name": "WESLEY PAULIN VICENTE",
+        "totalValue": 1285.2,
+        "totalQuotas": 51.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "13/11/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "06/12/2025",
+                "value": 176.4,
+                "quotas": 7.0
+            },
+            {
+                "date": "06/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "06/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "07/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "13/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 378.0,
+                "quotas": 15.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 226.8,
+                "quotas": 9.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "WESLEY REBEQUE GROPO": {
+        "name": "WESLEY REBEQUE GROPO",
+        "totalValue": 201.6,
+        "totalQuotas": 8.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "WESLLEY RIBEIRO SANT ANA": {
+        "name": "WESLLEY RIBEIRO SANT ANA",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 504.0,
+                "quotas": 20.0
+            }
+        ]
+    },
+    "WILKER COUTINHO DA SILVA": {
+        "name": "WILKER COUTINHO DA SILVA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "WILLA REGINA SENA EVANGELISTA": {
+        "name": "WILLA REGINA SENA EVANGELISTA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "16/12/2025",
+                "value": 100.0,
+                "quotas": 4.0
+            },
+            {
+                "date": "16/12/2025",
+                "value": 0.8,
+                "quotas": 0.0
+            }
+        ]
+    },
+    "WILLER DE OLIVEIRA GALVAO": {
+        "name": "WILLER DE OLIVEIRA GALVAO",
+        "totalValue": 730.8,
+        "totalQuotas": 29.0,
+        "entries": [
+            {
+                "date": "19/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "12/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "22/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            }
+        ]
+    },
+    "WILLIAM ALVES PEREIRA BARRETO": {
+        "name": "WILLIAM ALVES PEREIRA BARRETO",
+        "totalValue": 126.6,
+        "totalQuotas": 5.0,
+        "entries": [
+            {
+                "date": "17/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "19/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 51.0,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "WILLIAM BARBOSA DOS SANTOS": {
+        "name": "WILLIAM BARBOSA DOS SANTOS",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 0.2,
+                "quotas": 0.0
+            }
+        ]
+    },
+    "WILLIAM BENICIO DUTRA": {
+        "name": "WILLIAM BENICIO DUTRA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "WILLIAM DE LIMA TEODORO": {
+        "name": "WILLIAM DE LIMA TEODORO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "WILLIAM LUIS FERREIRA": {
+        "name": "WILLIAM LUIS FERREIRA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "WILLIAM MACHADO DE SA": {
+        "name": "WILLIAM MACHADO DE SA",
+        "totalValue": 25.0,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 25.0,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "WILLIAM TIEZZI CARDOSO SILVA": {
+        "name": "WILLIAM TIEZZI CARDOSO SILVA",
+        "totalValue": 781.2,
+        "totalQuotas": 31.0,
+        "entries": [
+            {
+                "date": "07/12/2025",
+                "value": 378.0,
+                "quotas": 15.0
+            },
+            {
+                "date": "21/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            },
+            {
+                "date": "27/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "WILLIAM TORRES LAUREANO DA ROSA": {
+        "name": "WILLIAM TORRES LAUREANO DA ROSA",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "27/12/2025",
+                "value": 151.2,
+                "quotas": 6.0
+            }
+        ]
+    },
+    "WILLIAN LOPES DA SILVA": {
+        "name": "WILLIAN LOPES DA SILVA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "20/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "WILLIAN SOUZA SANTOS": {
+        "name": "WILLIAN SOUZA SANTOS",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "24/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "WILSON BEZERRA MARIBONDO": {
+        "name": "WILSON BEZERRA MARIBONDO",
+        "totalValue": 302.4,
+        "totalQuotas": 12.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "25/12/2025",
+                "value": 176.4,
+                "quotas": 7.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "WILSON EDUARDO PINTO PAIM": {
+        "name": "WILSON EDUARDO PINTO PAIM",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "23/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "24/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "WILSON GOMES": {
+        "name": "WILSON GOMES",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "WILSON JOSE TEIXEIRA": {
+        "name": "WILSON JOSE TEIXEIRA",
+        "totalValue": 50.4,
+        "totalQuotas": 2.0,
+        "entries": [
+            {
+                "date": "28/11/2025",
+                "value": 50.4,
+                "quotas": 2.0
+            }
+        ]
+    },
+    "WILSON QUATROCHI JUNIOR": {
+        "name": "WILSON QUATROCHI JUNIOR",
+        "totalValue": 378.0,
+        "totalQuotas": 15.0,
+        "entries": [
+            {
+                "date": "13/11/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "WIRLAND DE SOUSA TEIXEIRA FILHO": {
+        "name": "WIRLAND DE SOUSA TEIXEIRA FILHO",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "22/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            },
+            {
+                "date": "23/12/2025",
+                "value": 75.6,
+                "quotas": 3.0
+            }
+        ]
+    },
+    "YGOR SILVA PEREIRA": {
+        "name": "YGOR SILVA PEREIRA",
+        "totalValue": 100.8,
+        "totalQuotas": 4.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            }
+        ]
+    },
+    "YOKO OKADA": {
+        "name": "YOKO OKADA",
+        "totalValue": 25.2,
+        "totalQuotas": 1.0,
+        "entries": [
+            {
+                "date": "12/12/2025",
+                "value": 25.2,
+                "quotas": 1.0
+            }
+        ]
+    },
+    "YONE MISSAO STANGER MONSORES": {
+        "name": "YONE MISSAO STANGER MONSORES",
+        "totalValue": 201.6,
+        "totalQuotas": 8.0,
+        "entries": [
+            {
+                "date": "26/12/2025",
+                "value": 201.6,
+                "quotas": 8.0
+            }
+        ]
+    },
+    "YUMI TAKITA": {
+        "name": "YUMI TAKITA",
+        "totalValue": 252.0,
+        "totalQuotas": 10.0,
+        "entries": [
+            {
+                "date": "28/12/2025",
+                "value": 252.0,
+                "quotas": 10.0
+            }
+        ]
+    },
+    "ZENITH AKEMI NAKAMURA": {
+        "name": "ZENITH AKEMI NAKAMURA",
+        "totalValue": 504.0,
+        "totalQuotas": 20.0,
+        "entries": [
+            {
+                "date": "15/12/2025",
+                "value": 126.0,
+                "quotas": 5.0
+            },
+            {
+                "date": "26/12/2025",
+                "value": 378.0,
+                "quotas": 15.0
+            }
+        ]
+    },
+    "ZILDA MARIA SILVA SOARES": {
+        "name": "ZILDA MARIA SILVA SOARES",
+        "totalValue": 277.2,
+        "totalQuotas": 11.0,
+        "entries": [
+            {
+                "date": "19/12/2025",
+                "value": 277.2,
+                "quotas": 11.0
+            }
+        ]
+    },
+    "ZINGARA LOPES SANTANA ATTA": {
+        "name": "ZINGARA LOPES SANTANA ATTA",
+        "totalValue": 151.2,
+        "totalQuotas": 6.0,
+        "entries": [
+            {
+                "date": "12/11/2025",
+                "value": 100.8,
+                "quotas": 4.0
+            },
+            {
+                "date": "21/12/2025",
                 "value": 50.4,
                 "quotas": 2.0
             }
