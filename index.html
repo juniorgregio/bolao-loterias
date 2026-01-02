@@ -60,32 +60,31 @@
             <button class="btn-last-draw" id="viewBettorsBtn" onclick="toggleBettorsModal()"
                 style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; font-weight: 700;">
                 <span class="btn-icon">🔍</span>
-                Minhas Cotas
-            </button>
+
         </div>
     </header>
 
     <main class="main-container">
-        <!-- CTA Principal - Dúvidas e Cotas -->
+        <!-- CTA Principal - Dúvidas -->
         <div class="mobile-cta-container">
             <button class="btn-highlight" onclick="toggleFaqModal()">
                 <span class="btn-icon-large">❓</span>
-                Dúvidas
-                <span class="btn-subtitle">Ganhadores</span>
-            </button>
-            <button class="btn-highlight" onclick="toggleBettorsModal()"
-                style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000;">
-                <span class="btn-icon-large">🔍</span>
-                Minhas Cotas
-                <span class="btn-subtitle" style="color: rgba(0,0,0,0.6);">Consultar</span>
+                Principais Dúvidas
+                <span class="btn-subtitle">para os ganhadores</span>
             </button>
         </div>
 
         <!-- Calculadora de Cotas Pessoais -->
         <section class="quota-calculator glass-card" id="calculatorSection">
-            <div class="section-header">
-                <h2>🧮 Calculadora de Retorno Pessoal</h2>
-                <span class="badge badge-gold">Sua Participação</span>
+            <div class="section-header" style="flex-wrap: wrap; gap: 10px;">
+                <div style="flex: 1;">
+                    <h2>🧮 Calculadora de Retorno Pessoal</h2>
+                    <span class="badge badge-gold">Sua Participação</span>
+                </div>
+                <button class="btn-sm-highlight" onclick="toggleBettorsModal()"
+                    style="display: flex; align-items: center; gap: 6px; background: rgba(255, 215, 0, 0.15); border: 1px solid #FFD700; color: #FFD700; padding: 6px 12px; border-radius: 20px; cursor: pointer; font-weight: 600; font-size: 0.85rem; transition: all 0.2s;">
+                    <span style="font-size: 1.1em;">🔍</span> Minhas Cotas
+                </button>
             </div>
             <div class="calculator-content">
                 <div class="calculator-inputs-grid"
