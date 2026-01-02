@@ -57,10 +57,6 @@
                 <span class="prize-label">Prêmio Real</span>
                 <span class="prize-value">R$ 1,09 BI</span>
             </div>
-            <button class="btn-last-draw" id="viewFaqBtn" onclick="toggleFaqModal()">
-                <span class="btn-icon">❓</span>
-                Dúvidas
-            </button>
             <button class="btn-last-draw" id="viewBettorsBtn" onclick="toggleBettorsModal()"
                 style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; font-weight: 700;">
                 <span class="btn-icon">🔍</span>
@@ -70,12 +66,18 @@
     </header>
 
     <main class="main-container">
-        <!-- CTA Principal - Dúvidas -->
+        <!-- CTA Principal - Dúvidas e Cotas -->
         <div class="mobile-cta-container">
             <button class="btn-highlight" onclick="toggleFaqModal()">
                 <span class="btn-icon-large">❓</span>
-                Principais Dúvidas
-                <span class="btn-subtitle">para os ganhadores</span>
+                Dúvidas
+                <span class="btn-subtitle">Ganhadores</span>
+            </button>
+            <button class="btn-highlight" onclick="toggleBettorsModal()"
+                style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000;">
+                <span class="btn-icon-large">🔍</span>
+                Minhas Cotas
+                <span class="btn-subtitle" style="color: rgba(0,0,0,0.6);">Consultar</span>
             </button>
         </div>
 
