@@ -500,6 +500,22 @@ function initEventListeners() {
             updateCalculator();
         });
     }
+
+    // Atualiza contador de jogos do Bolão 2
+    updateBolao2GamesCount();
+}
+
+/**
+ * Atualiza o contador de jogos do Bolão 2 dinamicamente
+ */
+function updateBolao2GamesCount() {
+    if (typeof GAMES_DATABASE_6 !== 'undefined') {
+        const totalGames = GAMES_DATABASE_6.reduce((acc, group) => acc + group.games.length, 0);
+        const badge = document.getElementById('bolao2GamesCount');
+        if (badge) {
+            badge.textContent = `${totalGames.toLocaleString('pt-BR')} jogos simples`;
+        }
+    }
 }
 
 /**

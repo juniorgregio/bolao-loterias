@@ -2084,7 +2084,13 @@ const GAMES_DATABASE_6 = [
             "01 08 12 25 31 39", "14 15 25 28 33 50", "18 22 26 29 47 57", "07 24 38 40 47 54", "02 05 11 32 35 56"
         ]
     }
-];
+,
+    {
+        source: "800 1a.pdf",
+        games: [
+            "10 11 21 30 37 42"
+        ]
+    }];
 
 // Alias para compatibilidade (bolão de 9 números é o padrão)
 const GAMES_DATABASE = GAMES_DATABASE_9;
@@ -2097,3 +2103,4 @@ const DEFAULT_GAMES_LIST = GAMES_DATABASE_9.map(group =>
 const DEFAULT_GAMES_LIST_6 = GAMES_DATABASE_6.map(group =>
     `# Arquivo: ${group.source}\n` + group.games.join('\n')
 ).join('\n\n');
+
