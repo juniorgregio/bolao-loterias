@@ -232,15 +232,15 @@
                                 <span id="calcAposAdmin">R$ 0</span>
                             </div>
 
-                            <!-- ITCMD com nota de isenção -->
-                            <div id="itcmdSection" style="background: rgba(231,76,60,0.1); border-radius: 6px; padding: 8px; margin: 8px 0; border: 1px solid rgba(231,76,60,0.3);">
+                            <!-- ITCMD com nota de isenção - APURADO POR BENEFICIÁRIO -->
+                            <div id="itcmdSection" style="background: rgba(231,76,60,0.1); border-radius: 6px; padding: 10px; margin: 8px 0; border: 1px solid rgba(231,76,60,0.3);">
                                 <div class="calc-step"
-                                    style="font-size: 0.85em; margin-bottom: 4px; color: #e74c3c; display: flex; justify-content: space-between;">
+                                    style="font-size: 0.85em; margin-bottom: 6px; color: #e74c3c; display: flex; justify-content: space-between; font-weight: 600;">
                                     <span>− ITCMD SP (4%):</span>
                                     <span id="calcITCMD">R$ 0</span>
                                 </div>
-                                <p id="itcmdNota" style="font-size: 0.7em; color: #e74c3c; margin: 0; font-style: italic;">
-                                    * ITCMD incide se cota > R$ 88.400 (limite isenção doações SP)
+                                <p id="itcmdNota" style="font-size: 0.7em; color: #888; margin: 0; line-height: 1.4;">
+                                    ⚠️ ITCMD é apurado pelo <strong>VALOR TOTAL</strong> que você recebe (soma de todas as suas cotas), não por cota individual!
                                 </p>
                             </div>
 
@@ -280,13 +280,16 @@
                                 <p style="font-size: 0.7em; color: #888; margin: 0;">
                                     • <span style="color: #e74c3c;">IR 30%</span> → Retido na fonte pela Caixa<br>
                                     • <span style="color: #ff6b6b;">Admin 10%</span> → Sobre valor após IR<br>
-                                    • <span style="color: #e74c3c;">ITCMD 4%</span> → Apenas se cota individual > R$ 88.400
+                                    • <span style="color: #e74c3c;">ITCMD 4%</span> → Se seu <strong>TOTAL</strong> recebido > R$ 88.400
                                 </p>
                             </div>
 
-                            <p style="font-size: 0.7em; color: #666; margin-top: 10px; text-align: center; font-style: italic;">
-                                ⚠️ ITCMD pode não incidir se cada apostador recebe apenas sua própria cota (sem doação).
-                                <br>Consulte um contador para sua situação específica.
+                            <p style="font-size: 0.7em; color: #f39c12; margin-top: 10px; text-align: center; background: rgba(243,156,18,0.1); padding: 8px; border-radius: 4px;">
+                                ⚠️ <strong>ATENÇÃO:</strong> O ITCMD incide sobre o VALOR TOTAL que você recebe (soma de todas as suas cotas), NÃO por cota individual!
+                            </p>
+                            
+                            <p style="font-size: 0.65em; color: #666; margin-top: 8px; text-align: center; font-style: italic;">
+                                Consulte um contador ou advogado tributarista para sua situação específica.
                             </p>
                         </div>
                     </div>
@@ -672,33 +675,37 @@
                         <li><strong>Heranças</strong> (causa mortis) - quando alguém falece e deixa bens</li>
                         <li><strong>Doações</strong> - transferência gratuita de bens ou valores</li>
                     </ul>
-                    <p><strong>Quando se aplica ao bolão?</strong></p>
-                    <p>O ITCMD <strong>pode</strong> incidir dependendo da interpretação fiscal:</p>
-                    <ul>
-                        <li>Se cada apostador recebe <strong>apenas sua cota proporcional</strong> às cotas que comprou → <span style="color: #2ecc71;">pode não haver ITCMD</span></li>
-                        <li>Se o Fisco entender como <em>doação</em> entre participantes → <span style="color: #e74c3c;">incide ITCMD</span></li>
-                    </ul>
+                    
+                    <p style="background: rgba(231,76,60,0.1); padding: 10px; border-radius: 6px; border-left: 3px solid #e74c3c; margin: 10px 0;">
+                        <strong>⚠️ IMPORTANTE:</strong> O ITCMD é apurado por <strong>BENEFICIÁRIO</strong> (pessoa física), considerando o <strong>VALOR TOTAL</strong> que a pessoa recebe. <strong>NÃO é por cota individual!</strong>
+                    </p>
+                    
                     <p><strong>🔔 Isenção para Doações em SP:</strong></p>
                     <ul>
-                        <li>Doações até <strong>2.500 UFESPs</strong> são <span style="color: #2ecc71;">ISENTAS</span></li>
-                        <li>Em 2025: ~<strong>R$ 88.400,00</strong> (UFESP = R$ 35,36)</li>
-                        <li>Se a cota ultrapassar esse valor, ITCMD incide sobre o <strong>valor TOTAL</strong></li>
+                        <li>Doações até <strong>2.500 UFESPs</strong> (~<strong>R$ 88.400</strong>) são ISENTAS</li>
+                        <li>A isenção se aplica ao <strong>VALOR TOTAL</strong> que você recebe</li>
+                        <li>Se o total recebido <strong>ultrapassar</strong> R$ 88.400, ITCMD incide sobre o <strong>VALOR TOTAL</strong> (não apenas sobre o excedente)</li>
                     </ul>
-                    <p><strong>Alíquota em São Paulo:</strong></p>
+                    
+                    <p style="background: rgba(255,193,7,0.1); padding: 10px; border-radius: 6px; margin: 10px 0;">
+                        <strong>❌ ERRO COMUM:</strong> "Cada cota vale R$ 7.692, que é menor que R$ 88.400, então estou isento."<br>
+                        <strong>✅ CORRETO:</strong> Se você tem 80 cotas = R$ 615.394, como ultrapassa R$ 88.400, paga ITCMD sobre os R$ 615.394 inteiros.
+                    </p>
+                    
+                    <p><strong>Exemplo de Cálculo (80 cotas = R$ 615.394):</strong></p>
                     <ul>
-                        <li>A alíquota em SP é de <strong>4%</strong> (fixa)</li>
-                        <li>É uma das mais baixas do Brasil</li>
-                        <li>Outros estados podem ter até 8%</li>
+                        <li>Valor Total Recebido: R$ 615.394,40</li>
+                        <li>Limite Isenção: R$ 88.400,00</li>
+                        <li>Ultrapassou? <strong>SIM</strong> → ITCMD incide</li>
+                        <li>Base de Cálculo: R$ 615.394,40 (valor TOTAL)</li>
+                        <li>ITCMD (4%): <strong>R$ 24.615,78</strong></li>
+                        <li><strong>Líquido Final: R$ 590.778,62</strong></li>
                     </ul>
-                    <p><strong>Exemplo de Cálculo (cota > R$ 88.400):</strong></p>
-                    <ul>
-                        <li>Prêmio Bruto: R$ 142.857 (antes IR)</li>
-                        <li>Após IR (-30%): R$ 100.000</li>
-                        <li>Após Admin (-10%): R$ 90.000</li>
-                        <li>ITCMD (-4%): R$ 3.600</li>
-                        <li><strong>Líquido Final: R$ 86.400</strong></li>
-                    </ul>
-                    <p style="font-size: 0.85em; color: #2ecc71; margin-top: 10px;">✅ <em>Se sua cota for ≤ R$ 88.400, você pode estar ISENTO do ITCMD!</em></p>
+                    
+                    <p><strong>Alíquota em São Paulo:</strong> <span style="color: #e74c3c; font-weight: bold;">4%</span> (fixa)</p>
+                    <p><strong>Responsável:</strong> O próprio beneficiário (quem recebe)</p>
+                    
+                    <p style="font-size: 0.85em; color: #2ecc71; margin-top: 10px;">✅ <em>Se seu TOTAL recebido for ≤ R$ 88.400 (até ~11 cotas), você pode estar ISENTO!</em></p>
                     <p style="font-size: 0.8em; color: #aaa; margin-top: 5px;">⚠️ <em>Consulte um contador ou advogado tributarista para sua situação específica.</em></p>
                 </div>
         </section>

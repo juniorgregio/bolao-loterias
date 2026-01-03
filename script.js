@@ -1148,15 +1148,28 @@ function updateCalculator() {
     // SE TEMOS DADOS REAIS DE VALIDAÇÃO (O BOLÃO GANHOU ALGO?)
     if (state.totalLiquidoValidado !== undefined && state.totalLiquidoValidado >= 0) {
         // Cálculo de Retorno Real
+        // IMPORTANTE: O ITCMD é calculado sobre o VALOR TOTAL que o beneficiário recebe
+        
+        // Valor por cota ANTES do ITCMD (apenas Admin descontado)
+        const cd = state.calculoDetalhado;
+        const valorPorCotaAntesITCMD = cd ? cd.totalAposAdmin / BOLAO_CONFIG.totalCotas : 0;
+        
+        // Total que ESTE USUÁRIO recebe (antes do ITCMD)
+        const minhasCotas = cotasPrincipal + cotasBolao2;
+        const meuValorTotalAntesITCMD = valorPorCotaAntesITCMD * cotasPrincipal;
+        
+        // Verifica se ultrapassa limite de isenção do ITCMD
+        const limiteIsencao = BOLAO_CONFIG.limiteIsencaoITCMD || 88400;
+        const meuItcmdAplicavel = meuValorTotalAntesITCMD > limiteIsencao;
+        const meuITCMD = meuItcmdAplicavel ? (meuValorTotalAntesITCMD * BOLAO_CONFIG.aliquotaITCMD) : 0;
+        
+        // Retorno líquido do Bolão Principal (após ITCMD individual)
+        const retornoPrincipal = meuValorTotalAntesITCMD - meuITCMD;
 
-        // Retorno vindo do Bolão Principal
-        // (Prêmio Líquido Principal / Total Cotas Princ) * Minhas Cotas Princ
-        // Mas calculate prêmio líquido total já, então:
-        // state.totalLiquidoPrincipal é o valor TOTAL ganho pelo bolão inteiro.
-        const retornoPrincipal = state.totalLiquidoPrincipal * partPrincipal;
-
-        // Retorno vindo do Bolão 2
-        const retornoBolao2 = state.totalLiquidoBolao2 * partBolao2;
+        // Retorno vindo do Bolão 2 (mesma lógica)
+        const valorPorCotaBolao2 = cd ? (cd.totalAposAdmin / BOLAO_CONFIG.totalCotasBolao2) * (BOLAO_CONFIG.totalCotasBolao2 / BOLAO_CONFIG.totalCotas) : 0;
+        const meuValorBolao2 = state.totalLiquidoBolao2 * partBolao2;
+        const retornoBolao2 = meuValorBolao2; // Bolão 2 já considera ITCMD no total
 
         const retornoTotal = retornoPrincipal + retornoBolao2;
 
@@ -1233,19 +1246,42 @@ function updateCalculator() {
                                 document.getElementById('calcTaxaAdmin').textContent = formatCurrency(cd.taxaAdmin);
                                 document.getElementById('calcAposAdmin').textContent = formatCurrency(cd.totalAposAdmin);
                                 
-                                // ITCMD com nota de isenção
+                                // ========================================
+                                // CÁLCULO DO ITCMD POR BENEFICIÁRIO
+                                // O ITCMD é apurado pelo VALOR TOTAL que o beneficiário recebe
+                                // NÃO por cota individual!
+                                // ========================================
+                                
+                                // Valor TOTAL que ESTE USUÁRIO vai receber (antes do ITCMD)
+                                const valorPorCotaAntesITCMD = cd.totalAposAdmin / cd.totalCotas;
+                                const minhasCotas = cotasPrincipal + cotasBolao2;
+                                const meuValorTotalAntesITCMD = valorPorCotaAntesITCMD * minhasCotas;
+                                
+                                // Verifica se MEU VALOR TOTAL ultrapassa o limite de isenção
+                                const meuItcmdAplicavel = meuValorTotalAntesITCMD > cd.limiteIsencao;
+                                
+                                // Se ultrapassar, ITCMD incide sobre o VALOR TOTAL (não sobre excedente)
+                                const meuITCMD = meuItcmdAplicavel ? (meuValorTotalAntesITCMD * (BOLAO_CONFIG.aliquotaITCMD)) : 0;
+                                const meuValorLiquido = meuValorTotalAntesITCMD - meuITCMD;
+                                
+                                // ITCMD com nota de isenção - AGORA BASEADO NO VALOR TOTAL DO BENEFICIÁRIO
                                 const itcmdEl = document.getElementById('calcITCMD');
                                 const itcmdNota = document.getElementById('itcmdNota');
                                 const itcmdSection = document.getElementById('itcmdSection');
                                 
                                 if (itcmdEl) {
-                                    if (cd.itcmdAplicavel) {
-                                        itcmdEl.textContent = formatCurrency(cd.valorITCMD);
-                                        if (itcmdNota) itcmdNota.innerHTML = `⚠️ ITCMD incide pois cota (${formatCurrency(cd.valorPorCotaPrincipal)}) > limite isenção (${formatCurrency(cd.limiteIsencao)})`;
-                                        if (itcmdSection) itcmdSection.style.borderColor = 'rgba(231,76,60,0.5)';
+                                    if (meuItcmdAplicavel) {
+                                        itcmdEl.textContent = formatCurrency(meuITCMD);
+                                        if (itcmdNota) itcmdNota.innerHTML = `⚠️ <strong>ITCMD INCIDE!</strong> Seu total (${formatCurrency(meuValorTotalAntesITCMD)}) > limite isenção (${formatCurrency(cd.limiteIsencao)})<br>
+                                        <span style="font-size: 0.9em;">O imposto incide sobre o VALOR TOTAL, não sobre o excedente.</span>`;
+                                        if (itcmdSection) {
+                                            itcmdSection.style.background = 'rgba(231,76,60,0.15)';
+                                            itcmdSection.style.borderColor = 'rgba(231,76,60,0.5)';
+                                        }
                                     } else {
                                         itcmdEl.textContent = 'R$ 0,00 (ISENTO)';
-                                        if (itcmdNota) itcmdNota.innerHTML = `✅ ISENTO! Cota (${formatCurrency(cd.valorPorCotaPrincipal)}) ≤ limite isenção (${formatCurrency(cd.limiteIsencao)})`;
+                                        if (itcmdNota) itcmdNota.innerHTML = `✅ <strong>ISENTO!</strong> Seu total (${formatCurrency(meuValorTotalAntesITCMD)}) ≤ limite isenção (${formatCurrency(cd.limiteIsencao)})<br>
+                                        <span style="font-size: 0.9em;">Máximo de ${cd.cotasParaIsencao} cotas para isenção (valor por cota: ${formatCurrency(valorPorCotaAntesITCMD)})</span>`;
                                         if (itcmdSection) {
                                             itcmdSection.style.background = 'rgba(46,204,113,0.1)';
                                             itcmdSection.style.borderColor = 'rgba(46,204,113,0.3)';
@@ -1253,11 +1289,11 @@ function updateCalculator() {
                                     }
                                 }
                                 
-                                document.getElementById('calcPremioLiquido').textContent = formatCurrency(cd.totalLiquido);
+                                document.getElementById('calcPremioLiquido').textContent = formatCurrency(meuValorLiquido);
                                 document.getElementById('calcTotalCotas').textContent = cd.totalCotas.toLocaleString('pt-BR');
-                                document.getElementById('calcPremioPorCota').textContent = formatCurrency(cd.premioPorCota);
-                                document.getElementById('calcSuasCotas').textContent = (cotasPrincipal + cotasBolao2).toLocaleString('pt-BR');
-                                document.getElementById('calcSeuPremio').textContent = formatCurrency(retornoTotal);
+                                document.getElementById('calcPremioPorCota').textContent = formatCurrency(valorPorCotaAntesITCMD);
+                                document.getElementById('calcSuasCotas').textContent = minhasCotas.toLocaleString('pt-BR');
+                                document.getElementById('calcSeuPremio').textContent = formatCurrency(meuValorLiquido);
                             }
 
         } else {
@@ -1617,17 +1653,25 @@ function displayResults() {
     const totalAposAdmin = totalAposIR * (1 - taxaAdmin);
 
     // ITCMD - Imposto Estadual SP (4%)
-    // IMPORTANTE: O ITCMD só incide se a cota INDIVIDUAL ultrapassar o limite de isenção
+    // CORREÇÃO IMPORTANTE: O ITCMD é apurado por BENEFICIÁRIO (valor TOTAL que a pessoa recebe)
+    // A isenção de ~R$ 88.400 se aplica ao TOTAL recebido pela pessoa, NÃO por cota individual
     const taxaITCMD = BOLAO_CONFIG.aliquotaITCMD;
     const limiteIsencao = BOLAO_CONFIG.limiteIsencaoITCMD || 88400;
     
-    // Calcula o valor por cota para verificar isenção
+    // Calcula o valor por cota
     const valorPorCotaPrincipal = totalAposAdmin / BOLAO_CONFIG.totalCotas;
     
-    // Verifica se a cota média está acima do limite de isenção
-    // Se estiver acima, ITCMD incide sobre o valor TOTAL da cota (não apenas o excedente)
-    const itcmdAplicavel = valorPorCotaPrincipal > limiteIsencao;
-    const valorITCMD = itcmdAplicavel ? (totalAposAdmin * taxaITCMD) : 0;
+    // Calcula quantas cotas uma pessoa pode ter para ficar isenta
+    // Se totalRecebido > limiteIsencao → ITCMD incide sobre o TOTAL (não sobre excedente)
+    const cotasParaIsencao = Math.floor(limiteIsencao / valorPorCotaPrincipal);
+    
+    // Para o cálculo do ITCMD do bolão como um todo, precisamos considerar que:
+    // - Beneficiários com <= cotasParaIsencao cotas: ISENTOS
+    // - Beneficiários com > cotasParaIsencao cotas: ITCMD sobre o TOTAL recebido
+    // Como não sabemos a distribuição exata, assumimos cenário conservador (todos pagam ITCMD)
+    // O cálculo individual será feito na calculadora pessoal
+    const itcmdAplicavel = true; // Sempre mostrar para cálculo conservador
+    const valorITCMD = totalAposAdmin * taxaITCMD;
     
     // Prêmio líquido final
     const totalLiquido = totalAposAdmin - valorITCMD;
@@ -1688,6 +1732,8 @@ function displayResults() {
     };
 
     // MEMÓRIA DE CÁLCULO DETALHADO (para exibição visual passo a passo)
+    // NOTA: O ITCMD é calculado por BENEFICIÁRIO (valor total que a pessoa recebe)
+    // O cálculo individual correto é feito na calculadora pessoal
     state.calculoDetalhado = {
         // Valores por faixa (após IR - como vem da Caixa)
         senaBruto: senaBruto,
@@ -1703,18 +1749,19 @@ function displayResults() {
         taxaAdmin: valorTaxaAdmin,
         totalAposAdmin: totalAposAdmin,
 
-        // ITCMD
-        valorITCMD: valorITCMD,
-        itcmdAplicavel: itcmdAplicavel,
+        // ITCMD - valores para referência (cálculo real é por beneficiário)
+        valorITCMDTotal: valorITCMD,           // ITCMD máximo (se todos pagassem)
         limiteIsencao: limiteIsencao,
         valorPorCotaPrincipal: valorPorCotaPrincipal,
-        aliquotaITCMD: BOLAO_CONFIG.aliquotaITCMD * 100, // Em percentual para exibição
+        cotasParaIsencao: cotasParaIsencao,    // Máximo de cotas para ficar isento
+        aliquotaITCMD: BOLAO_CONFIG.aliquotaITCMD * 100, // Em percentual
 
         totalLiquido: totalLiquido,
 
         // Cálculo por cota (apenas Bolão Principal)
         totalCotas: BOLAO_CONFIG.totalCotas,
-        premioPorCota: totalLiquido / BOLAO_CONFIG.totalCotas
+        premioPorCotaAntesITCMD: totalAposAdmin / BOLAO_CONFIG.totalCotas,
+        premioPorCotaComITCMD: totalLiquido / BOLAO_CONFIG.totalCotas
     };
 
     // Atualiza tabela de prêmios
