@@ -232,11 +232,11 @@
                                 <span id="calcAposAdmin">R$ 0</span>
                             </div>
 
-                            <!-- ITCMD com nota de isenção - APURADO POR BENEFICIÁRIO -->
-                            <div id="itcmdSection" style="background: rgba(231,76,60,0.1); border-radius: 6px; padding: 10px; margin: 8px 0; border: 1px solid rgba(231,76,60,0.3);">
+                            <!-- ITCMD com nota de isenção - APURADO POR BENEFICIÁRIO - CLICÁVEL -->
+                            <div id="itcmdSection" style="background: rgba(231,76,60,0.1); border-radius: 6px; padding: 10px; margin: 8px 0; border: 1px solid rgba(231,76,60,0.3); cursor: pointer; transition: all 0.2s;" onclick="openItcmdModal()">
                                 <div class="calc-step"
-                                    style="font-size: 0.85em; margin-bottom: 6px; color: #e74c3c; display: flex; justify-content: space-between; font-weight: 600;">
-                                    <span>− ITCMD SP (4%):</span>
+                                    style="font-size: 0.85em; margin-bottom: 6px; color: #e74c3c; display: flex; justify-content: space-between; font-weight: 600; align-items: center;">
+                                    <span>− ITCMD SP (4%)*: <span style="font-size: 0.75em; color: #888; font-weight: normal;">🔍 clique para ver como declarar</span></span>
                                     <span id="calcITCMD">R$ 0</span>
                                 </div>
                                 <p id="itcmdNota" style="font-size: 0.7em; color: #888; margin: 0; line-height: 1.4;">
@@ -912,6 +912,124 @@
 
     <!-- SheetJS para Excel Export -->
     <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+
+    <!-- Modal ITCMD - Dicas de Declaração -->
+    <div id="itcmdModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content glass-card" style="max-width: 650px; max-height: 90vh; overflow-y: auto;">
+            <div class="modal-header" style="background: linear-gradient(135deg, rgba(231,76,60,0.2), rgba(192,57,43,0.2)); border-bottom: 1px solid rgba(231,76,60,0.3);">
+                <h3 style="color: #e74c3c;">🏛️ ITCMD SP - Como Declarar e Pagar</h3>
+                <button class="close-modal" onclick="closeItcmdModal()">✖</button>
+            </div>
+
+            <div class="modal-body">
+                <!-- Alerta de Incidência -->
+                <div id="itcmdAlertaIncidencia" style="background: linear-gradient(135deg, rgba(231,76,60,0.15), rgba(192,57,43,0.1)); border: 2px solid #e74c3c; border-radius: 10px; padding: 15px; margin-bottom: 20px;">
+                    <p style="font-size: 1em; color: #e74c3c; font-weight: 700; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 1.5em;">⚠️</span> ITCMD INCIDE!
+                    </p>
+                    <p id="itcmdAlertaTexto" style="font-size: 0.9em; color: #fff; margin: 0; line-height: 1.5;">
+                        Seu total (<strong id="itcmdModalValorTotal">R$ 615.394,25</strong>) > limite de isenção (<strong>R$ 92.550,00</strong>).<br>
+                        <span style="color: #f39c12;">O imposto incide sobre o VALOR TOTAL, não sobre o excedente.</span>
+                    </p>
+                </div>
+
+                <!-- Resumo do Cálculo -->
+                <div style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 12px; margin-bottom: 20px;">
+                    <h4 style="color: #667eea; margin: 0 0 10px 0; font-size: 0.95em;">📊 Seu Cálculo</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.85em;">
+                        <div>
+                            <span style="color: #888;">Valor Total Recebido:</span><br>
+                            <strong id="itcmdModalValorRecebido" style="color: #fff;">R$ 615.394,25</strong>
+                        </div>
+                        <div>
+                            <span style="color: #888;">ITCMD Devido (4%):</span><br>
+                            <strong id="itcmdModalValorImposto" style="color: #e74c3c;">R$ 24.615,77</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Passo a Passo -->
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #2ecc71; margin: 0 0 15px 0; font-size: 1em;">📝 Passo a Passo para Declarar o ITCMD em SP</h4>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <!-- Passo 1 -->
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; border-left: 3px solid #3498db;">
+                            <p style="margin: 0 0 5px 0; font-weight: 600; color: #3498db;">1️⃣ Acesse o Portal da Fazenda SP</p>
+                            <p style="margin: 0; font-size: 0.85em; color: #aaa;">
+                                Acesse o sistema de declaração do ITCMD:
+                            </p>
+                            <a href="https://www10.fazenda.sp.gov.br/ITCMD_DEC/Default.aspx" target="_blank" rel="noopener noreferrer"
+                               style="display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; padding: 8px 12px; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 6px; font-size: 0.85em; font-weight: 600;">
+                                🔗 Acessar Portal ITCMD-SP
+                            </a>
+                        </div>
+
+                        <!-- Passo 2 -->
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; border-left: 3px solid #9b59b6;">
+                            <p style="margin: 0 0 5px 0; font-weight: 600; color: #9b59b6;">2️⃣ Selecione o Tipo de Transmissão</p>
+                            <p style="margin: 0; font-size: 0.85em; color: #aaa;">
+                                Escolha a opção:<br>
+                                <strong style="color: #fff; background: rgba(155,89,182,0.3); padding: 2px 8px; border-radius: 4px; display: inline-block; margin-top: 5px;">
+                                    📋 "Doação Extrajudicial"
+                                </strong>
+                            </p>
+                        </div>
+
+                        <!-- Passo 3 -->
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; border-left: 3px solid #e67e22;">
+                            <p style="margin: 0 0 5px 0; font-weight: 600; color: #e67e22;">3️⃣ Preencha a Declaração</p>
+                            <p style="margin: 0; font-size: 0.85em; color: #aaa;">
+                                Informe os dados do <strong>doador</strong> (administrador do bolão) e do <strong>donatário</strong> (você).<br>
+                                No campo de valor, informe o <strong>total recebido</strong> (soma de todas as suas cotas).
+                            </p>
+                        </div>
+
+                        <!-- Passo 4 -->
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; border-left: 3px solid #27ae60;">
+                            <p style="margin: 0 0 5px 0; font-weight: 600; color: #27ae60;">4️⃣ Emita o DARE (Guia de Pagamento)</p>
+                            <p style="margin: 0; font-size: 0.85em; color: #aaa;">
+                                Após preencher, o sistema gerará o <strong>DARE</strong> (Documento de Arrecadação de Receitas Estaduais).<br>
+                                O valor será calculado automaticamente: <strong style="color: #e74c3c;">4% sobre o total</strong>.
+                            </p>
+                        </div>
+
+                        <!-- Passo 5 -->
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; border-left: 3px solid #2ecc71;">
+                            <p style="margin: 0 0 5px 0; font-weight: 600; color: #2ecc71;">5️⃣ Efetue o Pagamento</p>
+                            <p style="margin: 0; font-size: 0.85em; color: #aaa;">
+                                Pague o DARE em qualquer banco autorizado, internet banking ou lotérica.<br>
+                                <strong style="color: #f39c12;">⏰ Prazo:</strong> Antes do recebimento ou até 30 dias após a doação.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dicas Importantes -->
+                <div style="background: rgba(241,196,15,0.1); border: 1px solid rgba(241,196,15,0.3); border-radius: 8px; padding: 12px; margin-bottom: 15px;">
+                    <h4 style="color: #f1c40f; margin: 0 0 10px 0; font-size: 0.9em;">💡 Dicas Importantes</h4>
+                    <ul style="margin: 0; padding-left: 20px; font-size: 0.8em; color: #ccc; line-height: 1.6;">
+                        <li>Guarde o <strong>comprovante de pagamento</strong> e a <strong>declaração</strong> por pelo menos 5 anos</li>
+                        <li>O não pagamento gera <strong>multa de 10% a 20%</strong> + juros (SELIC)</li>
+                        <li>A declaração pode ser retificada caso haja erro</li>
+                        <li>Em caso de dúvidas, consulte um <strong>contador ou advogado tributarista</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Observação sobre outros estados -->
+                <div style="background: rgba(231,76,60,0.1); border: 1px solid rgba(231,76,60,0.3); border-radius: 8px; padding: 12px;">
+                    <p style="font-size: 0.8em; color: #e74c3c; margin: 0; line-height: 1.5;">
+                        <strong>⚠️ IMPORTANTE - Beneficiários de outros estados:</strong><br>
+                        <span style="color: #ccc;">
+                            A alíquota de 4% e as regras descritas referem-se <strong>exclusivamente ao Estado de São Paulo</strong>. 
+                            Beneficiários domiciliados fora de SP devem consultar a legislação vigente do ITCMD do seu próprio estado 
+                            e do estado onde ocorrerá a transmissão/recebimento para apurar corretamente base de cálculo, alíquota e forma de recolhimento.
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal Consultar Cotas -->
     <div id="bettorsModal" class="modal-overlay" style="display: none;">

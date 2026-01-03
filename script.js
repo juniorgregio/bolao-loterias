@@ -777,6 +777,10 @@ window.onclick = function (event) {
     if (event.target === bettorsModal) {
         bettorsModal.style.display = "none";
     }
+    const itcmdModal = document.getElementById('itcmdModal');
+    if (event.target === itcmdModal) {
+        closeItcmdModal();
+    }
 }
 
 // ============================================
@@ -879,6 +883,84 @@ function toggleFaqModal() {
         modal.style.display = 'flex';
     } else {
         modal.style.display = 'none';
+    }
+}
+
+/**
+ * Abre o modal de ITCMD com dicas de declaração
+ */
+function openItcmdModal() {
+    const modal = document.getElementById('itcmdModal');
+    if (!modal) return;
+    
+    // Atualiza os valores no modal com base no cálculo atual
+    const cd = state.calculoDetalhado;
+    if (cd) {
+        const inputPrincipal = document.getElementById('quotasInput');
+        const inputBolao2 = document.getElementById('quotasInputBolao2');
+        const cotasPrincipal = parseInt(inputPrincipal?.value) || 0;
+        const cotasBolao2 = parseInt(inputBolao2?.value) || 0;
+        
+        const valorPorCotaAntesITCMD = cd.totalAposAdmin / cd.totalCotas;
+        const minhasCotas = cotasPrincipal + cotasBolao2;
+        const meuValorTotal = valorPorCotaAntesITCMD * minhasCotas;
+        const limiteIsencao = BOLAO_CONFIG.limiteIsencaoITCMD || 92550;
+        const meuItcmdAplicavel = meuValorTotal > limiteIsencao;
+        const meuITCMD = meuItcmdAplicavel ? (meuValorTotal * BOLAO_CONFIG.aliquotaITCMD) : 0;
+        
+        // Atualiza os textos no modal
+        const valorTotalEl = document.getElementById('itcmdModalValorTotal');
+        const valorRecebidoEl = document.getElementById('itcmdModalValorRecebido');
+        const valorImpostoEl = document.getElementById('itcmdModalValorImposto');
+        const alertaEl = document.getElementById('itcmdAlertaIncidencia');
+        const alertaTextoEl = document.getElementById('itcmdAlertaTexto');
+        
+        if (valorTotalEl) valorTotalEl.textContent = formatCurrency(meuValorTotal);
+        if (valorRecebidoEl) valorRecebidoEl.textContent = formatCurrency(meuValorTotal);
+        if (valorImpostoEl) valorImpostoEl.textContent = formatCurrency(meuITCMD);
+        
+        if (alertaEl && alertaTextoEl) {
+            if (meuItcmdAplicavel) {
+                alertaEl.style.display = 'block';
+                alertaEl.style.borderColor = '#e74c3c';
+                alertaEl.style.background = 'linear-gradient(135deg, rgba(231,76,60,0.15), rgba(192,57,43,0.1))';
+                alertaTextoEl.innerHTML = `
+                    Seu total (<strong>${formatCurrency(meuValorTotal)}</strong>) > limite de isenção (<strong>${formatCurrency(limiteIsencao)}</strong>).<br>
+                    <span style="color: #f39c12;">O imposto incide sobre o VALOR TOTAL, não sobre o excedente.</span>
+                `;
+            } else {
+                alertaEl.style.display = 'block';
+                alertaEl.style.borderColor = '#2ecc71';
+                alertaEl.style.background = 'linear-gradient(135deg, rgba(46,204,113,0.15), rgba(39,174,96,0.1))';
+                alertaEl.querySelector('p:first-child').innerHTML = '<span style="font-size: 1.5em;">✅</span> ISENTO DE ITCMD!';
+                alertaEl.querySelector('p:first-child').style.color = '#2ecc71';
+                alertaTextoEl.innerHTML = `
+                    Seu total (<strong>${formatCurrency(meuValorTotal)}</strong>) ≤ limite de isenção (<strong>${formatCurrency(limiteIsencao)}</strong>).<br>
+                    <span style="color: #2ecc71;">Você está dentro do limite de 2.500 UFESPs e não precisa pagar ITCMD.</span>
+                `;
+            }
+        }
+    }
+    
+    modal.style.display = 'flex';
+}
+
+/**
+ * Fecha o modal de ITCMD
+ */
+function closeItcmdModal() {
+    const modal = document.getElementById('itcmdModal');
+    if (modal) {
+        modal.style.display = 'none';
+        // Reseta o alerta para o estado padrão (incidência)
+        const alertaEl = document.getElementById('itcmdAlertaIncidencia');
+        if (alertaEl) {
+            const titleEl = alertaEl.querySelector('p:first-child');
+            if (titleEl) {
+                titleEl.innerHTML = '<span style="font-size: 1.5em;">⚠️</span> ITCMD INCIDE!';
+                titleEl.style.color = '#e74c3c';
+            }
+        }
     }
 }
 
