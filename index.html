@@ -178,7 +178,7 @@
                             style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)); border-radius: 8px; padding: 15px; border: 1px solid rgba(102, 126, 234, 0.3);">
                             <h4
                                 style="color: #667eea; font-size: 0.95em; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-                                📐 Memória de Cálculo
+                                📐 Memória de Cálculo Detalhada
                             </h4>
 
                             <!-- Detalhamento por Faixa -->
@@ -207,6 +207,19 @@
                                 <span id="calcPremioBruto">R$ 0</span>
                             </div>
 
+                            <!-- IR na Fonte -->
+                            <div class="calc-step"
+                                style="font-size: 0.85em; margin-bottom: 8px; color: #e74c3c; display: flex; justify-content: space-between;">
+                                <span>− IR na Fonte (30%):</span>
+                                <span id="calcIRFonte">R$ 0</span>
+                            </div>
+
+                            <div class="calc-step"
+                                style="font-size: 0.85em; margin-bottom: 8px; color: #3498db; display: flex; justify-content: space-between;">
+                                <span>= Após IR (recebido da Caixa):</span>
+                                <span id="calcAposIR">R$ 0</span>
+                            </div>
+
                             <div class="calc-step"
                                 style="font-size: 0.85em; margin-bottom: 8px; color: #ff6b6b; display: flex; justify-content: space-between;">
                                 <span>− Taxa Admin (10%):</span>
@@ -219,10 +232,16 @@
                                 <span id="calcAposAdmin">R$ 0</span>
                             </div>
 
-                            <div class="calc-step"
-                                style="font-size: 0.85em; margin-bottom: 8px; color: #e74c3c; display: flex; justify-content: space-between;">
-                                <span>− ITCMD SP (4%):</span>
-                                <span id="calcITCMD">R$ 0</span>
+                            <!-- ITCMD com nota de isenção -->
+                            <div id="itcmdSection" style="background: rgba(231,76,60,0.1); border-radius: 6px; padding: 8px; margin: 8px 0; border: 1px solid rgba(231,76,60,0.3);">
+                                <div class="calc-step"
+                                    style="font-size: 0.85em; margin-bottom: 4px; color: #e74c3c; display: flex; justify-content: space-between;">
+                                    <span>− ITCMD SP (4%):</span>
+                                    <span id="calcITCMD">R$ 0</span>
+                                </div>
+                                <p id="itcmdNota" style="font-size: 0.7em; color: #e74c3c; margin: 0; font-style: italic;">
+                                    * ITCMD incide se cota > R$ 88.400 (limite isenção doações SP)
+                                </p>
                             </div>
 
                             <div class="calc-step"
@@ -235,7 +254,7 @@
                                 style="border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 10px; margin-top: 5px;">
                                 <div class="calc-step"
                                     style="font-size: 0.85em; margin-bottom: 8px; color: #ccc; display: flex; justify-content: space-between;">
-                                    <span>÷ Total de Cotas:</span>
+                                    <span>÷ Total de Cotas do Bolão:</span>
                                     <span id="calcTotalCotas">0</span>
                                 </div>
                                 <div class="calc-step"
@@ -255,8 +274,19 @@
                                 🎉 SEU PRÊMIO LÍQUIDO: <span id="calcSeuPremio">R$ 0</span>
                             </div>
 
-                            <p style="font-size: 0.75em; color: #888; margin-top: 10px; text-align: center;">
-                                * Taxa Admin (10%) + ITCMD SP (4%) = 13,6% total de desconto sobre o bruto.
+                            <!-- Resumo de Descontos -->
+                            <div style="background: rgba(0,0,0,0.3); border-radius: 6px; padding: 10px; margin-top: 12px;">
+                                <p style="font-size: 0.75em; color: #aaa; margin: 0 0 6px 0; font-weight: 600;">📊 Resumo dos Descontos:</p>
+                                <p style="font-size: 0.7em; color: #888; margin: 0;">
+                                    • <span style="color: #e74c3c;">IR 30%</span> → Retido na fonte pela Caixa<br>
+                                    • <span style="color: #ff6b6b;">Admin 10%</span> → Sobre valor após IR<br>
+                                    • <span style="color: #e74c3c;">ITCMD 4%</span> → Apenas se cota individual > R$ 88.400
+                                </p>
+                            </div>
+
+                            <p style="font-size: 0.7em; color: #666; margin-top: 10px; text-align: center; font-style: italic;">
+                                ⚠️ ITCMD pode não incidir se cada apostador recebe apenas sua própria cota (sem doação).
+                                <br>Consulte um contador para sua situação específica.
                             </p>
                         </div>
                     </div>
@@ -539,8 +569,7 @@
             <div class="prize-breakdown" id="prizeBreakdown">
                 <h3>💰 Estimativa de Prêmios</h3>
                 <div class="prize-info-note">
-                    <em>⚠️ Valores baseados na distribuição: ~90% SENA, ~5% QUINA, ~5% QUADRA do prêmio de R$ 1,09
-                        bilhão. <strong>Descontos já aplicados:</strong> 10% Admin + 4% ITCMD (SP).</em>
+                    <em>⚠️ Valores baseados nos dados oficiais da Caixa. <strong>Descontos aplicados:</strong> IR 30% (retido na fonte) + Admin 10% + ITCMD 4% (se cota > R$ 88.400).</em>
                 </div>
                 <div class="prize-table">
                     <div class="prize-row header">
@@ -643,26 +672,34 @@
                         <li><strong>Heranças</strong> (causa mortis) - quando alguém falece e deixa bens</li>
                         <li><strong>Doações</strong> - transferência gratuita de bens ou valores</li>
                     </ul>
-                    <p><strong>Por que se aplica ao bolão?</strong></p>
-                    <p>Quando o prêmio da loteria é dividido entre os participantes do bolão, a Receita Estadual pode
-                        entender como uma <em>doação</em> entre os ganhadores. Por isso, incide o ITCMD sobre cada cota
-                        recebida.</p>
+                    <p><strong>Quando se aplica ao bolão?</strong></p>
+                    <p>O ITCMD <strong>pode</strong> incidir dependendo da interpretação fiscal:</p>
+                    <ul>
+                        <li>Se cada apostador recebe <strong>apenas sua cota proporcional</strong> às cotas que comprou → <span style="color: #2ecc71;">pode não haver ITCMD</span></li>
+                        <li>Se o Fisco entender como <em>doação</em> entre participantes → <span style="color: #e74c3c;">incide ITCMD</span></li>
+                    </ul>
+                    <p><strong>🔔 Isenção para Doações em SP:</strong></p>
+                    <ul>
+                        <li>Doações até <strong>2.500 UFESPs</strong> são <span style="color: #2ecc71;">ISENTAS</span></li>
+                        <li>Em 2025: ~<strong>R$ 88.400,00</strong> (UFESP = R$ 35,36)</li>
+                        <li>Se a cota ultrapassar esse valor, ITCMD incide sobre o <strong>valor TOTAL</strong></li>
+                    </ul>
                     <p><strong>Alíquota em São Paulo:</strong></p>
                     <ul>
                         <li>A alíquota em SP é de <strong>4%</strong> (fixa)</li>
                         <li>É uma das mais baixas do Brasil</li>
                         <li>Outros estados podem ter até 8%</li>
                     </ul>
-                    <p><strong>Exemplo de Cálculo:</strong></p>
+                    <p><strong>Exemplo de Cálculo (cota > R$ 88.400):</strong></p>
                     <ul>
-                        <li>Prêmio Bruto: R$ 100.000</li>
+                        <li>Prêmio Bruto: R$ 142.857 (antes IR)</li>
+                        <li>Após IR (-30%): R$ 100.000</li>
                         <li>Após Admin (-10%): R$ 90.000</li>
                         <li>ITCMD (-4%): R$ 3.600</li>
                         <li><strong>Líquido Final: R$ 86.400</strong></li>
                     </ul>
-                    <p style="font-size: 0.85em; color: #aaa; margin-top: 10px;">⚠️ <em>Importante: O ITCMD deve ser
-                            pago antes da liberação do prêmio ou em até 30 dias após o recebimento. A falta de pagamento
-                            gera multa e juros.</em></p>
+                    <p style="font-size: 0.85em; color: #2ecc71; margin-top: 10px;">✅ <em>Se sua cota for ≤ R$ 88.400, você pode estar ISENTO do ITCMD!</em></p>
+                    <p style="font-size: 0.8em; color: #aaa; margin-top: 5px;">⚠️ <em>Consulte um contador ou advogado tributarista para sua situação específica.</em></p>
                 </div>
         </section>
 

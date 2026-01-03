@@ -15,11 +15,18 @@ const BOLAO_CONFIG = {
     percentualQuina: 0.05,   // 5% para quina
     percentualQuadra: 0.05,  // 5% para quadra
 
+    // Imposto de Renda retido na fonte pela Caixa
+    aliquotaIR: 0.30, // 30% sobre prêmios de loteria
+
     // Desconto do administrador do bolão
     descontoAdmin: 0.10, // 10%
 
     // ITCMD - Imposto sobre Transmissão Causa Mortis e Doação (SP = 4%)
     aliquotaITCMD: 0.04, // 4% em São Paulo
+    
+    // Limite de isenção ITCMD para doações em SP (2.500 UFESPs)
+    // UFESP 2025 = R$ 35,36 → 2.500 x 35,36 = R$ 88.400
+    limiteIsencaoITCMD: 88400,
 
     // Dados do bolão
     arrecadacaoTotal: 536993.99,
@@ -1201,28 +1208,57 @@ function updateCalculator() {
             if (elB2Quina) elB2Quina.textContent = formatCurrency(quinaB2);
             if (elB2Quadra) elB2Quadra.textContent = formatCurrency(quadraB2);
 
-            // MEMÓRIA DE CÁLCULO VISUAL
-            const calcMemory = document.getElementById('calculationMemory');
-            if (calcMemory && state.calculoDetalhado) {
-                calcMemory.style.display = 'block';
-                const cd = state.calculoDetalhado;
+                            // MEMÓRIA DE CÁLCULO VISUAL
+                            const calcMemory = document.getElementById('calculationMemory');
+                            if (calcMemory && state.calculoDetalhado) {
+                                calcMemory.style.display = 'block';
+                                const cd = state.calculoDetalhado;
 
-                // Detalhamento por faixa
-                document.getElementById('calcSenaTotal').textContent = formatCurrency(cd.senaBruto);
-                document.getElementById('calcQuinaTotal').textContent = formatCurrency(cd.quinaBruto);
-                document.getElementById('calcQuadraTotal').textContent = formatCurrency(cd.quadraBruto);
+                                // Detalhamento por faixa (valores após IR)
+                                document.getElementById('calcSenaTotal').textContent = formatCurrency(cd.senaBruto);
+                                document.getElementById('calcQuinaTotal').textContent = formatCurrency(cd.quinaBruto);
+                                document.getElementById('calcQuadraTotal').textContent = formatCurrency(cd.quadraBruto);
 
-                // Totais consolidados
-                document.getElementById('calcPremioBruto').textContent = formatCurrency(cd.totalBruto);
-                document.getElementById('calcTaxaAdmin').textContent = formatCurrency(cd.taxaAdmin);
-                document.getElementById('calcAposAdmin').textContent = formatCurrency(cd.totalAposAdmin);
-                document.getElementById('calcITCMD').textContent = formatCurrency(cd.valorITCMD);
-                document.getElementById('calcPremioLiquido').textContent = formatCurrency(cd.totalLiquido);
-                document.getElementById('calcTotalCotas').textContent = cd.totalCotas.toLocaleString('pt-BR');
-                document.getElementById('calcPremioPorCota').textContent = formatCurrency(cd.premioPorCota);
-                document.getElementById('calcSuasCotas').textContent = (cotasPrincipal + cotasBolao2).toLocaleString('pt-BR');
-                document.getElementById('calcSeuPremio').textContent = formatCurrency(retornoTotal);
-            }
+                                // Totais consolidados com IR
+                                document.getElementById('calcPremioBruto').textContent = formatCurrency(cd.totalBrutoAntesIR);
+                                
+                                // IR retido na fonte
+                                const calcIRFonte = document.getElementById('calcIRFonte');
+                                if (calcIRFonte) calcIRFonte.textContent = formatCurrency(cd.valorIRRetido);
+                                
+                                // Após IR
+                                const calcAposIR = document.getElementById('calcAposIR');
+                                if (calcAposIR) calcAposIR.textContent = formatCurrency(cd.totalAposIR);
+                                
+                                document.getElementById('calcTaxaAdmin').textContent = formatCurrency(cd.taxaAdmin);
+                                document.getElementById('calcAposAdmin').textContent = formatCurrency(cd.totalAposAdmin);
+                                
+                                // ITCMD com nota de isenção
+                                const itcmdEl = document.getElementById('calcITCMD');
+                                const itcmdNota = document.getElementById('itcmdNota');
+                                const itcmdSection = document.getElementById('itcmdSection');
+                                
+                                if (itcmdEl) {
+                                    if (cd.itcmdAplicavel) {
+                                        itcmdEl.textContent = formatCurrency(cd.valorITCMD);
+                                        if (itcmdNota) itcmdNota.innerHTML = `⚠️ ITCMD incide pois cota (${formatCurrency(cd.valorPorCotaPrincipal)}) > limite isenção (${formatCurrency(cd.limiteIsencao)})`;
+                                        if (itcmdSection) itcmdSection.style.borderColor = 'rgba(231,76,60,0.5)';
+                                    } else {
+                                        itcmdEl.textContent = 'R$ 0,00 (ISENTO)';
+                                        if (itcmdNota) itcmdNota.innerHTML = `✅ ISENTO! Cota (${formatCurrency(cd.valorPorCotaPrincipal)}) ≤ limite isenção (${formatCurrency(cd.limiteIsencao)})`;
+                                        if (itcmdSection) {
+                                            itcmdSection.style.background = 'rgba(46,204,113,0.1)';
+                                            itcmdSection.style.borderColor = 'rgba(46,204,113,0.3)';
+                                        }
+                                    }
+                                }
+                                
+                                document.getElementById('calcPremioLiquido').textContent = formatCurrency(cd.totalLiquido);
+                                document.getElementById('calcTotalCotas').textContent = cd.totalCotas.toLocaleString('pt-BR');
+                                document.getElementById('calcPremioPorCota').textContent = formatCurrency(cd.premioPorCota);
+                                document.getElementById('calcSuasCotas').textContent = (cotasPrincipal + cotasBolao2).toLocaleString('pt-BR');
+                                document.getElementById('calcSeuPremio').textContent = formatCurrency(retornoTotal);
+                            }
 
         } else {
             if (detailsContainer) detailsContainer.style.display = 'none';
@@ -1562,37 +1598,51 @@ function displayResults() {
     }
 
     // Prêmio bruto do bolão (multiplicado pela quantidade que o bolão ganhou)
+    // NOTA: O valor da API já vem LÍQUIDO de IR (a Caixa retém 30% na fonte)
+    // Então premioSenaPorGanhador já é o valor após IR
     const senaBruto = totals.senas * premioSenaPorGanhador;
     const quinaBruto = totals.quinas * premioQuinaPorGanhador;
     const quadraBruto = totals.quadras * premioQuadraPorGanhador;
     const totalBruto = senaBruto + quinaBruto + quadraBruto;
+    
+    // Para mostrar o valor ANTES do IR (bruto real), calculamos inversamente
+    // Se valor após IR = valor bruto * (1 - 0.30), então valor bruto = valor após IR / 0.70
+    const totalBrutoAntesIR = totalBruto / (1 - BOLAO_CONFIG.aliquotaIR);
+    const valorIRRetido = totalBrutoAntesIR * BOLAO_CONFIG.aliquotaIR;
+    const totalAposIR = totalBruto; // Valor já líquido de IR
 
-    // Taxa do Admin (10%)
+    // Taxa do Admin (10%) - aplicada sobre o valor após IR
     const taxaAdmin = BOLAO_CONFIG.descontoAdmin;
+    const valorTaxaAdmin = totalAposIR * taxaAdmin;
+    const totalAposAdmin = totalAposIR * (1 - taxaAdmin);
 
     // ITCMD - Imposto Estadual SP (4%)
+    // IMPORTANTE: O ITCMD só incide se a cota INDIVIDUAL ultrapassar o limite de isenção
     const taxaITCMD = BOLAO_CONFIG.aliquotaITCMD;
-
-    // Fator líquido total: (1 - 10% admin) * (1 - 4% ITCMD) = 0.90 * 0.96 = 0.864
-    const fatorLiquidoTotal = (1 - taxaAdmin) * (1 - taxaITCMD);
-
-    // Prêmio após Admin (antes do ITCMD)
-    const senaAposAdmin = senaBruto * (1 - taxaAdmin);
-    const quinaAposAdmin = quinaBruto * (1 - taxaAdmin);
-    const quadraAposAdmin = quadraBruto * (1 - taxaAdmin);
-    const totalAposAdmin = totalBruto * (1 - taxaAdmin);
-
-    // Prêmio líquido final (após Admin E ITCMD)
-    const senaLiquido = senaBruto * fatorLiquidoTotal;
-    const quinaLiquido = quinaBruto * fatorLiquidoTotal;
-    const quadraLiquido = quadraBruto * fatorLiquidoTotal;
-    const totalLiquido = totalBruto * fatorLiquidoTotal;
-
-    // Valor do ITCMD (calculado sobre o valor após admin)
-    const valorITCMD = totalAposAdmin * taxaITCMD;
+    const limiteIsencao = BOLAO_CONFIG.limiteIsencaoITCMD || 88400;
+    
+    // Calcula o valor por cota para verificar isenção
+    const valorPorCotaPrincipal = totalAposAdmin / BOLAO_CONFIG.totalCotas;
+    
+    // Verifica se a cota média está acima do limite de isenção
+    // Se estiver acima, ITCMD incide sobre o valor TOTAL da cota (não apenas o excedente)
+    const itcmdAplicavel = valorPorCotaPrincipal > limiteIsencao;
+    const valorITCMD = itcmdAplicavel ? (totalAposAdmin * taxaITCMD) : 0;
+    
+    // Prêmio líquido final
+    const totalLiquido = totalAposAdmin - valorITCMD;
+    
+    // Valores líquidos por categoria (proporcionais)
+    const proporcaoSena = totalBruto > 0 ? senaBruto / totalBruto : 0;
+    const proporcaoQuina = totalBruto > 0 ? quinaBruto / totalBruto : 0;
+    const proporcaoQuadra = totalBruto > 0 ? quadraBruto / totalBruto : 0;
+    
+    const senaLiquido = totalLiquido * proporcaoSena;
+    const quinaLiquido = totalLiquido * proporcaoQuina;
+    const quadraLiquido = totalLiquido * proporcaoQuadra;
 
     // CÁLCULO SEPARADO POR BOLÃO E POR CATEGORIA
-    // Agora inclui tanto o desconto do Admin (10%) quanto o ITCMD (4%)
+    // Agora inclui: IR (30%), Admin (10%) e ITCMD (4% se aplicável)
 
     // Bolão Principal
     const { totalsPrincipal } = state.validationResults;
@@ -1600,6 +1650,7 @@ function displayResults() {
     const senaBrutoPrincipal = totalsPrincipal.senas * premioSenaPorGanhador;
     const quinaBrutoPrincipal = totalsPrincipal.quinas * premioQuinaPorGanhador;
     const quadraBrutoPrincipal = totalsPrincipal.quadras * premioQuadraPorGanhador;
+    const brutoPrincipal = senaBrutoPrincipal + quinaBrutoPrincipal + quadraBrutoPrincipal;
 
     // Bolão 2
     const { totalsBolao2 } = state.validationResults;
@@ -1607,10 +1658,17 @@ function displayResults() {
     const senaBrutoBolao2 = totalsBolao2.senas * premioSenaPorGanhador;
     const quinaBrutoBolao2 = totalsBolao2.quinas * premioQuinaPorGanhador;
     const quadraBrutoBolao2 = totalsBolao2.quadras * premioQuadraPorGanhador;
+    const brutoBolao2 = senaBrutoBolao2 + quinaBrutoBolao2 + quadraBrutoBolao2;
 
-    // Totais Líquidos (com Admin -10% e ITCMD -4%)
-    const liquidoPrincipal = (senaBrutoPrincipal + quinaBrutoPrincipal + quadraBrutoPrincipal) * fatorLiquidoTotal;
-    const liquidoBolao2 = (senaBrutoBolao2 + quinaBrutoBolao2 + quadraBrutoBolao2) * fatorLiquidoTotal;
+    // Fator de desconto (Admin + ITCMD se aplicável)
+    // Valores já vêm líquidos de IR da Caixa
+    const fatorAdmin = (1 - taxaAdmin);
+    const fatorITCMD = itcmdAplicavel ? (1 - taxaITCMD) : 1;
+    const fatorLiquidoTotal = fatorAdmin * fatorITCMD;
+
+    // Totais Líquidos
+    const liquidoPrincipal = brutoPrincipal * fatorLiquidoTotal;
+    const liquidoBolao2 = brutoBolao2 * fatorLiquidoTotal;
 
     // Salva no estado para a calculadora usar, incluindo breakdown
     state.totalLiquidoValidado = totalLiquido;
@@ -1631,18 +1689,25 @@ function displayResults() {
 
     // MEMÓRIA DE CÁLCULO DETALHADO (para exibição visual passo a passo)
     state.calculoDetalhado = {
-        // Valores por faixa (bruto)
+        // Valores por faixa (após IR - como vem da Caixa)
         senaBruto: senaBruto,
         quinaBruto: quinaBruto,
         quadraBruto: quadraBruto,
 
         // Totais consolidados
-        totalBruto: totalBruto,
-        taxaAdmin: totalBruto * BOLAO_CONFIG.descontoAdmin,
+        totalBrutoAntesIR: totalBrutoAntesIR, // Valor bruto real antes do IR
+        valorIRRetido: valorIRRetido,          // IR 30% retido na fonte
+        totalAposIR: totalAposIR,              // Valor recebido da Caixa (= totalBruto)
+        totalBruto: totalBruto,                // Alias para compatibilidade
+        
+        taxaAdmin: valorTaxaAdmin,
         totalAposAdmin: totalAposAdmin,
 
-        // ITCMD - 4% sobre valor após admin
+        // ITCMD
         valorITCMD: valorITCMD,
+        itcmdAplicavel: itcmdAplicavel,
+        limiteIsencao: limiteIsencao,
+        valorPorCotaPrincipal: valorPorCotaPrincipal,
         aliquotaITCMD: BOLAO_CONFIG.aliquotaITCMD * 100, // Em percentual para exibição
 
         totalLiquido: totalLiquido,
@@ -1686,13 +1751,17 @@ function displayResults() {
  */
 function updatePrizeNote(senaWinners, quinaWinners, quadraWinners) {
     const noteEl = document.querySelector('.prize-info-note');
+    const cd = state.calculoDetalhado;
+    const itcmdStatus = cd && cd.itcmdAplicavel 
+        ? `<span style="color: #e74c3c;">ITCMD 4% aplicado (cota > R$ 88.400)</span>`
+        : `<span style="color: #2ecc71;">ITCMD isento (cota ≤ R$ 88.400)</span>`;
+    
     if (noteEl) {
         noteEl.innerHTML = `
             <em>⚠️ Cálculo baseado em: <strong>${senaWinners}</strong> ganhador(es) de SENA, 
             <strong>${quinaWinners.toLocaleString('pt-BR')}</strong> de QUINA, 
             <strong>${quadraWinners.toLocaleString('pt-BR')}</strong> de QUADRA no Brasil. 
-            Prêmio total: R$1 bilhão (~90% SENA, ~5% QUINA, ~5% QUADRA). 
-            <strong>Descontos aplicados:</strong> 10% Admin + 4% ITCMD (SP).</em>
+            <strong>Descontos:</strong> IR 30% (fonte) + Admin 10% + ${itcmdStatus}</em>
         `;
     }
 }
