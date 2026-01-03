@@ -22,11 +22,16 @@ const BOLAO_CONFIG = {
     descontoAdmin: 0.10, // 10%
 
     // ITCMD - Imposto sobre Transmissão Causa Mortis e Doação (SP = 4%)
+    // IMPORTANTE: ITCMD incide sobre TRANSMISSÃO GRATUITA (doação), não sobre prêmio em si
+    // Em bolões, o Fisco tende a enquadrar o repasse como doação indireta
     aliquotaITCMD: 0.04, // 4% em São Paulo
     
     // Limite de isenção ITCMD para doações em SP (2.500 UFESPs)
-    // UFESP 2025 = R$ 35,36 → 2.500 x 35,36 = R$ 88.400
-    limiteIsencaoITCMD: 88400,
+    // UFESP 2025 = R$ 37,02 (Comunicado CAT-01/2025)
+    // 2.500 x R$ 37,02 = R$ 92.550,00
+    valorUFESP: 37.02,
+    limiteLFESPs: 2500,
+    limiteIsencaoITCMD: 92550, // 2.500 x 37,02 = R$ 92.550,00
 
     // Dados do bolão
     arrecadacaoTotal: 536993.99,
@@ -1798,17 +1803,14 @@ function displayResults() {
  */
 function updatePrizeNote(senaWinners, quinaWinners, quadraWinners) {
     const noteEl = document.querySelector('.prize-info-note');
-    const cd = state.calculoDetalhado;
-    const itcmdStatus = cd && cd.itcmdAplicavel 
-        ? `<span style="color: #e74c3c;">ITCMD 4% aplicado (cota > R$ 88.400)</span>`
-        : `<span style="color: #2ecc71;">ITCMD isento (cota ≤ R$ 88.400)</span>`;
+    const limiteIsencao = BOLAO_CONFIG.limiteIsencaoITCMD || 92550;
     
     if (noteEl) {
         noteEl.innerHTML = `
             <em>⚠️ Cálculo baseado em: <strong>${senaWinners}</strong> ganhador(es) de SENA, 
             <strong>${quinaWinners.toLocaleString('pt-BR')}</strong> de QUINA, 
             <strong>${quadraWinners.toLocaleString('pt-BR')}</strong> de QUADRA no Brasil. 
-            <strong>Descontos:</strong> IR 30% (fonte) + Admin 10% + ${itcmdStatus}</em>
+            <strong>Descontos:</strong> IR 30% (fonte) + Admin 10% + ITCMD 4%* (se total > ${formatCurrency(limiteIsencao)}). *Alíquota SP.</em>
         `;
     }
 }
