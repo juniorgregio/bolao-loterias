@@ -178,7 +178,7 @@
                             style="background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)); border-radius: 8px; padding: 15px; border: 1px solid rgba(102, 126, 234, 0.3);">
                             <h4
                                 style="color: #667eea; font-size: 0.95em; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
-                                📐 Memória de Cálculo
+                                📐 Memória de Cálculo Detalhada
                             </h4>
 
                             <!-- Detalhamento por Faixa -->
@@ -207,6 +207,19 @@
                                 <span id="calcPremioBruto">R$ 0</span>
                             </div>
 
+                            <!-- IR na Fonte -->
+                            <div class="calc-step"
+                                style="font-size: 0.85em; margin-bottom: 8px; color: #e74c3c; display: flex; justify-content: space-between;">
+                                <span>− IR na Fonte (30%):</span>
+                                <span id="calcIRFonte">R$ 0</span>
+                            </div>
+
+                            <div class="calc-step"
+                                style="font-size: 0.85em; margin-bottom: 8px; color: #3498db; display: flex; justify-content: space-between;">
+                                <span>= Após IR (recebido da Caixa):</span>
+                                <span id="calcAposIR">R$ 0</span>
+                            </div>
+
                             <div class="calc-step"
                                 style="font-size: 0.85em; margin-bottom: 8px; color: #ff6b6b; display: flex; justify-content: space-between;">
                                 <span>− Taxa Admin (10%):</span>
@@ -219,10 +232,16 @@
                                 <span id="calcAposAdmin">R$ 0</span>
                             </div>
 
-                            <div class="calc-step"
-                                style="font-size: 0.85em; margin-bottom: 8px; color: #e74c3c; display: flex; justify-content: space-between;">
-                                <span>− ITCMD SP (4%):</span>
-                                <span id="calcITCMD">R$ 0</span>
+                            <!-- ITCMD com nota de isenção - APURADO POR BENEFICIÁRIO - CLICÁVEL -->
+                            <div id="itcmdSection" style="background: rgba(231,76,60,0.1); border-radius: 6px; padding: 10px; margin: 8px 0; border: 1px solid rgba(231,76,60,0.3); cursor: pointer; transition: all 0.2s;" onclick="openItcmdModal()">
+                                <div class="calc-step"
+                                    style="font-size: 0.85em; margin-bottom: 6px; color: #e74c3c; display: flex; justify-content: space-between; font-weight: 600; align-items: center;">
+                                    <span>− ITCMD SP (4%)*: <span style="font-size: 0.75em; color: #888; font-weight: normal;">🔍 clique para ver como declarar</span></span>
+                                    <span id="calcITCMD">R$ 0</span>
+                                </div>
+                                <p id="itcmdNota" style="font-size: 0.7em; color: #888; margin: 0; line-height: 1.4;">
+                                    ⚠️ ITCMD é apurado pelo <strong>VALOR TOTAL</strong> que você recebe (soma de todas as suas cotas), não por cota individual!
+                                </p>
                             </div>
 
                             <div class="calc-step"
@@ -235,7 +254,7 @@
                                 style="border-top: 1px dashed rgba(255,255,255,0.2); padding-top: 10px; margin-top: 5px;">
                                 <div class="calc-step"
                                     style="font-size: 0.85em; margin-bottom: 8px; color: #ccc; display: flex; justify-content: space-between;">
-                                    <span>÷ Total de Cotas:</span>
+                                    <span>÷ Total de Cotas do Bolão:</span>
                                     <span id="calcTotalCotas">0</span>
                                 </div>
                                 <div class="calc-step"
@@ -255,8 +274,23 @@
                                 🎉 SEU PRÊMIO LÍQUIDO: <span id="calcSeuPremio">R$ 0</span>
                             </div>
 
-                            <p style="font-size: 0.75em; color: #888; margin-top: 10px; text-align: center;">
-                                * Taxa Admin (10%) + ITCMD SP (4%) = 13,6% total de desconto sobre o bruto.
+                            <!-- Resumo de Descontos -->
+                            <div style="background: rgba(0,0,0,0.3); border-radius: 6px; padding: 10px; margin-top: 12px;">
+                                <p style="font-size: 0.75em; color: #aaa; margin: 0 0 6px 0; font-weight: 600;">📊 Resumo dos Descontos:</p>
+                                <p style="font-size: 0.7em; color: #888; margin: 0;">
+                                    • <span style="color: #e74c3c;">IR 30%</span> → Retido na fonte pela Caixa<br>
+                                    • <span style="color: #ff6b6b;">Admin 10%</span> → Sobre valor após IR<br>
+                                    • <span style="color: #e74c3c;">ITCMD 4%*</span> → Se seu <strong>TOTAL</strong> recebido > R$ 92.550 (2.500 UFESPs)
+                                </p>
+                            </div>
+
+                            <p style="font-size: 0.7em; color: #f39c12; margin-top: 10px; text-align: center; background: rgba(243,156,18,0.1); padding: 8px; border-radius: 4px;">
+                                ⚠️ <strong>ATENÇÃO:</strong> ITCMD incide sobre o <strong>VALOR TOTAL</strong> que você recebe, NÃO por cota individual. Ao ultrapassar o limite, perde-se a isenção e paga-se sobre o total!
+                            </p>
+                            
+                            <p style="font-size: 0.65em; color: #888; margin-top: 8px; text-align: center; font-style: italic;">
+                                * Alíquota de SP. Beneficiários de outros estados devem consultar a legislação local.<br>
+                                Consulte um contador ou advogado tributarista para sua situação específica.
                             </p>
                         </div>
                     </div>
@@ -539,8 +573,7 @@
             <div class="prize-breakdown" id="prizeBreakdown">
                 <h3>💰 Estimativa de Prêmios</h3>
                 <div class="prize-info-note">
-                    <em>⚠️ Valores baseados na distribuição: ~90% SENA, ~5% QUINA, ~5% QUADRA do prêmio de R$ 1,09
-                        bilhão. <strong>Descontos já aplicados:</strong> 10% Admin + 4% ITCMD (SP).</em>
+                    <em>⚠️ Valores baseados nos dados oficiais da Caixa. <strong>Descontos:</strong> IR 30% (fonte) + Admin 10% + ITCMD 4%* (se total recebido > R$ 92.550). *Alíquota SP - outros estados podem variar.</em>
                 </div>
                 <div class="prize-table">
                     <div class="prize-row header">
@@ -636,33 +669,50 @@
                     <p>Exemplo: Se ganhar R$ 100.000, recebe R$ 90.000.</p>
                 </div>
                 <div class="explain-card" style="border-left: 4px solid #e74c3c;">
-                    <h4>🏛️ ITCMD - Imposto Estadual (4% em SP)</h4>
+                    <h4>🏛️ ITCMD - Imposto Estadual (4% em SP)*</h4>
+                    
                     <p><strong>O que é?</strong> ITCMD significa <em>Imposto sobre Transmissão Causa Mortis e
-                            Doação</em>. É um imposto estadual cobrado sobre:</p>
+                            Doação</em>. É um imposto estadual que incide sobre <strong>transmissão gratuita de valores</strong>:</p>
                     <ul>
                         <li><strong>Heranças</strong> (causa mortis) - quando alguém falece e deixa bens</li>
-                        <li><strong>Doações</strong> - transferência gratuita de bens ou valores</li>
+                        <li><strong>Doações</strong> - transferência gratuita de bens ou valores entre vivos</li>
                     </ul>
-                    <p><strong>Por que se aplica ao bolão?</strong></p>
-                    <p>Quando o prêmio da loteria é dividido entre os participantes do bolão, a Receita Estadual pode
-                        entender como uma <em>doação</em> entre os ganhadores. Por isso, incide o ITCMD sobre cada cota
-                        recebida.</p>
-                    <p><strong>Alíquota em São Paulo:</strong></p>
+                    
+                    <p style="background: rgba(231,76,60,0.1); padding: 10px; border-radius: 6px; border-left: 3px solid #e74c3c; margin: 10px 0;">
+                        <strong>⚠️ IMPORTANTE:</strong> ITCMD <strong>NÃO</strong> incide sobre "prêmio" em si (isso é IR). Em bolões, o Fisco tende a enquadrar o repasse do administrador aos participantes como <strong>DOAÇÃO INDIRETA</strong>, gerando incidência de ITCMD. O imposto é apurado <strong>por CPF</strong> e pelo <strong>somatório anual</strong> recebido.
+                    </p>
+                    
+                    <p><strong>🔔 Isenção para Doações em SP (2025):</strong></p>
                     <ul>
-                        <li>A alíquota em SP é de <strong>4%</strong> (fixa)</li>
-                        <li>É uma das mais baixas do Brasil</li>
-                        <li>Outros estados podem ter até 8%</li>
+                        <li>Limite: <strong>2.500 UFESPs</strong> (valor atualizado anualmente)</li>
+                        <li>UFESP 2025 = <strong>R$ 37,02</strong></li>
+                        <li>Limite em reais: 2.500 × R$ 37,02 = <strong>R$ 92.550,00</strong></li>
+                        <li>Ao <strong>ultrapassar</strong> o limite, perde-se a isenção e o ITCMD incide sobre o <strong>VALOR TOTAL</strong> (não apenas sobre o excedente)</li>
                     </ul>
-                    <p><strong>Exemplo de Cálculo:</strong></p>
+                    
+                    <p style="background: rgba(255,193,7,0.1); padding: 10px; border-radius: 6px; margin: 10px 0;">
+                        <strong>❌ ERRO COMUM:</strong> "Cada cota vale R$ 7.692, que é menor que R$ 92.550, então estou isento."<br>
+                        <strong>✅ CORRETO:</strong> Se você tem 80 cotas = R$ 615.394, como ultrapassa R$ 92.550, paga ITCMD sobre os R$ 615.394 <strong>inteiros</strong>.
+                    </p>
+                    
+                    <p><strong>Exemplo de Cálculo (80 cotas ≈ R$ 615.394):</strong></p>
                     <ul>
-                        <li>Prêmio Bruto: R$ 100.000</li>
-                        <li>Após Admin (-10%): R$ 90.000</li>
-                        <li>ITCMD (-4%): R$ 3.600</li>
-                        <li><strong>Líquido Final: R$ 86.400</strong></li>
+                        <li>Valor Total Recebido: R$ 615.394,40</li>
+                        <li>Limite Isenção 2025: R$ 92.550,00</li>
+                        <li>Ultrapassou? <strong>SIM</strong> → Perde isenção</li>
+                        <li>Base de Cálculo: R$ 615.394,40 (valor <strong>TOTAL</strong>)</li>
+                        <li>ITCMD (4%): <strong>R$ 24.615,78</strong></li>
+                        <li><strong>Líquido Final: R$ 590.778,62</strong></li>
                     </ul>
-                    <p style="font-size: 0.85em; color: #aaa; margin-top: 10px;">⚠️ <em>Importante: O ITCMD deve ser
-                            pago antes da liberação do prêmio ou em até 30 dias após o recebimento. A falta de pagamento
-                            gera multa e juros.</em></p>
+                    
+                    <p><strong>Alíquota em São Paulo:</strong> <span style="color: #e74c3c; font-weight: bold;">4%</span> (fixa)</p>
+                    <p><strong>Responsável:</strong> O próprio beneficiário (quem recebe)</p>
+                    
+                    <p style="font-size: 0.85em; color: #2ecc71; margin-top: 10px;">✅ <em>Se seu TOTAL recebido for ≤ R$ 92.550 (até ~12 cotas), você pode estar ISENTO!</em></p>
+                    
+                    <p style="font-size: 0.8em; color: #f39c12; margin-top: 10px; background: rgba(243,156,18,0.1); padding: 8px; border-radius: 4px;">
+                        <strong>* ATENÇÃO - Beneficiários de outros estados:</strong> O ITCMD de 4% refere-se à legislação de SP. Beneficiários domiciliados fora de SP devem consultar a legislação vigente do seu estado e do estado onde ocorrerá a transmissão para apurar corretamente a alíquota, base de cálculo e recolhimento.
+                    </p>
                 </div>
         </section>
 
@@ -862,6 +912,124 @@
 
     <!-- SheetJS para Excel Export -->
     <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+
+    <!-- Modal ITCMD - Dicas de Declaração -->
+    <div id="itcmdModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content glass-card" style="max-width: 650px; max-height: 90vh; overflow-y: auto;">
+            <div class="modal-header" style="background: linear-gradient(135deg, rgba(231,76,60,0.2), rgba(192,57,43,0.2)); border-bottom: 1px solid rgba(231,76,60,0.3);">
+                <h3 style="color: #e74c3c;">🏛️ ITCMD SP - Como Declarar e Pagar</h3>
+                <button class="close-modal" onclick="closeItcmdModal()">✖</button>
+            </div>
+
+            <div class="modal-body">
+                <!-- Alerta de Incidência -->
+                <div id="itcmdAlertaIncidencia" style="background: linear-gradient(135deg, rgba(231,76,60,0.15), rgba(192,57,43,0.1)); border: 2px solid #e74c3c; border-radius: 10px; padding: 15px; margin-bottom: 20px;">
+                    <p style="font-size: 1em; color: #e74c3c; font-weight: 700; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 1.5em;">⚠️</span> ITCMD INCIDE!
+                    </p>
+                    <p id="itcmdAlertaTexto" style="font-size: 0.9em; color: #fff; margin: 0; line-height: 1.5;">
+                        Seu total (<strong id="itcmdModalValorTotal">R$ 615.394,25</strong>) > limite de isenção (<strong>R$ 92.550,00</strong>).<br>
+                        <span style="color: #f39c12;">O imposto incide sobre o VALOR TOTAL, não sobre o excedente.</span>
+                    </p>
+                </div>
+
+                <!-- Resumo do Cálculo -->
+                <div style="background: rgba(0,0,0,0.2); border-radius: 8px; padding: 12px; margin-bottom: 20px;">
+                    <h4 style="color: #667eea; margin: 0 0 10px 0; font-size: 0.95em;">📊 Seu Cálculo</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.85em;">
+                        <div>
+                            <span style="color: #888;">Valor Total Recebido:</span><br>
+                            <strong id="itcmdModalValorRecebido" style="color: #fff;">R$ 615.394,25</strong>
+                        </div>
+                        <div>
+                            <span style="color: #888;">ITCMD Devido (4%):</span><br>
+                            <strong id="itcmdModalValorImposto" style="color: #e74c3c;">R$ 24.615,77</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Passo a Passo -->
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #2ecc71; margin: 0 0 15px 0; font-size: 1em;">📝 Passo a Passo para Declarar o ITCMD em SP</h4>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <!-- Passo 1 -->
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; border-left: 3px solid #3498db;">
+                            <p style="margin: 0 0 5px 0; font-weight: 600; color: #3498db;">1️⃣ Acesse o Portal da Fazenda SP</p>
+                            <p style="margin: 0; font-size: 0.85em; color: #aaa;">
+                                Acesse o sistema de declaração do ITCMD:
+                            </p>
+                            <a href="https://www10.fazenda.sp.gov.br/ITCMD_DEC/Default.aspx" target="_blank" rel="noopener noreferrer"
+                               style="display: inline-flex; align-items: center; gap: 6px; margin-top: 8px; padding: 8px 12px; background: linear-gradient(135deg, #3498db, #2980b9); color: white; text-decoration: none; border-radius: 6px; font-size: 0.85em; font-weight: 600;">
+                                🔗 Acessar Portal ITCMD-SP
+                            </a>
+                        </div>
+
+                        <!-- Passo 2 -->
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; border-left: 3px solid #9b59b6;">
+                            <p style="margin: 0 0 5px 0; font-weight: 600; color: #9b59b6;">2️⃣ Selecione o Tipo de Transmissão</p>
+                            <p style="margin: 0; font-size: 0.85em; color: #aaa;">
+                                Escolha a opção:<br>
+                                <strong style="color: #fff; background: rgba(155,89,182,0.3); padding: 2px 8px; border-radius: 4px; display: inline-block; margin-top: 5px;">
+                                    📋 "Doação Extrajudicial"
+                                </strong>
+                            </p>
+                        </div>
+
+                        <!-- Passo 3 -->
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; border-left: 3px solid #e67e22;">
+                            <p style="margin: 0 0 5px 0; font-weight: 600; color: #e67e22;">3️⃣ Preencha a Declaração</p>
+                            <p style="margin: 0; font-size: 0.85em; color: #aaa;">
+                                Informe os dados do <strong>doador</strong> (administrador do bolão) e do <strong>donatário</strong> (você).<br>
+                                No campo de valor, informe o <strong>total recebido</strong> (soma de todas as suas cotas).
+                            </p>
+                        </div>
+
+                        <!-- Passo 4 -->
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; border-left: 3px solid #27ae60;">
+                            <p style="margin: 0 0 5px 0; font-weight: 600; color: #27ae60;">4️⃣ Emita o DARE (Guia de Pagamento)</p>
+                            <p style="margin: 0; font-size: 0.85em; color: #aaa;">
+                                Após preencher, o sistema gerará o <strong>DARE</strong> (Documento de Arrecadação de Receitas Estaduais).<br>
+                                O valor será calculado automaticamente: <strong style="color: #e74c3c;">4% sobre o total</strong>.
+                            </p>
+                        </div>
+
+                        <!-- Passo 5 -->
+                        <div style="background: rgba(255,255,255,0.05); border-radius: 8px; padding: 12px; border-left: 3px solid #2ecc71;">
+                            <p style="margin: 0 0 5px 0; font-weight: 600; color: #2ecc71;">5️⃣ Efetue o Pagamento</p>
+                            <p style="margin: 0; font-size: 0.85em; color: #aaa;">
+                                Pague o DARE em qualquer banco autorizado, internet banking ou lotérica.<br>
+                                <strong style="color: #f39c12;">⏰ Prazo:</strong> Antes do recebimento ou até 30 dias após a doação.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dicas Importantes -->
+                <div style="background: rgba(241,196,15,0.1); border: 1px solid rgba(241,196,15,0.3); border-radius: 8px; padding: 12px; margin-bottom: 15px;">
+                    <h4 style="color: #f1c40f; margin: 0 0 10px 0; font-size: 0.9em;">💡 Dicas Importantes</h4>
+                    <ul style="margin: 0; padding-left: 20px; font-size: 0.8em; color: #ccc; line-height: 1.6;">
+                        <li>Guarde o <strong>comprovante de pagamento</strong> e a <strong>declaração</strong> por pelo menos 5 anos</li>
+                        <li>O não pagamento gera <strong>multa de 10% a 20%</strong> + juros (SELIC)</li>
+                        <li>A declaração pode ser retificada caso haja erro</li>
+                        <li>Em caso de dúvidas, consulte um <strong>contador ou advogado tributarista</strong></li>
+                    </ul>
+                </div>
+
+                <!-- Observação sobre outros estados -->
+                <div style="background: rgba(231,76,60,0.1); border: 1px solid rgba(231,76,60,0.3); border-radius: 8px; padding: 12px;">
+                    <p style="font-size: 0.8em; color: #e74c3c; margin: 0; line-height: 1.5;">
+                        <strong>⚠️ IMPORTANTE - Beneficiários de outros estados:</strong><br>
+                        <span style="color: #ccc;">
+                            A alíquota de 4% e as regras descritas referem-se <strong>exclusivamente ao Estado de São Paulo</strong>. 
+                            Beneficiários domiciliados fora de SP devem consultar a legislação vigente do ITCMD do seu próprio estado 
+                            e do estado onde ocorrerá a transmissão/recebimento para apurar corretamente base de cálculo, alíquota e forma de recolhimento.
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal Consultar Cotas -->
     <div id="bettorsModal" class="modal-overlay" style="display: none;">
