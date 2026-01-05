@@ -1340,6 +1340,7 @@ function loadSampleGames() {
 /**
  * Valida todos os jogos contra os números sorteados
  * SEMPRE valida ambos os bolões (Principal e Bolão 2)
+ * TAMBÉM valida jogos inseridos manualmente no textarea
  */
 function validateGames() {
     // Verifica se 6 números foram selecionados
@@ -1375,6 +1376,21 @@ function validateGames() {
                     source: group.source,
                     bolao: 'Bolão 2'
                 });
+            });
+        });
+    }
+
+    // TAMBÉM inclui jogos do textarea (inseridos manualmente)
+    const textarea = document.getElementById('gamesTextarea');
+    if (textarea && textarea.value.trim() !== '') {
+        const manualGames = parseGames(textarea.value);
+        manualGames.forEach(game => {
+            // Determina se é Principal ou Bolão 2 baseado no bolão ativo
+            const bolaoType = state.activeBolao === 9 ? 'Principal' : 'Bolão 2';
+            allGames.push({
+                numbers: game.numbers,
+                source: game.source || 'Manual',
+                bolao: bolaoType
             });
         });
     }
