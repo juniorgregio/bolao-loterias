@@ -1339,8 +1339,8 @@ function loadSampleGames() {
 
 /**
  * Valida todos os jogos contra os números sorteados
- * SEMPRE valida ambos os bolões (Principal e Bolão 2)
- * TAMBÉM valida jogos inseridos manualmente no textarea
+ * Se o textarea tiver jogos personalizados, valida APENAS esses
+ * Caso contrário, valida os jogos dos bancos de dados (Principal e Bolão 2)
  */
 function validateGames() {
     // Verifica se 6 números foram selecionados
@@ -1349,43 +1349,15 @@ function validateGames() {
         return;
     }
 
-    // SEMPRE coleta jogos de ambos os bolões
     let allGames = [];
 
-    // Bolão Principal (9 números por jogo)
-    if (typeof GAMES_DATABASE_9 !== 'undefined') {
-        GAMES_DATABASE_9.forEach(group => {
-            group.games.forEach(game => {
-                const numbers = game.split(/\s+/).map(n => parseInt(n));
-                allGames.push({
-                    numbers: numbers,
-                    source: group.source,
-                    bolao: 'Principal'
-                });
-            });
-        });
-    }
-
-    // Bolão 2 (6 números por jogo)
-    if (typeof GAMES_DATABASE_6 !== 'undefined') {
-        GAMES_DATABASE_6.forEach(group => {
-            group.games.forEach(game => {
-                const numbers = game.split(/\s+/).map(n => parseInt(n));
-                allGames.push({
-                    numbers: numbers,
-                    source: group.source,
-                    bolao: 'Bolão 2'
-                });
-            });
-        });
-    }
-
-    // TAMBÉM inclui jogos do textarea (inseridos manualmente)
+    // Verifica se há jogos manuais no textarea
     const textarea = document.getElementById('gamesTextarea');
-    if (textarea && textarea.value.trim() !== '') {
-        const manualGames = parseGames(textarea.value);
+    const manualGames = textarea && textarea.value.trim() !== '' ? parseGames(textarea.value) : [];
+
+    // Se há jogos manuais, usa APENAS esses (ignora banco de dados)
+    if (manualGames.length > 0) {
         manualGames.forEach(game => {
-            // Determina se é Principal ou Bolão 2 baseado no bolão ativo
             const bolaoType = state.activeBolao === 9 ? 'Principal' : 'Bolão 2';
             allGames.push({
                 numbers: game.numbers,
@@ -1393,11 +1365,41 @@ function validateGames() {
                 bolao: bolaoType
             });
         });
+    } else {
+        // Sem jogos manuais: usa os bancos de dados
+
+        // Bolão Principal (9 números por jogo)
+        if (typeof GAMES_DATABASE_9 !== 'undefined') {
+            GAMES_DATABASE_9.forEach(group => {
+                group.games.forEach(game => {
+                    const numbers = game.split(/\s+/).map(n => parseInt(n));
+                    allGames.push({
+                        numbers: numbers,
+                        source: group.source,
+                        bolao: 'Principal'
+                    });
+                });
+            });
+        }
+
+        // Bolão 2 (6 números por jogo)
+        if (typeof GAMES_DATABASE_6 !== 'undefined') {
+            GAMES_DATABASE_6.forEach(group => {
+                group.games.forEach(game => {
+                    const numbers = game.split(/\s+/).map(n => parseInt(n));
+                    allGames.push({
+                        numbers: numbers,
+                        source: group.source,
+                        bolao: 'Bolão 2'
+                    });
+                });
+            });
+        }
     }
 
     // Se nenhum jogo encontrado, mostra erro
     if (allGames.length === 0) {
-        showToast('Nenhum jogo encontrado nos bolões!', 'error');
+        showToast('Nenhum jogo encontrado! Cole seus jogos no campo de texto.', 'error');
         return;
     }
 
