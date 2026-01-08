@@ -222,14 +222,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Carrega números sorteados por default (enquanto API não funciona)
     try { initDefaultNumbers(); } catch (e) { console.error('Erro default numbers:', e); }
 
-    // FALLBACK: Garante que o splash será escondido mesmo se houver erro
-    setTimeout(() => {
-        const splash = document.getElementById('victorySplash');
-        if (splash && !splash.classList.contains('hidden')) {
-            console.log('Fallback: Escondendo splash');
-            splash.classList.add('hidden');
-        }
-    }, 3000);
+    // PÁGINA DESABILITADA - Splash permanece visível
+    // Fallback removido para manter apenas a tela de vitória
 });
 
 /**
@@ -253,24 +247,23 @@ function initDefaultNumbers() {
     // Atualiza UI da grade de números
     updateNumbersUI();
 
-    // Transição do Splash após 2.5 segundos
+    // PÁGINA DESABILITADA TEMPORARIAMENTE
+    // Mantém o splash visível e oculta o restante da página
+    const mainContainer = document.querySelector('.main-container');
+    const header = document.querySelector('.header');
+    const footer = document.querySelector('.footer');
+    const siteFooter = document.querySelector('.site-footer');
+    
+    if (mainContainer) mainContainer.style.display = 'none';
+    if (header) header.style.display = 'none';
+    if (footer) footer.style.display = 'none';
+    if (siteFooter) siteFooter.style.display = 'none';
+    
+    // O splash permanece visível - NÃO esconde automaticamente
+    // Dispara confetti após 2 segundos
     setTimeout(() => {
-        const splash = document.getElementById('victorySplash');
-        if (splash) {
-            splash.classList.add('hidden');
-        }
-
-        // Após a transição, dispara confetti e valida jogos
-        setTimeout(() => {
-            triggerConfetti();
-            showToast('🎉 PARABÉNS! Ganhamos a SENA da Mega da Virada!', 'success');
-
-            // Valida os jogos automaticamente após pequeno delay
-            setTimeout(() => {
-                validateGames();
-            }, 500);
-        }, 800);
-    }, 2500);
+        triggerConfetti();
+    }, 2000);
 }
 
 /**
