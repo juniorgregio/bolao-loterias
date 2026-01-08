@@ -304,6 +304,25 @@ body {
     margin-top: 0.5rem;
 }
 
+.splash-credits {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.splash-credits a {
+    color: #0077B5;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.splash-credits a:hover {
+    color: #00a0dc;
+}
+
 @media (max-width: 600px) {
     .splash-title {
         font-size: 1.8rem;
