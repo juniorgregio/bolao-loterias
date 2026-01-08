@@ -312,6 +312,20 @@ body {
     color: rgba(255, 255, 255, 0.5);
 }
 
+.splash-credits p {
+    margin: 0.3rem 0;
+}
+
+.splash-organizer {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.splash-organizer span {
+    color: #FFD700;
+    font-weight: 600;
+}
+
 .splash-credits a {
     color: #0077B5;
     text-decoration: none;
